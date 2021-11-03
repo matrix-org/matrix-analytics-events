@@ -1,0 +1,14 @@
+{
+  "name": "matrix-analytics-events",
+  "version": "0.0.1",
+  "description": "JSON schema for analytics events from matrix SDKs",
+  "author": "Element",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "json-schema-to-typescript": "^10.1.5"
+  },
+  "scripts": {
+    "build": "yarn build:ts",
+    "build:ts": "json2ts schemas/ -o types/"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "PageViewEvent",
+  "type": "object",
+  "properties": {
+    "eventName": {
+      "const": "$pageview"
+    },
+    "durationMs": {
+      "description": "The amount of time it took to switch between this page and the last, in ms",
+      "type": "number"
+    },
+    "screen": {
+      "description": "The name of the screen",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
