@@ -6,7 +6,6 @@
  */
 
 export interface PageView {
-  eventName?: "$pageview";
   /**
    * The amount of time it took to switch between this page and the last, in ms
    */

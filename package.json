@@ -11,6 +11,7 @@
   "scripts": {
     "build": "yarn build:ts && yarn build:kt && yarn build:swift",
     "build:ts": "json2ts schemas/ -o types/",
-    "build:kt": "scripts/build-kotlin.sh"
+    "build:kt": "scripts/build-kotlin.sh",
+    "build:swift": "scripts/build-swift.sh"
   }
 }
