@@ -1,7 +1,9 @@
-This repository contains JSON schema defining analytics events raised by the Matrix SDKs.
+# matrix-analytics-events
 
-It also contains a generator of client stubs for these events which are used by the client SDKs to ensure events they
-raise comply with the schema through compile-time type verification.
+This repository contains JSON schema defining analytics events raised by the Matrix client SDKs.
+
+It also contains a generator of type stubs for these events which can be used by the client SDKs. Using these stubs 
+ensures events raised comply with the schema via compile-time type verification.
 
 ## Schemas
 
