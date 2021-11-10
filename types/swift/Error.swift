@@ -11,12 +11,17 @@ struct Error {
     /// Context - client defined, can used for debugging
     let context: String?
     let domain: Domain
+    let eventName: EventName
     let name: Name
 }
 
 enum Domain {
     case e2Ee
     case voip
+}
+
+enum EventName {
+    case error
 }
 
 enum Name {

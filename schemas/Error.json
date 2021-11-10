@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "description": "Triggered when an error occurred",
+  "properties": {
+    "eventName": {
+      "enum": ["Error"]
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "E2EE",
+        "VOIP"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "enum": [
+        "UnknownError",
+        "OlmIndexError",
+        "OlmKeysNotSentError",
+        "OlmUnspecifiedError",
+        "VoipUserHangup",
+        "VoipIceFailed",
+        "VoipInviteTimeout",
+        "VoipIceTimeout",
+        "VoipUserMediaFailed"
+      ],
+      "required": true
+    },
+    "context": {
+      "description": "Context - client defined, can be used for debugging",
+      "type": "string"
+    }
+  },
+  "required": ["domain", "name", "eventName"],
+  "additionalProperties": false
+}

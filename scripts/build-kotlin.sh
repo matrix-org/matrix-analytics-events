@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm types/kotlin/*
+
 set -e
 
 for json in schemas/*.json

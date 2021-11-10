@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm types/swift/*
+
 set -e
 
 for json in schemas/*.json

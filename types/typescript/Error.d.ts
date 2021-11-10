@@ -9,6 +9,7 @@
  * Triggered when an error occurred
  */
 export interface Error {
+  eventName: "Error";
   domain: "E2EE" | "VOIP";
   name:
     | "UnknownError"

@@ -10,12 +10,17 @@ data class Error (
     val context: String? = null,
 
     val domain: Domain,
+    val eventName: EventName,
     val name: Name
 )
 
 enum class Domain {
     E2Ee,
     Voip
+}
+
+enum class EventName {
+    Error
 }
 
 enum class Name {
