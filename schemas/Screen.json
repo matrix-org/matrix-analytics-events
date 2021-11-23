@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "description": "Triggered when the user changed screen",
+  "properties": {
+    "eventName": {
+      "enum": ["Screen"]
+    },
+    "screenName": {
+      "type": "string",
+      "enum": [
+        "Home",
+        "Room",
+        "RoomDirectory",
+        "User",
+        "Group",
+        "MyGroups",
+        "WebLoading",
+        "WebWelcome",
+        "WebLogin",
+        "WebRegister",
+        "WebForgotPassword",
+        "WebCompleteSecurity",
+        "WebE2ESetup",
+        "WebSoftLogout"
+      ]
+    },
+    "durationMs": {
+      "type": "number"
+    }
+  },
+  "required": ["screenName", "eventName"],
+  "additionalProperties": false
+}

@@ -22,7 +22,7 @@ export interface Error {
     | "VoipIceTimeout"
     | "VoipUserMediaFailed";
   /**
-   * Context - client defined, can used for debugging
+   * Context - client defined, can be used for debugging
    */
   context?: string;
 }
