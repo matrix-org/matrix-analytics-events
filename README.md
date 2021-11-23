@@ -28,3 +28,20 @@ To generate the stubs:
 ```
 yarn build
 ```
+
+## Guidelines for creating new event schema
+
+* One schema per .json. The filename should match the event's name, including case.
+* Each schema should contain an `eventName` property declared as an `enum` with a single value. 
+  This convention can be relied upon by consumers of stubs as a way to get the correct name to send for that event.
+
+  For example:
+
+```
+"eventName": {
+  "enum": ["Error"]
+},
+```
+
+* You must describe your event using `description` fields. Your audience might be unfamiliar with the codebase, 
+  or non-technical, so don't refer to code concepts and try to describe things in general but accurate terms.
