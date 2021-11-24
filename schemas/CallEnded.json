@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "description": "Triggered when a call has ended.",
+  "properties": {
+    "eventName": {
+      "title": "CallEndedEventName",
+      "enum": ["CallEnded"]
+    },
+    "placed": {
+      "description": "Whether this user placed it.",
+      "type": "boolean"
+    },
+    "isVideo": {
+      "description": "Whether its a video call or not.",
+      "type": "boolean"
+    },
+    "durationMs": {
+      "description": "The duration of the call.",
+      "type": "integer"
+    },
+    "numParticipants": {
+      "description": "Number of participants in the call.",
+      "type": "integer"
+    }
+  },
+  "required": ["placed", "isVideo", "durationMs", "numParticipants", "eventName"],
+  "additionalProperties": false
+}

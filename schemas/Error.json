@@ -3,10 +3,12 @@
   "description": "Triggered when an error occurred",
   "properties": {
     "eventName": {
+      "title": "ErrorEventName",
       "enum": ["Error"]
     },
     "domain": {
       "type": "string",
+      "title": "ErrorDomain",
       "enum": [
         "E2EE",
         "VOIP"
@@ -14,6 +16,7 @@
     },
     "name": {
       "type": "string",
+      "title": "ErrorName",
       "enum": [
         "UnknownError",
         "OlmIndexError",
