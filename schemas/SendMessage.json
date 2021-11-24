@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "description": "Triggered when the user sends a message",
+  "properties": {
+    "eventName": {
+      "enum": ["SendMessage"]
+    },
+    "roomId": {
+      "type": "string"
+    },
+    "threadId": {
+      "type": "string"
+    },
+    "isEdit": {
+      "type": "boolean"
+    },
+    "isReply": {
+      "type": "boolean"
+    },
+    "msgType": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "localEchoDurationMs": {
+      "type": "number"
+    }
+  },
+  "required": ["roomId"],
+  "additionalProperties": false
+}
