@@ -5,13 +5,13 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type EventNameScreen = "Screen";
+export type ScreenEventName = "Screen";
 
 /**
  * Triggered when the user changed screen
  */
 export interface Screen {
-  eventName: EventNameScreen;
+  eventName: ScreenEventName;
   screenName:
     | "Home"
     | "Room"

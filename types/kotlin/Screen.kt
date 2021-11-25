@@ -5,11 +5,11 @@ package quicktype
  */
 data class Screen (
     val durationMS: Double? = null,
-    val eventName: EventNameScreen,
+    val eventName: ScreenEventName,
     val screenName: ScreenName
 )
 
-enum class EventNameScreen {
+enum class ScreenEventName {
     Screen
 }
 
