@@ -2,33 +2,35 @@
 import json
 import argparse
 import os
+from dataclasses import dataclass
 
 parser = argparse.ArgumentParser(description='Create Kotlin file from Json schema')
-parser.add_argument('-s', '--source', dest='json_schema',
-                   help='Json shema file', required=True)
+parser.add_argument(
+    '-s',
+    '--source',
+    dest='json_schema',
+    help='Json shema file',
+    required=True
+)
 
 args = parser.parse_args()
 
-# Capitalize also change the next letter.
-def firstLetterUp(str):
+# capitalize() can also change the next letter, and I want to keep camel case.
+def first_letter_up(str):
     return str[0].upper() + str[1:]
 
-class Enum(object):
-    """docstring for Enum"""
-    def __init__(self, name, values):
-        super(Enum, self).__init__()
-        self.name = name
-        self.values = values
+@dataclass
+class Enum():
+    name: str
+    values: []
         
-class Member(object):
-    """docstring for Member"""
-    def __init__(self, name, type, enum, description, required):
-        super(Member, self).__init__()
-        self.name = name
-        self.type = type
-        self.enum = enum
-        self.description = description
-        self.required = required
+@dataclass
+class Member():
+    name:str
+    type: str
+    enum: []
+    description: str
+    required: bool
     def __lt__(self, other):
         return self.name < other.name
         
@@ -38,16 +40,16 @@ with open(args.json_schema) as json_file:
     data = json.load(json_file)
 
     # Parse
-    members = list()
-    enums = list()
+    members = []
+    enums = []
     name = data['properties']['eventName']['enum'][0]
     required = data.get('required')
     for p in data['properties']:
-        if(p == 'eventName'):
+        if p == 'eventName':
             continue
         enum = data['properties'][p].get('enum')
-        if(enum):
-            enums.append(Enum(firstLetterUp(p), enum))
+        if enum:
+            enums.append(Enum(first_letter_up(p), enum))
 
         members.append(
             Member(
@@ -60,8 +62,8 @@ with open(args.json_schema) as json_file:
             )
     members.sort()
 
-    # Print output
-    print("""/*
+    # Compute output
+    result = """/*
  * Copyright (c) 2021 New Vector Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,82 +80,87 @@ with open(args.json_schema) as json_file:
  */
 
 package im.vector.app.features.analytics.plan
-""")
 
-    if(isScreen):
+"""
+
+    if isScreen:
         itf = "VectorAnalyticsScreen"
     else:
         itf = "VectorAnalyticsEvent"
 
-    print("import im.vector.app.features.analytics.itf.%s" % itf)
-    print("")
-    print("// GENERATED FILE, DO NOT EDIT")
-    print("")
-    print("/**")
-    print(" * %s" % data["description"])
-    print(" */")
-    print("data class %s(" % klass)
+    result += (
+        f"import im.vector.app.features.analytics.itf.{itf}\n\n"
+        f"// GENERATED FILE, DO NOT EDIT\n\n"
+        f"/**\n"
+        f" * {data.get('description')}\n"
+        f" */\n"
+        f"data class {klass}(\n"
+    )
 
     for member in members:
-        if(member.description):
-            print('    /**')
-            print('     * ' + member.description)
-            print('     */')
-        if(member.required):
+        if member.description:
+            result += (
+                f'    /**\n'
+                f'     * {member.description}\n'
+                f'     */\n'
+            )
+        if member.required:
             defaultValue = ""
         else:
             defaultValue = "? = null"
-        if(member.type == 'string'):
-            if(member.enum):
-                print('    val ' + member.name + ': ' + firstLetterUp(member.name) + defaultValue + ',')
+        if member.type == 'string':
+            if member.enum:
+                result += f'    val {member.name}: {first_letter_up(member.name)}'
             else:
-                print('    val ' + member.name + ': String' + defaultValue + ',')                    
-        elif(member.type == 'number'):
-            print('    val ' + member.name + ': Double' + defaultValue + ',')
-        elif(member.type == 'integer'):
-            print('    val ' + member.name + ': Int' + defaultValue + ',')
-        elif(member.type == 'boolean'):
-            print('    val ' + member.name + ': Boolean' + defaultValue + ',')
+                result += f'    val {member.name}: String'
+        elif member.type == 'number':
+            result += f'    val {member.name}: Double'
+        elif member.type == 'integer':
+            result += f'    val {member.name}: Int'
+        elif member.type == 'boolean':
+            result += f'    val {member.name}: Boolean'
         else:
-            raise Exception("Not handled yet: %s" % member.type)
+            raise Exception(f"Not handled yet: {member.type}")
+        result += f"{defaultValue},\n"
 
-    print(") : %s {" % itf)
+    result += f") : {itf} " + "{\n"
 
     for enum in enums:
-        print("")
-        print("    enum class %s {" % enum.name)
+        result += "\n"
+        result += f"    enum class {enum.name} " + "{\n"
         enum.values.sort()
         for value in enum.values:
-            print("        %s," % value)
-        print("    }")
+            result += f"        {value},\n"
+        result += "    }\n"
         
 
-    print("")
-    if(isScreen):
-        print("    override fun getName() = screenName.name")
+    result += "\n"
+    if isScreen:
+        result += f'    override fun getName() = screenName.name\n'
     else:
-        print("    override fun getName() = \"%s\"" % name)
+        result += f'    override fun getName() = "{name}"\n'
 
-    print("")
-    if(not members):
-        print("    override fun getProperties(): Map<String, Any>? = null")
+    result += "\n"
+    if not members:
+        result += "    override fun getProperties(): Map<String, Any>? = null\n"
     else:
-        print("    override fun getProperties(): Map<String, Any>? {")
-        print("        return mutableMapOf<String, Any>().apply {")
+        result += "    override fun getProperties(): Map<String, Any>? {\n"
+        result += "        return mutableMapOf<String, Any>().apply {\n"
         for member in members:
-            if(member.name == "screenName" and isScreen):
+            if member.name == "screenName" and isScreen:
                 continue
             if member.required:
-                if(member.enum):
-                    print("            put(\"%s\", %s.name)" % (member.name, member.name))
+                if member.enum:
+                    result += f'            put("{member.name}", {member.name}.name)\n'
                 else:
-                    print("            put(\"%s\", %s)" % (member.name, member.name))
+                    result += f'            put("{member.name}", {member.name})\n'
             else:
-                if(member.enum):
-                    print("            %s?.let { put(\"%s\", it.name) }" % (member.name, member.name))
+                if member.enum:
+                    result += '            %s?.let { put("%s", it.name) }\n' % (member.name, member.name)
                 else:
-                    print("            %s?.let { put(\"%s\", it) }" % (member.name, member.name))
-        print("        }.takeIf { it.isNotEmpty() }")
-        print("    }")
+                    result += '            %s?.let { put("%s", it) }\n' % (member.name, member.name)
+        result += "        }.takeIf { it.isNotEmpty() }\n"
+        result += "    }\n"
 
-    print("}")
+    result += "}"
+    print(result)
