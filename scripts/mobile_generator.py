@@ -16,8 +16,9 @@ parser.add_argument(
     '-l',
     '--language',
     dest='output_language',
-    help='Defaults to kotlin if omitted. For Swift use -l swift',
-    required=False
+    choices=['kotlin', 'swift'],
+    help='The language to generate.',
+    required=True
 )
 
 args = parser.parse_args()
@@ -27,7 +28,7 @@ def first_letter_up(str):
     return str[0].upper() + str[1:]
 
 # Compute the output for Kotlin
-def compute_kotlin():
+def compute_kotlin(members, enums, event_name):
     result = """/*
  * Copyright (c) 2021 New Vector Ltd
  *
@@ -55,7 +56,8 @@ package im.vector.app.features.analytics.plan
 
     result += (
         f"import im.vector.app.features.analytics.itf.{itf}\n\n"
-        f"// GENERATED FILE, DO NOT EDIT\n\n"
+        f"// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT\n"
+        f"// https://github.com/matrix-org/matrix-analytics-events/\n\n"
         f"/**\n"
         f" * {data.get('description')}\n"
         f" */\n"
@@ -103,7 +105,7 @@ package im.vector.app.features.analytics.plan
     if isScreen:
         result += f'    override fun getName() = screenName.name\n'
     else:
-        result += f'    override fun getName() = "{name}"\n'
+        result += f'    override fun getName() = "{event_name}"\n'
 
     result += "\n"
     if not members:
@@ -131,7 +133,7 @@ package im.vector.app.features.analytics.plan
     return result
 
 # Compute the output for Swift
-def compute_swift():
+def compute_swift(members, enums, event_name):
     result = """// 
 // Copyright 2021 New Vector Ltd
 //
@@ -165,7 +167,7 @@ def compute_swift():
     )
     
     if not isScreen:
-        result += f'        let eventName = "{name}"\n'
+        result += f'        let eventName = "{event_name}"\n'
     
     result += "\n"
     for member in members:
@@ -251,7 +253,7 @@ with open(args.json_schema) as json_file:
     # Parse
     members = []
     enums = []
-    name = data['properties']['eventName']['enum'][0]
+    event_name = data['properties']['eventName']['enum'][0]
     required = data.get('required')
     for p in data['properties']:
         if p == 'eventName':
@@ -272,7 +274,9 @@ with open(args.json_schema) as json_file:
     members.sort()
     
     # Compute output
-    if args.output_language == "swift":
-        print(compute_swift())
+    if args.output_language == "kotlin":
+        print(compute_kotlin(members, enums, event_name))
+    elif args.output_language == "swift":
+        print(compute_swift(members, enums, event_name))
     else:
-        print(compute_kotlin())
+        raise Exception(f"Invalid language option: {args.output_language}")
