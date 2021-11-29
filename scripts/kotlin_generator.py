@@ -22,13 +22,13 @@ def first_letter_up(str):
 @dataclass
 class Enum():
     name: str
-    values: []
+    values: list[object]
         
 @dataclass
 class Member():
     name:str
     type: str
-    enum: []
+    enum: list[str]
     description: str
     required: bool
     def __lt__(self, other):
