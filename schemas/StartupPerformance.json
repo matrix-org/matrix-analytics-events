@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "description": "Used to track the performance of startup operations.",
+  "properties": {
+    "eventName": {
+      "enum": ["StartupPerformance"]
+    },
+    "operation": {
+      "description": "The operation that was profiled.",
+      "type": "string",
+      "enum": [
+        "InitialSync",
+        "IncrementalSync",
+        "StorePreload",
+        "MountData",
+        "LaunchScreen"
+      ]
+    },
+    "durationMs": {
+      "description": "The length of the operation in milliseconds.",
+      "type": "number"
+    },
+    "context": {
+      "description": "Client defined, can be used for debugging.",
+      "type": "string"
+    }
+  },
+  "required": ["operation", "durationMs", "eventName"],
+  "additionalProperties": false
+}
