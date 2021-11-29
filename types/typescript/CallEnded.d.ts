@@ -5,13 +5,11 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type CallEndedEventName = "CallEnded";
-
 /**
  * Triggered when a call has ended.
  */
 export interface CallEnded {
-  eventName: CallEndedEventName;
+  eventName: "CallEnded";
   /**
    * Whether this user placed it.
    */
@@ -21,7 +19,7 @@ export interface CallEnded {
    */
   isVideo: boolean;
   /**
-   * The duration of the call.
+   * The duration of the call in milliseconds.
    */
   durationMs: number;
   /**

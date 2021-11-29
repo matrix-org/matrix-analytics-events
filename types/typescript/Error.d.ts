@@ -5,26 +5,22 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type ErrorEventName = "Error";
-export type ErrorDomain = "E2EE" | "VOIP";
-export type ErrorName =
-  | "UnknownError"
-  | "OlmIndexError"
-  | "OlmKeysNotSentError"
-  | "OlmUnspecifiedError"
-  | "VoipUserHangup"
-  | "VoipIceFailed"
-  | "VoipInviteTimeout"
-  | "VoipIceTimeout"
-  | "VoipUserMediaFailed";
-
 /**
  * Triggered when an error occurred
  */
 export interface Error {
-  eventName: ErrorEventName;
-  domain: ErrorDomain;
-  name: ErrorName;
+  eventName: "Error";
+  domain: "E2EE" | "VOIP";
+  name:
+    | "UnknownError"
+    | "OlmIndexError"
+    | "OlmKeysNotSentError"
+    | "OlmUnspecifiedError"
+    | "VoipUserHangup"
+    | "VoipIceFailed"
+    | "VoipInviteTimeout"
+    | "VoipIceTimeout"
+    | "VoipUserMediaFailed";
   /**
    * Context - client defined, can be used for debugging
    */

@@ -4,7 +4,7 @@ package quicktype
  * Triggered when the user joins a room.
  */
 data class JoinedRoom (
-    val eventName: JoinedRoomEventName,
+    val eventName: EventName,
 
     /**
      * Whether the room is a DM.
@@ -17,7 +17,7 @@ data class JoinedRoom (
     val roomSize: RoomSize
 )
 
-enum class JoinedRoomEventName {
+enum class EventName {
     JoinedRoom
 }
 

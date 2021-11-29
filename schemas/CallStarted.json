@@ -3,7 +3,6 @@
   "description": "Triggered when a call is started.",
   "properties": {
     "eventName": {
-      "title": "CallStartedEventName",
       "enum": ["CallStarted"]
     },
     "placed": {

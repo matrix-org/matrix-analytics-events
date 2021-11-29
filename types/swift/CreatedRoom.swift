@@ -8,16 +8,16 @@ import Foundation
 /// Triggered when the user creates a room.
 // MARK: - AnalyticsEventCreatedRoom
 public struct AnalyticsEventCreatedRoom: Codable {
-    public let eventName: AnalyticsEventCreatedRoomEventName
+    public let eventName: AnalyticsEventEventName
     /// Whether the room is a DM.
     public let isDM: Bool
 
-    public init(eventName: AnalyticsEventCreatedRoomEventName, isDM: Bool) {
+    public init(eventName: AnalyticsEventEventName, isDM: Bool) {
         self.eventName = eventName
         self.isDM = isDM
     }
 }
 
-public enum AnalyticsEventCreatedRoomEventName: String, Codable {
+public enum AnalyticsEventEventName: String, Codable {
     case createdRoom = "CreatedRoom"
 }

@@ -8,20 +8,20 @@ import Foundation
 /// Triggered when the user joins a room.
 // MARK: - AnalyticsEventJoinedRoom
 public struct AnalyticsEventJoinedRoom: Codable {
-    public let eventName: AnalyticsEventJoinedRoomEventName
+    public let eventName: AnalyticsEventEventName
     /// Whether the room is a DM.
     public let isDM: Bool
     /// The size of the room.
     public let roomSize: AnalyticsEventRoomSize
 
-    public init(eventName: AnalyticsEventJoinedRoomEventName, isDM: Bool, roomSize: AnalyticsEventRoomSize) {
+    public init(eventName: AnalyticsEventEventName, isDM: Bool, roomSize: AnalyticsEventRoomSize) {
         self.eventName = eventName
         self.isDM = isDM
         self.roomSize = roomSize
     }
 }
 
-public enum AnalyticsEventJoinedRoomEventName: String, Codable {
+public enum AnalyticsEventEventName: String, Codable {
     case joinedRoom = "JoinedRoom"
 }
 

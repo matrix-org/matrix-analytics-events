@@ -5,13 +5,11 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type CallErrorEventName = "CallError";
-
 /**
  * Triggered when an error occurred in a call.
  */
 export interface CallError {
-  eventName: CallErrorEventName;
+  eventName: "CallError";
   /**
    * Whether this user placed it.
    */

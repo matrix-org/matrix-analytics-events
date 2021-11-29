@@ -9,21 +9,21 @@ data class Error (
      */
     val context: String? = null,
 
-    val domain: ErrorDomain,
-    val eventName: ErrorEventName,
-    val name: ErrorName
+    val domain: Domain,
+    val eventName: EventName,
+    val name: Name
 )
 
-enum class ErrorDomain {
+enum class Domain {
     E2Ee,
     Voip
 }
 
-enum class ErrorEventName {
+enum class EventName {
     Error
 }
 
-enum class ErrorName {
+enum class Name {
     OlmIndexError,
     OlmKeysNotSentError,
     OlmUnspecifiedError,

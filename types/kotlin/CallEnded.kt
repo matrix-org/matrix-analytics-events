@@ -5,11 +5,11 @@ package quicktype
  */
 data class CallEnded (
     /**
-     * The duration of the call.
+     * The duration of the call in milliseconds.
      */
     val durationMS: Long,
 
-    val eventName: CallEndedEventName,
+    val eventName: EventName,
 
     /**
      * Whether its a video call or not.
@@ -27,6 +27,6 @@ data class CallEnded (
     val placed: Boolean
 )
 
-enum class CallEndedEventName {
+enum class EventName {
     CallEnded
 }

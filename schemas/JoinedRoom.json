@@ -3,7 +3,6 @@
   "description": "Triggered when the user joins a room.",
   "properties": {
     "eventName": {
-      "title": "JoinedRoomEventName",
       "enum": ["JoinedRoom"]
     },
     "roomSize": {

@@ -8,7 +8,7 @@ import Foundation
 /// Triggered when an error occurred in a call.
 // MARK: - AnalyticsEventCallError
 public struct AnalyticsEventCallError: Codable {
-    public let eventName: AnalyticsEventCallErrorEventName
+    public let eventName: AnalyticsEventEventName
     /// Whether its a video call or not.
     public let isVideo: Bool
     /// Number of participants in the call.
@@ -16,7 +16,7 @@ public struct AnalyticsEventCallError: Codable {
     /// Whether this user placed it.
     public let placed: Bool
 
-    public init(eventName: AnalyticsEventCallErrorEventName, isVideo: Bool, numParticipants: Int, placed: Bool) {
+    public init(eventName: AnalyticsEventEventName, isVideo: Bool, numParticipants: Int, placed: Bool) {
         self.eventName = eventName
         self.isVideo = isVideo
         self.numParticipants = numParticipants
@@ -24,6 +24,6 @@ public struct AnalyticsEventCallError: Codable {
     }
 }
 
-public enum AnalyticsEventCallErrorEventName: String, Codable {
+public enum AnalyticsEventEventName: String, Codable {
     case callError = "CallError"
 }

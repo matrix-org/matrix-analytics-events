@@ -4,7 +4,7 @@ package quicktype
  * Triggered when a call is started.
  */
 data class CallStarted (
-    val eventName: CallStartedEventName,
+    val eventName: EventName,
 
     /**
      * Whether its a video call or not.
@@ -22,6 +22,6 @@ data class CallStarted (
     val placed: Boolean
 )
 
-enum class CallStartedEventName {
+enum class EventName {
     CallStarted
 }

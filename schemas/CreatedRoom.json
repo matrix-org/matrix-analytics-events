@@ -3,7 +3,6 @@
   "description": "Triggered when the user creates a room.",
   "properties": {
     "eventName": {
-      "title": "CreatedRoomEventName",
       "enum": ["CreatedRoom"]
     },
     "isDM": {

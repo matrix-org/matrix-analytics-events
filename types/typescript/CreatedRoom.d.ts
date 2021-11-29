@@ -5,13 +5,11 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type CreatedRoomEventName = "CreatedRoom";
-
 /**
  * Triggered when the user creates a room.
  */
 export interface CreatedRoom {
-  eventName: CreatedRoomEventName;
+  eventName: "CreatedRoom";
   /**
    * Whether the room is a DM.
    */

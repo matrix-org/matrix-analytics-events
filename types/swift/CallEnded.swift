@@ -8,9 +8,9 @@ import Foundation
 /// Triggered when a call has ended.
 // MARK: - AnalyticsEventCallEnded
 public struct AnalyticsEventCallEnded: Codable {
-    /// The duration of the call.
+    /// The duration of the call in milliseconds.
     public let durationMs: Int
-    public let eventName: AnalyticsEventCallEndedEventName
+    public let eventName: AnalyticsEventEventName
     /// Whether its a video call or not.
     public let isVideo: Bool
     /// Number of participants in the call.
@@ -18,7 +18,7 @@ public struct AnalyticsEventCallEnded: Codable {
     /// Whether this user placed it.
     public let placed: Bool
 
-    public init(durationMs: Int, eventName: AnalyticsEventCallEndedEventName, isVideo: Bool, numParticipants: Int, placed: Bool) {
+    public init(durationMs: Int, eventName: AnalyticsEventEventName, isVideo: Bool, numParticipants: Int, placed: Bool) {
         self.durationMs = durationMs
         self.eventName = eventName
         self.isVideo = isVideo
@@ -27,6 +27,6 @@ public struct AnalyticsEventCallEnded: Codable {
     }
 }
 
-public enum AnalyticsEventCallEndedEventName: String, Codable {
+public enum AnalyticsEventEventName: String, Codable {
     case callEnded = "CallEnded"
 }

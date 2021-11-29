@@ -9,17 +9,17 @@ import Foundation
 // MARK: - AnalyticsEventScreen
 public struct AnalyticsEventScreen: Codable {
     public let durationMs: Double?
-    public let eventName: AnalyticsEventScreenEventName
+    public let eventName: AnalyticsEventEventName
     public let screenName: AnalyticsEventScreenName
 
-    public init(durationMs: Double?, eventName: AnalyticsEventScreenEventName, screenName: AnalyticsEventScreenName) {
+    public init(durationMs: Double?, eventName: AnalyticsEventEventName, screenName: AnalyticsEventScreenName) {
         self.durationMs = durationMs
         self.eventName = eventName
         self.screenName = screenName
     }
 }
 
-public enum AnalyticsEventScreenEventName: String, Codable {
+public enum AnalyticsEventEventName: String, Codable {
     case screen = "Screen"
 }
 

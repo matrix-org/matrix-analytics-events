@@ -4,7 +4,7 @@ package quicktype
  * Triggered when the user clicks/taps on a UI element.
  */
 data class Click (
-    val eventName: ClickEventName,
+    val eventName: EventName,
 
     /**
      * The index of the element, if its in a list of elements.
@@ -14,16 +14,16 @@ data class Click (
     /**
      * The unique name of this element.
      */
-    val name: ElementName
+    val name: Name
 )
 
-enum class ClickEventName {
+enum class EventName {
     Click
 }
 
 /**
  * The unique name of this element.
  */
-enum class ElementName {
+enum class Name {
     SendMessageButton
 }

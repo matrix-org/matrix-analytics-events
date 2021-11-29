@@ -4,7 +4,7 @@ package quicktype
  * Triggered when the user creates a room.
  */
 data class CreatedRoom (
-    val eventName: CreatedRoomEventName,
+    val eventName: EventName,
 
     /**
      * Whether the room is a DM.
@@ -12,6 +12,6 @@ data class CreatedRoom (
     val isDM: Boolean
 )
 
-enum class CreatedRoomEventName {
+enum class EventName {
     CreatedRoom
 }

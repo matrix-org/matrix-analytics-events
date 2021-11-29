@@ -3,7 +3,6 @@
   "description": "Triggered when a call has ended.",
   "properties": {
     "eventName": {
-      "title": "CallEndedEventName",
       "enum": ["CallEnded"]
     },
     "placed": {
@@ -15,7 +14,7 @@
       "type": "boolean"
     },
     "durationMs": {
-      "description": "The duration of the call.",
+      "description": "The duration of the call in milliseconds.",
       "type": "integer"
     },
     "numParticipants": {

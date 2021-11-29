@@ -8,24 +8,24 @@ import Foundation
 /// Triggered when the user clicks/taps on a UI element.
 // MARK: - AnalyticsEventClick
 public struct AnalyticsEventClick: Codable {
-    public let eventName: AnalyticsEventClickEventName
+    public let eventName: AnalyticsEventEventName
     /// The index of the element, if its in a list of elements.
     public let index: Int?
     /// The unique name of this element.
-    public let name: AnalyticsEventElementName
+    public let name: AnalyticsEventName
 
-    public init(eventName: AnalyticsEventClickEventName, index: Int?, name: AnalyticsEventElementName) {
+    public init(eventName: AnalyticsEventEventName, index: Int?, name: AnalyticsEventName) {
         self.eventName = eventName
         self.index = index
         self.name = name
     }
 }
 
-public enum AnalyticsEventClickEventName: String, Codable {
+public enum AnalyticsEventEventName: String, Codable {
     case click = "Click"
 }
 
 /// The unique name of this element.
-public enum AnalyticsEventElementName: String, Codable {
+public enum AnalyticsEventName: String, Codable {
     case sendMessageButton = "SendMessageButton"
 }

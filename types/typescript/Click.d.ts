@@ -5,18 +5,15 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type ClickEventName = "Click";
-/**
- * The unique name of this element.
- */
-export type ElementName = "SendMessageButton";
-
 /**
  * Triggered when the user clicks/taps on a UI element.
  */
 export interface Click {
-  eventName: ClickEventName;
-  name: ElementName;
+  eventName: "Click";
+  /**
+   * The unique name of this element.
+   */
+  name: "SendMessageButton";
   /**
    * The index of the element, if its in a list of elements.
    */

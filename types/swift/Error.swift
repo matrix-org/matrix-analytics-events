@@ -10,11 +10,11 @@ import Foundation
 public struct AnalyticsEventError: Codable {
     /// Context - client defined, can be used for debugging
     public let context: String?
-    public let domain: AnalyticsEventErrorDomain
-    public let eventName: AnalyticsEventErrorEventName
-    public let name: AnalyticsEventErrorName
+    public let domain: AnalyticsEventDomain
+    public let eventName: AnalyticsEventEventName
+    public let name: AnalyticsEventName
 
-    public init(context: String?, domain: AnalyticsEventErrorDomain, eventName: AnalyticsEventErrorEventName, name: AnalyticsEventErrorName) {
+    public init(context: String?, domain: AnalyticsEventDomain, eventName: AnalyticsEventEventName, name: AnalyticsEventName) {
         self.context = context
         self.domain = domain
         self.eventName = eventName
@@ -22,16 +22,16 @@ public struct AnalyticsEventError: Codable {
     }
 }
 
-public enum AnalyticsEventErrorDomain: String, Codable {
+public enum AnalyticsEventDomain: String, Codable {
     case e2Ee = "E2EE"
     case voip = "VOIP"
 }
 
-public enum AnalyticsEventErrorEventName: String, Codable {
+public enum AnalyticsEventEventName: String, Codable {
     case error = "Error"
 }
 
-public enum AnalyticsEventErrorName: String, Codable {
+public enum AnalyticsEventName: String, Codable {
     case olmIndexError = "OlmIndexError"
     case olmKeysNotSentError = "OlmKeysNotSentError"
     case olmUnspecifiedError = "OlmUnspecifiedError"

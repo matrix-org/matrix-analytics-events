@@ -5,13 +5,11 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type CallStartedEventName = "CallStarted";
-
 /**
  * Triggered when a call is started.
  */
 export interface CallStarted {
-  eventName: CallStartedEventName;
+  eventName: "CallStarted";
   /**
    * Whether this user placed it.
    */

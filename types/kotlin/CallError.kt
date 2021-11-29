@@ -4,7 +4,7 @@ package quicktype
  * Triggered when an error occurred in a call.
  */
 data class CallError (
-    val eventName: CallErrorEventName,
+    val eventName: EventName,
 
     /**
      * Whether its a video call or not.
@@ -22,6 +22,6 @@ data class CallError (
     val placed: Boolean
 )
 
-enum class CallErrorEventName {
+enum class EventName {
     CallError
 }

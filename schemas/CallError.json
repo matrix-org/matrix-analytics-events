@@ -3,7 +3,6 @@
   "description": "Triggered when an error occurred in a call.",
   "properties": {
     "eventName": {
-      "title": "CallErrorEventName",
       "enum": ["CallError"]
     },
     "placed": {
