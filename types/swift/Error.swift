@@ -21,20 +21,26 @@ import Foundation
 
 /// Triggered when an error occurred
 extension AnalyticsEvent {
-    struct Error: AnalyticsEventProtocol {
-        let eventName = "Error"
+    public struct Error: AnalyticsEventProtocol {
+        public let eventName = "Error"
 
         /// Context - client defined, can be used for debugging
-        let context: String?
-        let domain: Domain
-        let name: Name
+        public let context: String?
+        public let domain: Domain
+        public let name: Name
 
-        enum Domain: String {
+        public init(context: String?, domain: Domain, name: Name) {
+            self.context = context
+            self.domain = domain
+            self.name = name
+        }
+
+        public enum Domain: String {
             case E2EE
             case VOIP
         }
 
-        enum Name: String {
+        public enum Name: String {
             case OlmIndexError
             case OlmKeysNotSentError
             case OlmUnspecifiedError
@@ -46,7 +52,7 @@ extension AnalyticsEvent {
             case VoipUserMediaFailed
         }
 
-        var properties: [String: Any] {
+        public var properties: [String: Any] {
             return [
                 "context": context as Any,
                 "domain": domain.rawValue,

@@ -21,12 +21,17 @@ import Foundation
 
 /// Triggered when the user changed screen
 extension AnalyticsEvent {
-    struct Screen: AnalyticsScreenProtocol {
+    public struct Screen: AnalyticsScreenProtocol {
 
-        let durationMs: Double?
-        let screenName: ScreenName
+        public let durationMs: Double?
+        public let screenName: ScreenName
 
-        enum ScreenName: String {
+        public init(durationMs: Double?, screenName: ScreenName) {
+            self.durationMs = durationMs
+            self.screenName = screenName
+        }
+
+        public enum ScreenName: String {
             case Group
             case Home
             case MyGroups
@@ -43,7 +48,7 @@ extension AnalyticsEvent {
             case WebWelcome
         }
 
-        var properties: [String: Any] {
+        public var properties: [String: Any] {
             return [
                 "durationMs": durationMs as Any
             ]

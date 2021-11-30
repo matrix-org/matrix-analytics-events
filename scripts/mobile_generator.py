@@ -27,8 +27,40 @@ args = parser.parse_args()
 def first_letter_up(str):
     return str[0].upper() + str[1:]
 
-# Compute the output for Kotlin
-def compute_kotlin(members, enums, event_name):
+# Whether the supplied class name is for the Screen event.
+def isScreenEvent(str):
+    return str == "Screen"
+
+# Parse the schema into members, enums and the event name.
+def parse_schema(data):
+    members = []
+    enums = []
+    event_name = data['properties']['eventName']['enum'][0]
+    required = data.get('required')
+    for p in data['properties']:
+        if p == 'eventName':
+            continue
+        enum = data['properties'][p].get('enum')
+        if enum:
+            enums.append(Enum(first_letter_up(p), enum))
+
+        members.append(
+            Member(
+                p,
+                data['properties'][p].get('type'),
+                enum,
+                data['properties'][p].get('description'),
+                p in required or data['properties'][p].get('required')
+                )
+            )
+    members.sort()
+    
+    return (members, enums, event_name)
+
+# Compute the output for Kotlin.
+def compute_kotlin(klass, members, enums, event_name):
+    isScreen = isScreenEvent(klass)
+    
     result = """/*
  * Copyright (c) 2021 New Vector Ltd
  *
@@ -132,8 +164,32 @@ package im.vector.app.features.analytics.plan
     result += "}"
     return result
 
-# Compute the output for Swift
-def compute_swift(members, enums, event_name):
+def swift_member_definition(member):
+    if member.required:
+        optionalSuffix = ""
+    else:
+        optionalSuffix = "?"
+    if member.type == 'string':
+        if member.enum:
+            definition = f'{member.name}: {first_letter_up(member.name)}'
+        else:
+            definition = f'{member.name}: String'
+    elif member.type == 'number':
+        definition = f'{member.name}: Double'
+    elif member.type == 'integer':
+        definition = f'{member.name}: Int'
+    elif member.type == 'boolean':
+        definition = f'{member.name}: Bool'
+    else:
+        raise Exception(f"Not handled yet: {member.type}")
+    definition += f"{optionalSuffix}"
+    
+    return definition
+
+# Compute the output for Swift.
+def compute_swift(klass, members, enums, event_name):
+    isScreen = isScreenEvent(klass)
+    
     result = """// 
 // Copyright 2021 New Vector Ltd
 //
@@ -163,51 +219,50 @@ def compute_swift(members, enums, event_name):
         "// https://github.com/matrix-org/matrix-analytics-events/\n\n"
         f"/// {data.get('description')}\n"
         f"extension AnalyticsEvent {{\n"
-        f"    struct {klass}: {itf} {{\n"
+        f"    public struct {klass}: {itf} {{\n"
     )
     
+    # Event name (constant)
     if not isScreen:
-        result += f'        let eventName = "{event_name}"\n'
+        result += f'        public let eventName = "{event_name}"\n'
     
+    # Struct properties
     result += "\n"
     for member in members:
         if member.description:
             result += (
                 f'        /// {member.description}\n'
             )
-        if member.required:
-            defaultValue = ""
-        else:
-            defaultValue = "?"
-        if member.type == 'string':
-            if member.enum:
-                result += f'        let {member.name}: {first_letter_up(member.name)}'
-            else:
-                result += f'        let {member.name}: String'
-        elif member.type == 'number':
-            result += f'        let {member.name}: Double'
-        elif member.type == 'integer':
-            result += f'        let {member.name}: Int'
-        elif member.type == 'boolean':
-            result += f'        let {member.name}: Bool'
-        else:
-            raise Exception(f"Not handled yet: {member.type}")
-        result += f"{defaultValue}\n"
-
+        result += f'        public let {swift_member_definition(member)}\n'
+    
+    # Initializer (synthesized init is lost for public structs)
+    result += "\n"
+    result += "        public init("
+    for index, member in enumerate(members):
+        result += f"{swift_member_definition(member)}"
+        if index < len(members) - 1:
+            result += ", "
+    result += ") {\n"
+    for member in members:
+        result += f"            self.{member.name} = {member.name}\n"
+    result += "        }\n"
+    
+    # Nested enums
     for enum in enums:
         result += "\n"
-        result += f"        enum {enum.name}: String {{\n"
+        result += f"        public enum {enum.name}: String {{\n"
         enum.values.sort()
         for value in enum.values:
             result += f"            case {value}\n"
         result += "        }\n"
-
+    
+    # Properties dictionary
     result += "\n"
     if not members:
-        result += "        var properties: [String: Any] = [:]\n"
+        result += "        public var properties: [String: Any] = [:]\n"
     else:
         filteredMembers = list(filter(lambda member: member.name != "screenName", members))
-        result += "        var properties: [String: Any] {\n"
+        result += "        public var properties: [String: Any] {\n"
         result += "            return [\n"
         for index, member in enumerate(filteredMembers):
             if member.enum:
@@ -247,36 +302,15 @@ class Member():
         
 with open(args.json_schema) as json_file:
     klass = os.path.basename(args.json_schema).removesuffix(".json")
-    isScreen = klass == "Screen"
     data = json.load(json_file)
 
     # Parse
-    members = []
-    enums = []
-    event_name = data['properties']['eventName']['enum'][0]
-    required = data.get('required')
-    for p in data['properties']:
-        if p == 'eventName':
-            continue
-        enum = data['properties'][p].get('enum')
-        if enum:
-            enums.append(Enum(first_letter_up(p), enum))
-
-        members.append(
-            Member(
-                p,
-                data['properties'][p].get('type'),
-                enum,
-                data['properties'][p].get('description'),
-                p in required or data['properties'][p].get('required')
-                )
-            )
-    members.sort()
+    (members, enums, event_name) = parse_schema(data)
     
     # Compute output
     if args.output_language == "kotlin":
-        print(compute_kotlin(members, enums, event_name))
+        print(compute_kotlin(klass, members, enums, event_name))
     elif args.output_language == "swift":
-        print(compute_swift(members, enums, event_name))
+        print(compute_swift(klass, members, enums, event_name))
     else:
         raise Exception(f"Invalid language option: {args.output_language}")
