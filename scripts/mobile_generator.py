@@ -313,4 +313,4 @@ with open(args.json_schema) as json_file:
     elif args.output_language == "swift":
         print(compute_swift(klass, members, enums, event_name))
     else:
-        raise Exception(f"Invalid language option: {args.output_language}")
+        raise Exception(f"Support for language {args.output_language} has not been implemented.")
