@@ -18,41 +18,44 @@ package im.vector.app.features.analytics.plan
 
 import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 
-// GENERATED FILE, DO NOT EDIT
+// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
+// https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Used to track the performance of startup operations.
+ * Triggered after timing a long running operation in the app.
  */
-data class StartupPerformance(
+data class PerformanceTimer(
     /**
      * Client defined, can be used for debugging.
      */
     val context: String? = null,
     /**
-     * The length of the operation in milliseconds.
+     * The timer that is being reported.
      */
-    val durationMs: Double,
+    val name: Name,
     /**
-     * The operation that was profiled.
+     * The time reported by the timer in milliseconds.
      */
-    val operation: Operation,
+    val timeMs: Int,
 ) : VectorAnalyticsEvent {
 
-    enum class Operation {
-        IncrementalSync,
-        InitialSync,
-        LaunchScreen,
-        MountData,
-        StorePreload,
+    enum class Name {
+        InitialSyncParsing,
+        InitialSyncRequest,
+        StartupIncrementalSync,
+        StartupInitialSync,
+        StartupLaunchScreen,
+        StartupStorePreload,
+        StartupStoreReady,
     }
 
-    override fun getName() = "StartupPerformance"
+    override fun getName() = "PerformanceTimer"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             context?.let { put("context", it) }
-            put("durationMs", durationMs)
-            put("operation", operation.name)
+            put("name", name.name)
+            put("timeMs", timeMs)
         }.takeIf { it.isNotEmpty() }
     }
 }
