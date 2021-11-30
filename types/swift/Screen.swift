@@ -1,41 +1,57 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
+// 
+// Copyright 2021 New Vector Ltd
 //
-//   let analyticsEventScreen = try? newJSONDecoder().decode(AnalyticsEventScreen.self, from: jsonData)
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
 
 import Foundation
 
+// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
+// https://github.com/matrix-org/matrix-analytics-events/
+
 /// Triggered when the user changed screen
-// MARK: - AnalyticsEventScreen
-public struct AnalyticsEventScreen: Codable {
-    public let durationMs: Double?
-    public let eventName: AnalyticsEventEventName
-    public let screenName: AnalyticsEventScreenName
+extension AnalyticsEvent {
+    public struct Screen: AnalyticsScreenProtocol {
 
-    public init(durationMs: Double?, eventName: AnalyticsEventEventName, screenName: AnalyticsEventScreenName) {
-        self.durationMs = durationMs
-        self.eventName = eventName
-        self.screenName = screenName
+        public let durationMs: Double?
+        public let screenName: ScreenName
+
+        public init(durationMs: Double?, screenName: ScreenName) {
+            self.durationMs = durationMs
+            self.screenName = screenName
+        }
+
+        public enum ScreenName: String {
+            case Group
+            case Home
+            case MyGroups
+            case Room
+            case RoomDirectory
+            case User
+            case WebCompleteSecurity
+            case WebE2ESetup
+            case WebForgotPassword
+            case WebLoading
+            case WebLogin
+            case WebRegister
+            case WebSoftLogout
+            case WebWelcome
+        }
+
+        public var properties: [String: Any] {
+            return [
+                "durationMs": durationMs as Any
+            ]
+        }
     }
-}
-
-public enum AnalyticsEventEventName: String, Codable {
-    case screen = "Screen"
-}
-
-public enum AnalyticsEventScreenName: String, Codable {
-    case group = "Group"
-    case home = "Home"
-    case myGroups = "MyGroups"
-    case room = "Room"
-    case roomDirectory = "RoomDirectory"
-    case user = "User"
-    case webCompleteSecurity = "WebCompleteSecurity"
-    case webE2ESetup = "WebE2ESetup"
-    case webForgotPassword = "WebForgotPassword"
-    case webLoading = "WebLoading"
-    case webLogin = "WebLogin"
-    case webRegister = "WebRegister"
-    case webSoftLogout = "WebSoftLogout"
-    case webWelcome = "WebWelcome"
 }

@@ -1,35 +1,52 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
+// 
+// Copyright 2021 New Vector Ltd
 //
-//   let analyticsEventJoinedRoom = try? newJSONDecoder().decode(AnalyticsEventJoinedRoom.self, from: jsonData)
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
 
 import Foundation
 
+// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
+// https://github.com/matrix-org/matrix-analytics-events/
+
 /// Triggered when the user joins a room.
-// MARK: - AnalyticsEventJoinedRoom
-public struct AnalyticsEventJoinedRoom: Codable {
-    public let eventName: AnalyticsEventEventName
-    /// Whether the room is a DM.
-    public let isDM: Bool
-    /// The size of the room.
-    public let roomSize: AnalyticsEventRoomSize
+extension AnalyticsEvent {
+    public struct JoinedRoom: AnalyticsEventProtocol {
+        public let eventName = "JoinedRoom"
 
-    public init(eventName: AnalyticsEventEventName, isDM: Bool, roomSize: AnalyticsEventRoomSize) {
-        self.eventName = eventName
-        self.isDM = isDM
-        self.roomSize = roomSize
+        /// Whether the room is a DM.
+        public let isDM: Bool
+        /// The size of the room.
+        public let roomSize: RoomSize
+
+        public init(isDM: Bool, roomSize: RoomSize) {
+            self.isDM = isDM
+            self.roomSize = roomSize
+        }
+
+        public enum RoomSize: String {
+            case ElevenToOneHundred
+            case MoreThanAThousand
+            case OneHundredAndOneToAThousand
+            case ThreeToTen
+            case Two
+        }
+
+        public var properties: [String: Any] {
+            return [
+                "isDM": isDM,
+                "roomSize": roomSize.rawValue
+            ]
+        }
     }
-}
-
-public enum AnalyticsEventEventName: String, Codable {
-    case joinedRoom = "JoinedRoom"
-}
-
-/// The size of the room.
-public enum AnalyticsEventRoomSize: String, Codable {
-    case elevenToOneHundred = "ElevenToOneHundred"
-    case moreThanAThousand = "MoreThanAThousand"
-    case oneHundredAndOneToAThousand = "OneHundredAndOneToAThousand"
-    case threeToTen = "ThreeToTen"
-    case two = "Two"
 }
