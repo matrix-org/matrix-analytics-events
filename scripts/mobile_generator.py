@@ -43,7 +43,7 @@ def make_enum(name, json_property):
             values.append(EnumValue(value, None))
     elif one_of_dict:
         for value in one_of_dict:
-            value_name = value["enum"][0]
+            value_name = value["const"]
             description = value.get('description')
             values.append(EnumValue(value_name, description))
     
