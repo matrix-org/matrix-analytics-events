@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "description": "Triggered when the user clicks/taps on a UI element.",
+  "properties": {
+    "eventName": {
+      "enum": ["Click"]
+    },
+    "name": {
+      "description": "The unique name of this element.",
+      "type": "string",
+      "enum": [
+        "SendMessageButton"
+      ]
+    },
+    "index": {
+      "description": "The index of the element, if its in a list of elements.",
+      "type": "integer"
+    }
+  },
+  "required": ["name", "eventName"],
+  "additionalProperties": false
+}

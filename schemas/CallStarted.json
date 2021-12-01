@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "description": "Triggered when a call is started.",
+  "properties": {
+    "eventName": {
+      "enum": ["CallStarted"]
+    },
+    "placed": {
+      "description": "Whether this user placed it.",
+      "type": "boolean"
+    },
+    "isVideo": {
+      "description": "Whether its a video call or not.",
+      "type": "boolean"
+    },
+    "numParticipants": {
+      "description": "Number of participants in the call.",
+      "type": "integer"
+    }
+  },
+  "required": ["placed", "isVideo", "numParticipants", "eventName"],
+  "additionalProperties": false
+}

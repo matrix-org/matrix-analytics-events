@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "description": "Triggered when the user creates a room.",
+  "properties": {
+    "eventName": {
+      "enum": ["CreatedRoom"]
+    },
+    "isDM": {
+      "description": "Whether the room is a DM.",
+      "type": "boolean"
+    }
+  },
+  "required": ["isDM", "eventName"],
+  "additionalProperties": false
+}
