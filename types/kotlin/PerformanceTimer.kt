@@ -1,7 +1,7 @@
 package quicktype
 
 /**
- * Triggered after timing a long running operation in the app.
+ * Triggered after timing an operation in the app.
  */
 data class PerformanceTimer (
     /**
@@ -10,6 +10,12 @@ data class PerformanceTimer (
     val context: String? = null,
 
     val eventName: EventName,
+
+    /**
+     * Client defined, an optional value to indicate how many items were handled during the
+     * operation.
+     */
+    val itemCount: Long? = null,
 
     /**
      * The timer that is being reported.
@@ -32,6 +38,7 @@ enum class EventName {
 enum class Name {
     InitialSyncParsing,
     InitialSyncRequest,
+    NotificationsOpenEvent,
     StartupIncrementalSync,
     StartupInitialSync,
     StartupLaunchScreen,

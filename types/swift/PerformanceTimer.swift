@@ -19,20 +19,23 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered after timing a long running operation in the app.
+/// Triggered after timing an operation in the app.
 extension AnalyticsEvent {
     public struct PerformanceTimer: AnalyticsEventProtocol {
         public let eventName = "PerformanceTimer"
 
         /// Client defined, can be used for debugging.
         public let context: String?
+        /// Client defined, an optional value to indicate how many items were handled during the operation.
+        public let itemCount: Int?
         /// The timer that is being reported.
         public let name: Name
         /// The time reported by the timer in milliseconds.
         public let timeMs: Int
 
-        public init(context: String?, name: Name, timeMs: Int) {
+        public init(context: String?, itemCount: Int?, name: Name, timeMs: Int) {
             self.context = context
+            self.itemCount = itemCount
             self.name = name
             self.timeMs = timeMs
         }
@@ -40,6 +43,7 @@ extension AnalyticsEvent {
         public enum Name: String {
             case InitialSyncParsing
             case InitialSyncRequest
+            case NotificationsOpenEvent
             case StartupIncrementalSync
             case StartupInitialSync
             case StartupLaunchScreen
@@ -50,6 +54,7 @@ extension AnalyticsEvent {
         public var properties: [String: Any] {
             return [
                 "context": context as Any,
+                "itemCount": itemCount as Any,
                 "name": name.rawValue,
                 "timeMs": timeMs
             ]

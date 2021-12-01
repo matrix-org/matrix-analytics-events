@@ -6,7 +6,7 @@
  */
 
 /**
- * Triggered after timing a long running operation in the app.
+ * Triggered after timing an operation in the app.
  */
 export interface PerformanceTimer {
   eventName: "PerformanceTimer";
@@ -20,11 +20,16 @@ export interface PerformanceTimer {
     | "StartupStoreReady"
     | "StartupLaunchScreen"
     | "InitialSyncRequest"
-    | "InitialSyncParsing";
+    | "InitialSyncParsing"
+    | "NotificationsOpenEvent";
   /**
    * The time reported by the timer in milliseconds.
    */
   timeMs: number;
+  /**
+   * Client defined, an optional value to indicate how many items were handled during the operation.
+   */
+  itemCount?: number;
   /**
    * Client defined, can be used for debugging.
    */

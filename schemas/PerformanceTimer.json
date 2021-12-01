@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Triggered after timing a long running operation in the app.",
+  "description": "Triggered after timing an operation in the app.",
   "properties": {
     "eventName": {
       "enum": ["PerformanceTimer"]
@@ -15,11 +15,16 @@
         "StartupStoreReady",
         "StartupLaunchScreen",
         "InitialSyncRequest",
-        "InitialSyncParsing"
+        "InitialSyncParsing",
+        "NotificationsOpenEvent"
       ]
     },
     "timeMs": {
       "description": "The time reported by the timer in milliseconds.",
+      "type": "integer"
+    },
+    "itemCount": {
+      "description": "Client defined, an optional value to indicate how many items were handled during the operation.",
       "type": "integer"
     },
     "context": {

@@ -22,13 +22,17 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered after timing a long running operation in the app.
+ * Triggered after timing an operation in the app.
  */
 data class PerformanceTimer(
     /**
      * Client defined, can be used for debugging.
      */
     val context: String? = null,
+    /**
+     * Client defined, an optional value to indicate how many items were handled during the operation.
+     */
+    val itemCount: Int? = null,
     /**
      * The timer that is being reported.
      */
@@ -42,6 +46,7 @@ data class PerformanceTimer(
     enum class Name {
         InitialSyncParsing,
         InitialSyncRequest,
+        NotificationsOpenEvent,
         StartupIncrementalSync,
         StartupInitialSync,
         StartupLaunchScreen,
@@ -54,6 +59,7 @@ data class PerformanceTimer(
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             context?.let { put("context", it) }
+            itemCount?.let { put("itemCount", it) }
             put("name", name.name)
             put("timeMs", timeMs)
         }.takeIf { it.isNotEmpty() }
