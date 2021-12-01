@@ -23,10 +23,11 @@ import Foundation
 extension AnalyticsEvent {
     public struct Screen: AnalyticsScreenProtocol {
 
-        public let durationMs: Double?
+        /// How long the screen was displayed for in milliseconds.
+        public let durationMs: Int?
         public let screenName: ScreenName
 
-        public init(durationMs: Double?, screenName: ScreenName) {
+        public init(durationMs: Int?, screenName: ScreenName) {
             self.durationMs = durationMs
             self.screenName = screenName
         }
