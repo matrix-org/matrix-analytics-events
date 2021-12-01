@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "description": "Triggered after timing an operation in the app.",
+  "properties": {
+    "eventName": {
+      "enum": ["PerformanceTimer"]
+    },
+    "name": {
+      "description": "The timer that is being reported.",
+      "type": "string",
+      "enum": [
+        "StartupInitialSync",
+        "StartupIncrementalSync",
+        "StartupStorePreload",
+        "StartupStoreReady",
+        "StartupLaunchScreen",
+        "InitialSyncRequest",
+        "InitialSyncParsing",
+        "NotificationsOpenEvent"
+      ]
+    },
+    "timeMs": {
+      "description": "The time reported by the timer in milliseconds.",
+      "type": "integer"
+    },
+    "itemCount": {
+      "description": "Client defined, an optional value to indicate how many items were handled during the operation.",
+      "type": "integer"
+    },
+    "context": {
+      "description": "Client defined, can be used for debugging.",
+      "type": "string"
+    }
+  },
+  "required": ["name", "timeMs", "eventName"],
+  "additionalProperties": false
+}

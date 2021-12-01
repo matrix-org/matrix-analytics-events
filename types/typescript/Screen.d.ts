@@ -25,5 +25,8 @@ export interface Screen {
     | "WebCompleteSecurity"
     | "WebE2ESetup"
     | "WebSoftLogout";
+  /**
+   * How long the screen was displayed for in milliseconds.
+   */
   durationMs?: number;
 }

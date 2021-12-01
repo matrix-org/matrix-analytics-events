@@ -25,7 +25,8 @@
       ]
     },
     "durationMs": {
-      "type": "number"
+      "description": "How long the screen was displayed for in milliseconds.",
+      "type": "integer"
     }
   },
   "required": ["screenName", "eventName"],
