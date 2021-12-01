@@ -147,6 +147,12 @@ package im.vector.app.features.analytics.plan
         result += f"    enum class {enum.name} " + "{\n"
         enum.values.sort()
         for value in enum.values:
+            if value.description:
+                result += (
+                    f'        /**\n'
+                    f'         * {value.description}\n'
+                    f'         */\n'
+                )
             result += f"        {value.name},\n"
         result += "    }\n"
         
