@@ -13,7 +13,7 @@ export interface PerformanceTimer {
   /**
    * The timer that is being reported.
    */
-  name:
+  name: (
     | "StartupInitialSync"
     | "StartupIncrementalSync"
     | "StartupStorePreload"
@@ -21,7 +21,9 @@ export interface PerformanceTimer {
     | "StartupLaunchScreen"
     | "InitialSyncRequest"
     | "InitialSyncParsing"
-    | "NotificationsOpenEvent";
+    | "NotificationsOpenEvent"
+  ) &
+    string;
   /**
    * The time reported by the timer in milliseconds.
    */

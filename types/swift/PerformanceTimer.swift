@@ -41,13 +41,21 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
+            /// The time spent parsing the response from an initial /sync request.
             case InitialSyncParsing
+            /// The time spent waiting for a response to an initial /sync request.
             case InitialSyncRequest
+            /// The time taken to display an event in the timeline that was opened from a notification.
             case NotificationsOpenEvent
+            /// The duration of a regular /sync request when resuming the app.
             case StartupIncrementalSync
+            /// The duration of an initial /sync request during startup (if the store has been wiped).
             case StartupInitialSync
+            /// How long the app launch screen is displayed for.
             case StartupLaunchScreen
+            /// The time to preload data in the MXStore on iOS.
             case StartupStorePreload
+            /// The time to load all data from the store (including StartupStorePreload time).
             case StartupStoreReady
         }
 

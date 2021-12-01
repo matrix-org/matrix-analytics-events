@@ -31,6 +31,25 @@ def first_letter_up(str):
 def isScreenEvent(str):
     return str == "Screen"
 
+# Makes an Enum object from a json property
+def make_enum(name, json_property):
+    values = []
+    
+    enum_dict = json_property.get('enum')
+    one_of_dict = json_property.get('oneOf')
+    
+    if enum_dict:
+        for value in enum_dict:
+            values.append(EnumValue(value, None))
+    elif one_of_dict:
+        for value in one_of_dict:
+            value_name = value["enum"][0]
+            description = value.get('description')
+            values.append(EnumValue(value_name, description))
+    
+    if len(values) > 0:
+        return Enum(first_letter_up(name), values)
+
 # Parse the schema into members, enums and the event name.
 def parse_schema(data):
     members = []
@@ -40,10 +59,9 @@ def parse_schema(data):
     for p in data['properties']:
         if p == 'eventName':
             continue
-        enum = data['properties'][p].get('enum')
+        enum = make_enum(p, data['properties'][p])
         if enum:
-            enums.append(Enum(first_letter_up(p), enum))
-
+            enums.append(enum)
         members.append(
             Member(
                 p,
@@ -129,7 +147,7 @@ package im.vector.app.features.analytics.plan
         result += f"    enum class {enum.name} " + "{\n"
         enum.values.sort()
         for value in enum.values:
-            result += f"        {value},\n"
+            result += f"        {value.name},\n"
         result += "    }\n"
         
 
@@ -253,7 +271,9 @@ def compute_swift(klass, members, enums, event_name):
         result += f"        public enum {enum.name}: String {{\n"
         enum.values.sort()
         for value in enum.values:
-            result += f"            case {value}\n"
+            if value.description:
+                result += f"            /// {value.description}\n"
+            result += f"            case {value.name}\n"
         result += "        }\n"
     
     # Properties dictionary
@@ -286,20 +306,28 @@ def compute_swift(klass, members, enums, event_name):
     return result
 
 @dataclass
-class Enum():
+class EnumValue():
     name: str
+    description: str
+    
+    def __lt__(self, other):
+         return self.name < other.name
+    
+@dataclass
+class Enum():
+    name: EnumValue
     values: list[object]
-        
+
 @dataclass
 class Member():
     name:str
     type: str
-    enum: list[str]
+    enum: list[Enum]
     description: str
     required: bool
     def __lt__(self, other):
         return self.name < other.name
-        
+
 with open(args.json_schema) as json_file:
     klass = os.path.basename(args.json_schema).removesuffix(".json")
     data = json.load(json_file)

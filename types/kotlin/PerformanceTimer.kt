@@ -33,7 +33,21 @@ enum class EventName {
 }
 
 /**
- * The timer that is being reported.
+ * The duration of an initial /sync request during startup (if the store has been wiped).
+ *
+ * The duration of a regular /sync request when resuming the app.
+ *
+ * The time to preload data in the MXStore on iOS.
+ *
+ * The time to load all data from the store (including StartupStorePreload time).
+ *
+ * How long the app launch screen is displayed for.
+ *
+ * The time spent waiting for a response to an initial /sync request.
+ *
+ * The time spent parsing the response from an initial /sync request.
+ *
+ * The time taken to display an event in the timeline that was opened from a notification.
  */
 enum class Name {
     InitialSyncParsing,
