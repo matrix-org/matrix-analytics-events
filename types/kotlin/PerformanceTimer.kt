@@ -20,7 +20,7 @@ data class PerformanceTimer (
     /**
      * The timer that is being reported.
      */
-    val name: Name,
+    val name: String,
 
     /**
      * The time reported by the timer in milliseconds.
@@ -30,18 +30,4 @@ data class PerformanceTimer (
 
 enum class EventName {
     PerformanceTimer
-}
-
-/**
- * The timer that is being reported.
- */
-enum class Name {
-    InitialSyncParsing,
-    InitialSyncRequest,
-    NotificationsOpenEvent,
-    StartupIncrementalSync,
-    StartupInitialSync,
-    StartupLaunchScreen,
-    StartupStorePreload,
-    StartupStoreReady
 }
