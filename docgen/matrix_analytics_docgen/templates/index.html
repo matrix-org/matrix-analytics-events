@@ -1,0 +1,75 @@
+<!DOCTYPE html lang="en">
+<meta charset="utf-8">
+<html>
+<head>
+    <title>Analytics events for Element clients</title>
+    <style>
+        .event-table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .event-table .property {
+            width: 33%
+        }
+
+        .event-table .description {
+            width: 33%
+        }
+
+        .event-table .type {
+            width: 33%
+        }
+
+        .event-table td {
+            padding: 5px;
+            border: 1px solid #ccc;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analytics events for Element clients</h1>    
+    {% for event in events %}
+        <section class="event">            
+            <h2>{{ event.name }}</h2>
+            <p>{{ event.description }}</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for property in event.properties %}
+                        <tr>
+                            <td>{{ property.name }}</td>                        
+                            <td>{{ property.description if property.description }}</td>
+                            <td>
+                                {% if property.type is string %}
+                                    {{ property.type }}
+                                {% else %}    
+                                    <ul>
+                                        {% for enum_member in property.type %}
+                                            <li>
+                                                {% if enum_member.description %}
+                                                    <b>{{ enum_member.name }}:</b> {{ enum_member.description }}
+                                                {% else %}
+                                                    {{ enum_member.name }}    
+                                                {% endif %}    
+                                            </li>
+                                        {% endfor %}
+                                    </ul>                                    
+                                {% endif %}
+                            </td>                            
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    {% endfor %}
+</body>
+</html>
