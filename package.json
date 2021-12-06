@@ -12,7 +12,7 @@
     "build": "yarn build:ts && yarn build:kt && yarn build:swift && yarn build:kt2",
     "build:ts": "scripts/build-typescript.sh",
     "build:kt": "scripts/build-kotlin.sh",
-    "build:kt2": "scripts/build-kotlin2.sh",
-    "build:swift": "scripts/build-swift.sh"
+    "build:kt2": "cd stub-generator && poetry run python -m matrix_analytics_stub_generator -l kotlin -o ../types/kotlin2 ../schemas/*.json",
+    "build:swift": "cd stub-generator && poetry run python -m matrix_analytics_stub_generator -l swift -o ../types/swift ../schemas/*.json"
   }
 }

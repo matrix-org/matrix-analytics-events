@@ -1,27 +1,8 @@
 #!/usr/bin/env python3
 import json
-import argparse
+import glob
 import os
 from dataclasses import dataclass
-
-parser = argparse.ArgumentParser(description='Create Kotlin file from Json schema')
-parser.add_argument(
-    '-s',
-    '--source',
-    dest='json_schema',
-    help='Json schema file',
-    required=True
-)
-parser.add_argument(
-    '-l',
-    '--language',
-    dest='output_language',
-    choices=['kotlin', 'swift'],
-    help='The language to generate.',
-    required=True
-)
-
-args = parser.parse_args()
 
 # capitalize() can also change the next letter, and I want to keep camel case.
 def first_letter_up(str):
@@ -76,7 +57,7 @@ def parse_schema(data):
     return (members, enums, event_name)
 
 # Compute the output for Kotlin.
-def compute_kotlin(klass, members, enums, event_name):
+def compute_kotlin(klass, data, members, enums, event_name):
     isScreen = isScreenEvent(klass)
     
     result = """/*
@@ -211,7 +192,7 @@ def swift_member_definition(member):
     return definition
 
 # Compute the output for Swift.
-def compute_swift(klass, members, enums, event_name):
+def compute_swift(klass, data, members, enums, event_name):
     isScreen = isScreenEvent(klass)
     
     result = """// 
@@ -334,17 +315,23 @@ class Member():
     def __lt__(self, other):
         return self.name < other.name
 
-with open(args.json_schema) as json_file:
-    klass = os.path.basename(args.json_schema).removesuffix(".json")
-    data = json.load(json_file)
-
-    # Parse
-    (members, enums, event_name) = parse_schema(data)
+def generate_stub(output_language: str, json_schema_paths: str, output_dir: str):
+    for json_schema_path in json_schema_paths:
+        with open(json_schema_path) as json_file:
+            data = json.load(json_file)
+            klass = os.path.basename(json_schema_path).removesuffix(".json")            
+            (members, enums, event_name) = parse_schema(data)
     
-    # Compute output
-    if args.output_language == "kotlin":
-        print(compute_kotlin(klass, members, enums, event_name))
-    elif args.output_language == "swift":
-        print(compute_swift(klass, members, enums, event_name))
-    else:
-        raise Exception(f"Support for language {args.output_language} has not been implemented.")
+            if output_language in "kotlin":
+                ext = ".kt"
+                output = compute_kotlin(klass, data, members, enums, event_name)
+            elif output_language == "swift":
+                ext = ".swift"
+                output = compute_swift(klass, data, members, enums, event_name)
+            else:
+                raise Exception(f"Support for language {output_language} has not been implemented.")
+
+            output_path = os.path.join(output_dir, klass + ext)
+            with open(output_path, "w") as output_file:
+                print(output_path)
+                output_file.write(output)

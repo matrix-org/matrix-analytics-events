@@ -48,12 +48,12 @@ def render_schema(events: list[Event]) -> str:
     return template.render(events=events)
 
 
-def generate_documentation(schemas_dir: str, output_path: str):
+def generate_documentation(schemas_dir: str, output_path: str) -> None:
     events = []
 
     for json_filename in glob.glob("*.json", root_dir=schemas_dir):
         with open(os.path.join(schemas_dir, json_filename), "r") as f:
             events.append(load_schema(json.load(f)))
-
-    with open(output_path, "w") as output_file:
+    
+    with open(output_path, 'w') as output_file:
         output_file.write(render_schema(events))
