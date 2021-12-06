@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "matrix-analytics-docgen"
+name = "matrix-analytics-stub-generator"
 version = "0.1.0"
-description = "Documentation generator for matrix-analytics-events"
+description = "Stub and Documentation generator for matrix-analytics-events"
 authors = ["James Salter <iteration@gmail.com>"]
 
 [tool.poetry.dependencies]
