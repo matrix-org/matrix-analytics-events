@@ -41,10 +41,16 @@ extension AnalyticsEvent {
             case Group
             /// The Home tab on iOS | possibly the same on Android? | The Home space on Web?
             case Home
+            /// The screen that displays the user's breadcrumbs.
+            case MobileBreadcrumbs
+            /// The tab on mobile that displays the dialpad.
+            case MobileDialpad
             /// The Favourites tab on mobile that lists your favourite people/rooms.
             case MobileFavourites
             /// The screen shown to share a link to download the app.
             case MobileInviteFriends
+            /// The screen that displays the login flow.
+            case MobileLogin
             /// The People tab on mobile that lists all the DM rooms you have joined.
             case MobilePeople
             /// The Rooms tab on mobile that lists all the (non-direct) rooms you've joined.
@@ -69,6 +75,8 @@ extension AnalyticsEvent {
             case RoomDetails
             /// The screen that lists public rooms for you to discover.
             case RoomDirectory
+            /// The screen that lists all the user's rooms and let them filter the rooms.
+            case RoomFilter
             /// The screen that displays the list of members that are part of a room.
             case RoomMembers
             /// The notifications settings screen shown from the Room Details screen.
@@ -87,7 +95,7 @@ extension AnalyticsEvent {
             case SettingsMentionsAndKeywords
             /// The global security settings screen.
             case SettingsSecurity
-            /// The screen shown to create a new (non-direct) room.
+            /// The screen shown to create a new direct room.
             case StartChat
             /// A screen that shows information about a room member.
             case User
