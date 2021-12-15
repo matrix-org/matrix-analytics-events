@@ -18,7 +18,7 @@
         {"const": "RoomSettings", "description": "The settings screen shown from the Room Details screen."},
         {"const": "RoomNotifications", "description": "The notifications settings screen shown from the Room Details screen."},
         {"const": "RoomDirectory", "description": "The screen that lists public rooms for you to discover."},
-        {"const": "StartChat", "description": "The screen shown to create a new (non-direct) room."},
+        {"const": "StartChat", "description": "The screen shown to create a new direct room."},
         {"const": "CreateRoom", "description": "The screen shown to create a new (non-direct) room."},
         {"const": "Settings", "description": "The global settings screen shown in the app."},
         {"const": "SettingsSecurity", "description": "The global security settings screen."},
