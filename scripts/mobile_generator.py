@@ -117,43 +117,48 @@ package im.vector.app.features.analytics.plan
     for member in members:
         if member.description:
             result += (
-                f'    /**\n'
-                f'     * {member.description}\n'
-                f'     */\n'
+                f'        /**\n'
+                f'         * {member.description}\n'
+                f'         */\n'
             )
         if member.required:
             defaultValue = ""
         else:
             defaultValue = "? = null"
+        result += "        "
         if member.type == 'string':
             if member.enum:
-                result += f'    val {member.name}: {first_letter_up(member.name)}'
+                result += f'val {member.name}: {first_letter_up(member.name)}'
             else:
-                result += f'    val {member.name}: String'
+                result += f'val {member.name}: String'
         elif member.type == 'number':
-            result += f'    val {member.name}: Double'
+            result += f'val {member.name}: Double'
         elif member.type == 'integer':
-            result += f'    val {member.name}: Int'
+            result += f'val {member.name}: Int'
         elif member.type == 'boolean':
-            result += f'    val {member.name}: Boolean'
+            result += f'val {member.name}: Boolean'
         else:
             raise Exception(f"Not handled yet: {member.type}")
         result += f"{defaultValue},\n"
 
     result += f") : {itf} " + "{\n"
 
+    isFirstEnum = True
     for enum in enums:
         result += "\n"
         result += f"    enum class {enum.name} " + "{\n"
         enum.values.sort()
         for value in enum.values:
             if value.description:
+                if not isFirstEnum:
+                    result += "\n"
                 result += (
                     f'        /**\n'
                     f'         * {value.description}\n'
                     f'         */\n'
                 )
             result += f"        {value.name},\n"
+            isFirstEnum = False
         result += "    }\n"
         
 

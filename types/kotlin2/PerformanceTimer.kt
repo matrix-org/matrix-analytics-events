@@ -25,22 +25,22 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  * Triggered after timing an operation in the app.
  */
 data class PerformanceTimer(
-    /**
-     * Client defined, can be used for debugging.
-     */
-    val context: String? = null,
-    /**
-     * Client defined, an optional value to indicate how many items were handled during the operation.
-     */
-    val itemCount: Int? = null,
-    /**
-     * The timer that is being reported.
-     */
-    val name: Name,
-    /**
-     * The time reported by the timer in milliseconds.
-     */
-    val timeMs: Int,
+        /**
+         * Client defined, can be used for debugging.
+         */
+        val context: String? = null,
+        /**
+         * Client defined, an optional value to indicate how many items were handled during the operation.
+         */
+        val itemCount: Int? = null,
+        /**
+         * The timer that is being reported.
+         */
+        val name: Name,
+        /**
+         * The time reported by the timer in milliseconds.
+         */
+        val timeMs: Int,
 ) : VectorAnalyticsEvent {
 
     enum class Name {
@@ -48,30 +48,37 @@ data class PerformanceTimer(
          * The time spent parsing the response from an initial /sync request.
          */
         InitialSyncParsing,
+
         /**
          * The time spent waiting for a response to an initial /sync request.
          */
         InitialSyncRequest,
+
         /**
          * The time taken to display an event in the timeline that was opened from a notification.
          */
         NotificationsOpenEvent,
+
         /**
          * The duration of a regular /sync request when resuming the app.
          */
         StartupIncrementalSync,
+
         /**
          * The duration of an initial /sync request during startup (if the store has been wiped).
          */
         StartupInitialSync,
+
         /**
          * How long the app launch screen is displayed for.
          */
         StartupLaunchScreen,
+
         /**
          * The time to preload data in the MXStore on iOS.
          */
         StartupStorePreload,
+
         /**
          * The time to load all data from the store (including StartupStorePreload time).
          */
