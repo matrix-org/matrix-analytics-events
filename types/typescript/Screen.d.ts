@@ -10,13 +10,36 @@
  */
 export interface Screen {
   eventName: "Screen";
-  screenName:
+  screenName: (
     | "Home"
     | "Room"
-    | "RoomDirectory"
+    | "RoomDetails"
+    | "RoomMembers"
     | "User"
+    | "RoomSearch"
+    | "RoomUploads"
+    | "RoomSettings"
+    | "RoomNotifications"
+    | "RoomDirectory"
+    | "StartChat"
+    | "CreateRoom"
+    | "Settings"
+    | "SettingsSecurity"
+    | "SettingsDefaultNotifications"
+    | "SettingsMentionsAndKeywords"
+    | "DeactivateAccount"
     | "Group"
     | "MyGroups"
+    | "MobileSidebar"
+    | "MobileFavourites"
+    | "MobilePeople"
+    | "MobileRooms"
+    | "MobileSearchRooms"
+    | "MobileSearchMessages"
+    | "MobileSearchPeople"
+    | "MobileSearchFiles"
+    | "MobileSwitchDirectory"
+    | "MobileInviteFriends"
     | "WebLoading"
     | "WebWelcome"
     | "WebLogin"
@@ -24,7 +47,9 @@ export interface Screen {
     | "WebForgotPassword"
     | "WebCompleteSecurity"
     | "WebE2ESetup"
-    | "WebSoftLogout";
+    | "WebSoftLogout"
+  ) &
+    string;
   /**
    * How long the screen was displayed for in milliseconds.
    */
