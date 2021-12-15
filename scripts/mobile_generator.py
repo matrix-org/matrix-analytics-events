@@ -143,18 +143,22 @@ package im.vector.app.features.analytics.plan
 
     result += f") : {itf} " + "{\n"
 
+    isFirstEnum = True
     for enum in enums:
         result += "\n"
         result += f"    enum class {enum.name} " + "{\n"
         enum.values.sort()
         for value in enum.values:
             if value.description:
+                if not isFirstEnum:
+                    result += "\n"
                 result += (
                     f'        /**\n'
                     f'         * {value.description}\n'
                     f'         */\n'
                 )
             result += f"        {value.name},\n"
+            isFirstEnum = False
         result += "    }\n"
         
 
