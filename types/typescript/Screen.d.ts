@@ -11,6 +11,10 @@
 export interface Screen {
   eventName: "Screen";
   screenName: (
+    | "Welcome"
+    | "Login"
+    | "ForgotPassword"
+    | "Register"
     | "Home"
     | "Room"
     | "RoomDetails"
@@ -31,7 +35,6 @@ export interface Screen {
     | "DeactivateAccount"
     | "Group"
     | "MyGroups"
-    | "MobileLogin"
     | "MobileSidebar"
     | "MobileFavourites"
     | "MobilePeople"
@@ -45,10 +48,6 @@ export interface Screen {
     | "MobileInviteFriends"
     | "MobileBreadcrumbs"
     | "WebLoading"
-    | "WebWelcome"
-    | "WebLogin"
-    | "WebRegister"
-    | "WebForgotPassword"
     | "WebCompleteSecurity"
     | "WebE2ESetup"
     | "WebSoftLogout"

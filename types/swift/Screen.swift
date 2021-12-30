@@ -37,10 +37,14 @@ extension AnalyticsEvent {
             case CreateRoom
             /// The confirmation screen shown before deactivating an account.
             case DeactivateAccount
+            /// The form for the forgot password use case
+            case ForgotPassword
             /// Legacy: The screen that shows information about a specific group.
             case Group
             /// The Home tab on iOS | possibly the same on Android? | The Home space on Web?
             case Home
+            /// The screen that displays the login flow (when the user already has an account).
+            case Login
             /// The screen that displays the user's breadcrumbs.
             case MobileBreadcrumbs
             /// The tab on mobile that displays the dialpad.
@@ -49,8 +53,6 @@ extension AnalyticsEvent {
             case MobileFavourites
             /// The screen shown to share a link to download the app.
             case MobileInviteFriends
-            /// The screen that displays the login flow.
-            case MobileLogin
             /// The People tab on mobile that lists all the DM rooms you have joined.
             case MobilePeople
             /// The Rooms tab on mobile that lists all the (non-direct) rooms you've joined.
@@ -69,6 +71,8 @@ extension AnalyticsEvent {
             case MobileSwitchDirectory
             /// Legacy: The screen that shows all groups/communities you have joined.
             case MyGroups
+            /// The screen that displays the registration flow (when the user wants to create an account)
+            case Register
             /// The screen that displays the messages and events received in a room.
             case Room
             /// The screen shown when tapping the name of a room from the Room screen.
@@ -104,17 +108,11 @@ extension AnalyticsEvent {
             /// ?
             case WebE2ESetup
             /// ?
-            case WebForgotPassword
-            /// ?
             case WebLoading
             /// ?
-            case WebLogin
-            /// ?
-            case WebRegister
-            /// ?
             case WebSoftLogout
-            /// ?
-            case WebWelcome
+            /// The splash screen.
+            case Welcome
         }
 
         public var properties: [String: Any] {
