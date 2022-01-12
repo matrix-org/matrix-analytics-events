@@ -13,20 +13,30 @@ class EnumValue:
 
 @dataclass
 class Enum:
-    name: EnumValue
-    values: list[object]
+    name: str
+    values: list[EnumValue]
 
 
 @dataclass
 class Member:
     name: str
     type: str
-    enum: list[Enum]
+    enum: Enum
     description: str
     required: bool
 
     def __lt__(self, other):
         return self.name < other.name
+
+
+@dataclass
+class Schema:
+    klass: str
+    data: dict
+    members: List[Member]
+    enums: List[Enum]
+    event_name: str
+    description: str
 
 
 def first_letter_up(s: str) -> str:
@@ -59,7 +69,7 @@ def make_enum(name: str, json_property: dict) -> Enum:
         return Enum(first_letter_up(name), values)
 
 
-def parse_schema(data: dict) -> Tuple[List[Member], List[Enum], str]:
+def parse_schema(data: dict, klass: str) -> Schema:
     """Parse the schema into members, enums and the event name."""
     members = []
     enums = []
@@ -81,5 +91,4 @@ def parse_schema(data: dict) -> Tuple[List[Member], List[Enum], str]:
             )
         )
     members.sort()
-
-    return (members, enums, event_name)
+    return Schema(klass, data, members, enums, event_name, data.get("description"))

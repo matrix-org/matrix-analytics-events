@@ -1,31 +1,42 @@
 import argparse
 import json
 import os
+from typing import Iterator, List
 from .documentation import generate_documentation
 from .kotlin import compute_kotlin
 from .swift import compute_swift
-from .schema import parse_schema
+from .schema import Schema, parse_schema
 
 
-def generate_stub(output_language: str, json_schema_paths: str, output_dir: str):
+def load_schemas(json_schema_paths: List[str]) -> Iterator[Schema]:
     for json_schema_path in json_schema_paths:
         with open(json_schema_path) as json_file:
             data = json.load(json_file)
             klass = os.path.basename(json_schema_path).removesuffix(".json")
-            (members, enums, event_name) = parse_schema(data)
+            yield parse_schema(data, klass)
 
+
+def generate_stub(
+    output_language: str, json_schema_paths: str, output_dir: str
+) -> None:
+    if output_language == "html":
+        generate_documentation(
+            load_schemas(json_schema_paths), os.path.join(args.output_dir, "index.html")
+        )
+    else:
+        for schema in load_schemas(json_schema_paths):
             if output_language in "kotlin":
                 ext = ".kt"
-                output = compute_kotlin(klass, data, members, enums, event_name)
+                output = compute_kotlin(schema)
             elif output_language == "swift":
                 ext = ".swift"
-                output = compute_swift(klass, data, members, enums, event_name)
+                output = compute_swift(schema)
             else:
                 raise Exception(
                     f"Support for language {output_language} has not been implemented."
                 )
 
-            output_path = os.path.join(output_dir, klass + ext)
+            output_path = os.path.join(output_dir, schema.klass + ext)
             with open(output_path, "w") as output_file:
                 print(output_path)
                 output_file.write(output)
@@ -57,9 +68,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    if args.output_language == "html":
-        generate_documentation(
-            args.schema_paths, os.path.join(args.output_dir, "index.html")
-        )
-    else:
-        generate_stub(args.output_language, args.schema_paths, args.output_dir)
+    generate_stub(args.output_language, args.schema_paths, args.output_dir)

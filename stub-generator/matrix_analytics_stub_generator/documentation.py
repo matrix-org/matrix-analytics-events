@@ -3,7 +3,8 @@ import glob
 from jinja2 import Environment, PackageLoader, select_autoescape
 import json
 import os.path
-from typing import Optional, Union, Any
+from typing import Iterator, Optional, Union, Any
+from .schema import Schema
 
 
 @dataclass
@@ -48,21 +49,15 @@ def load_schema(json: str) -> Event:
     )
 
 
-def render_schema(events: list[Event]) -> str:
+def render_schema(schemas: Iterator[Schema]) -> str:
     env = Environment(
         loader=PackageLoader("matrix_analytics_stub_generator"),
         autoescape=select_autoescape(),
     )
     template = env.get_template("index.html")
-    return template.render(events=events)
+    return template.render(schemas=schemas)
 
 
-def generate_documentation(schemas_dir: str, output_path: str) -> None:
-    events = []
-
-    for json_filename in glob.glob("*.json", root_dir=schemas_dir):
-        with open(os.path.join(schemas_dir, json_filename), "r") as f:
-            events.append(load_schema(json.load(f)))
-
+def generate_documentation(schemas: Iterator[Schema], output_path: str) -> None:
     with open(output_path, "w") as output_file:
-        output_file.write(render_schema(events))
+        output_file.write(render_schema(schemas))

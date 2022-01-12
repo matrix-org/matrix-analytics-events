@@ -1,8 +1,8 @@
 from typing import List
-from .schema import Member, Enum, first_letter_up, is_screen_event
+from .schema import Schema, Member, first_letter_up, is_screen_event
 
 
-def swift_member_definition(member):
+def swift_member_definition(member: Member) -> str:
     if member.required:
         optionalSuffix = ""
     else:
@@ -25,11 +25,9 @@ def swift_member_definition(member):
     return definition
 
 
-def compute_swift(
-    klass: str, data: dict, members: List[Member], enums: List[Enum], event_name: str
-) -> str:
+def compute_swift(schema: Schema) -> str:
     """Compute the output for Swift."""
-    is_screen = is_screen_event(klass)
+    is_screen = is_screen_event(schema.klass)
 
     result = """//
 // Copyright 2021 New Vector Ltd
@@ -58,18 +56,18 @@ def compute_swift(
         "import Foundation\n\n"
         "// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT\n"
         "// https://github.com/matrix-org/matrix-analytics-events/\n\n"
-        f"/// {data.get('description')}\n"
+        f"/// {schema.data.get('description')}\n"
         f"extension AnalyticsEvent {{\n"
-        f"    public struct {klass}: {itf} {{\n"
+        f"    public struct {schema.klass}: {itf} {{\n"
     )
 
     # Event name (constant)
     if not is_screen:
-        result += f'        public let eventName = "{event_name}"\n'
+        result += f'        public let eventName = "{schema.event_name}"\n'
 
     # Struct properties
     result += "\n"
-    for member in members:
+    for member in schema.members:
         if member.description:
             result += f"        /// {member.description}\n"
         result += f"        public let {swift_member_definition(member)}\n"
@@ -77,17 +75,17 @@ def compute_swift(
     # Initializer (synthesized init is lost for public structs)
     result += "\n"
     result += "        public init("
-    for index, member in enumerate(members):
+    for index, member in enumerate(schema.members):
         result += f"{swift_member_definition(member)}"
-        if index < len(members) - 1:
+        if index < len(schema.members) - 1:
             result += ", "
     result += ") {\n"
-    for member in members:
+    for member in schema.members:
         result += f"            self.{member.name} = {member.name}\n"
     result += "        }\n"
 
     # Nested enums
-    for enum in enums:
+    for enum in schema.enums:
         result += "\n"
         result += f"        public enum {enum.name}: String {{\n"
         enum.values.sort()
@@ -99,15 +97,15 @@ def compute_swift(
 
     # Properties dictionary
     result += "\n"
-    if not members:
+    if not schema.members:
         result += "        public var properties: [String: Any] = [:]\n"
     else:
-        filteredMembers = list(
-            filter(lambda member: member.name != "screenName", members)
+        filtered_members = list(
+            filter(lambda member: member.name != "screenName", schema.members)
         )
         result += "        public var properties: [String: Any] {\n"
         result += "            return [\n"
-        for index, member in enumerate(filteredMembers):
+        for index, member in enumerate(filtered_members):
             if member.enum:
                 if member.required:
                     result += f'                "{member.name}": {member.name}.rawValue'
@@ -118,7 +116,7 @@ def compute_swift(
                     result += f'                "{member.name}": {member.name}'
                 else:
                     result += f'                "{member.name}": {member.name} as Any'
-            if index < len(filteredMembers) - 1:
+            if index < len(filtered_members) - 1:
                 result += ",\n"
             else:
                 result += "\n"

@@ -31,10 +31,10 @@
 </head>
 <body>
     <h1>Analytics events for Element clients</h1>    
-    {% for event in events %}
+    {% for schema in schemas %}
         <section class="event">            
-            <h2>{{ event.name }}</h2>
-            <p>{{ event.description }}</p>
+            <h2>{{ schema.event_name }}</h2>
+            <p>{{ schema.description }}</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -44,26 +44,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for property in event.properties %}
+                    {% for member in schema.members %}
                         <tr>
-                            <td>{{ property.name }}</td>                        
-                            <td>{{ property.description if property.description }}</td>
+                            <td>{{ member.name }}</td>                        
+                            <td>{{ member.description if member.description }}</td>
                             <td>
-                                {% if property.type is string %}
-                                    {{ property.type }}
-                                {% else %}    
+                                {% if member.enum %}
                                     <ul>
-                                        {% for enum_member in property.type %}
+                                        {% for enum_value in member.enum.values %}
                                             <li>
-                                                {% if enum_member.description %}
-                                                    <b>{{ enum_member.name }}:</b> {{ enum_member.description }}
+                                                {% if enum_value.description %}
+                                                    <b>{{ enum_value.name }}:</b> {{ enum_value.description }}
                                                 {% else %}
-                                                    {{ enum_member.name }}    
+                                                    {{ enum_value.name }}    
                                                 {% endif %}    
                                             </li>
                                         {% endfor %}
                                     </ul>                                    
-                                {% endif %}
+                                {% else %}                                
+                                    {{ member.type }}
+                                {% endif %}                            
                             </td>                            
                         </tr>
                     {% endfor %}

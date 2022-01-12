@@ -1,12 +1,10 @@
 from typing import List
-from .schema import Member, Enum, is_screen_event, first_letter_up
+from .schema import Schema, is_screen_event, first_letter_up
 
 
-def compute_kotlin(
-    klass: str, data: dict, members: List[Member], enums: List[Enum], event_name: str
-) -> str:
+def compute_kotlin(schema: Schema) -> str:
     """Compute the output for Kotlin."""
-    is_screen = is_screen_event(klass)
+    is_screen = is_screen_event(schema.klass)
 
     result = """/*
  * Copyright (c) 2021 New Vector Ltd
@@ -38,12 +36,12 @@ package im.vector.app.features.analytics.plan
         f"// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT\n"
         f"// https://github.com/matrix-org/matrix-analytics-events/\n\n"
         f"/**\n"
-        f" * {data.get('description')}\n"
+        f" * {schema.data.get('description')}\n"
         f" */\n"
-        f"data class {klass}(\n"
+        f"data class {schema.klass}(\n"
     )
 
-    for member in members:
+    for member in schema.members:
         if member.description:
             result += f"    /**\n" f"     * {member.description}\n" f"     */\n"
         if member.required:
@@ -67,7 +65,7 @@ package im.vector.app.features.analytics.plan
 
     result += f") : {itf} " + "{\n"
 
-    for enum in enums:
+    for enum in schema.enums:
         result += "\n"
         result += f"    enum class {enum.name} " + "{\n"
         enum.values.sort()
@@ -85,15 +83,15 @@ package im.vector.app.features.analytics.plan
     if is_screen:
         result += f"    override fun getName() = screenName.name\n"
     else:
-        result += f'    override fun getName() = "{event_name}"\n'
+        result += f'    override fun getName() = "{schema.event_name}"\n'
 
     result += "\n"
-    if not members:
+    if not schema.members:
         result += "    override fun getProperties(): Map<String, Any>? = null\n"
     else:
         result += "    override fun getProperties(): Map<String, Any>? {\n"
         result += "        return mutableMapOf<String, Any>().apply {\n"
-        for member in members:
+        for member in schema.members:
             if member.name == "screenName" and is_screen:
                 continue
             if member.required:
