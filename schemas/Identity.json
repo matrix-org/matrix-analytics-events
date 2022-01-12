@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "description": "The user properties to apply when identifying",
+    "properties": {
+      "eventName": {
+        "enum": ["Identity"]
+      },
+      "ftueUseCaseSelection": {
+        "description": "The selected messaging use case during the onboarding flow.",
+        "type": "string",
+        "enum": [
+          "FriendsAndFamily",
+          "Teams",
+          "Communities",
+          "Skipped"
+        ]
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  }
+  
