@@ -8,16 +8,18 @@ from dataclasses import dataclass
 def first_letter_up(str):
     return str[0].upper() + str[1:]
 
+
 # Whether the supplied class name is for the Screen event.
 def isScreenEvent(str):
     return str == "Screen"
+
 
 # Makes an Enum object from a json property
 def make_enum(name, json_property):
     values = []
 
-    enum_dict = json_property.get('enum')
-    one_of_dict = json_property.get('oneOf')
+    enum_dict = json_property.get("enum")
+    one_of_dict = json_property.get("oneOf")
 
     if enum_dict:
         for value in enum_dict:
@@ -25,36 +27,38 @@ def make_enum(name, json_property):
     elif one_of_dict:
         for value in one_of_dict:
             value_name = value["const"]
-            description = value.get('description')
+            description = value.get("description")
             values.append(EnumValue(value_name, description))
 
     if len(values) > 0:
         return Enum(first_letter_up(name), values)
 
+
 # Parse the schema into members, enums and the event name.
 def parse_schema(data):
     members = []
     enums = []
-    event_name = data['properties']['eventName']['enum'][0]
-    required = data.get('required')
-    for p in data['properties']:
-        if p == 'eventName':
+    event_name = data["properties"]["eventName"]["enum"][0]
+    required = data.get("required")
+    for p in data["properties"]:
+        if p == "eventName":
             continue
-        enum = make_enum(p, data['properties'][p])
+        enum = make_enum(p, data["properties"][p])
         if enum:
             enums.append(enum)
         members.append(
             Member(
                 p,
-                data['properties'][p].get('type'),
+                data["properties"][p].get("type"),
                 enum,
-                data['properties'][p].get('description'),
-                p in required or data['properties'][p].get('required')
-                )
+                data["properties"][p].get("description"),
+                p in required or data["properties"][p].get("required"),
             )
+        )
     members.sort()
 
     return (members, enums, event_name)
+
 
 # Compute the output for Kotlin.
 def compute_kotlin(klass, data, members, enums, event_name):
@@ -97,26 +101,22 @@ package im.vector.app.features.analytics.plan
 
     for member in members:
         if member.description:
-            result += (
-                f'    /**\n'
-                f'     * {member.description}\n'
-                f'     */\n'
-            )
+            result += f"    /**\n" f"     * {member.description}\n" f"     */\n"
         if member.required:
             defaultValue = ""
         else:
             defaultValue = "? = null"
-        if member.type == 'string':
+        if member.type == "string":
             if member.enum:
-                result += f'    val {member.name}: {first_letter_up(member.name)}'
+                result += f"    val {member.name}: {first_letter_up(member.name)}"
             else:
-                result += f'    val {member.name}: String'
-        elif member.type == 'number':
-            result += f'    val {member.name}: Double'
-        elif member.type == 'integer':
-            result += f'    val {member.name}: Int'
-        elif member.type == 'boolean':
-            result += f'    val {member.name}: Boolean'
+                result += f"    val {member.name}: String"
+        elif member.type == "number":
+            result += f"    val {member.name}: Double"
+        elif member.type == "integer":
+            result += f"    val {member.name}: Int"
+        elif member.type == "boolean":
+            result += f"    val {member.name}: Boolean"
         else:
             raise Exception(f"Not handled yet: {member.type}")
         result += f"{defaultValue},\n"
@@ -130,17 +130,16 @@ package im.vector.app.features.analytics.plan
         for value in enum.values:
             if value.description:
                 result += (
-                    f'        /**\n'
-                    f'         * {value.description}\n'
-                    f'         */\n'
+                    f"        /**\n"
+                    f"         * {value.description}\n"
+                    f"         */\n"
                 )
             result += f"        {value.name},\n"
         result += "    }\n"
 
-
     result += "\n"
     if isScreen:
-        result += f'    override fun getName() = screenName.name\n'
+        result += f"    override fun getName() = screenName.name\n"
     else:
         result += f'    override fun getName() = "{event_name}"\n'
 
@@ -160,36 +159,44 @@ package im.vector.app.features.analytics.plan
                     result += f'            put("{member.name}", {member.name})\n'
             else:
                 if member.enum:
-                    result += '            %s?.let { put("%s", it.name) }\n' % (member.name, member.name)
+                    result += '            %s?.let { put("%s", it.name) }\n' % (
+                        member.name,
+                        member.name,
+                    )
                 else:
-                    result += '            %s?.let { put("%s", it) }\n' % (member.name, member.name)
+                    result += '            %s?.let { put("%s", it) }\n' % (
+                        member.name,
+                        member.name,
+                    )
         result += "        }.takeIf { it.isNotEmpty() }\n"
         result += "    }\n"
 
     result += "}"
     return result
 
+
 def swift_member_definition(member):
     if member.required:
         optionalSuffix = ""
     else:
         optionalSuffix = "?"
-    if member.type == 'string':
+    if member.type == "string":
         if member.enum:
-            definition = f'{member.name}: {first_letter_up(member.name)}'
+            definition = f"{member.name}: {first_letter_up(member.name)}"
         else:
-            definition = f'{member.name}: String'
-    elif member.type == 'number':
-        definition = f'{member.name}: Double'
-    elif member.type == 'integer':
-        definition = f'{member.name}: Int'
-    elif member.type == 'boolean':
-        definition = f'{member.name}: Bool'
+            definition = f"{member.name}: String"
+    elif member.type == "number":
+        definition = f"{member.name}: Double"
+    elif member.type == "integer":
+        definition = f"{member.name}: Int"
+    elif member.type == "boolean":
+        definition = f"{member.name}: Bool"
     else:
         raise Exception(f"Not handled yet: {member.type}")
     definition += f"{optionalSuffix}"
 
     return definition
+
 
 # Compute the output for Swift.
 def compute_swift(klass, data, members, enums, event_name):
@@ -235,10 +242,8 @@ def compute_swift(klass, data, members, enums, event_name):
     result += "\n"
     for member in members:
         if member.description:
-            result += (
-                f'        /// {member.description}\n'
-            )
-        result += f'        public let {swift_member_definition(member)}\n'
+            result += f"        /// {member.description}\n"
+        result += f"        public let {swift_member_definition(member)}\n"
 
     # Initializer (synthesized init is lost for public structs)
     result += "\n"
@@ -268,7 +273,9 @@ def compute_swift(klass, data, members, enums, event_name):
     if not members:
         result += "        public var properties: [String: Any] = [:]\n"
     else:
-        filteredMembers = list(filter(lambda member: member.name != "screenName", members))
+        filteredMembers = list(
+            filter(lambda member: member.name != "screenName", members)
+        )
         result += "        public var properties: [String: Any] {\n"
         result += "            return [\n"
         for index, member in enumerate(filteredMembers):
@@ -289,31 +296,36 @@ def compute_swift(klass, data, members, enums, event_name):
         result += "            ]\n"
         result += "        }\n"
 
-    result += "    }\n}"
+    result += "    }\n}\n"
     return result
 
+
 @dataclass
-class EnumValue():
+class EnumValue:
     name: str
     description: str
 
     def __lt__(self, other):
-         return self.name < other.name
+        return self.name < other.name
+
 
 @dataclass
-class Enum():
+class Enum:
     name: EnumValue
     values: list[object]
 
+
 @dataclass
-class Member():
-    name:str
+class Member:
+    name: str
     type: str
     enum: list[Enum]
     description: str
     required: bool
+
     def __lt__(self, other):
         return self.name < other.name
+
 
 def generate_stub(output_language: str, json_schema_paths: str, output_dir: str):
     for json_schema_path in json_schema_paths:
@@ -329,7 +341,9 @@ def generate_stub(output_language: str, json_schema_paths: str, output_dir: str)
                 ext = ".swift"
                 output = compute_swift(klass, data, members, enums, event_name)
             else:
-                raise Exception(f"Support for language {output_language} has not been implemented.")
+                raise Exception(
+                    f"Support for language {output_language} has not been implemented."
+                )
 
             output_path = os.path.join(output_dir, klass + ext)
             with open(output_path, "w") as output_file:
