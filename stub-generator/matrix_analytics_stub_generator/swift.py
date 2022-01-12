@@ -122,5 +122,5 @@ def compute_swift(schema: Schema) -> str:
         result += "            ]\n"
         result += "        }\n"
 
-    result += "    }\n}"
+    result += "    }\n}\n"
     return result

@@ -119,5 +119,5 @@ package im.vector.app.features.analytics.plan
         result += "        }.takeIf { it.isNotEmpty() }\n"
         result += "    }\n"
 
-    result += "}"
+    result += "}\n"
     return result
