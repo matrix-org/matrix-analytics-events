@@ -15,10 +15,10 @@ def isScreenEvent(str):
 # Makes an Enum object from a json property
 def make_enum(name, json_property):
     values = []
-    
+
     enum_dict = json_property.get('enum')
     one_of_dict = json_property.get('oneOf')
-    
+
     if enum_dict:
         for value in enum_dict:
             values.append(EnumValue(value, None))
@@ -27,7 +27,7 @@ def make_enum(name, json_property):
             value_name = value["const"]
             description = value.get('description')
             values.append(EnumValue(value_name, description))
-    
+
     if len(values) > 0:
         return Enum(first_letter_up(name), values)
 
@@ -53,13 +53,13 @@ def parse_schema(data):
                 )
             )
     members.sort()
-    
+
     return (members, enums, event_name)
 
 # Compute the output for Kotlin.
 def compute_kotlin(klass, data, members, enums, event_name):
     isScreen = isScreenEvent(klass)
-    
+
     result = """/*
  * Copyright (c) 2021 New Vector Ltd
  *
@@ -136,7 +136,7 @@ package im.vector.app.features.analytics.plan
                 )
             result += f"        {value.name},\n"
         result += "    }\n"
-        
+
 
     result += "\n"
     if isScreen:
@@ -188,14 +188,14 @@ def swift_member_definition(member):
     else:
         raise Exception(f"Not handled yet: {member.type}")
     definition += f"{optionalSuffix}"
-    
+
     return definition
 
 # Compute the output for Swift.
 def compute_swift(klass, data, members, enums, event_name):
     isScreen = isScreenEvent(klass)
-    
-    result = """// 
+
+    result = """//
 // Copyright 2021 New Vector Ltd
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -226,11 +226,11 @@ def compute_swift(klass, data, members, enums, event_name):
         f"extension AnalyticsEvent {{\n"
         f"    public struct {klass}: {itf} {{\n"
     )
-    
+
     # Event name (constant)
     if not isScreen:
         result += f'        public let eventName = "{event_name}"\n'
-    
+
     # Struct properties
     result += "\n"
     for member in members:
@@ -239,7 +239,7 @@ def compute_swift(klass, data, members, enums, event_name):
                 f'        /// {member.description}\n'
             )
         result += f'        public let {swift_member_definition(member)}\n'
-    
+
     # Initializer (synthesized init is lost for public structs)
     result += "\n"
     result += "        public init("
@@ -251,7 +251,7 @@ def compute_swift(klass, data, members, enums, event_name):
     for member in members:
         result += f"            self.{member.name} = {member.name}\n"
     result += "        }\n"
-    
+
     # Nested enums
     for enum in enums:
         result += "\n"
@@ -262,7 +262,7 @@ def compute_swift(klass, data, members, enums, event_name):
                 result += f"            /// {value.description}\n"
             result += f"            case {value.name}\n"
         result += "        }\n"
-    
+
     # Properties dictionary
     result += "\n"
     if not members:
@@ -296,10 +296,10 @@ def compute_swift(klass, data, members, enums, event_name):
 class EnumValue():
     name: str
     description: str
-    
+
     def __lt__(self, other):
          return self.name < other.name
-    
+
 @dataclass
 class Enum():
     name: EnumValue
@@ -319,9 +319,9 @@ def generate_stub(output_language: str, json_schema_paths: str, output_dir: str)
     for json_schema_path in json_schema_paths:
         with open(json_schema_path) as json_file:
             data = json.load(json_file)
-            klass = os.path.basename(json_schema_path).removesuffix(".json")            
+            klass = os.path.basename(json_schema_path).removesuffix(".json")
             (members, enums, event_name) = parse_schema(data)
-    
+
             if output_language in "kotlin":
                 ext = ".kt"
                 output = compute_kotlin(klass, data, members, enums, event_name)
