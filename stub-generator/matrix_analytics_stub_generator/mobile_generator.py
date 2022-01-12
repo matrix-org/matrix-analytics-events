@@ -63,7 +63,7 @@ def parse_schema(data):
 
 def compute_kotlin(klass, data, members, enums, event_name):
     """Compute the output for Kotlin."""
-    isScreen = is_screen_event(klass)
+    is_screen = is_screen_event(klass)
 
     result = """/*
  * Copyright (c) 2021 New Vector Ltd
@@ -85,7 +85,7 @@ package im.vector.app.features.analytics.plan
 
 """
 
-    if isScreen:
+    if is_screen:
         itf = "VectorAnalyticsScreen"
     else:
         itf = "VectorAnalyticsEvent"
@@ -139,7 +139,7 @@ package im.vector.app.features.analytics.plan
         result += "    }\n"
 
     result += "\n"
-    if isScreen:
+    if is_screen:
         result += f"    override fun getName() = screenName.name\n"
     else:
         result += f'    override fun getName() = "{event_name}"\n'
@@ -151,7 +151,7 @@ package im.vector.app.features.analytics.plan
         result += "    override fun getProperties(): Map<String, Any>? {\n"
         result += "        return mutableMapOf<String, Any>().apply {\n"
         for member in members:
-            if member.name == "screenName" and isScreen:
+            if member.name == "screenName" and is_screen:
                 continue
             if member.required:
                 if member.enum:
@@ -201,7 +201,7 @@ def swift_member_definition(member):
 
 def compute_swift(klass, data, members, enums, event_name):
     """Compute the output for Swift."""
-    isScreen = is_screen_event(klass)
+    is_screen = is_screen_event(klass)
 
     result = """//
 // Copyright 2021 New Vector Ltd
@@ -221,7 +221,7 @@ def compute_swift(klass, data, members, enums, event_name):
 
 """
 
-    if isScreen:
+    if is_screen:
         itf = "AnalyticsScreenProtocol"
     else:
         itf = "AnalyticsEventProtocol"
@@ -236,7 +236,7 @@ def compute_swift(klass, data, members, enums, event_name):
     )
 
     # Event name (constant)
-    if not isScreen:
+    if not is_screen:
         result += f'        public let eventName = "{event_name}"\n'
 
     # Struct properties
