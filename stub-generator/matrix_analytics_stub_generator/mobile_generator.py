@@ -10,7 +10,7 @@ def first_letter_up(str):
 
 
 # Whether the supplied class name is for the Screen event.
-def isScreenEvent(str):
+def is_screen_event(str):
     return str == "Screen"
 
 
@@ -62,7 +62,7 @@ def parse_schema(data):
 
 # Compute the output for Kotlin.
 def compute_kotlin(klass, data, members, enums, event_name):
-    isScreen = isScreenEvent(klass)
+    isScreen = is_screen_event(klass)
 
     result = """/*
  * Copyright (c) 2021 New Vector Ltd
@@ -200,7 +200,7 @@ def swift_member_definition(member):
 
 # Compute the output for Swift.
 def compute_swift(klass, data, members, enums, event_name):
-    isScreen = isScreenEvent(klass)
+    isScreen = is_screen_event(klass)
 
     result = """//
 // Copyright 2021 New Vector Ltd
