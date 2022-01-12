@@ -1,4 +1,3 @@
-from typing import List
 from .schema import Schema, is_screen_event, first_letter_up
 
 
@@ -81,7 +80,7 @@ package im.vector.app.features.analytics.plan
 
     result += "\n"
     if is_screen:
-        result += f"    override fun getName() = screenName.name\n"
+        result += "    override fun getName() = screenName.name\n"
     else:
         result += f'    override fun getName() = "{schema.event_name}"\n'
 

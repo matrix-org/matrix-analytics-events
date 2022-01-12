@@ -1,4 +1,3 @@
-from typing import List
 from .schema import Schema, Member, first_letter_up, is_screen_event
 
 
@@ -110,7 +109,7 @@ def compute_swift(schema: Schema) -> str:
                 if member.required:
                     result += f'                "{member.name}": {member.name}.rawValue'
                 else:
-                    result += f'                "{member.name}": {member.name}?.rawValue as Any'
+                    result += f'                "{member.name}": {member.name}?.rawValue as Any'  # noqa
             else:
                 if member.required:
                     result += f'                "{member.name}": {member.name}'
