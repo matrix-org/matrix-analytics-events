@@ -10,26 +10,9 @@ data class Screen (
     val durationMS: Long? = null,
 
     val eventName: EventName,
-    val screenName: ScreenName
+    val screenName: String
 )
 
 enum class EventName {
     Screen
-}
-
-enum class ScreenName {
-    Group,
-    Home,
-    MyGroups,
-    Room,
-    RoomDirectory,
-    User,
-    WebCompleteSecurity,
-    WebE2ESetup,
-    WebForgotPassword,
-    WebLoading,
-    WebLogin,
-    WebRegister,
-    WebSoftLogout,
-    WebWelcome
 }
