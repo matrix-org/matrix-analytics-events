@@ -17,10 +17,19 @@ ensures events raised comply with the schema via compile-time type verification.
 After creating or updating an event schema, you need to generate new type stubs and commit them along with your changes
 to the events.
 
-To install the stub generator (only needed once), you'll need yarn on your system, then: 
+To install the stub generator (only needed once), you'll need on your system
+
+* yarn
+* python 3.10+
+* [poetry](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions)
+
+For me, the easiest way to install python 3.10 was via [pyenv](https://github.com/pyenv/pyenv),
+then poetry was happy to recognise it after running `pyenv local 3.10.0`.
+
+Then run
 
 ```
-yarn install
+scripts/setup.sh
 ```
 
 To generate the stubs:
