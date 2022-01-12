@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "description": "Triggered when the user becomes unauthenticated without actually clicking sign out(E.g. Due to expiry of an access token without a way to refresh).",
+  "properties": {
+    "eventName": {
+      "enum": ["UnauthenticatedError"]
+    },
+    "refreshTokenAuth": {
+      "description": "Whether the auth mechanism is refresh-token-based.",
+      "type": "boolean"
+    },
+    "softLogout": {
+      "description": "Whether a soft logout or hard logout was triggered.",
+      "type": "boolean"
+    },
+    "errorCode": {
+      "description": "The error code as defined in matrix spec.",
+      "type": "string"
+    },
+    "errorReason": {
+      "description": "The reason for the error.",
+      "type": "string"
+    }
+  },
+  "required": ["refreshTokenAuth", "softLogout"],
+  "additionalProperties": false
+}
