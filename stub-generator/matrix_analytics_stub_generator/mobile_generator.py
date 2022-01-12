@@ -3,19 +3,47 @@ import json
 import glob
 import os
 from dataclasses import dataclass
+from typing import List, Tuple
 
 
-def first_letter_up(str):
+@dataclass
+class EnumValue:
+    name: str
+    description: str
+
+    def __lt__(self, other):
+        return self.name < other.name
+
+
+@dataclass
+class Enum:
+    name: EnumValue
+    values: list[object]
+
+
+@dataclass
+class Member:
+    name: str
+    type: str
+    enum: list[Enum]
+    description: str
+    required: bool
+
+    def __lt__(self, other):
+        return self.name < other.name
+
+
+def first_letter_up(s: str) -> str:
     """capitalize() can also change the next letter, and I want to keep camel case."""
-    return str[0].upper() + str[1:]
+    return s[0].upper() + s[1:]
 
 
-def is_screen_event(str):
+def is_screen_event(s) -> str:
     """Whether the supplied class name is for the Screen event."""
-    return str == "Screen"
+    return s == "Screen"
 
 
-def make_enum(name, json_property):
+def make_enum(name: str, json_property: dict) -> Enum:
     """Makes an Enum object from a json property"""
     values = []
 
@@ -35,7 +63,7 @@ def make_enum(name, json_property):
         return Enum(first_letter_up(name), values)
 
 
-def parse_schema(data):
+def parse_schema(data: dict) -> Tuple[List[Member], List[Enum], str]:
     """Parse the schema into members, enums and the event name."""
     members = []
     enums = []
@@ -61,7 +89,9 @@ def parse_schema(data):
     return (members, enums, event_name)
 
 
-def compute_kotlin(klass, data, members, enums, event_name):
+def compute_kotlin(
+    klass: str, data: dict, members: List[Member], enums: List[Enum], event_name: str
+) -> str:
     """Compute the output for Kotlin."""
     is_screen = is_screen_event(klass)
 
@@ -199,7 +229,9 @@ def swift_member_definition(member):
     return definition
 
 
-def compute_swift(klass, data, members, enums, event_name):
+def compute_swift(
+    klass: str, data: dict, members: List[Member], enums: List[Enum], event_name: str
+) -> str:
     """Compute the output for Swift."""
     is_screen = is_screen_event(klass)
 
@@ -297,35 +329,8 @@ def compute_swift(klass, data, members, enums, event_name):
         result += "            ]\n"
         result += "        }\n"
 
-    result += "    }\n}\n"
+    result += "    }\n}"
     return result
-
-
-@dataclass
-class EnumValue:
-    name: str
-    description: str
-
-    def __lt__(self, other):
-        return self.name < other.name
-
-
-@dataclass
-class Enum:
-    name: EnumValue
-    values: list[object]
-
-
-@dataclass
-class Member:
-    name: str
-    type: str
-    enum: list[Enum]
-    description: str
-    required: bool
-
-    def __lt__(self, other):
-        return self.name < other.name
 
 
 def generate_stub(output_language: str, json_schema_paths: str, output_dir: str):
