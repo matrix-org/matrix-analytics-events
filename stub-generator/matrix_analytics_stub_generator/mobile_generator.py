@@ -4,18 +4,19 @@ import glob
 import os
 from dataclasses import dataclass
 
-# capitalize() can also change the next letter, and I want to keep camel case.
+
 def first_letter_up(str):
+    """capitalize() can also change the next letter, and I want to keep camel case."""
     return str[0].upper() + str[1:]
 
 
-# Whether the supplied class name is for the Screen event.
 def is_screen_event(str):
+    """Whether the supplied class name is for the Screen event."""
     return str == "Screen"
 
 
-# Makes an Enum object from a json property
 def make_enum(name, json_property):
+    """Makes an Enum object from a json property"""
     values = []
 
     enum_dict = json_property.get("enum")
@@ -34,8 +35,8 @@ def make_enum(name, json_property):
         return Enum(first_letter_up(name), values)
 
 
-# Parse the schema into members, enums and the event name.
 def parse_schema(data):
+    """Parse the schema into members, enums and the event name."""
     members = []
     enums = []
     event_name = data["properties"]["eventName"]["enum"][0]
@@ -60,8 +61,8 @@ def parse_schema(data):
     return (members, enums, event_name)
 
 
-# Compute the output for Kotlin.
 def compute_kotlin(klass, data, members, enums, event_name):
+    """Compute the output for Kotlin."""
     isScreen = is_screen_event(klass)
 
     result = """/*
@@ -198,8 +199,8 @@ def swift_member_definition(member):
     return definition
 
 
-# Compute the output for Swift.
 def compute_swift(klass, data, members, enums, event_name):
+    """Compute the output for Swift."""
     isScreen = is_screen_event(klass)
 
     result = """//
