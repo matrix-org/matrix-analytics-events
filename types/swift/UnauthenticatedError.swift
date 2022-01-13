@@ -1,4 +1,4 @@
-// 
+//
 // Copyright 2021 New Vector Ltd
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,26 +24,32 @@ extension AnalyticsEvent {
     public struct UnauthenticatedError: AnalyticsEventProtocol {
         public let eventName = "UnauthenticatedError"
 
-        /// The error code as defined in matrix spec.
-        public let errorCode: String?
-        /// The reason for the error.
-        public let errorReason: String?
+        /// The error code as defined in matrix spec. The source of this error is from the homeserver.
+        public let errorCode: ErrorCode
+        /// The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.
+        public let errorReason: String
         /// Whether the auth mechanism is refresh-token-based.
         public let refreshTokenAuth: Bool
         /// Whether a soft logout or hard logout was triggered.
         public let softLogout: Bool
 
-        public init(errorCode: String?, errorReason: String?, refreshTokenAuth: Bool, softLogout: Bool) {
+        public init(errorCode: ErrorCode, errorReason: String, refreshTokenAuth: Bool, softLogout: Bool) {
             self.errorCode = errorCode
             self.errorReason = errorReason
             self.refreshTokenAuth = refreshTokenAuth
             self.softLogout = softLogout
         }
 
+        public enum ErrorCode: String {
+            case M_FORBIDDEN
+            case M_UNKNOWN
+            case M_UNKNOWN_TOKEN
+        }
+
         public var properties: [String: Any] {
             return [
-                "errorCode": errorCode as Any,
-                "errorReason": errorReason as Any,
+                "errorCode": errorCode.rawValue,
+                "errorReason": errorReason,
                 "refreshTokenAuth": refreshTokenAuth,
                 "softLogout": softLogout
             ]

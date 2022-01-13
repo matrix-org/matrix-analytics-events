@@ -6,14 +6,15 @@ package quicktype
  */
 data class UnauthenticatedError (
     /**
-     * The error code as defined in matrix spec.
+     * The error code as defined in matrix spec. The source of this error is from the homeserver.
      */
-    val errorCode: String? = null,
+    val errorCode: ErrorCode,
 
     /**
-     * The reason for the error.
+     * The reason for the error. The source of this error is from the homeserver, the reason can
+     * vary and is subject to change so there is no enum of possible values.
      */
-    val errorReason: String? = null,
+    val errorReason: String,
 
     val eventName: EventName? = null,
 
@@ -27,6 +28,15 @@ data class UnauthenticatedError (
      */
     val softLogout: Boolean
 )
+
+/**
+ * The error code as defined in matrix spec. The source of this error is from the homeserver.
+ */
+enum class ErrorCode {
+    MForbidden,
+    MUnknown,
+    MUnknownToken
+}
 
 enum class EventName {
     UnauthenticatedError

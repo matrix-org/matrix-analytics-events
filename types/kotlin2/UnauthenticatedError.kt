@@ -26,13 +26,13 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  */
 data class UnauthenticatedError(
         /**
-         * The error code as defined in matrix spec.
+         * The error code as defined in matrix spec. The source of this error is from the homeserver.
          */
-        val errorCode: String? = null,
+        val errorCode: ErrorCode,
         /**
-         * The reason for the error.
+         * The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.
          */
-        val errorReason: String? = null,
+        val errorReason: String,
         /**
          * Whether the auth mechanism is refresh-token-based.
          */
@@ -43,12 +43,18 @@ data class UnauthenticatedError(
         val softLogout: Boolean,
 ) : VectorAnalyticsEvent {
 
+    enum class ErrorCode {
+        M_FORBIDDEN,
+        M_UNKNOWN,
+        M_UNKNOWN_TOKEN,
+    }
+
     override fun getName() = "UnauthenticatedError"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            errorCode?.let { put("errorCode", it) }
-            errorReason?.let { put("errorReason", it) }
+            put("errorCode", errorCode.name)
+            put("errorReason", errorReason)
             put("refreshTokenAuth", refreshTokenAuth)
             put("softLogout", softLogout)
         }.takeIf { it.isNotEmpty() }

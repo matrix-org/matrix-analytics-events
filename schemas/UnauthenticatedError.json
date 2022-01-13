@@ -14,14 +14,19 @@
       "type": "boolean"
     },
     "errorCode": {
-      "description": "The error code as defined in matrix spec.",
-      "type": "string"
+      "description": "The error code as defined in matrix spec. The source of this error is from the homeserver.",
+      "type": "string",
+      "enum": [
+        "M_UNKNOWN",
+        "M_FORBIDDEN",
+        "M_UNKNOWN_TOKEN"
+      ]
     },
     "errorReason": {
-      "description": "The reason for the error.",
+      "description": "The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.",
       "type": "string"
     }
   },
-  "required": ["refreshTokenAuth", "softLogout"],
+  "required": ["refreshTokenAuth", "softLogout", "errorCode", "errorReason"],
   "additionalProperties": false
 }

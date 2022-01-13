@@ -19,11 +19,11 @@ export interface UnauthenticatedError {
    */
   softLogout: boolean;
   /**
-   * The error code as defined in matrix spec.
+   * The error code as defined in matrix spec. The source of this error is from the homeserver.
    */
-  errorCode?: string;
+  errorCode: "M_UNKNOWN" | "M_FORBIDDEN" | "M_UNKNOWN_TOKEN";
   /**
-   * The reason for the error.
+   * The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.
    */
-  errorReason?: string;
+  errorReason: string;
 }
