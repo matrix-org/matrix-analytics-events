@@ -1,0 +1,675 @@
+<!DOCTYPE html lang="en">
+<meta charset="utf-8">
+<html>
+<head>
+    <title>Analytics events for Element clients</title>
+    <style>
+        .event-table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .event-table .property {
+            width: 33%
+        }
+
+        .event-table .description {
+            width: 33%
+        }
+
+        .event-table .type {
+            width: 33%
+        }
+
+        .event-table td {
+            padding: 5px;
+            border: 1px solid #ccc;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analytics events for Element clients</h1>    
+    
+        <section class="event">            
+            <h2>Error</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>domain</td>                        
+                            <td></td>
+                            <td>
+                                    
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    E2EE    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VOIP    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td></td>
+                            <td>
+                                    
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    UnknownError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmIndexError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmKeysNotSentError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmUnspecifiedError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipUserHangup    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipIceFailed    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipInviteTimeout    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipIceTimeout    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipUserMediaFailed    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>context</td>                        
+                            <td>Context - client defined, can be used for debugging</td>
+                            <td>
+                                
+                                    string
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>Screen</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>screenName</td>                        
+                            <td></td>
+                            <td>
+                                    
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Home    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Room    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    RoomDirectory    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    User    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Group    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    MyGroups    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebLoading    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebWelcome    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebLogin    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebRegister    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebForgotPassword    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebCompleteSecurity    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebE2ESetup    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    WebSoftLogout    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>How long the screen was displayed for in milliseconds.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>Click</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The unique name of this element.</td>
+                            <td>
+                                    
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    SendMessageButton    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>index</td>                        
+                            <td>The index of the element, if its in a list of elements.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>PerformanceTimer</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The timer that is being reported.</td>
+                            <td>
+                                    
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped).
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time).
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>timeMs</td>                        
+                            <td>The time reported by the timer in milliseconds.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>itemCount</td>                        
+                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>context</td>                        
+                            <td>Client defined, can be used for debugging.</td>
+                            <td>
+                                
+                                    string
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CreatedRoom</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>JoinedRoom</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>roomSize</td>                        
+                            <td>The size of the room.</td>
+                            <td>
+                                    
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Two    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    ThreeToTen    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    ElevenToOneHundred    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OneHundredAndOneToAThousand    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    MoreThanAThousand    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallStarted</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallError</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallEnded</h2>
+            <p></p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                
+                                    boolean
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>The duration of the call in milliseconds.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                
+                                    integer
+                                
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+</body>
+</html>
