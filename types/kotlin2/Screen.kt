@@ -44,6 +44,11 @@ data class Screen(
         DeactivateAccount,
 
         /**
+         * The form for the forgot password use case
+         */
+        ForgotPassword,
+
+        /**
          * Legacy: The screen that shows information about a specific group.
          */
         Group,
@@ -52,6 +57,21 @@ data class Screen(
          * The Home tab on iOS | possibly the same on Android? | The Home space on Web?
          */
         Home,
+
+        /**
+         * The screen that displays the login flow (when the user already has an account).
+         */
+        Login,
+
+        /**
+         * The screen that displays the user's breadcrumbs.
+         */
+        MobileBreadcrumbs,
+
+        /**
+         * The tab on mobile that displays the dialpad.
+         */
+        MobileDialpad,
 
         /**
          * The Favourites tab on mobile that lists your favourite people/rooms.
@@ -109,6 +129,11 @@ data class Screen(
         MyGroups,
 
         /**
+         * The screen that displays the registration flow (when the user wants to create an account)
+         */
+        Register,
+
+        /**
          * The screen that displays the messages and events received in a room.
          */
         Room,
@@ -122,6 +147,11 @@ data class Screen(
          * The screen that lists public rooms for you to discover.
          */
         RoomDirectory,
+
+        /**
+         * The screen that lists all the user's rooms and let them filter the rooms.
+         */
+        RoomFilter,
 
         /**
          * The screen that displays the list of members that are part of a room.
@@ -169,7 +199,7 @@ data class Screen(
         SettingsSecurity,
 
         /**
-         * The screen shown to create a new (non-direct) room.
+         * The screen shown to create a new direct room.
          */
         StartChat,
 
@@ -191,22 +221,7 @@ data class Screen(
         /**
          * ?
          */
-        WebForgotPassword,
-
-        /**
-         * ?
-         */
         WebLoading,
-
-        /**
-         * ?
-         */
-        WebLogin,
-
-        /**
-         * ?
-         */
-        WebRegister,
 
         /**
          * ?
@@ -214,9 +229,9 @@ data class Screen(
         WebSoftLogout,
 
         /**
-         * ?
+         * The splash screen.
          */
-        WebWelcome,
+        Welcome,
     }
 
     override fun getName() = screenName.name

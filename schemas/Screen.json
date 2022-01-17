@@ -8,6 +8,11 @@
     "screenName": {
       "type": "string",
       "oneOf": [
+        {"const": "Welcome", "description": "The splash screen."},
+        {"const": "Login", "description": "The screen that displays the login flow (when the user already has an account)."},
+        {"const": "ForgotPassword", "description": "The form for the forgot password use case"},
+        {"const": "Register", "description": "The screen that displays the registration flow (when the user wants to create an account)"},
+
         {"const": "Home", "description": "The Home tab on iOS | possibly the same on Android? | The Home space on Web?"},
         {"const": "Room", "description": "The screen that displays the messages and events received in a room."},
         {"const": "RoomDetails", "description": "The screen shown when tapping the name of a room from the Room screen."},
@@ -18,7 +23,8 @@
         {"const": "RoomSettings", "description": "The settings screen shown from the Room Details screen."},
         {"const": "RoomNotifications", "description": "The notifications settings screen shown from the Room Details screen."},
         {"const": "RoomDirectory", "description": "The screen that lists public rooms for you to discover."},
-        {"const": "StartChat", "description": "The screen shown to create a new (non-direct) room."},
+        {"const": "RoomFilter", "description": "The screen that lists all the user's rooms and let them filter the rooms."},
+        {"const": "StartChat", "description": "The screen shown to create a new direct room."},
         {"const": "CreateRoom", "description": "The screen shown to create a new (non-direct) room."},
         {"const": "Settings", "description": "The global settings screen shown in the app."},
         {"const": "SettingsSecurity", "description": "The global security settings screen."},
@@ -32,18 +38,16 @@
         {"const": "MobileFavourites", "description": "The Favourites tab on mobile that lists your favourite people/rooms."},
         {"const": "MobilePeople", "description": "The People tab on mobile that lists all the DM rooms you have joined."},
         {"const": "MobileRooms", "description": "The Rooms tab on mobile that lists all the (non-direct) rooms you've joined."},
+        {"const": "MobileDialpad", "description": "The tab on mobile that displays the dialpad."},
         {"const": "MobileSearchRooms", "description": "The Rooms tab shown in the global search screen on Mobile."},
         {"const": "MobileSearchMessages", "description": "The Messages tab shown in the global search screen on Mobile."},
         {"const": "MobileSearchPeople", "description": "The People tab shown in the global search screen on Mobile."},
         {"const": "MobileSearchFiles", "description": "The Files tab shown in the global search screen on Mobile."},
         {"const": "MobileSwitchDirectory", "description": "The screen shown to select which room directory you'd like to use."},
         {"const": "MobileInviteFriends", "description": "The screen shown to share a link to download the app."},
+        {"const": "MobileBreadcrumbs", "description": "The screen that displays the user's breadcrumbs."},
         
         {"const": "WebLoading", "description": "?"},
-        {"const": "WebWelcome", "description": "?"},
-        {"const": "WebLogin", "description": "?"},
-        {"const": "WebRegister", "description": "?"},
-        {"const": "WebForgotPassword", "description": "?"},
         {"const": "WebCompleteSecurity", "description": "?"},
         {"const": "WebE2ESetup", "description": "?"},
         {"const": "WebSoftLogout", "description": "?"}
