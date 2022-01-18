@@ -8,11 +8,11 @@
       "ftueUseCaseSelection": {
         "description": "The selected messaging use case during the onboarding flow.",
         "type": "string",
-        "enum": [
-          "FriendsAndFamily",
-          "Teams",
-          "Communities",
-          "Skipped"
+        "oneOf": [
+          {"const": "PersonalMessaging", "description": "The first option, Friends and family."},
+          {"const": "WorkMessaging", "description": "The second option, Teams."},
+          {"const": "CommunityMessaging", "description": "The third option, Communities."},
+          {"const": "Skip", "description": "The footer option to skip the question."}
         ]
       }
     },

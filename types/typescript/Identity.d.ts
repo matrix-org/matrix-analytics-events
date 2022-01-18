@@ -13,5 +13,5 @@ export interface Identity {
   /**
    * The selected messaging use case during the onboarding flow.
    */
-  ftueUseCaseSelection?: "FriendsAndFamily" | "Teams" | "Communities" | "Skipped";
+  ftueUseCaseSelection?: ("PersonalMessaging" | "WorkMessaging" | "CommunityMessaging" | "Skip") & string;
 }

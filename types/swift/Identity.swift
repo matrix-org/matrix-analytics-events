@@ -32,10 +32,14 @@ extension AnalyticsEvent {
         }
 
         public enum FtueUseCaseSelection: String {
-            case Communities
-            case FriendsAndFamily
-            case Skipped
-            case Teams
+            /// The third option, Communities.
+            case CommunityMessaging
+            /// The first option, Friends and family.
+            case PersonalMessaging
+            /// The footer option to skip the question.
+            case Skip
+            /// The second option, Teams.
+            case WorkMessaging
         }
 
         public var properties: [String: Any] {

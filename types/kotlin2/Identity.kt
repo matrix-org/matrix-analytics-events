@@ -32,10 +32,25 @@ data class Identity(
 ) : VectorAnalyticsEvent {
 
     enum class FtueUseCaseSelection {
-        Communities,
-        FriendsAndFamily,
-        Skipped,
-        Teams,
+        /**
+         * The third option, Communities.
+         */
+        CommunityMessaging,
+
+        /**
+         * The first option, Friends and family.
+         */
+        PersonalMessaging,
+
+        /**
+         * The footer option to skip the question.
+         */
+        Skip,
+
+        /**
+         * The second option, Teams.
+         */
+        WorkMessaging,
     }
 
     override fun getName() = "Identity"
