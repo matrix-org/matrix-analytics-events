@@ -46,7 +46,7 @@ yarn build
 
   For example:
 
-```
+```json
 "eventName": {
   "enum": ["Error"]
 },
@@ -54,3 +54,39 @@ yarn build
 
 * You must describe your event using `description` fields. Your audience might be unfamiliar with the codebase, 
   or non-technical, so don't refer to code concepts and try to describe things in general but accurate terms.
+
+### Description examples
+
+#### Events
+
+```json
+{
+  "type": "object",
+  "description": "Triggered when the user changed screen",
+  "properties": {
+    "eventName": {
+      "enum": ["Screen"]
+    }
+  }
+}
+```
+
+#### Primitive properties
+
+```json
+"durationMs": {
+  "description": "How long the screen was displayed for in milliseconds.",
+  "type": "integer"
+}
+```
+
+#### Enums
+
+```json
+"screenName": {
+  "type": "string",
+  "oneOf": [
+    {"const": "Welcome", "description": "The splash screen."},
+  ]
+}
+```
