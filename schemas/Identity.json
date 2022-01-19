@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "description": "The user properties to apply when identifying",
+    "properties": {
+      "eventName": {
+        "enum": ["Identity"]
+      },
+      "ftueUseCaseSelection": {
+        "description": "The selected messaging use case during the onboarding flow.",
+        "type": "string",
+        "oneOf": [
+          {"const": "PersonalMessaging", "description": "The first option, Friends and family."},
+          {"const": "WorkMessaging", "description": "The second option, Teams."},
+          {"const": "CommunityMessaging", "description": "The third option, Communities."},
+          {"const": "Skip", "description": "The footer option to skip the question."}
+        ]
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  }
+  
