@@ -1,5 +1,4 @@
-from .schema import Schema, is_screen_event, first_letter_up
-
+from .schema import Schema, is_screen_event, first_letter_up, split_text
 
 def compute_kotlin(schema: Schema) -> str:
     """Compute the output for Kotlin."""
@@ -35,16 +34,16 @@ package im.vector.app.features.analytics.plan
         f"// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT\n"
         f"// https://github.com/matrix-org/matrix-analytics-events/\n\n"
         f"/**\n"
-        f" * {schema.data.get('description')}\n"
+        f"{split_text(' * ', schema.data.get('description'))}\n"
         f" */\n"
         f"data class {schema.klass}(\n"
     )
 
     for member in schema.members:
         if member.description:
-            result += (
-                f"        /**\n" f"         * {member.description}\n" f"         */\n"
-            )
+            result += f"        /**\n"
+            result += f"{split_text('         * ', member.description)}\n"
+            result += f"         */\n"
         if member.required:
             defaultValue = ""
         else:
@@ -76,11 +75,9 @@ package im.vector.app.features.analytics.plan
             if value.description:
                 if not isFirstEnum:
                     result += "\n"
-                result += (
-                    f"        /**\n"
-                    f"         * {value.description}\n"
-                    f"         */\n"
-                )
+                result += f"        /**\n"
+                result += f"{split_text('         * ', value.description)}\n"
+                result += f"         */\n"
             result += f"        {value.name},\n"
             isFirstEnum = False
         result += "    }\n"
