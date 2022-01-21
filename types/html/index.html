@@ -536,13 +536,13 @@
                                         
                                             <li>
                                                 
-                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped).
+                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app.
+                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
                                                     
                                             </li>
                                         
@@ -566,13 +566,13 @@
                                         
                                             <li>
                                                 
-                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request.
+                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request.
+                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
                                                     
                                             </li>
                                         
