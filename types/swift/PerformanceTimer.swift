@@ -41,15 +41,15 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
-            /// The time spent parsing the response from an initial /sync request.
+            /// The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
             case InitialSyncParsing
-            /// The time spent waiting for a response to an initial /sync request.
+            /// The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
             case InitialSyncRequest
             /// The time taken to display an event in the timeline that was opened from a notification.
             case NotificationsOpenEvent
-            /// The duration of a regular /sync request when resuming the app.
+            /// The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
             case StartupIncrementalSync
-            /// The duration of an initial /sync request during startup (if the store has been wiped).
+            /// The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
             case StartupInitialSync
             /// How long the app launch screen is displayed for.
             case StartupLaunchScreen
