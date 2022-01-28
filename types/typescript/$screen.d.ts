@@ -8,8 +8,8 @@
 /**
  * Triggered when the user changed screen
  */
-export interface Screen {
-  eventName: "Screen";
+export interface $Screen {
+  eventName: "$screen";
   screenName: (
     | "Welcome"
     | "Login"

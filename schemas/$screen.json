@@ -3,7 +3,7 @@
   "description": "Triggered when the user changed screen",
   "properties": {
     "eventName": {
-      "enum": ["Screen"]
+      "enum": ["$screen"]
     },
     "screenName": {
       "type": "string",
