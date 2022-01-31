@@ -33,285 +33,6 @@
     <h1>Analytics events for Element clients</h1>    
     
         <section class="event">            
-            <h2>$screen</h2>
-            <p>Triggered when the user changed screen</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>durationMs</td>                        
-                            <td>How long the screen was displayed for in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>screenName</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Welcome:</b> The splash screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Login:</b> The screen that displays the login flow (when the user already has an account).
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ForgotPassword:</b> The form for the forgot password use case
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Register:</b> The screen that displays the registration flow (when the user wants to create an account)
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Home:</b> The Home tab on iOS | possibly the same on Android? | The Home space on Web?
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Room:</b> The screen that displays the messages and events received in a room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomDetails:</b> The screen shown when tapping the name of a room from the Room screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomMembers:</b> The screen that displays the list of members that are part of a room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>User:</b> A screen that shows information about a room member.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomSearch:</b> The screen that allows you to search for messages/files in a specific room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomUploads:</b> The screen that allows you to see all of the files sent in a specific room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomSettings:</b> The settings screen shown from the Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomNotifications:</b> The notifications settings screen shown from the Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomDirectory:</b> The screen that lists public rooms for you to discover.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomFilter:</b> The screen that lists all the user&#39;s rooms and let them filter the rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartChat:</b> The screen shown to create a new direct room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>CreateRoom:</b> The screen shown to create a new (non-direct) room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Settings:</b> The global settings screen shown in the app.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsSecurity:</b> The global security settings screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsDefaultNotifications:</b> The settings screen to change the default notification options.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsMentionsAndKeywords:</b> The settings screen to manage notification mentions and keywords.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>DeactivateAccount:</b> The confirmation screen shown before deactivating an account.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Group:</b> Legacy: The screen that shows information about a specific group.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MyGroups:</b> Legacy: The screen that shows all groups/communities you have joined.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSidebar:</b> The sidebar shown on mobile with spaces, settings etc.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileFavourites:</b> The Favourites tab on mobile that lists your favourite people/rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobilePeople:</b> The People tab on mobile that lists all the DM rooms you have joined.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRooms:</b> The Rooms tab on mobile that lists all the (non-direct) rooms you&#39;ve joined.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileDialpad:</b> The tab on mobile that displays the dialpad.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSearchRooms:</b> The Rooms tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSearchMessages:</b> The Messages tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSearchPeople:</b> The People tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSearchFiles:</b> The Files tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSwitchDirectory:</b> The screen shown to select which room directory you&#39;d like to use.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileInviteFriends:</b> The screen shown to share a link to download the app.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileBreadcrumbs:</b> The screen that displays the user&#39;s breadcrumbs.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebLoading:</b> ?
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebCompleteSecurity:</b> ?
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebE2ESetup:</b> ?
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSoftLogout:</b> ?
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
             <h2>CallEnded</h2>
             <p>Triggered when a call has ended.</p>
             <table class="event-table">
@@ -872,6 +593,285 @@
                             <td>
                                                                 
                                     integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>$screen</h2>
+            <p>Triggered when the user changed screen</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>How long the screen was displayed for in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>screenName</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Welcome:</b> The splash screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Login:</b> The screen that displays the login flow (when the user already has an account).
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ForgotPassword:</b> The form for the forgot password use case
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Register:</b> The screen that displays the registration flow (when the user wants to create an account)
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Home:</b> The Home tab on iOS | possibly the same on Android? | The Home space on Web?
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Room:</b> The screen that displays the messages and events received in a room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDetails:</b> The screen shown when tapping the name of a room from the Room screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomMembers:</b> The screen that displays the list of members that are part of a room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>User:</b> A screen that shows information about a room member.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSearch:</b> The screen that allows you to search for messages/files in a specific room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomUploads:</b> The screen that allows you to see all of the files sent in a specific room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettings:</b> The settings screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomNotifications:</b> The notifications settings screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDirectory:</b> The screen that lists public rooms for you to discover.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomFilter:</b> The screen that lists all the user&#39;s rooms and let them filter the rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartChat:</b> The screen shown to create a new direct room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>CreateRoom:</b> The screen shown to create a new (non-direct) room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Settings:</b> The global settings screen shown in the app.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsSecurity:</b> The global security settings screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsDefaultNotifications:</b> The settings screen to change the default notification options.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsMentionsAndKeywords:</b> The settings screen to manage notification mentions and keywords.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>DeactivateAccount:</b> The confirmation screen shown before deactivating an account.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Group:</b> Legacy: The screen that shows information about a specific group.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MyGroups:</b> Legacy: The screen that shows all groups/communities you have joined.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSidebar:</b> The sidebar shown on mobile with spaces, settings etc.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileFavourites:</b> The Favourites tab on mobile that lists your favourite people/rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobilePeople:</b> The People tab on mobile that lists all the DM rooms you have joined.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRooms:</b> The Rooms tab on mobile that lists all the (non-direct) rooms you&#39;ve joined.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileDialpad:</b> The tab on mobile that displays the dialpad.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSearchRooms:</b> The Rooms tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSearchMessages:</b> The Messages tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSearchPeople:</b> The People tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSearchFiles:</b> The Files tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSwitchDirectory:</b> The screen shown to select which room directory you&#39;d like to use.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileInviteFriends:</b> The screen shown to share a link to download the app.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileBreadcrumbs:</b> The screen that displays the user&#39;s breadcrumbs.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebLoading:</b> ?
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebCompleteSecurity:</b> ?
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebE2ESetup:</b> ?
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSoftLogout:</b> ?
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
