@@ -8,6 +8,7 @@
     "screenName": {
       "type": "string",
       "oneOf": [
+        {"const": "Home", "description": "The Home tab on iOS | possibly the same on Android? | Home page on Web"},
         {"const": "Welcome", "description": "The splash screen."},
         {"const": "Login", "description": "The screen that displays the login flow (when the user already has an account)."},
         {"const": "ForgotPassword", "description": "The form for the forgot password use case"},
@@ -29,7 +30,6 @@
         {"const": "Group", "description": "Legacy: The screen that shows information about a specific group."},
         {"const": "MyGroups", "description": "Legacy: The screen that shows all groups/communities you have joined."},
 
-        {"const": "MobileHome", "description": "The Home tab on iOS | possibly the same on Android?"},
         {"const": "MobileSidebar", "description": "The sidebar shown on mobile with spaces, settings etc."},
         {"const": "MobileFavourites", "description": "The Favourites tab on mobile that lists your favourite people/rooms."},
         {"const": "MobilePeople", "description": "The People tab on mobile that lists all the DM rooms you have joined."},

@@ -11,6 +11,7 @@
 export interface Screen {
   eventName: "$screen";
   screenName: (
+    | "Home"
     | "Welcome"
     | "Login"
     | "ForgotPassword"
@@ -30,7 +31,6 @@ export interface Screen {
     | "DeactivateAccount"
     | "Group"
     | "MyGroups"
-    | "MobileHome"
     | "MobileSidebar"
     | "MobileFavourites"
     | "MobilePeople"

@@ -54,6 +54,12 @@ data class Screen(
         Group,
 
         /**
+         * The Home tab on iOS | possibly the same on Android? | Home page on
+         * Web
+         */
+        Home,
+
+        /**
          * The screen that displays the login flow (when the user already has an
          * account).
          */
@@ -73,11 +79,6 @@ data class Screen(
          * The Favourites tab on mobile that lists your favourite people/rooms.
          */
         MobileFavourites,
-
-        /**
-         * The Home tab on iOS | possibly the same on Android?
-         */
-        MobileHome,
 
         /**
          * The screen shown to share a link to download the app.

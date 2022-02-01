@@ -41,6 +41,8 @@ extension AnalyticsEvent {
             case ForgotPassword
             /// Legacy: The screen that shows information about a specific group.
             case Group
+            /// The Home tab on iOS | possibly the same on Android? | Home page on Web
+            case Home
             /// The screen that displays the login flow (when the user already has an account).
             case Login
             /// The screen that displays the user's breadcrumbs.
@@ -49,8 +51,6 @@ extension AnalyticsEvent {
             case MobileDialpad
             /// The Favourites tab on mobile that lists your favourite people/rooms.
             case MobileFavourites
-            /// The Home tab on iOS | possibly the same on Android?
-            case MobileHome
             /// The screen shown to share a link to download the app.
             case MobileInviteFriends
             /// The People tab on mobile that lists all the DM rooms you have joined.
