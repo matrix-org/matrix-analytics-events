@@ -54,12 +54,6 @@ data class Screen(
         Group,
 
         /**
-         * The Home tab on iOS | possibly the same on Android? | The Home space
-         * on Web?
-         */
-        Home,
-
-        /**
          * The screen that displays the login flow (when the user already has an
          * account).
          */
@@ -79,6 +73,11 @@ data class Screen(
          * The Favourites tab on mobile that lists your favourite people/rooms.
          */
         MobileFavourites,
+
+        /**
+         * The Home tab on iOS | possibly the same on Android?
+         */
+        MobileHome,
 
         /**
          * The screen shown to share a link to download the app.
@@ -115,6 +114,26 @@ data class Screen(
          * The Rooms tab shown in the global search screen on Mobile.
          */
         MobileSearchRooms,
+
+        /**
+         * The global settings screen shown in the app.
+         */
+        MobileSettings,
+
+        /**
+         * The settings screen to change the default notification options.
+         */
+        MobileSettingsDefaultNotifications,
+
+        /**
+         * The settings screen to manage notification mentions and keywords.
+         */
+        MobileSettingsMentionsAndKeywords,
+
+        /**
+         * The global security settings screen.
+         */
+        MobileSettingsSecurity,
 
         /**
          * The sidebar shown on mobile with spaces, settings etc.
@@ -187,26 +206,6 @@ data class Screen(
         RoomUploads,
 
         /**
-         * The global settings screen shown in the app.
-         */
-        Settings,
-
-        /**
-         * The settings screen to change the default notification options.
-         */
-        SettingsDefaultNotifications,
-
-        /**
-         * The settings screen to manage notification mentions and keywords.
-         */
-        SettingsMentionsAndKeywords,
-
-        /**
-         * The global security settings screen.
-         */
-        SettingsSecurity,
-
-        /**
          * The screen shown to create a new direct room.
          */
         StartChat,
@@ -217,24 +216,90 @@ data class Screen(
         User,
 
         /**
-         * ?
+         * Element Web showing flow to trust this new device with cross-signing.
          */
         WebCompleteSecurity,
 
         /**
-         * ?
+         * Element Web showing flow to setup SSSS / cross-signing on this
+         * account.
          */
         WebE2ESetup,
 
         /**
-         * ?
+         * Element Web loading spinner.
          */
         WebLoading,
 
         /**
-         * ?
+         * Element Web device has been soft logged out by the server.
          */
         WebSoftLogout,
+
+        /**
+         * Legacy: Element Web User Settings Flair Tab.
+         */
+        WebUserSettingFlair,
+
+        /**
+         * Element Web User Settings Mjolnir (labs) Tab.
+         */
+        WebUserSettingMjolnir,
+
+        /**
+         * Element Web User Settings Appearance Tab.
+         */
+        WebUserSettingsAppearance,
+
+        /**
+         * Element Web User Settings General Tab.
+         */
+        WebUserSettingsGeneral,
+
+        /**
+         * Element Web User Settings Help & About Tab.
+         */
+        WebUserSettingsHelpAbout,
+
+        /**
+         * Element Web User Settings Ignored Users Tab.
+         */
+        WebUserSettingsIgnoredUsers,
+
+        /**
+         * Element Web User Settings Keyboard Tab.
+         */
+        WebUserSettingsKeyboard,
+
+        /**
+         * Element Web User Settings Labs Tab.
+         */
+        WebUserSettingsLabs,
+
+        /**
+         * Element Web User Settings Notifications Tab.
+         */
+        WebUserSettingsNotifications,
+
+        /**
+         * Element Web User Settings Preferences Tab.
+         */
+        WebUserSettingsPreferences,
+
+        /**
+         * Element Web User Settings Security & Privacy Tab.
+         */
+        WebUserSettingsSecurityPrivacy,
+
+        /**
+         * Element Web User Settings Sidebar Tab.
+         */
+        WebUserSettingsSidebar,
+
+        /**
+         * Element Web User Settings Voice & Video Tab.
+         */
+        WebUserSettingsVoiceVideo,
 
         /**
          * The splash screen.

@@ -13,7 +13,6 @@
         {"const": "ForgotPassword", "description": "The form for the forgot password use case"},
         {"const": "Register", "description": "The screen that displays the registration flow (when the user wants to create an account)"},
 
-        {"const": "Home", "description": "The Home tab on iOS | possibly the same on Android? | The Home space on Web?"},
         {"const": "Room", "description": "The screen that displays the messages and events received in a room."},
         {"const": "RoomDetails", "description": "The screen shown when tapping the name of a room from the Room screen."},
         {"const": "RoomMembers", "description": "The screen that displays the list of members that are part of a room."},
@@ -26,14 +25,11 @@
         {"const": "RoomFilter", "description": "The screen that lists all the user's rooms and let them filter the rooms."},
         {"const": "StartChat", "description": "The screen shown to create a new direct room."},
         {"const": "CreateRoom", "description": "The screen shown to create a new (non-direct) room."},
-        {"const": "Settings", "description": "The global settings screen shown in the app."},
-        {"const": "SettingsSecurity", "description": "The global security settings screen."},
-        {"const": "SettingsDefaultNotifications", "description": "The settings screen to change the default notification options."},
-        {"const": "SettingsMentionsAndKeywords", "description": "The settings screen to manage notification mentions and keywords."},
         {"const": "DeactivateAccount", "description": "The confirmation screen shown before deactivating an account."},
         {"const": "Group", "description": "Legacy: The screen that shows information about a specific group."},
         {"const": "MyGroups", "description": "Legacy: The screen that shows all groups/communities you have joined."},
-        
+
+        {"const": "MobileHome", "description": "The Home tab on iOS | possibly the same on Android?"},
         {"const": "MobileSidebar", "description": "The sidebar shown on mobile with spaces, settings etc."},
         {"const": "MobileFavourites", "description": "The Favourites tab on mobile that lists your favourite people/rooms."},
         {"const": "MobilePeople", "description": "The People tab on mobile that lists all the DM rooms you have joined."},
@@ -46,11 +42,28 @@
         {"const": "MobileSwitchDirectory", "description": "The screen shown to select which room directory you'd like to use."},
         {"const": "MobileInviteFriends", "description": "The screen shown to share a link to download the app."},
         {"const": "MobileBreadcrumbs", "description": "The screen that displays the user's breadcrumbs."},
+        {"const": "MobileSettings", "description": "The global settings screen shown in the app."},
+        {"const": "MobileSettingsSecurity", "description": "The global security settings screen."},
+        {"const": "MobileSettingsDefaultNotifications", "description": "The settings screen to change the default notification options."},
+        {"const": "MobileSettingsMentionsAndKeywords", "description": "The settings screen to manage notification mentions and keywords."},
         
-        {"const": "WebLoading", "description": "?"},
-        {"const": "WebCompleteSecurity", "description": "?"},
-        {"const": "WebE2ESetup", "description": "?"},
-        {"const": "WebSoftLogout", "description": "?"}
+        {"const": "WebLoading", "description": "Element Web loading spinner."},
+        {"const": "WebCompleteSecurity", "description": "Element Web showing flow to trust this new device with cross-signing."},
+        {"const": "WebE2ESetup", "description": "Element Web showing flow to setup SSSS / cross-signing on this account."},
+        {"const": "WebSoftLogout", "description": "Element Web device has been soft logged out by the server."},
+        {"const": "WebUserSettingsGeneral", "description": "Element Web User Settings General Tab."},
+        {"const": "WebUserSettingsAppearance", "description": "Element Web User Settings Appearance Tab."},
+        {"const": "WebUserSettingsNotifications", "description": "Element Web User Settings Notifications Tab."},
+        {"const": "WebUserSettingsPreferences", "description": "Element Web User Settings Preferences Tab."},
+        {"const": "WebUserSettingsKeyboard", "description": "Element Web User Settings Keyboard Tab."},
+        {"const": "WebUserSettingsSidebar", "description": "Element Web User Settings Sidebar Tab."},
+        {"const": "WebUserSettingsVoiceVideo", "description": "Element Web User Settings Voice & Video Tab."},
+        {"const": "WebUserSettingsSecurityPrivacy", "description": "Element Web User Settings Security & Privacy Tab."},
+        {"const": "WebUserSettingsLabs", "description": "Element Web User Settings Labs Tab."},
+        {"const": "WebUserSettingsIgnoredUsers", "description": "Element Web User Settings Ignored Users Tab."},
+        {"const": "WebUserSettingsHelpAbout", "description": "Element Web User Settings Help & About Tab."},
+        {"const": "WebUserSettingMjolnir", "description": "Element Web User Settings Mjolnir (labs) Tab."},
+        {"const": "WebUserSettingFlair", "description": "Legacy: Element Web User Settings Flair Tab."}
       ]
     },
     "durationMs": {
