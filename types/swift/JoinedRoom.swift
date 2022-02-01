@@ -26,26 +26,33 @@ extension AnalyticsEvent {
 
         /// Whether the room is a DM.
         public let isDM: Bool
-        /// The size of the room.
-        public let roomSize: RoomSize
+        /// Whether the room is a Space.
+        public let isSpace: Bool
+        /// The reason for the room change if known.
+        public let trigger: Trigger?
 
-        public init(isDM: Bool, roomSize: RoomSize) {
+        public init(isDM: Bool, isSpace: Bool, trigger: Trigger?) {
             self.isDM = isDM
-            self.roomSize = roomSize
+            self.isSpace = isSpace
+            self.trigger = trigger
         }
 
-        public enum RoomSize: String {
-            case ElevenToOneHundred
-            case MoreThanAThousand
-            case OneHundredAndOneToAThousand
-            case ThreeToTen
-            case Two
+        public enum Trigger: String {
+            /// Room joined via a push/desktop notification.
+            case Notification
+            /// Room joined via the public rooms directory.
+            case RoomDirectory
+            /// Room joined via the space hierarchy view.
+            case SpaceHierarchy
+            /// Room joined via a timeline pill or link in another room.
+            case Timeline
         }
 
         public var properties: [String: Any] {
             return [
                 "isDM": isDM,
-                "roomSize": roomSize.rawValue
+                "isSpace": isSpace,
+                "trigger": trigger?.rawValue as Any
             ]
         }
     }

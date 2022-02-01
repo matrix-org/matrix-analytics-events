@@ -215,7 +215,31 @@
                                         
                                             <li>
                                                 
-                                                    SendMessageButton    
+                                                    <b>SendMessageButton:</b> User tapped the send message button.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SideMenuSelectedSpace:</b> User tapped the already selected space from the space list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SideMenuSwitchSpace:</b> User tapped an unselected space from the space list -&gt; space switching should occur.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserNotification:</b> User tapped an application notification
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MatrixToLink:</b> User tapped a matrix to link.
                                                     
                                             </li>
                                         
@@ -449,39 +473,43 @@
                         </tr>
                     
                         <tr>
-                            <td>roomSize</td>                        
-                            <td>The size of the room.</td>
+                            <td>isSpace</td>                        
+                            <td>Whether the room is a Space.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>trigger</td>                        
+                            <td>The reason for the room change if known.</td>
                             <td>
                                 
                                     <ul>
                                         
                                             <li>
                                                 
-                                                    Two    
+                                                    <b>RoomDirectory:</b> Room joined via the public rooms directory.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    ThreeToTen    
+                                                    <b>SpaceHierarchy:</b> Room joined via the space hierarchy view.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    ElevenToOneHundred    
+                                                    <b>Timeline:</b> Room joined via a timeline pill or link in another room.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    OneHundredAndOneToAThousand    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    MoreThanAThousand    
+                                                    <b>Notification:</b> Room joined via a push/desktop notification.
                                                     
                                             </li>
                                         
@@ -871,6 +899,24 @@
                                                     
                                             </li>
                                         
+                                            <li>
+                                                
+                                                    <b>SpaceMenu:</b> The bottom sheet that list all space options
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceExploreRooms:</b> Screen that displays the list of rooms and spaces of a space
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceMembers:</b> Screen that displays the list of memebrs of a space
+                                                    
+                                            </li>
+                                        
                                     </ul>                                    
                                                             
                             </td>                            
@@ -946,6 +992,218 @@
                         <tr>
                             <td>softLogout</td>                        
                             <td>Whether a soft logout or hard logout was triggered.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>UserPropertiesChanged</h2>
+            <p>Triggered when the user changed screen</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>ViewRoom</h2>
+            <p>Triggered when the user changes rooms.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>trigger</td>                        
+                            <td>The reason for the room change if known.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Created:</b> Room accessed due to being just created.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomList:</b> Room accessed via the room list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDirectory:</b> Room accessed via the public rooms directory.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceHierarchy:</b> Room accessed via the space hierarchy view.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Timeline:</b> Room accessed via a timeline pill or link in another room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Notification:</b> Room accessed via a push/desktop notification.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Tombstone:</b> Room accessed via a tombstone at the bottom of a predecessor room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Predecessor:</b> Room accessed via the predecessor link at the top of the upgraded room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Widget:</b> Room switched due to widget interaction.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MessageSearch:</b> Room switched due to user interacting with a message search result.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MessageUser:</b> Room switched due to user selecting a user to go to a DM with.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>VerificationRequest:</b> Room switched due to user interacting with incoming verification request.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebNotificationPanel:</b> Room accessed via Element Web/Desktop&#39;s notification panel.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSlashCommand:</b> Room accessed via a slash command in Element Web/Desktop like /goto.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebKeyboardShortcut:</b> Room accessed via an Element Web/Desktop keyboard shortcut like go to next room with unread messages.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebHorizontalBreadcrumbs:</b> Room accessed via the Element Web/Desktop horizontal breadcrumbs at the top of the room list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebVerticalBreadcrumbs:</b> Room accessed via the Element Web/Desktop vertical breadcrumb hover menu.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebAcceptCall:</b> Room switched due to accepting a call in a different room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebDialPad:</b> Room switched due to making a call via the dial pad in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebForwardShortcut:</b> Room accessed via the shortcut in Element Web/Desktop&#39;s forward modal.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebUnifiedSearch:</b> Room accessed via Element Web/Desktop&#39;s Unified Search modal.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebPredecessorSettings:</b> Room accessed via the predecessor link in Settings &gt; Advanced in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpaceContextSwitch:</b> Room switched due to the user changing space in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListNotificationBadge:</b> Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpacePanelNotificationBadge:</b> Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebFloatingCallWindow:</b> Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>viaKeyboard</td>                        
+                            <td>Whether the interaction was performed via the keyboard input.</td>
                             <td>
                                                                 
                                     boolean

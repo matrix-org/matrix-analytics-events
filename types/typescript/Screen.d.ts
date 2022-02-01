@@ -51,6 +51,9 @@ export interface Screen {
     | "WebCompleteSecurity"
     | "WebE2ESetup"
     | "WebSoftLogout"
+    | "SpaceMenu"
+    | "SpaceExploreRooms"
+    | "SpaceMembers"
   ) &
     string;
   /**

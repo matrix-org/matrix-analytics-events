@@ -35,7 +35,16 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
+            /// User tapped a matrix to link.
+            case MatrixToLink
+            /// User tapped the send message button.
             case SendMessageButton
+            /// User tapped the already selected space from the space list.
+            case SideMenuSelectedSpace
+            /// User tapped an unselected space from the space list -> space switching should occur.
+            case SideMenuSwitchSpace
+            /// User tapped an application notification
+            case UserNotification
         }
 
         public var properties: [String: Any] {

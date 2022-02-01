@@ -36,7 +36,31 @@ data class Click(
 ) : VectorAnalyticsEvent {
 
     enum class Name {
+        /**
+         * User tapped a matrix to link.
+         */
+        MatrixToLink,
+
+        /**
+         * User tapped the send message button.
+         */
         SendMessageButton,
+
+        /**
+         * User tapped the already selected space from the space list.
+         */
+        SideMenuSelectedSpace,
+
+        /**
+         * User tapped an unselected space from the space list -> space
+         * switching should occur.
+         */
+        SideMenuSwitchSpace,
+
+        /**
+         * User tapped an application notification
+         */
+        UserNotification,
     }
 
     override fun getName() = "Click"

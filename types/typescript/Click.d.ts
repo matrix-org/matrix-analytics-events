@@ -13,7 +13,8 @@ export interface Click {
   /**
    * The unique name of this element.
    */
-  name: "SendMessageButton";
+  name: ("SendMessageButton" | "SideMenuSelectedSpace" | "SideMenuSwitchSpace" | "UserNotification" | "MatrixToLink") &
+    string;
   /**
    * The index of the element, if its in a list of elements.
    */

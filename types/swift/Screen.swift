@@ -99,6 +99,12 @@ extension AnalyticsEvent {
             case SettingsMentionsAndKeywords
             /// The global security settings screen.
             case SettingsSecurity
+            /// Screen that displays the list of rooms and spaces of a space
+            case SpaceExploreRooms
+            /// Screen that displays the list of memebrs of a space
+            case SpaceMembers
+            /// The bottom sheet that list all space options
+            case SpaceMenu
             /// The screen shown to create a new direct room.
             case StartChat
             /// A screen that shows information about a room member.

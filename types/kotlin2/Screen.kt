@@ -207,6 +207,21 @@ data class Screen(
         SettingsSecurity,
 
         /**
+         * Screen that displays the list of rooms and spaces of a space
+         */
+        SpaceExploreRooms,
+
+        /**
+         * Screen that displays the list of memebrs of a space
+         */
+        SpaceMembers,
+
+        /**
+         * The bottom sheet that list all space options
+         */
+        SpaceMenu,
+
+        /**
          * The screen shown to create a new direct room.
          */
         StartChat,

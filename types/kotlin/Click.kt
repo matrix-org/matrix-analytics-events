@@ -14,16 +14,9 @@ data class Click (
     /**
      * The unique name of this element.
      */
-    val name: Name
+    val name: String
 )
 
 enum class EventName {
     Click
-}
-
-/**
- * The unique name of this element.
- */
-enum class Name {
-    SendMessageButton
 }
