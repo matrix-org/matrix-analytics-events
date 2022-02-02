@@ -19,9 +19,9 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// The user properties to apply when identifying
+/// The user properties to apply when identifying. These properties should all be device independent.
 extension AnalyticsEvent {
-    public struct Identity: AnalyticsEventProtocol {
+    public struct Identify: AnalyticsEventProtocol {
         public let eventName = "$identify"
 
         /// The selected messaging use case during the onboarding flow.
