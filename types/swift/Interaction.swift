@@ -72,10 +72,6 @@ extension AnalyticsEvent {
             case WebRoomListRoomTileNotificationsMenu
             /// User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
             case WebRoomSettingsLeaveButton
-            /// User invited someone to room by using the /invite slash command in Element Web/Desktop.
-            case WebSlashCommandInviteCommand
-            /// User ran the /leave slash command in Element Web/Desktop.
-            case WebSlashCommandPartCommand
         }
 
         public enum InteractionType: String {

@@ -24,7 +24,6 @@ export interface Interaction {
     | "WebRoomListRoomTileContextMenuLeaveItem"
     | "WebRoomHeaderContextMenuLeaveItem"
     | "WebRoomSettingsLeaveButton"
-    | "WebSlashCommandPartCommand"
     | "WebRoomListRoomTileContextMenuSettingsItem"
     | "WebRoomHeaderContextMenuSettingsItem"
     | "WebRightPanelRoomInfoSettingsButton"
@@ -32,7 +31,6 @@ export interface Interaction {
     | "WebRoomHeaderContextMenuInviteItem"
     | "WebRightPanelMemberListInviteButton"
     | "WebRightPanelRoomUserInfoInviteButton"
-    | "WebSlashCommandInviteCommand"
   ) &
     string;
   /**

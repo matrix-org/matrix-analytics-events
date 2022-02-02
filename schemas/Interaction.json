@@ -19,15 +19,13 @@
         {"const": "WebRoomListRoomTileContextMenuLeaveItem", "description":  "User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuLeaveItem", "description":  "User interacted with leave action in the context menu on the header of a room in Element Web/Desktop." },
         {"const": "WebRoomSettingsLeaveButton", "description":  "User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop." },
-        {"const": "WebSlashCommandPartCommand", "description":  "User ran the /leave slash command in Element Web/Desktop." },
         {"const": "WebRoomListRoomTileContextMenuSettingsItem", "description":  "User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuSettingsItem", "description":  "User accessed room settings using the context menu on the header of a room in Element Web/Desktop." },
         {"const": "WebRightPanelRoomInfoSettingsButton", "description":  "User accessed room settings using the 'Settings' button in the right panel room summary card of Element Web/Desktop." },
         {"const": "WebRoomListRoomTileContextMenuInviteItem", "description":  "User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuInviteItem", "description":  "User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop." },
         {"const": "WebRightPanelMemberListInviteButton", "description":  "User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop." },
-        {"const": "WebRightPanelRoomUserInfoInviteButton", "description":  "User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop." },
-        {"const": "WebSlashCommandInviteCommand", "description":  "User invited someone to room by using the /invite slash command in Element Web/Desktop." }
+        {"const": "WebRightPanelRoomUserInfoInviteButton", "description":  "User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop." }
       ]
     },
     "index": {

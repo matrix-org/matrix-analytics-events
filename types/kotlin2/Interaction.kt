@@ -141,17 +141,6 @@ data class Interaction(
          * settings dialog in Element Web/Desktop.
          */
         WebRoomSettingsLeaveButton,
-
-        /**
-         * User invited someone to room by using the /invite slash command in
-         * Element Web/Desktop.
-         */
-        WebSlashCommandInviteCommand,
-
-        /**
-         * User ran the /leave slash command in Element Web/Desktop.
-         */
-        WebSlashCommandPartCommand,
     }
 
     enum class InteractionType {
