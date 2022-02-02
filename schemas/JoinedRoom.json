@@ -35,6 +35,6 @@
       "type": "boolean"
     }
   },
-  "required": ["isDM", "eventName", "isSpace"],
+  "required": ["roomSize", "isDM", "eventName", "isSpace"],
   "additionalProperties": false
 }

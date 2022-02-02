@@ -36,7 +36,7 @@ data class JoinedRoom(
         /**
          * The size of the room.
          */
-        val roomSize: RoomSize? = null,
+        val roomSize: RoomSize,
         /**
          * The reason for the room change if known.
          */
@@ -79,7 +79,7 @@ data class JoinedRoom(
         return mutableMapOf<String, Any>().apply {
             put("isDM", isDM)
             put("isSpace", isSpace)
-            roomSize?.let { put("roomSize", it.name) }
+            put("roomSize", roomSize.name)
             trigger?.let { put("trigger", it.name) }
         }.takeIf { it.isNotEmpty() }
     }

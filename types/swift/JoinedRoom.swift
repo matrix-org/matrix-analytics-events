@@ -29,11 +29,11 @@ extension AnalyticsEvent {
         /// Whether the room is a Space.
         public let isSpace: Bool
         /// The size of the room.
-        public let roomSize: RoomSize?
+        public let roomSize: RoomSize
         /// The reason for the room change if known.
         public let trigger: Trigger?
 
-        public init(isDM: Bool, isSpace: Bool, roomSize: RoomSize?, trigger: Trigger?) {
+        public init(isDM: Bool, isSpace: Bool, roomSize: RoomSize, trigger: Trigger?) {
             self.isDM = isDM
             self.isSpace = isSpace
             self.roomSize = roomSize
@@ -63,7 +63,7 @@ extension AnalyticsEvent {
             return [
                 "isDM": isDM,
                 "isSpace": isSpace,
-                "roomSize": roomSize?.rawValue as Any,
+                "roomSize": roomSize.rawValue,
                 "trigger": trigger?.rawValue as Any
             ]
         }
