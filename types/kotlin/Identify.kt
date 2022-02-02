@@ -1,9 +1,10 @@
 package quicktype
 
 /**
- * The user properties to apply when identifying
+ * The user properties to apply when identifying. These properties should all be device
+ * independent.
  */
-data class Identity (
+data class Identify (
     val eventName: EventName? = null,
 
     /**
@@ -13,5 +14,5 @@ data class Identity (
 )
 
 enum class EventName {
-    Identity
+    Identify
 }

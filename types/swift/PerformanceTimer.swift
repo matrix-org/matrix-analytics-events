@@ -53,9 +53,9 @@ extension AnalyticsEvent {
             case StartupInitialSync
             /// How long the app launch screen is displayed for.
             case StartupLaunchScreen
-            /// The time to preload data in the MXStore on iOS.
+            /// The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
             case StartupStorePreload
-            /// The time to load all data from the store (including StartupStorePreload time).
+            /// The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
             case StartupStoreReady
         }
 

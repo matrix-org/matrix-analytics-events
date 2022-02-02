@@ -22,9 +22,10 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * The user properties to apply when identifying
+ * The user properties to apply when identifying. These properties should all be
+ * device independent.
  */
-data class Identity(
+data class Identify(
         /**
          * The selected messaging use case during the onboarding flow.
          */
@@ -53,7 +54,7 @@ data class Identity(
         WorkMessaging,
     }
 
-    override fun getName() = "Identity"
+    override fun getName() = "$identify"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {

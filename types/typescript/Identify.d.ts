@@ -6,10 +6,10 @@
  */
 
 /**
- * The user properties to apply when identifying
+ * The user properties to apply when identifying. These properties should all be device independent.
  */
-export interface Identity {
-  eventName?: "Identity";
+export interface Identify {
+  eventName?: "$identify";
   /**
    * The selected messaging use case during the onboarding flow.
    */
