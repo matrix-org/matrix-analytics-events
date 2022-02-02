@@ -184,6 +184,53 @@
         </section>
     
         <section class="event">            
+            <h2>Composer</h2>
+            <p>Triggered when the user sends a message via the composer.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>inThread</td>                        
+                            <td>Whether the user was using the composer inside of a thread.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isEditing</td>                        
+                            <td>Whether the user&#39;s composer interaction was editing a previously sent event.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isReply</td>                        
+                            <td>Whether the user&#39;s composer interaction was a reply to a previously sent event.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>CreatedRoom</h2>
             <p>Triggered when the user creates a room.</p>
             <table class="event-table">
@@ -439,12 +486,6 @@
                             <td>
                                 
                                     <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>ComposerSendMessage:</b> User sent a message via the send message composer.
-                                                    
-                                            </li>
                                         
                                             <li>
                                                 

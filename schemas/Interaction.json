@@ -9,8 +9,6 @@
       "description": "The unique name of this element.",
       "type": "string",
       "oneOf": [
-        {"const": "ComposerSendMessage", "description": "User sent a message via the send message composer." },
-
         {"const": "WebRoomListRoomTileContextMenuFavouriteAction", "description":  "User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuFavouriteAction", "description":  "User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop." },
         {"const": "WebRoomListRoomTileNotificationsMenu", "description":  "User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop." },

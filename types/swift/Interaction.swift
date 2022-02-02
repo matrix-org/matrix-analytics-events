@@ -38,8 +38,6 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
-            /// User sent a message via the send message composer.
-            case ComposerSendMessage
             /// User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
             case WebRightPanelMemberListInviteAction
             /// User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop.

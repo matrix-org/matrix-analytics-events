@@ -41,11 +41,6 @@ data class Interaction(
 
     enum class Name {
         /**
-         * User sent a message via the send message composer.
-         */
-        ComposerSendMessage,
-
-        /**
          * User accessed the room invite flow using the button at the top of the
          * room member list in the right panel of Element Web/Desktop.
          */

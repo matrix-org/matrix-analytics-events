@@ -14,7 +14,6 @@ export interface Interaction {
    * The unique name of this element.
    */
   name: (
-    | "ComposerSendMessage"
     | "WebRoomListRoomTileContextMenuFavouriteAction"
     | "WebRoomHeaderContextMenuFavouriteAction"
     | "WebRoomListRoomTileNotificationsMenu"
