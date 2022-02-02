@@ -44,91 +44,91 @@ data class Interaction(
          * User accessed the room invite flow using the button at the top of the
          * room member list in the right panel of Element Web/Desktop.
          */
-        WebRightPanelMemberListInviteAction,
+        WebRightPanelMemberListInviteButton,
 
         /**
          * User accessed room member list using the 'People' button in the right
          * panel room summary card of Element Web/Desktop.
          */
-        WebRightPanelRoomInfoPeopleAction,
+        WebRightPanelRoomInfoPeopleButton,
 
         /**
          * User accessed room settings using the 'Settings' button in the right
          * panel room summary card of Element Web/Desktop.
          */
-        WebRightPanelRoomInfoSettingsAction,
+        WebRightPanelRoomInfoSettingsButton,
 
         /**
          * User accessed room member list using the back button in the right
          * panel user info card of Element Web/Desktop.
          */
-        WebRightPanelRoomUserInfoBackAction,
+        WebRightPanelRoomUserInfoBackButton,
 
         /**
          * User invited someone to room by clicking invite on the right panel
          * user info card in Element Web/Desktop.
          */
-        WebRightPanelRoomUserInfoInviteAction,
+        WebRightPanelRoomUserInfoInviteButton,
 
         /**
          * User adjusted their favourites using the context menu on the header
          * of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuFavouriteAction,
+        WebRoomHeaderContextMenuFavouriteToggle,
 
         /**
          * User accessed the room invite flow using the context menu on the
          * header of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuInviteAction,
+        WebRoomHeaderContextMenuInviteItem,
 
         /**
          * User interacted with leave action in the context menu on the header
          * of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuLeaveAction,
+        WebRoomHeaderContextMenuLeaveItem,
 
         /**
          * User accessed their room notification settings via the context menu
          * on the header of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuNotificationsAction,
+        WebRoomHeaderContextMenuNotificationsItem,
 
         /**
          * User accessed room member list using the context menu on the header
          * of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuPeopleAction,
+        WebRoomHeaderContextMenuPeopleItem,
 
         /**
          * User accessed room settings using the context menu on the header of a
          * room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuSettingsAction,
+        WebRoomHeaderContextMenuSettingsItem,
 
         /**
          * User adjusted their favourites using the context menu on a room tile
          * in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuFavouriteAction,
+        WebRoomListRoomTileContextMenuFavouriteToggle,
 
         /**
          * User accessed the room invite flow using the context menu on a room
          * tile in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuInviteAction,
+        WebRoomListRoomTileContextMenuInviteItem,
 
         /**
          * User interacted with leave action in the context menu on a room tile
          * in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuLeaveAction,
+        WebRoomListRoomTileContextMenuLeaveItem,
 
         /**
          * User accessed room settings using the context menu on a room tile in
          * the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuSettingsAction,
+        WebRoomListRoomTileContextMenuSettingsItem,
 
         /**
          * User accessed their room notification settings via the context menu
@@ -140,7 +140,7 @@ data class Interaction(
          * User interacted with leave action in the general tab of the room
          * settings dialog in Element Web/Desktop.
          */
-        WebRoomSettingsLeaveAction,
+        WebRoomSettingsLeaveButton,
 
         /**
          * User invited someone to room by using the /invite slash command in

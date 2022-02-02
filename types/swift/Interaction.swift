@@ -39,39 +39,39 @@ extension AnalyticsEvent {
 
         public enum Name: String {
             /// User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
-            case WebRightPanelMemberListInviteAction
+            case WebRightPanelMemberListInviteButton
             /// User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop.
-            case WebRightPanelRoomInfoPeopleAction
+            case WebRightPanelRoomInfoPeopleButton
             /// User accessed room settings using the 'Settings' button in the right panel room summary card of Element Web/Desktop.
-            case WebRightPanelRoomInfoSettingsAction
+            case WebRightPanelRoomInfoSettingsButton
             /// User accessed room member list using the back button in the right panel user info card of Element Web/Desktop.
-            case WebRightPanelRoomUserInfoBackAction
+            case WebRightPanelRoomUserInfoBackButton
             /// User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop.
-            case WebRightPanelRoomUserInfoInviteAction
+            case WebRightPanelRoomUserInfoInviteButton
             /// User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuFavouriteAction
+            case WebRoomHeaderContextMenuFavouriteToggle
             /// User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuInviteAction
+            case WebRoomHeaderContextMenuInviteItem
             /// User interacted with leave action in the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuLeaveAction
+            case WebRoomHeaderContextMenuLeaveItem
             /// User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuNotificationsAction
+            case WebRoomHeaderContextMenuNotificationsItem
             /// User accessed room member list using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuPeopleAction
+            case WebRoomHeaderContextMenuPeopleItem
             /// User accessed room settings using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuSettingsAction
+            case WebRoomHeaderContextMenuSettingsItem
             /// User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuFavouriteAction
+            case WebRoomListRoomTileContextMenuFavouriteToggle
             /// User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuInviteAction
+            case WebRoomListRoomTileContextMenuInviteItem
             /// User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuLeaveAction
+            case WebRoomListRoomTileContextMenuLeaveItem
             /// User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuSettingsAction
+            case WebRoomListRoomTileContextMenuSettingsItem
             /// User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop.
             case WebRoomListRoomTileNotificationsMenu
             /// User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
-            case WebRoomSettingsLeaveAction
+            case WebRoomSettingsLeaveButton
             /// User invited someone to room by using the /invite slash command in Element Web/Desktop.
             case WebSlashCommandInviteCommand
             /// User ran the /leave slash command in Element Web/Desktop.
