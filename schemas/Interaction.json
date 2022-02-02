@@ -8,8 +8,28 @@
     "name": {
       "description": "The unique name of this element.",
       "type": "string",
-      "enum": [
-        "SendMessageButton"
+      "oneOf": [
+        {"const": "ComposerSendMessage", "description": "User sent a message via the send message composer." },
+
+        {"const": "WebRoomListRoomTileContextMenuFavouriteAction", "description":  "User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuFavouriteAction", "description":  "User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileNotificationsMenu", "description":  "User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuNotificationsAction", "description":  "User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuPeopleAction", "description":  "User accessed room member list using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRightPanelRoomInfoPeopleAction", "description":  "User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop." },
+        {"const": "WebRightPanelRoomUserInfoBackAction", "description":  "User accessed room member list using the back button in the right panel user info card of Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileContextMenuLeaveAction", "description":  "User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuLeaveAction", "description":  "User interacted with leave action in the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRoomSettingsLeaveAction", "description":  "User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop." },
+        {"const": "WebSlashCommandPartCommand", "description":  "User ran the /leave slash command in Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileContextMenuSettingsAction", "description":  "User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuSettingsAction", "description":  "User accessed room settings using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRightPanelRoomInfoSettingsAction", "description":  "User accessed room settings using the 'Settings' button in the right panel room summary card of Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileContextMenuInviteAction", "description":  "User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuInviteAction", "description":  "User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRightPanelMemberListInviteAction", "description":  "User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop." },
+        {"const": "WebRightPanelRoomUserInfoInviteAction", "description":  "User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop." },
+        {"const": "WebSlashCommandInviteCommand", "description":  "User invited someone to room by using the /invite slash command in Element Web/Desktop." }
       ]
     },
     "index": {

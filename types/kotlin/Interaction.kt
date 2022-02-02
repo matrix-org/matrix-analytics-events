@@ -19,7 +19,7 @@ data class Interaction (
     /**
      * The unique name of this element.
      */
-    val name: Name
+    val name: String
 )
 
 enum class EventName {
@@ -33,11 +33,4 @@ enum class InteractionType {
     Keyboard,
     Pointer,
     Touch
-}
-
-/**
- * The unique name of this element.
- */
-enum class Name {
-    SendMessageButton
 }

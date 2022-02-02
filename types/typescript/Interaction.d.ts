@@ -13,7 +13,29 @@ export interface Interaction {
   /**
    * The unique name of this element.
    */
-  name: "SendMessageButton";
+  name: (
+    | "ComposerSendMessage"
+    | "WebRoomListRoomTileContextMenuFavouriteAction"
+    | "WebRoomHeaderContextMenuFavouriteAction"
+    | "WebRoomListRoomTileNotificationsMenu"
+    | "WebRoomHeaderContextMenuNotificationsAction"
+    | "WebRoomHeaderContextMenuPeopleAction"
+    | "WebRightPanelRoomInfoPeopleAction"
+    | "WebRightPanelRoomUserInfoBackAction"
+    | "WebRoomListRoomTileContextMenuLeaveAction"
+    | "WebRoomHeaderContextMenuLeaveAction"
+    | "WebRoomSettingsLeaveAction"
+    | "WebSlashCommandPartCommand"
+    | "WebRoomListRoomTileContextMenuSettingsAction"
+    | "WebRoomHeaderContextMenuSettingsAction"
+    | "WebRightPanelRoomInfoSettingsAction"
+    | "WebRoomListRoomTileContextMenuInviteAction"
+    | "WebRoomHeaderContextMenuInviteAction"
+    | "WebRightPanelMemberListInviteAction"
+    | "WebRightPanelRoomUserInfoInviteAction"
+    | "WebSlashCommandInviteCommand"
+  ) &
+    string;
   /**
    * The index of the element, if its in a list of elements.
    */

@@ -40,7 +40,123 @@ data class Interaction(
 ) : VectorAnalyticsEvent {
 
     enum class Name {
-        SendMessageButton,
+        /**
+         * User sent a message via the send message composer.
+         */
+        ComposerSendMessage,
+
+        /**
+         * User accessed the room invite flow using the button at the top of the
+         * room member list in the right panel of Element Web/Desktop.
+         */
+        WebRightPanelMemberListInviteAction,
+
+        /**
+         * User accessed room member list using the 'People' button in the right
+         * panel room summary card of Element Web/Desktop.
+         */
+        WebRightPanelRoomInfoPeopleAction,
+
+        /**
+         * User accessed room settings using the 'Settings' button in the right
+         * panel room summary card of Element Web/Desktop.
+         */
+        WebRightPanelRoomInfoSettingsAction,
+
+        /**
+         * User accessed room member list using the back button in the right
+         * panel user info card of Element Web/Desktop.
+         */
+        WebRightPanelRoomUserInfoBackAction,
+
+        /**
+         * User invited someone to room by clicking invite on the right panel
+         * user info card in Element Web/Desktop.
+         */
+        WebRightPanelRoomUserInfoInviteAction,
+
+        /**
+         * User adjusted their favourites using the context menu on the header
+         * of a room in Element Web/Desktop.
+         */
+        WebRoomHeaderContextMenuFavouriteAction,
+
+        /**
+         * User accessed the room invite flow using the context menu on the
+         * header of a room in Element Web/Desktop.
+         */
+        WebRoomHeaderContextMenuInviteAction,
+
+        /**
+         * User interacted with leave action in the context menu on the header
+         * of a room in Element Web/Desktop.
+         */
+        WebRoomHeaderContextMenuLeaveAction,
+
+        /**
+         * User accessed their room notification settings via the context menu
+         * on the header of a room in Element Web/Desktop.
+         */
+        WebRoomHeaderContextMenuNotificationsAction,
+
+        /**
+         * User accessed room member list using the context menu on the header
+         * of a room in Element Web/Desktop.
+         */
+        WebRoomHeaderContextMenuPeopleAction,
+
+        /**
+         * User accessed room settings using the context menu on the header of a
+         * room in Element Web/Desktop.
+         */
+        WebRoomHeaderContextMenuSettingsAction,
+
+        /**
+         * User adjusted their favourites using the context menu on a room tile
+         * in the room list in Element Web/Desktop.
+         */
+        WebRoomListRoomTileContextMenuFavouriteAction,
+
+        /**
+         * User accessed the room invite flow using the context menu on a room
+         * tile in the room list in Element Web/Desktop.
+         */
+        WebRoomListRoomTileContextMenuInviteAction,
+
+        /**
+         * User interacted with leave action in the context menu on a room tile
+         * in the room list in Element Web/Desktop.
+         */
+        WebRoomListRoomTileContextMenuLeaveAction,
+
+        /**
+         * User accessed room settings using the context menu on a room tile in
+         * the room list in Element Web/Desktop.
+         */
+        WebRoomListRoomTileContextMenuSettingsAction,
+
+        /**
+         * User accessed their room notification settings via the context menu
+         * on a room tile in the room list in Element Web/Desktop.
+         */
+        WebRoomListRoomTileNotificationsMenu,
+
+        /**
+         * User interacted with leave action in the general tab of the room
+         * settings dialog in Element Web/Desktop.
+         */
+        WebRoomSettingsLeaveAction,
+
+        /**
+         * User invited someone to room by using the /invite slash command in
+         * Element Web/Desktop.
+         */
+        WebSlashCommandInviteCommand,
+
+        /**
+         * User ran the /leave slash command in Element Web/Desktop.
+         */
+        WebSlashCommandPartCommand,
     }
 
     enum class InteractionType {
