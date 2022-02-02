@@ -6,10 +6,10 @@
  */
 
 /**
- * Triggered when the user clicks/taps on a UI element.
+ * Triggered when the user clicks/taps/activates a UI element.
  */
-export interface Click {
-  eventName: "Click";
+export interface Interaction {
+  eventName: "Interaction";
   /**
    * The unique name of this element.
    */
@@ -18,4 +18,8 @@ export interface Click {
    * The index of the element, if its in a list of elements.
    */
   index?: number;
+  /**
+   * The manner with which the user activated the UI element.
+   */
+  interactionType?: "Pointer" | "Keyboard" | "Touch";
 }

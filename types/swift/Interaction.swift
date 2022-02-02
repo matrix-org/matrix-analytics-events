@@ -19,18 +19,21 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user clicks/taps on a UI element.
+/// Triggered when the user clicks/taps/activates a UI element.
 extension AnalyticsEvent {
-    public struct Click: AnalyticsEventProtocol {
-        public let eventName = "Click"
+    public struct Interaction: AnalyticsEventProtocol {
+        public let eventName = "Interaction"
 
         /// The index of the element, if its in a list of elements.
         public let index: Int?
+        /// The manner with which the user activated the UI element.
+        public let interactionType: InteractionType?
         /// The unique name of this element.
         public let name: Name
 
-        public init(index: Int?, name: Name) {
+        public init(index: Int?, interactionType: InteractionType?, name: Name) {
             self.index = index
+            self.interactionType = interactionType
             self.name = name
         }
 
@@ -38,9 +41,16 @@ extension AnalyticsEvent {
             case SendMessageButton
         }
 
+        public enum InteractionType: String {
+            case Keyboard
+            case Pointer
+            case Touch
+        }
+
         public var properties: [String: Any] {
             return [
                 "index": index as Any,
+                "interactionType": interactionType?.rawValue as Any,
                 "name": name.rawValue
             ]
         }

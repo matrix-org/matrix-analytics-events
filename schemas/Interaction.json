@@ -1,9 +1,9 @@
 {
   "type": "object",
-  "description": "Triggered when the user clicks/taps on a UI element.",
+  "description": "Triggered when the user clicks/taps/activates a UI element.",
   "properties": {
     "eventName": {
-      "enum": ["Click"]
+      "enum": ["Interaction"]
     },
     "name": {
       "description": "The unique name of this element.",
@@ -15,6 +15,15 @@
     "index": {
       "description": "The index of the element, if its in a list of elements.",
       "type": "integer"
+    },
+    "interactionType": {
+      "description": "The manner with which the user activated the UI element.",
+      "type": "string",
+      "enum": [
+        "Pointer",
+        "Keyboard",
+        "Touch"
+      ]
     }
   },
   "required": ["name", "eventName"],

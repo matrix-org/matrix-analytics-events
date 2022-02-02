@@ -22,13 +22,17 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user clicks/taps on a UI element.
+ * Triggered when the user clicks/taps/activates a UI element.
  */
-data class Click(
+data class Interaction(
         /**
          * The index of the element, if its in a list of elements.
          */
         val index: Int? = null,
+        /**
+         * The manner with which the user activated the UI element.
+         */
+        val interactionType: InteractionType? = null,
         /**
          * The unique name of this element.
          */
@@ -39,11 +43,18 @@ data class Click(
         SendMessageButton,
     }
 
-    override fun getName() = "Click"
+    enum class InteractionType {
+        Keyboard,
+        Pointer,
+        Touch,
+    }
+
+    override fun getName() = "Interaction"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             index?.let { put("index", it) }
+            interactionType?.let { put("interactionType", it.name) }
             put("name", name.name)
         }.takeIf { it.isNotEmpty() }
     }

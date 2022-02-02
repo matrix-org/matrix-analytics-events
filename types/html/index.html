@@ -184,51 +184,6 @@
         </section>
     
         <section class="event">            
-            <h2>Click</h2>
-            <p>Triggered when the user clicks/taps on a UI element.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>index</td>                        
-                            <td>The index of the element, if its in a list of elements.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td>The unique name of this element.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    SendMessageButton    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
             <h2>CreatedRoom</h2>
             <p>Triggered when the user creates a room.</p>
             <table class="event-table">
@@ -413,6 +368,81 @@
                                             <li>
                                                 
                                                     <b>Skip:</b> The footer option to skip the question.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>Interaction</h2>
+            <p>Triggered when the user clicks/taps/activates a UI element.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>index</td>                        
+                            <td>The index of the element, if its in a list of elements.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>interactionType</td>                        
+                            <td>The manner with which the user activated the UI element.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Pointer    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Keyboard    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Touch    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The unique name of this element.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    SendMessageButton    
                                                     
                                             </li>
                                         
