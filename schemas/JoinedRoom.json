@@ -15,6 +15,17 @@
        {"const": "Notification", "description": "Room joined via a push/desktop notification."}
      ]
     },
+    "roomSize": {
+       "description": "The size of the room.",
+       "type": "string",
+       "enum": [
+         "Two",
+         "ThreeToTen",
+         "ElevenToOneHundred",
+         "OneHundredAndOneToAThousand",
+         "MoreThanAThousand"
+       ]
+     },
     "isDM": {
       "description": "Whether the room is a DM.",
       "type": "boolean"

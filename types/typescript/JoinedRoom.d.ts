@@ -15,6 +15,10 @@ export interface JoinedRoom {
    */
   trigger?: ("RoomDirectory" | "SpaceHierarchy" | "Timeline" | "Notification") & string;
   /**
+   * The size of the room.
+   */
+  roomSize?: "Two" | "ThreeToTen" | "ElevenToOneHundred" | "OneHundredAndOneToAThousand" | "MoreThanAThousand";
+  /**
    * Whether the room is a DM.
    */
   isDM: boolean;

@@ -34,6 +34,10 @@ data class JoinedRoom(
          */
         val isSpace: Boolean,
         /**
+         * The size of the room.
+         */
+        val roomSize: RoomSize? = null,
+        /**
          * The reason for the room change if known.
          */
         val trigger: Trigger? = null,
@@ -61,12 +65,21 @@ data class JoinedRoom(
         Timeline,
     }
 
+    enum class RoomSize {
+        ElevenToOneHundred,
+        MoreThanAThousand,
+        OneHundredAndOneToAThousand,
+        ThreeToTen,
+        Two,
+    }
+
     override fun getName() = "JoinedRoom"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             put("isDM", isDM)
             put("isSpace", isSpace)
+            roomSize?.let { put("roomSize", it.name) }
             trigger?.let { put("trigger", it.name) }
         }.takeIf { it.isNotEmpty() }
     }

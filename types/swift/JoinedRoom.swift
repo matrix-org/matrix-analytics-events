@@ -28,12 +28,15 @@ extension AnalyticsEvent {
         public let isDM: Bool
         /// Whether the room is a Space.
         public let isSpace: Bool
+        /// The size of the room.
+        public let roomSize: RoomSize?
         /// The reason for the room change if known.
         public let trigger: Trigger?
 
-        public init(isDM: Bool, isSpace: Bool, trigger: Trigger?) {
+        public init(isDM: Bool, isSpace: Bool, roomSize: RoomSize?, trigger: Trigger?) {
             self.isDM = isDM
             self.isSpace = isSpace
+            self.roomSize = roomSize
             self.trigger = trigger
         }
 
@@ -48,10 +51,19 @@ extension AnalyticsEvent {
             case Timeline
         }
 
+        public enum RoomSize: String {
+            case ElevenToOneHundred
+            case MoreThanAThousand
+            case OneHundredAndOneToAThousand
+            case ThreeToTen
+            case Two
+        }
+
         public var properties: [String: Any] {
             return [
                 "isDM": isDM,
                 "isSpace": isSpace,
+                "roomSize": roomSize?.rawValue as Any,
                 "trigger": trigger?.rawValue as Any
             ]
         }
