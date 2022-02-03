@@ -54,7 +54,7 @@ data class Identify(
         WorkMessaging,
     }
 
-    override fun getName() = "$identify"
+    override fun getName() = "\$identify"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
