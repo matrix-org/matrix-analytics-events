@@ -55,12 +55,12 @@ data class UnauthenticatedError(
 
     override fun getName() = "UnauthenticatedError"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
             put("errorCode", errorCode.name)
             put("errorReason", errorReason)
             put("refreshTokenAuth", refreshTokenAuth)
             put("softLogout", softLogout)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

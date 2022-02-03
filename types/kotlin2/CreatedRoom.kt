@@ -33,9 +33,9 @@ data class CreatedRoom(
 
     override fun getName() = "CreatedRoom"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
             put("isDM", isDM)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

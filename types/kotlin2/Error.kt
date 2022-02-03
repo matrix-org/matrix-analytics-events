@@ -52,11 +52,11 @@ data class Error(
 
     override fun getName() = "Error"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
-            context?.let { put("context", it) }
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
+            put("context", context)
             put("domain", domain.name)
             put("name", name.name)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

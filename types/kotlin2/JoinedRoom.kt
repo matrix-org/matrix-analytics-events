@@ -45,10 +45,10 @@ data class JoinedRoom(
 
     override fun getName() = "JoinedRoom"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
             put("isDM", isDM)
             put("roomSize", roomSize.name)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

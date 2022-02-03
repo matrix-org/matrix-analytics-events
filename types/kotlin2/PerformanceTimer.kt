@@ -98,12 +98,12 @@ data class PerformanceTimer(
 
     override fun getName() = "PerformanceTimer"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
-            context?.let { put("context", it) }
-            itemCount?.let { put("itemCount", it) }
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
+            put("context", context)
+            put("itemCount", itemCount)
             put("name", name.name)
             put("timeMs", timeMs)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

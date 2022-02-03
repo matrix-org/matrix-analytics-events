@@ -56,9 +56,9 @@ data class Identify(
 
     override fun getName() = "$identify"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
-            ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.name) }
-        }.takeIf { it.isNotEmpty() }
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
+            put("ftueUseCaseSelection", ftueUseCaseSelection?.name)
+        }
     }
 }

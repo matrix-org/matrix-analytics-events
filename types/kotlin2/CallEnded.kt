@@ -45,12 +45,12 @@ data class CallEnded(
 
     override fun getName() = "CallEnded"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
             put("durationMs", durationMs)
             put("isVideo", isVideo)
             put("numParticipants", numParticipants)
             put("placed", placed)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

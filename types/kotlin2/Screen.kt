@@ -244,9 +244,9 @@ data class Screen(
 
     override fun getName() = screenName.name
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
-            durationMs?.let { put("durationMs", it) }
-        }.takeIf { it.isNotEmpty() }
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
+            put("durationMs", durationMs)
+        }
     }
 }

@@ -151,11 +151,11 @@ data class Interaction(
 
     override fun getName() = "Interaction"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
-            index?.let { put("index", it) }
-            interactionType?.let { put("interactionType", it.name) }
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
+            put("index", index)
+            put("interactionType", interactionType?.name)
             put("name", name.name)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

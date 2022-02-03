@@ -38,9 +38,9 @@ data class SlashCommand(
 
     override fun getName() = "SlashCommand"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
             put("command", command.name)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }

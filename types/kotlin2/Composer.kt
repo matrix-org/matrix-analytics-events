@@ -43,11 +43,11 @@ data class Composer(
 
     override fun getName() = "Composer"
 
-    override fun getProperties(): Map<String, Any>? {
-        return mutableMapOf<String, Any>().apply {
+    override fun getProperties(): Map<String, Any?>? {
+        return mutableMapOf<String, Any?>().apply {
             put("inThread", inThread)
             put("isEditing", isEditing)
             put("isReply", isReply)
-        }.takeIf { it.isNotEmpty() }
+        }
     }
 }
