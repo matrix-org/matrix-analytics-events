@@ -97,24 +97,24 @@ def compute_swift(schema: Schema) -> str:
     # Properties dictionary
     result += "\n"
     if not schema.members:
-        result += "        public var properties: [String: Any] = [:]\n"
+        result += "        public var properties: [String: Any?] = [:]\n"
     else:
         filtered_members = list(
             filter(lambda member: member.name != "screenName", schema.members)
         )
-        result += "        public var properties: [String: Any] {\n"
+        result += "        public var properties: [String: Any?] {\n"
         result += "            return [\n"
         for index, member in enumerate(filtered_members):
             if member.enum:
                 if member.required:
                     result += f'                "{member.name}": {member.name}.rawValue'
                 else:
-                    result += f'                "{member.name}": {member.name}?.rawValue as Any'  # noqa
+                    result += f'                "{member.name}": {member.name}?.rawValue'  # noqa
             else:
                 if member.required:
                     result += f'                "{member.name}": {member.name}'
                 else:
-                    result += f'                "{member.name}": {member.name} as Any'
+                    result += f'                "{member.name}": {member.name}'
             if index < len(filtered_members) - 1:
                 result += ",\n"
             else:

@@ -31,7 +31,7 @@ extension AnalyticsEvent {
             self.isDM = isDM
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
                 "isDM": isDM
             ]

@@ -59,10 +59,10 @@ extension AnalyticsEvent {
             case StartupStoreReady
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
-                "context": context as Any,
-                "itemCount": itemCount as Any,
+                "context": context,
+                "itemCount": itemCount,
                 "name": name.rawValue,
                 "timeMs": timeMs
             ]

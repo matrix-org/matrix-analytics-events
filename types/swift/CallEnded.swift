@@ -40,7 +40,7 @@ extension AnalyticsEvent {
             self.placed = placed
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
                 "durationMs": durationMs,
                 "isVideo": isVideo,

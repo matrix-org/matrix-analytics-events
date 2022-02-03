@@ -24,7 +24,7 @@ public protocol AnalyticsEventProtocol {
     /// The name of the event being reported.
     var eventName: String { get }
     /// A dictionary containing all additional properties that are reported.
-    var properties: [String: Any] { get }
+    var properties: [String: Any?] { get }
 }
 
 /// An event that can be sent to an analytics service which represents the display of a screen .
@@ -32,5 +32,5 @@ public protocol AnalyticsScreenProtocol {
     /// The name of the event being reported.
     var screenName: AnalyticsEvent.Screen.ScreenName { get }
     /// A dictionary containing all additional properties that are reported.
-    var properties: [String: Any] { get }
+    var properties: [String: Any?] { get }
 }

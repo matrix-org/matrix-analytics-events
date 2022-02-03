@@ -42,7 +42,7 @@ extension AnalyticsEvent {
             case Two
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
                 "isDM": isDM,
                 "roomSize": roomSize.rawValue

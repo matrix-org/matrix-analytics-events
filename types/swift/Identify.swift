@@ -42,9 +42,9 @@ extension AnalyticsEvent {
             case WorkMessaging
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
-                "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue as Any
+                "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue
             ]
         }
     }

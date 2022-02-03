@@ -38,9 +38,9 @@ extension AnalyticsEvent {
             case SendMessageButton
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
-                "index": index as Any,
+                "index": index,
                 "name": name.rawValue
             ]
         }

@@ -52,9 +52,9 @@ extension AnalyticsEvent {
             case VoipUserMediaFailed
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
-                "context": context as Any,
+                "context": context,
                 "domain": domain.rawValue,
                 "name": name.rawValue
             ]

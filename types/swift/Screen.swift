@@ -115,9 +115,9 @@ extension AnalyticsEvent {
             case Welcome
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
-                "durationMs": durationMs as Any
+                "durationMs": durationMs
             ]
         }
     }

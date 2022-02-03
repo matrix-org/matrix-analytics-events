@@ -46,7 +46,7 @@ extension AnalyticsEvent {
             case M_UNKNOWN_TOKEN
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
                 "errorCode": errorCode.rawValue,
                 "errorReason": errorReason,
