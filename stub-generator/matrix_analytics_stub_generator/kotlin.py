@@ -86,7 +86,7 @@ package im.vector.app.features.analytics.plan
     if is_screen:
         result += "    override fun getName() = screenName.name\n"
     else:
-        result += f'    override fun getName() = "{schema.event_name}"\n'
+        result += f'    override fun getName() = "{escape_event_name(schema.event_name)}"\n'
 
     result += "\n"
     if not schema.members:
@@ -118,3 +118,6 @@ package im.vector.app.features.analytics.plan
 
     result += "}\n"
     return result
+
+def escape_event_name(event_name: str) -> str:
+    return event_name.replace("$", "\$")
