@@ -121,3 +121,4 @@ package im.vector.app.features.analytics.plan
 
 def escape_event_name(event_name: str) -> str:
     return event_name.replace("$", "\$")
+    
