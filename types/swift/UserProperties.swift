@@ -19,16 +19,18 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// The user properties to apply when identifying. These properties should all be device independent.
+/// The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.
 extension AnalyticsEvent {
-    public struct Identify: AnalyticsEventProtocol {
-        public let eventName = "$identify"
+    public struct UserProperties: AnalyticsEventProtocol {
 
         /// The selected messaging use case during the onboarding flow.
         public let ftueUseCaseSelection: FtueUseCaseSelection?
+        /// Number of spaces (and sub-spaces) the user is joined to
+        public let numSpaces: Int?
 
-        public init(ftueUseCaseSelection: FtueUseCaseSelection?) {
+        public init(ftueUseCaseSelection: FtueUseCaseSelection?, numSpaces: Int?) {
             self.ftueUseCaseSelection = ftueUseCaseSelection
+            self.numSpaces = numSpaces
         }
 
         public enum FtueUseCaseSelection: String {
@@ -44,7 +46,8 @@ extension AnalyticsEvent {
 
         public var properties: [String: Any] {
             return [
-                "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue as Any
+                "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue as Any,
+                "numSpaces": numSpaces as Any
             ]
         }
     }

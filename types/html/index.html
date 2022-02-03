@@ -375,59 +375,6 @@
         </section>
     
         <section class="event">            
-            <h2>$identify</h2>
-            <p>The user properties to apply when identifying. These properties should all be device independent.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>ftueUseCaseSelection</td>                        
-                            <td>The selected messaging use case during the onboarding flow.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>PersonalMessaging:</b> The first option, Friends and family.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WorkMessaging:</b> The second option, Teams.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>CommunityMessaging:</b> The third option, Communities.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Skip:</b> The footer option to skip the question.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
             <h2>Interaction</h2>
             <p>Triggered when the user clicks/taps/activates a UI element.</p>
             <table class="event-table">
@@ -1163,6 +1110,69 @@
                             <td>
                                                                 
                                     boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>UserProperties</h2>
+            <p>The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>ftueUseCaseSelection</td>                        
+                            <td>The selected messaging use case during the onboarding flow.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>PersonalMessaging:</b> The first option, Friends and family.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WorkMessaging:</b> The second option, Teams.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>CommunityMessaging:</b> The third option, Communities.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Skip:</b> The footer option to skip the question.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numSpaces</td>                        
+                            <td>Number of spaces (and sub-spaces) the user is joined to</td>
+                            <td>
+                                                                
+                                    integer
                                                             
                             </td>                            
                         </tr>

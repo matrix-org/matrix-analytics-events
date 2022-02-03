@@ -85,7 +85,7 @@ package im.vector.app.features.analytics.plan
     result += "\n"
     if is_screen:
         result += "    override fun getName() = screenName.name\n"
-    else:
+    elif schema.event_name:
         result += f'    override fun getName() = "{schema.event_name}"\n'
 
     result += "\n"

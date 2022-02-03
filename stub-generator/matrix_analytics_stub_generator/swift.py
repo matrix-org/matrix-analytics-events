@@ -61,7 +61,7 @@ def compute_swift(schema: Schema) -> str:
     )
 
     # Event name (constant)
-    if not is_screen:
+    if not is_screen and schema.event_name:
         result += f'        public let eventName = "{schema.event_name}"\n'
 
     # Struct properties

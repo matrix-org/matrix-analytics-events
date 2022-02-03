@@ -78,7 +78,7 @@ def parse_schema(data: dict, klass: str) -> Schema:
     """Parse the schema into members, enums and the event name."""
     members = []
     enums = []
-    event_name = data["properties"]["eventName"]["enum"][0]
+    event_name = data["properties"].get("eventName", {}).get("enum", [None])[0]
     required = data.get("required")
     for p in data["properties"]:
         if p == "eventName":
