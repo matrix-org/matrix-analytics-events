@@ -19,6 +19,7 @@
        "description": "The size of the room.",
        "type": "string",
        "enum": [
+         "One",
          "Two",
          "ThreeToTen",
          "ElevenToOneHundred",

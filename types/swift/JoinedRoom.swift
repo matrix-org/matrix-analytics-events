@@ -54,6 +54,7 @@ extension AnalyticsEvent {
         public enum RoomSize: String {
             case ElevenToOneHundred
             case MoreThanAThousand
+            case One
             case OneHundredAndOneToAThousand
             case ThreeToTen
             case Two

@@ -52,9 +52,9 @@
         {"const": "WebE2ESetup", "description": "?"},
         {"const": "WebSoftLogout", "description": "?"},
 
-        {"const": "SpaceMenu", "description": "The bottom sheet that list all space options"},
+        {"const": "MobileSpaceMenu", "description": "The bottom sheet that list all space options"},
         {"const": "SpaceExploreRooms", "description": "Screen that displays the list of rooms and spaces of a space"},
-        {"const": "SpaceMembers", "description": "Screen that displays the list of memebrs of a space"}
+        {"const": "MobileSpaceMembers", "description": "Screen that displays the list of memebrs of a space"}
       ]
     },
     "durationMs": {

@@ -184,8 +184,8 @@
         </section>
     
         <section class="event">            
-            <h2>Click</h2>
-            <p>Triggered when the user clicks/taps on a UI element.</p>
+            <h2>Composer</h2>
+            <p>Triggered when the user sends a message via the composer.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -197,53 +197,31 @@
                 <tbody>
                     
                         <tr>
-                            <td>index</td>                        
-                            <td>The index of the element, if its in a list of elements.</td>
+                            <td>inThread</td>                        
+                            <td>Whether the user was using the composer inside of a thread.</td>
                             <td>
                                                                 
-                                    integer
+                                    boolean
                                                             
                             </td>                            
                         </tr>
                     
                         <tr>
-                            <td>name</td>                        
-                            <td>The unique name of this element.</td>
+                            <td>isEditing</td>                        
+                            <td>Whether the user&#39;s composer interaction was editing a previously sent event.</td>
                             <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>SendMessageButton:</b> User tapped the send message button.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SideMenuSelectedSpace:</b> User tapped the already selected space from the space list.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SideMenuSwitchSpace:</b> User tapped an unselected space from the space list -&gt; space switching should occur.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>UserNotification:</b> User tapped an application notification
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MatrixToLink:</b> User tapped a matrix to link.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isReply</td>                        
+                            <td>Whether the user&#39;s composer interaction was a reply to a previously sent event.</td>
+                            <td>
+                                                                
+                                    boolean
                                                             
                             </td>                            
                         </tr>
@@ -450,6 +428,207 @@
         </section>
     
         <section class="event">            
+            <h2>Interaction</h2>
+            <p>Triggered when the user clicks/taps/activates a UI element.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>index</td>                        
+                            <td>The index of the element, if its in a list of elements.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>interactionType</td>                        
+                            <td>The manner with which the user activated the UI element.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Pointer    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Keyboard    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Touch    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The unique name of this element.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuFavouriteToggle:</b> User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuFavouriteToggle:</b> User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileNotificationsMenu:</b> User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuNotificationsItem:</b> User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuPeopleItem:</b> User accessed room member list using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomInfoPeopleButton:</b> User accessed room member list using the &#39;People&#39; button in the right panel room summary card of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomUserInfoBackButton:</b> User accessed room member list using the back button in the right panel user info card of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuLeaveItem:</b> User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuLeaveItem:</b> User interacted with leave action in the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomSettingsLeaveButton:</b> User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuSettingsItem:</b> User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuSettingsItem:</b> User accessed room settings using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomInfoSettingsButton:</b> User accessed room settings using the &#39;Settings&#39; button in the right panel room summary card of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuInviteItem:</b> User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuInviteItem:</b> User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelMemberListInviteButton:</b> User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomUserInfoInviteButton:</b> User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSendMessageButton:</b> User tapped the send message button.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSideMenuSelectedSpace:</b> User tapped the already selected space from the space list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSideMenuSwitchSpace:</b> User tapped an unselected space from the space list -&gt; space switching should occur.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileUserNotification:</b> User tapped an application notification
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileMatrixToLink:</b> User tapped a matrix to link.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>JoinedRoom</h2>
             <p>Triggered when the user joins a room.</p>
             <table class="event-table">
@@ -488,6 +667,12 @@
                             <td>
                                 
                                     <ul>
+                                        
+                                            <li>
+                                                
+                                                    One    
+                                                    
+                                            </li>
                                         
                                             <li>
                                                 
@@ -943,7 +1128,7 @@
                                         
                                             <li>
                                                 
-                                                    <b>SpaceMenu:</b> The bottom sheet that list all space options
+                                                    <b>MobileSpaceMenu:</b> The bottom sheet that list all space options
                                                     
                                             </li>
                                         
@@ -955,7 +1140,48 @@
                                         
                                             <li>
                                                 
-                                                    <b>SpaceMembers:</b> Screen that displays the list of memebrs of a space
+                                                    <b>MobileSpaceMembers:</b> Screen that displays the list of memebrs of a space
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>SlashCommand</h2>
+            <p>Triggered when the user runs a slash command in their composer.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>command</td>                        
+                            <td>The name of this command.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    part    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    invite    
                                                     
                                             </li>
                                         

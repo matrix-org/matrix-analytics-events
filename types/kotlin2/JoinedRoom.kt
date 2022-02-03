@@ -68,6 +68,7 @@ data class JoinedRoom(
     enum class RoomSize {
         ElevenToOneHundred,
         MoreThanAThousand,
+        One,
         OneHundredAndOneToAThousand,
         ThreeToTen,
         Two,

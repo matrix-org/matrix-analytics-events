@@ -37,6 +37,7 @@ enum class EventName {
 enum class RoomSize {
     ElevenToOneHundred,
     MoreThanAThousand,
+    One,
     OneHundredAndOneToAThousand,
     ThreeToTen,
     Two

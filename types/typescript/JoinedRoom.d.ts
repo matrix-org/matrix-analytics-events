@@ -17,7 +17,7 @@ export interface JoinedRoom {
   /**
    * The size of the room.
    */
-  roomSize: "Two" | "ThreeToTen" | "ElevenToOneHundred" | "OneHundredAndOneToAThousand" | "MoreThanAThousand";
+  roomSize: "One" | "Two" | "ThreeToTen" | "ElevenToOneHundred" | "OneHundredAndOneToAThousand" | "MoreThanAThousand";
   /**
    * Whether the room is a DM.
    */
