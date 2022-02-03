@@ -22,7 +22,7 @@ data class JoinedRoom (
     val roomSize: RoomSize,
 
     /**
-     * The reason for the room change if known.
+     * The reason for the room being joined if known.
      */
     val trigger: String? = null
 )

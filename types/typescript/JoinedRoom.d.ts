@@ -11,7 +11,7 @@
 export interface JoinedRoom {
   eventName: "JoinedRoom";
   /**
-   * The reason for the room change if known.
+   * The reason for the room being joined if known.
    */
   trigger?: ("RoomDirectory" | "SpaceHierarchy" | "Timeline" | "Notification") & string;
   /**

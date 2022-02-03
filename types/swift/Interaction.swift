@@ -38,16 +38,10 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
-            /// User tapped a matrix to link.
-            case MobileMatrixToLink
-            /// User tapped the send message button.
-            case MobileSendMessageButton
             /// User tapped the already selected space from the space list.
-            case MobileSideMenuSelectedSpace
+            case SideMenuSelectedSpace
             /// User tapped an unselected space from the space list -> space switching should occur.
-            case MobileSideMenuSwitchSpace
-            /// User tapped an application notification
-            case MobileUserNotification
+            case SideMenuSwitchSpace
             /// User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
             case WebRightPanelMemberListInviteButton
             /// User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop.

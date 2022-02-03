@@ -6,7 +6,7 @@
       "enum": ["JoinedRoom"]
     },
     "trigger": {
-     "description": "The reason for the room change if known.",
+     "description": "The reason for the room being joined if known.",
      "type": "string",
      "oneOf": [
        {"const": "RoomDirectory", "description": "Room joined via the public rooms directory."},

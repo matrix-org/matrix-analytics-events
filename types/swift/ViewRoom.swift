@@ -49,6 +49,8 @@ extension AnalyticsEvent {
             case RoomDirectory
             /// Room accessed via the room list.
             case RoomList
+            /// Room accessed via a slash command in Element Web/Desktop like /goto.
+            case SlashCommand
             /// Room accessed via the space hierarchy view.
             case SpaceHierarchy
             /// Room accessed via a timeline pill or link in another room.
@@ -75,8 +77,6 @@ extension AnalyticsEvent {
             case WebPredecessorSettings
             /// Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop.
             case WebRoomListNotificationBadge
-            /// Room accessed via a slash command in Element Web/Desktop like /goto.
-            case WebSlashCommand
             /// Room switched due to the user changing space in Element Web/Desktop.
             case WebSpaceContextSwitch
             /// Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop.

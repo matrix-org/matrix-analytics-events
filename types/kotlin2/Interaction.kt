@@ -41,30 +41,15 @@ data class Interaction(
 
     enum class Name {
         /**
-         * User tapped a matrix to link.
-         */
-        MobileMatrixToLink,
-
-        /**
-         * User tapped the send message button.
-         */
-        MobileSendMessageButton,
-
-        /**
          * User tapped the already selected space from the space list.
          */
-        MobileSideMenuSelectedSpace,
+        SideMenuSelectedSpace,
 
         /**
          * User tapped an unselected space from the space list -> space
          * switching should occur.
          */
-        MobileSideMenuSwitchSpace,
-
-        /**
-         * User tapped an application notification
-         */
-        MobileUserNotification,
+        SideMenuSwitchSpace,
 
         /**
          * User accessed the room invite flow using the button at the top of the

@@ -73,6 +73,11 @@ data class ViewRoom(
         RoomList,
 
         /**
+         * Room accessed via a slash command in Element Web/Desktop like /goto.
+         */
+        SlashCommand,
+
+        /**
          * Room accessed via the space hierarchy view.
          */
         SpaceHierarchy,
@@ -145,11 +150,6 @@ data class ViewRoom(
          * sublist in Element Web/Desktop.
          */
         WebRoomListNotificationBadge,
-
-        /**
-         * Room accessed via a slash command in Element Web/Desktop like /goto.
-         */
-        WebSlashCommand,
 
         /**
          * Room switched due to the user changing space in Element Web/Desktop.
