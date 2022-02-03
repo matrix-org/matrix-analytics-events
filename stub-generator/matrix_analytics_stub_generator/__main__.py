@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import shutil
 from typing import Iterator, List
 from .documentation import generate_documentation
 from .kotlin import compute_kotlin
@@ -67,5 +68,9 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+
+    # delete and re-create the output directory to ensure it is empty and we don't keep old type stubs
+    shutil.rmtree(args.output_dir)
+    os.mkdir(args.output_dir)
 
     generate_stub(args.output_language, args.schema_paths, args.output_dir)

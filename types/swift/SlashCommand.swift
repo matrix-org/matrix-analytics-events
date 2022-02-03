@@ -19,29 +19,26 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user clicks/taps on a UI element.
+/// Triggered when the user runs a slash command in their composer.
 extension AnalyticsEvent {
-    public struct Click: AnalyticsEventProtocol {
-        public let eventName = "Click"
+    public struct SlashCommand: AnalyticsEventProtocol {
+        public let eventName = "SlashCommand"
 
-        /// The index of the element, if its in a list of elements.
-        public let index: Int?
-        /// The unique name of this element.
-        public let name: Name
+        /// The name of this command.
+        public let command: Command
 
-        public init(index: Int?, name: Name) {
-            self.index = index
-            self.name = name
+        public init(command: Command) {
+            self.command = command
         }
 
-        public enum Name: String {
-            case SendMessageButton
+        public enum Command: String {
+            case invite
+            case part
         }
 
         public var properties: [String: Any] {
             return [
-                "index": index as Any,
-                "name": name.rawValue
+                "command": command.rawValue
             ]
         }
     }
