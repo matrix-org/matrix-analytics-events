@@ -90,10 +90,10 @@ package im.vector.app.features.analytics.plan
 
     result += "\n"
     if not schema.members:
-        result += "    override fun getProperties(): Map<String, Any>? = null\n"
+        result += "    override fun getProperties(): Map<String, Any?>? = null\n"
     else:
-        result += "    override fun getProperties(): Map<String, Any>? {\n"
-        result += "        return mutableMapOf<String, Any>().apply {\n"
+        result += "    override fun getProperties(): Map<String, Any?>? {\n"
+        result += "        return mutableMapOf<String, Any?>().apply {\n"
         for member in schema.members:
             if member.name == "screenName" and is_screen:
                 continue
@@ -104,16 +104,16 @@ package im.vector.app.features.analytics.plan
                     result += f'            put("{member.name}", {member.name})\n'
             else:
                 if member.enum:
-                    result += '            %s?.let { put("%s", it.name) }\n' % (
+                    result += '            put("%s", %s?.name)\n' % (
                         member.name,
                         member.name,
                     )
                 else:
-                    result += '            %s?.let { put("%s", it) }\n' % (
+                    result += '            put("%s", %s)\n' % (
                         member.name,
                         member.name,
                     )
-        result += "        }.takeIf { it.isNotEmpty() }\n"
+        result += "        }\n"
         result += "    }\n"
 
     result += "}\n"
