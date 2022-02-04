@@ -16,8 +16,6 @@
 
 package im.vector.app.features.analytics.plan
 
-import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
-
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
@@ -34,7 +32,7 @@ data class UserProperties(
          * Number of spaces (and sub-spaces) the user is joined to
          */
         val numSpaces: Int? = null,
-) : VectorAnalyticsEvent {
+) {
 
     enum class FtueUseCaseSelection {
         /**

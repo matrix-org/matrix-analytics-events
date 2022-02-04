@@ -26,11 +26,15 @@ package im.vector.app.features.analytics.plan
 
     if is_screen:
         itf = "VectorAnalyticsScreen"
-    else:
+    elif schema.event_name:
         itf = "VectorAnalyticsEvent"
+    else:
+        itf = ""
+
+    if itf:
+        result += f"import im.vector.app.features.analytics.itf.{itf}\n\n"
 
     result += (
-        f"import im.vector.app.features.analytics.itf.{itf}\n\n"
         f"// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT\n"
         f"// https://github.com/matrix-org/matrix-analytics-events/\n\n"
         f"/**\n"
@@ -64,7 +68,10 @@ package im.vector.app.features.analytics.plan
             raise Exception(f"Not handled yet: {member.type}")
         result += f"{defaultValue},\n"
 
-    result += f") : {itf} " + "{\n"
+    if itf:
+        result += f") : {itf} " + "{\n"
+    else:
+        result += ") {\n"
 
     isFirstEnum = True
     for enum in schema.enums:
