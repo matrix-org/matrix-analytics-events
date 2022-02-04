@@ -21,7 +21,7 @@ import Foundation
 
 /// The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.
 extension AnalyticsEvent {
-    public struct UserProperties: AnalyticsEventProtocol {
+    public struct UserProperties {
 
         /// The selected messaging use case during the onboarding flow.
         public let ftueUseCaseSelection: FtueUseCaseSelection?
@@ -44,10 +44,10 @@ extension AnalyticsEvent {
             case WorkMessaging
         }
 
-        public var properties: [String: Any] {
+        public var properties: [String: Any?] {
             return [
-                "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue as Any,
-                "numSpaces": numSpaces as Any
+                "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue,
+                "numSpaces": numSpaces
             ]
         }
     }
