@@ -99,7 +99,11 @@ package im.vector.app.features.analytics.plan
     if not schema.members:
         result += "    override fun getProperties(): Map<String, Any>? = null\n"
     else:
-        result += "    override fun getProperties(): Map<String, Any>? {\n"
+        if itf:
+            result += "    override fun getProperties(): Map<String, Any>? {\n"
+        else:
+            result += "    fun getProperties(): Map<String, Any>? {\n"
+
         result += "        return mutableMapOf<String, Any>().apply {\n"
         for member in schema.members:
             if member.name == "screenName" and is_screen:

@@ -57,7 +57,7 @@ data class UserProperties(
     }
 
 
-    override fun getProperties(): Map<String, Any>? {
+    fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.name) }
             numSpaces?.let { put("numSpaces", it) }
