@@ -12,9 +12,19 @@ data class JoinedRoom (
     val isDM: Boolean,
 
     /**
+     * Whether the room is a Space.
+     */
+    val isSpace: Boolean,
+
+    /**
      * The size of the room.
      */
-    val roomSize: RoomSize
+    val roomSize: RoomSize,
+
+    /**
+     * The trigger for a room being joined if known.
+     */
+    val trigger: String? = null
 )
 
 enum class EventName {
@@ -27,6 +37,7 @@ enum class EventName {
 enum class RoomSize {
     ElevenToOneHundred,
     MoreThanAThousand,
+    One,
     OneHundredAndOneToAThousand,
     ThreeToTen,
     Two

@@ -5,22 +5,37 @@
     "eventName": {
       "enum": ["JoinedRoom"]
     },
-    "roomSize": {
-      "description": "The size of the room.",
-      "type": "string",
-      "enum": [
-        "Two",
-        "ThreeToTen",
-        "ElevenToOneHundred",
-        "OneHundredAndOneToAThousand",
-        "MoreThanAThousand"
-      ]
+    "trigger": {
+     "description": "The trigger for a room being joined if known.",
+     "type": "string",
+     "oneOf": [
+       {"const": "RoomDirectory", "description": "Room joined via the public rooms directory."},
+       {"const": "SpaceHierarchy", "description": "Room joined via the space hierarchy view."},
+       {"const": "Timeline", "description": "Room joined via a timeline pill or link in another room."},
+       {"const": "Notification", "description": "Room joined via a push/desktop notification."}
+     ]
     },
+    "roomSize": {
+       "description": "The size of the room.",
+       "type": "string",
+       "enum": [
+         "One",
+         "Two",
+         "ThreeToTen",
+         "ElevenToOneHundred",
+         "OneHundredAndOneToAThousand",
+         "MoreThanAThousand"
+       ]
+     },
     "isDM": {
       "description": "Whether the room is a DM.",
       "type": "boolean"
+    },
+    "isSpace": {
+      "description": "Whether the room is a Space.",
+      "type": "boolean"
     }
   },
-  "required": ["roomSize", "isDM", "eventName"],
+  "required": ["roomSize", "isDM", "eventName", "isSpace"],
   "additionalProperties": false
 }

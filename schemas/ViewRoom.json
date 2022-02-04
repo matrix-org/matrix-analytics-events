@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "description": "Triggered when the user changes rooms.",
+  "properties": {
+    "eventName": {
+      "enum": ["ViewRoom"]
+    },
+    "trigger": {
+     "description": "The reason for the room change if known.",
+     "type": "string",
+     "oneOf": [
+       {"const": "Created", "description": "Room accessed due to being just created."},
+       {"const": "RoomList", "description": "Room accessed via the room list."},
+       {"const": "RoomDirectory", "description": "Room accessed via the public rooms directory."},
+       {"const": "SpaceHierarchy", "description": "Room accessed via the space hierarchy view."},
+       {"const": "Timeline", "description": "Room accessed via a timeline pill or link in another room."},
+       {"const": "Notification", "description": "Room accessed via a push/desktop notification."},
+       {"const": "Tombstone", "description": "Room accessed via a tombstone at the bottom of a predecessor room."},
+       {"const": "Predecessor", "description": "Room accessed via the predecessor link at the top of the upgraded room."},
+       {"const": "Widget", "description": "Room switched due to widget interaction."},
+       {"const": "MessageSearch", "description": "Room switched due to user interacting with a message search result."},
+       {"const": "MessageUser", "description": "Room switched due to user selecting a user to go to a DM with."},
+       {"const": "VerificationRequest", "description": "Room switched due to user interacting with incoming verification request."},
+       {"const": "SlashCommand", "description": "Room accessed via a slash command in Element Web/Desktop like /goto."},
+
+       {"const": "WebNotificationPanel", "description": "Room accessed via Element Web/Desktop's notification panel."},
+       {"const": "WebKeyboardShortcut", "description": "Room accessed via an Element Web/Desktop keyboard shortcut like go to next room with unread messages."},
+       {"const": "WebHorizontalBreadcrumbs", "description": "Room accessed via the Element Web/Desktop horizontal breadcrumbs at the top of the room list."},
+       {"const": "WebVerticalBreadcrumbs", "description": "Room accessed via the Element Web/Desktop vertical breadcrumb hover menu."},
+       {"const": "WebAcceptCall", "description": "Room switched due to accepting a call in a different room in Element Web/Desktop."},
+       {"const": "WebDialPad", "description": "Room switched due to making a call via the dial pad in Element Web/Desktop."},
+       {"const": "WebForwardShortcut", "description": "Room accessed via the shortcut in Element Web/Desktop's forward modal."},
+       {"const": "WebUnifiedSearch", "description": "Room accessed via Element Web/Desktop's Unified Search modal."},
+       {"const": "WebPredecessorSettings", "description": "Room accessed via the predecessor link in Settings > Advanced in Element Web/Desktop."},
+       {"const": "WebSpaceContextSwitch", "description": "Room switched due to the user changing space in Element Web/Desktop."},
+       {"const": "WebRoomListNotificationBadge", "description": "Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop."},
+       {"const": "WebSpacePanelNotificationBadge", "description": "Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop."},
+       {"const": "WebFloatingCallWindow", "description": "Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop."}
+     ]
+    },
+    "viaKeyboard": {
+       "description": "Whether the interaction was performed via the keyboard input.",
+       "type": "boolean"
+     }
+   },
+    "isDM": {
+      "description": "Whether the room is a DM.",
+      "type": "boolean"
+    },
+    "activeSpace": {
+      "description": "active space when user navigated to the room.",
+      "type": "string",
+      "enum": [
+       {"const": "Home", "description": "Active space is Home."},
+       {"const": "Private", "description": "Active space is a private space."},
+       {"const": "Public", "description": "Active space is a public space."},
+       {"const": "Meta", "description": "Active space is a meta space."}
+    ]
+  },
+  "required": [],
+  "additionalProperties": false
+}

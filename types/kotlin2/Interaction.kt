@@ -41,6 +41,17 @@ data class Interaction(
 
     enum class Name {
         /**
+         * User tapped the already selected space from the space list.
+         */
+        SpacePanelSelectedSpace,
+
+        /**
+         * User tapped an unselected space from the space list -> space
+         * switching should occur.
+         */
+        SpacePanelSwitchSpace,
+
+        /**
          * User accessed the room invite flow using the button at the top of the
          * room member list in the right panel of Element Web/Desktop.
          */

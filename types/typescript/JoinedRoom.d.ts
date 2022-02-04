@@ -11,11 +11,19 @@
 export interface JoinedRoom {
   eventName: "JoinedRoom";
   /**
+   * The trigger for a room being joined if known.
+   */
+  trigger?: ("RoomDirectory" | "SpaceHierarchy" | "Timeline" | "Notification") & string;
+  /**
    * The size of the room.
    */
-  roomSize: "Two" | "ThreeToTen" | "ElevenToOneHundred" | "OneHundredAndOneToAThousand" | "MoreThanAThousand";
+  roomSize: "One" | "Two" | "ThreeToTen" | "ElevenToOneHundred" | "OneHundredAndOneToAThousand" | "MoreThanAThousand";
   /**
    * Whether the room is a DM.
    */
   isDM: boolean;
+  /**
+   * Whether the room is a Space.
+   */
+  isSpace: boolean;
 }

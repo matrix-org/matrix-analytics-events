@@ -25,7 +25,9 @@
         {"const": "WebRoomListRoomTileContextMenuInviteItem", "description":  "User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuInviteItem", "description":  "User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop." },
         {"const": "WebRightPanelMemberListInviteButton", "description":  "User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop." },
-        {"const": "WebRightPanelRoomUserInfoInviteButton", "description":  "User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop." }
+        {"const": "WebRightPanelRoomUserInfoInviteButton", "description":  "User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop." },
+        {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},
+        {"const": "SpacePanelSwitchSpace", "description": "User tapped an unselected space from the space list -> space switching should occur."}
       ]
     },
     "index": {
