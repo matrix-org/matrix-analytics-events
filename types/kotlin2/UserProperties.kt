@@ -16,21 +16,23 @@
 
 package im.vector.app.features.analytics.plan
 
-import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
-
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * The user properties to apply when identifying. These properties should all be
- * device independent.
+ * The user properties to apply when identifying. This is not an event
+ * definition. These properties must all be device independent.
  */
-data class Identify(
+data class UserProperties(
         /**
          * The selected messaging use case during the onboarding flow.
          */
         val ftueUseCaseSelection: FtueUseCaseSelection? = null,
-) : VectorAnalyticsEvent {
+        /**
+         * Number of spaces (and sub-spaces) the user is joined to
+         */
+        val numSpaces: Int? = null,
+) {
 
     enum class FtueUseCaseSelection {
         /**
@@ -54,11 +56,11 @@ data class Identify(
         WorkMessaging,
     }
 
-    override fun getName() = "$identify"
 
-    override fun getProperties(): Map<String, Any>? {
+    fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.name) }
+            numSpaces?.let { put("numSpaces", it) }
         }.takeIf { it.isNotEmpty() }
     }
 }

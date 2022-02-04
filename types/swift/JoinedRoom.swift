@@ -30,7 +30,7 @@ extension AnalyticsEvent {
         public let isSpace: Bool
         /// The size of the room.
         public let roomSize: RoomSize
-        /// The reason for the room being joined if known.
+        /// The trigger for a room being joined if known.
         public let trigger: Trigger?
 
         public init(isDM: Bool, isSpace: Bool, roomSize: RoomSize, trigger: Trigger?) {

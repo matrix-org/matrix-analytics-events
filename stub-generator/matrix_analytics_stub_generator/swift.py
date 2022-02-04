@@ -23,6 +23,31 @@ def swift_member_definition(member: Member) -> str:
 
     return definition
 
+def swift_properties_type(protocol) -> str:
+    # Event protocols don't need optional values and will cast nil to Any
+    if protocol:
+        return "[String: Any]"
+    else:
+        return "[String: Any?]"
+
+def swift_member_property(member: Member, protocol) -> str:
+    if member.enum:
+        if member.required:
+            property = f'"{member.name}": {member.name}.rawValue'
+        elif protocol:
+            # Silence compiler warning with cast of Optional to Any
+            property = f'"{member.name}": {member.name}?.rawValue as Any'
+        else:
+            property = f'"{member.name}": {member.name}?.rawValue'
+    else:
+        if not member.required and protocol:
+            # Silence compiler warning with cast of Optional to Any
+            property = f'"{member.name}": {member.name} as Any'
+        else:
+            property = f'"{member.name}": {member.name}'
+    
+    return property
+
 
 def compute_swift(schema: Schema) -> str:
     """Compute the output for Swift."""
@@ -47,9 +72,11 @@ def compute_swift(schema: Schema) -> str:
 """
 
     if is_screen:
-        itf = "AnalyticsScreenProtocol"
+        protocol = "AnalyticsScreenProtocol"
+    elif schema.event_name:
+        protocol = "AnalyticsEventProtocol"
     else:
-        itf = "AnalyticsEventProtocol"
+        protocol = None
 
     result += (
         "import Foundation\n\n"
@@ -57,11 +84,16 @@ def compute_swift(schema: Schema) -> str:
         "// https://github.com/matrix-org/matrix-analytics-events/\n\n"
         f"/// {schema.data.get('description')}\n"
         f"extension AnalyticsEvent {{\n"
-        f"    public struct {schema.klass}: {itf} {{\n"
     )
+    
+    # Protocol conformance
+    if protocol:
+        result += f"    public struct {schema.klass}: {protocol} {{\n"
+    else:
+        result += f"    public struct {schema.klass} {{\n"
 
     # Event name (constant)
-    if not is_screen:
+    if not is_screen and schema.event_name:
         result += f'        public let eventName = "{schema.event_name}"\n'
 
     # Struct properties
@@ -97,24 +129,15 @@ def compute_swift(schema: Schema) -> str:
     # Properties dictionary
     result += "\n"
     if not schema.members:
-        result += "        public var properties: [String: Any] = [:]\n"
+        result += f"        public var properties: {swift_properties_type(protocol)} = [:]\n"
     else:
         filtered_members = list(
             filter(lambda member: member.name != "screenName", schema.members)
         )
-        result += "        public var properties: [String: Any] {\n"
+        result += f"        public var properties: {swift_properties_type(protocol)} {{\n"
         result += "            return [\n"
         for index, member in enumerate(filtered_members):
-            if member.enum:
-                if member.required:
-                    result += f'                "{member.name}": {member.name}.rawValue'
-                else:
-                    result += f'                "{member.name}": {member.name}?.rawValue as Any'  # noqa
-            else:
-                if member.required:
-                    result += f'                "{member.name}": {member.name}'
-                else:
-                    result += f'                "{member.name}": {member.name} as Any'
+            result += f'                {swift_member_property(member, protocol)}'
             if index < len(filtered_members) - 1:
                 result += ",\n"
             else:

@@ -43,13 +43,13 @@ data class Interaction(
         /**
          * User tapped the already selected space from the space list.
          */
-        SideMenuSelectedSpace,
+        SpacePanelSelectedSpace,
 
         /**
          * User tapped an unselected space from the space list -> space
          * switching should occur.
          */
-        SideMenuSwitchSpace,
+        SpacePanelSwitchSpace,
 
         /**
          * User accessed the room invite flow using the button at the top of the

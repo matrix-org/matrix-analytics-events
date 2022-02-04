@@ -6,12 +6,15 @@
  */
 
 /**
- * The user properties to apply when identifying. These properties should all be device independent.
+ * The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.
  */
-export interface Identify {
-  eventName?: "$identify";
+export interface UserProperties {
   /**
    * The selected messaging use case during the onboarding flow.
    */
   ftueUseCaseSelection?: ("PersonalMessaging" | "WorkMessaging" | "CommunityMessaging" | "Skip") & string;
+  /**
+   * Number of spaces (and sub-spaces) the user is joined to
+   */
+  numSpaces?: number;
 }

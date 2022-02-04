@@ -38,7 +38,7 @@ data class JoinedRoom(
          */
         val roomSize: RoomSize,
         /**
-         * The reason for the room being joined if known.
+         * The trigger for a room being joined if known.
          */
         val trigger: Trigger? = null,
 ) : VectorAnalyticsEvent {

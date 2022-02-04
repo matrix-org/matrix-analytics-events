@@ -31,8 +31,8 @@ export interface Interaction {
     | "WebRoomHeaderContextMenuInviteItem"
     | "WebRightPanelMemberListInviteButton"
     | "WebRightPanelRoomUserInfoInviteButton"
-    | "SideMenuSelectedSpace"
-    | "SideMenuSwitchSpace"
+    | "SpacePanelSelectedSpace"
+    | "SpacePanelSwitchSpace"
   ) &
     string;
   /**

@@ -39,9 +39,9 @@ extension AnalyticsEvent {
 
         public enum Name: String {
             /// User tapped the already selected space from the space list.
-            case SideMenuSelectedSpace
+            case SpacePanelSelectedSpace
             /// User tapped an unselected space from the space list -> space switching should occur.
-            case SideMenuSwitchSpace
+            case SpacePanelSwitchSpace
             /// User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
             case WebRightPanelMemberListInviteButton
             /// User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop.
