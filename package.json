@@ -8,7 +8,14 @@
     "json-schema-to-typescript": "^10.1.5",
     "quicktype": "^15.0.260"
   },
+  "files": [
+    "types/typescript",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
+    "prepublishOnly": "yarn build:ts",
     "build": "yarn build:ts && yarn build:kt && yarn build:swift && yarn build:kt2 && yarn build:html",
     "build:ts": "scripts/build-typescript.sh",
     "build:kt": "scripts/build-kotlin.sh",
