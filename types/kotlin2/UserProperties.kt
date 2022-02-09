@@ -76,7 +76,6 @@ data class UserProperties(
         WorkMessaging,
     }
 
-
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             WebMetaSpaceFavouritesEnabled?.let { put("WebMetaSpaceFavouritesEnabled", it) }
