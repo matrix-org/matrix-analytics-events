@@ -34,6 +34,8 @@ export interface Interaction {
     | "WebQuickSettingsThemeDropdown"
     | "WebUserMenuThemeToggleButton"
     | "WebSettingsAppearanceTabThemeSelector"
+    | "WebQuickSettingsPinToSidebarCheckbox"
+    | "WebSettingsSidebarTabSpacesCheckbox"
     | "SpacePanelSelectedSpace"
     | "SpacePanelSwitchSpace"
   ) &
