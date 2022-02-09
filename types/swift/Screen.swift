@@ -75,6 +75,10 @@ extension AnalyticsEvent {
             case MobileSettingsSecurity
             /// The sidebar shown on mobile with spaces, settings etc.
             case MobileSidebar
+            /// Screen that displays the list of members of a space
+            case MobileSpaceMembers
+            /// The bottom sheet that list all space options
+            case MobileSpaceMenu
             /// The screen shown to select which room directory you'd like to use.
             case MobileSwitchDirectory
             /// Legacy: The screen that shows all groups/communities you have joined.
@@ -99,6 +103,8 @@ extension AnalyticsEvent {
             case RoomSettings
             /// The screen that allows you to see all of the files sent in a specific room.
             case RoomUploads
+            /// Screen that displays the list of rooms and spaces of a space
+            case SpaceExploreRooms
             /// The screen shown to create a new direct room.
             case StartChat
             /// A screen that shows information about a room member.

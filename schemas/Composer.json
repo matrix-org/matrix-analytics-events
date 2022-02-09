@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "description": "Triggered when the user sends a message via the composer.",
+  "properties": {
+    "eventName": {
+      "enum": ["Composer"]
+    },
+    "isEditing": {
+      "description": "Whether the user's composer interaction was editing a previously sent event.",
+      "type": "boolean"
+    },
+    "isReply": {
+      "description": "Whether the user's composer interaction was a reply to a previously sent event.",
+      "type": "boolean"
+    },
+    "inThread": {
+      "description": "Whether the user was using the composer inside of a thread.",
+      "type": "boolean"
+    }
+  },
+  "required": ["eventName", "isEditing", "isReply", "inThread"],
+  "additionalProperties": false
+}

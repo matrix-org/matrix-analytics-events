@@ -33,7 +33,7 @@
     <h1>Analytics events for Element clients</h1>    
     {% for schema in schemas %}
         <section class="event">            
-            <h2>{{ schema.event_name }}</h2>
+            <h2>{{ schema.event_name or schema.klass }}</h2>
             <p>{{ schema.description }}</p>
             <table class="event-table">
                 <thead>

@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "description": "Triggered when the user clicks/taps/activates a UI element.",
+  "properties": {
+    "eventName": {
+      "enum": ["Interaction"]
+    },
+    "name": {
+      "description": "The unique name of this element.",
+      "type": "string",
+      "oneOf": [
+        {"const": "WebRoomListRoomTileContextMenuFavouriteToggle", "description":  "User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuFavouriteToggle", "description":  "User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileNotificationsMenu", "description":  "User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuNotificationsItem", "description":  "User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuPeopleItem", "description":  "User accessed room member list using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRightPanelRoomInfoPeopleButton", "description":  "User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop." },
+        {"const": "WebRightPanelRoomUserInfoBackButton", "description":  "User accessed room member list using the back button in the right panel user info card of Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileContextMenuLeaveItem", "description":  "User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuLeaveItem", "description":  "User interacted with leave action in the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRoomSettingsLeaveButton", "description":  "User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileContextMenuSettingsItem", "description":  "User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuSettingsItem", "description":  "User accessed room settings using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRightPanelRoomInfoSettingsButton", "description":  "User accessed room settings using the 'Settings' button in the right panel room summary card of Element Web/Desktop." },
+        {"const": "WebRoomListRoomTileContextMenuInviteItem", "description":  "User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop." },
+        {"const": "WebRoomHeaderContextMenuInviteItem", "description":  "User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebRightPanelMemberListInviteButton", "description":  "User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop." },
+        {"const": "WebRightPanelRoomUserInfoInviteButton", "description":  "User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop." },
+        {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},
+        {"const": "SpacePanelSwitchSpace", "description": "User tapped an unselected space from the space list -> space switching should occur."}
+      ]
+    },
+    "index": {
+      "description": "The index of the element, if its in a list of elements.",
+      "type": "integer"
+    },
+    "interactionType": {
+      "description": "The manner with which the user activated the UI element.",
+      "type": "string",
+      "enum": [
+        "Pointer",
+        "Keyboard",
+        "Touch"
+      ]
+    }
+  },
+  "required": ["name", "eventName"],
+  "additionalProperties": false
+}

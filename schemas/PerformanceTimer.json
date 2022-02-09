@@ -11,8 +11,8 @@
       "oneOf": [
         {"const": "StartupInitialSync", "description": "The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms."},
         {"const": "StartupIncrementalSync", "description": "The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response."},
-        {"const": "StartupStorePreload", "description": "The time to preload data in the MXStore on iOS."},
-        {"const": "StartupStoreReady", "description": "The time to load all data from the store (including StartupStorePreload time)."},
+        {"const": "StartupStorePreload", "description": "The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store."},
+        {"const": "StartupStoreReady", "description": "The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session"},
         {"const": "StartupLaunchScreen", "description": "How long the app launch screen is displayed for."},
         {"const": "InitialSyncRequest", "description": "The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms."},
         {"const": "InitialSyncParsing", "description": "The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms."},

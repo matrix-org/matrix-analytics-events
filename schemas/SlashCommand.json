@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "description": "Triggered when the user runs a slash command in their composer.",
+  "properties": {
+    "eventName": {
+      "enum": ["SlashCommand"]
+    },
+    "command": {
+      "description": "The name of this command.",
+      "type": "string",
+      "enum": [
+        "part",
+        "invite"
+      ]
+    }
+  },
+  "required": ["command", "eventName"],
+  "additionalProperties": false
+}

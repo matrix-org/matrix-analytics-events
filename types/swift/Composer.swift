@@ -19,29 +19,29 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user clicks/taps on a UI element.
+/// Triggered when the user sends a message via the composer.
 extension AnalyticsEvent {
-    public struct Click: AnalyticsEventProtocol {
-        public let eventName = "Click"
+    public struct Composer: AnalyticsEventProtocol {
+        public let eventName = "Composer"
 
-        /// The index of the element, if its in a list of elements.
-        public let index: Int?
-        /// The unique name of this element.
-        public let name: Name
+        /// Whether the user was using the composer inside of a thread.
+        public let inThread: Bool
+        /// Whether the user's composer interaction was editing a previously sent event.
+        public let isEditing: Bool
+        /// Whether the user's composer interaction was a reply to a previously sent event.
+        public let isReply: Bool
 
-        public init(index: Int?, name: Name) {
-            self.index = index
-            self.name = name
-        }
-
-        public enum Name: String {
-            case SendMessageButton
+        public init(inThread: Bool, isEditing: Bool, isReply: Bool) {
+            self.inThread = inThread
+            self.isEditing = isEditing
+            self.isReply = isReply
         }
 
         public var properties: [String: Any] {
             return [
-                "index": index as Any,
-                "name": name.rawValue
+                "inThread": inThread,
+                "isEditing": isEditing,
+                "isReply": isReply
             ]
         }
     }

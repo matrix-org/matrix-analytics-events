@@ -26,11 +26,15 @@ package im.vector.app.features.analytics.plan
 
     if is_screen:
         itf = "VectorAnalyticsScreen"
-    else:
+    elif schema.event_name:
         itf = "VectorAnalyticsEvent"
+    else:
+        itf = ""
+
+    if itf:
+        result += f"import im.vector.app.features.analytics.itf.{itf}\n\n"
 
     result += (
-        f"import im.vector.app.features.analytics.itf.{itf}\n\n"
         f"// GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT\n"
         f"// https://github.com/matrix-org/matrix-analytics-events/\n\n"
         f"/**\n"
@@ -64,7 +68,10 @@ package im.vector.app.features.analytics.plan
             raise Exception(f"Not handled yet: {member.type}")
         result += f"{defaultValue},\n"
 
-    result += f") : {itf} " + "{\n"
+    if itf:
+        result += f") : {itf} " + "{\n"
+    else:
+        result += ") {\n"
 
     isFirstEnum = True
     for enum in schema.enums:
@@ -85,14 +92,18 @@ package im.vector.app.features.analytics.plan
     result += "\n"
     if is_screen:
         result += "    override fun getName() = screenName.name\n"
-    else:
+    elif schema.event_name:
         result += f'    override fun getName() = "{schema.event_name}"\n'
 
     result += "\n"
     if not schema.members:
         result += "    override fun getProperties(): Map<String, Any>? = null\n"
     else:
-        result += "    override fun getProperties(): Map<String, Any>? {\n"
+        if itf:
+            result += "    override fun getProperties(): Map<String, Any>? {\n"
+        else:
+            result += "    fun getProperties(): Map<String, Any>? {\n"
+
         result += "        return mutableMapOf<String, Any>().apply {\n"
         for member in schema.members:
             if member.name == "screenName" and is_screen:

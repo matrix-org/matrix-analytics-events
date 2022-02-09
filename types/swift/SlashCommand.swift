@@ -19,32 +19,26 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// The user properties to apply when identifying
+/// Triggered when the user runs a slash command in their composer.
 extension AnalyticsEvent {
-    public struct Identity: AnalyticsEventProtocol {
-        public let eventName = "Identity"
+    public struct SlashCommand: AnalyticsEventProtocol {
+        public let eventName = "SlashCommand"
 
-        /// The selected messaging use case during the onboarding flow.
-        public let ftueUseCaseSelection: FtueUseCaseSelection?
+        /// The name of this command.
+        public let command: Command
 
-        public init(ftueUseCaseSelection: FtueUseCaseSelection?) {
-            self.ftueUseCaseSelection = ftueUseCaseSelection
+        public init(command: Command) {
+            self.command = command
         }
 
-        public enum FtueUseCaseSelection: String {
-            /// The third option, Communities.
-            case CommunityMessaging
-            /// The first option, Friends and family.
-            case PersonalMessaging
-            /// The footer option to skip the question.
-            case Skip
-            /// The second option, Teams.
-            case WorkMessaging
+        public enum Command: String {
+            case invite
+            case part
         }
 
         public var properties: [String: Any] {
             return [
-                "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue as Any
+                "command": command.rawValue
             ]
         }
     }

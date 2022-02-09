@@ -29,6 +29,7 @@
         {"const": "DeactivateAccount", "description": "The confirmation screen shown before deactivating an account."},
         {"const": "Group", "description": "Legacy: The screen that shows information about a specific group."},
         {"const": "MyGroups", "description": "Legacy: The screen that shows all groups/communities you have joined."},
+        {"const": "SpaceExploreRooms", "description": "Screen that displays the list of rooms and spaces of a space"},
 
         {"const": "MobileSidebar", "description": "The sidebar shown on mobile with spaces, settings etc."},
         {"const": "MobileFavourites", "description": "The Favourites tab on mobile that lists your favourite people/rooms."},
@@ -46,7 +47,9 @@
         {"const": "MobileSettingsSecurity", "description": "The global security settings screen."},
         {"const": "MobileSettingsDefaultNotifications", "description": "The settings screen to change the default notification options."},
         {"const": "MobileSettingsMentionsAndKeywords", "description": "The settings screen to manage notification mentions and keywords."},
-        
+        {"const": "MobileSpaceMenu", "description": "The bottom sheet that list all space options"},
+        {"const": "MobileSpaceMembers", "description": "Screen that displays the list of members of a space"},
+
         {"const": "WebLoading", "description": "Element Web loading spinner."},
         {"const": "WebCompleteSecurity", "description": "Element Web showing flow to trust this new device with cross-signing."},
         {"const": "WebE2ESetup", "description": "Element Web showing flow to setup SSSS / cross-signing on this account."},
