@@ -18,6 +18,10 @@ export interface UserProperties {
    */
   numSpaces?: number;
   /**
+   * Number of joined rooms the user has favourited
+   */
+  numFavouriteRooms?: number;
+  /**
    * Whether the user has the home space enabled
    */
   WebMetaSpaceHomeEnabled?: boolean;

@@ -11,6 +11,11 @@ data class UserProperties (
     val ftueUseCaseSelection: String? = null,
 
     /**
+     * Number of joined rooms the user has favourited
+     */
+    val numFavouriteRooms: Long? = null,
+
+    /**
      * Number of spaces (and sub-spaces) the user is joined to
      */
     val numSpaces: Long? = null,

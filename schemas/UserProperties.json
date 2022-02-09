@@ -16,6 +16,10 @@
         "description": "Number of spaces (and sub-spaces) the user is joined to",
         "type": "integer"
       },
+      "numFavouriteRooms": {
+        "description": "Number of joined rooms the user has favourited",
+        "type": "integer"
+      },
       "WebMetaSpaceHomeEnabled": {
         "description": "Whether the user has the home space enabled",
         "type": "boolean"

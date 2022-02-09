@@ -35,16 +35,19 @@ extension AnalyticsEvent {
         public let WebMetaSpacePeopleEnabled: Bool?
         /// The selected messaging use case during the onboarding flow.
         public let ftueUseCaseSelection: FtueUseCaseSelection?
+        /// Number of joined rooms the user has favourited
+        public let numFavouriteRooms: Int?
         /// Number of spaces (and sub-spaces) the user is joined to
         public let numSpaces: Int?
 
-        public init(WebMetaSpaceFavouritesEnabled: Bool?, WebMetaSpaceHomeAllRooms: Bool?, WebMetaSpaceHomeEnabled: Bool?, WebMetaSpaceOrphansEnabled: Bool?, WebMetaSpacePeopleEnabled: Bool?, ftueUseCaseSelection: FtueUseCaseSelection?, numSpaces: Int?) {
+        public init(WebMetaSpaceFavouritesEnabled: Bool?, WebMetaSpaceHomeAllRooms: Bool?, WebMetaSpaceHomeEnabled: Bool?, WebMetaSpaceOrphansEnabled: Bool?, WebMetaSpacePeopleEnabled: Bool?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
             self.WebMetaSpaceFavouritesEnabled = WebMetaSpaceFavouritesEnabled
             self.WebMetaSpaceHomeAllRooms = WebMetaSpaceHomeAllRooms
             self.WebMetaSpaceHomeEnabled = WebMetaSpaceHomeEnabled
             self.WebMetaSpaceOrphansEnabled = WebMetaSpaceOrphansEnabled
             self.WebMetaSpacePeopleEnabled = WebMetaSpacePeopleEnabled
             self.ftueUseCaseSelection = ftueUseCaseSelection
+            self.numFavouriteRooms = numFavouriteRooms
             self.numSpaces = numSpaces
         }
 
@@ -67,6 +70,7 @@ extension AnalyticsEvent {
                 "WebMetaSpaceOrphansEnabled": WebMetaSpaceOrphansEnabled,
                 "WebMetaSpacePeopleEnabled": WebMetaSpacePeopleEnabled,
                 "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue,
+                "numFavouriteRooms": numFavouriteRooms,
                 "numSpaces": numSpaces
             ]
         }
