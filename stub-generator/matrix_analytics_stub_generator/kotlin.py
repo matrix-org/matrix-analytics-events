@@ -88,11 +88,12 @@ package im.vector.app.features.analytics.plan
             result += f"        {value.name},\n"
             isFirstEnum = False
         result += "    }\n"
-
-    result += "\n"
+    
     if is_screen:
+        result += "\n"
         result += "    override fun getName() = screenName.name\n"
     elif schema.event_name:
+        result += "\n"
         result += f'    override fun getName() = "{schema.event_name}"\n'
 
     result += "\n"
