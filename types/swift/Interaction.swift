@@ -42,6 +42,8 @@ extension AnalyticsEvent {
             case SpacePanelSelectedSpace
             /// User tapped an unselected space from the space list -> space switching should occur.
             case SpacePanelSwitchSpace
+            /// User interacted with the theme dropdown in the quick settings menu of Element Web/Desktop.
+            case WebQuickSettingsThemeDropdown
             /// User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
             case WebRightPanelMemberListInviteButton
             /// User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop.
@@ -76,6 +78,10 @@ extension AnalyticsEvent {
             case WebRoomListRoomTileNotificationsMenu
             /// User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
             case WebRoomSettingsLeaveButton
+            /// User interacted with the theme radio selector in the Appearance tab of Settings in Element Web/Desktop.
+            case WebSettingsAppearanceTabThemeSelector
+            /// User clicked the theme toggle button in the user menu of Element Web/Desktop.
+            case WebUserMenuThemeToggleButton
         }
 
         public enum InteractionType: String {
