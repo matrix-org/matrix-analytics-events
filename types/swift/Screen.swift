@@ -41,7 +41,7 @@ extension AnalyticsEvent {
             case ForgotPassword
             /// Legacy: The screen that shows information about a specific group.
             case Group
-            /// The Home tab on iOS | possibly the same on Android? | The Home space on Web?
+            /// The Home tab on iOS | possibly the same on Android? | Home page on Web
             case Home
             /// The screen that displays the login flow (when the user already has an account).
             case Login
@@ -65,9 +65,17 @@ extension AnalyticsEvent {
             case MobileSearchPeople
             /// The Rooms tab shown in the global search screen on Mobile.
             case MobileSearchRooms
+            /// The global settings screen shown in the app.
+            case MobileSettings
+            /// The settings screen to change the default notification options.
+            case MobileSettingsDefaultNotifications
+            /// The settings screen to manage notification mentions and keywords.
+            case MobileSettingsMentionsAndKeywords
+            /// The global security settings screen.
+            case MobileSettingsSecurity
             /// The sidebar shown on mobile with spaces, settings etc.
             case MobileSidebar
-            /// Screen that displays the list of memebrs of a space
+            /// Screen that displays the list of members of a space
             case MobileSpaceMembers
             /// The bottom sheet that list all space options
             case MobileSpaceMenu
@@ -95,28 +103,46 @@ extension AnalyticsEvent {
             case RoomSettings
             /// The screen that allows you to see all of the files sent in a specific room.
             case RoomUploads
-            /// The global settings screen shown in the app.
-            case Settings
-            /// The settings screen to change the default notification options.
-            case SettingsDefaultNotifications
-            /// The settings screen to manage notification mentions and keywords.
-            case SettingsMentionsAndKeywords
-            /// The global security settings screen.
-            case SettingsSecurity
             /// Screen that displays the list of rooms and spaces of a space
             case SpaceExploreRooms
             /// The screen shown to create a new direct room.
             case StartChat
             /// A screen that shows information about a room member.
             case User
-            /// ?
+            /// Element Web showing flow to trust this new device with cross-signing.
             case WebCompleteSecurity
-            /// ?
+            /// Element Web showing flow to setup SSSS / cross-signing on this account.
             case WebE2ESetup
-            /// ?
+            /// Element Web loading spinner.
             case WebLoading
-            /// ?
+            /// Element Web device has been soft logged out by the server.
             case WebSoftLogout
+            /// Legacy: Element Web User Settings Flair Tab.
+            case WebUserSettingFlair
+            /// Element Web User Settings Mjolnir (labs) Tab.
+            case WebUserSettingMjolnir
+            /// Element Web User Settings Appearance Tab.
+            case WebUserSettingsAppearance
+            /// Element Web User Settings General Tab.
+            case WebUserSettingsGeneral
+            /// Element Web User Settings Help & About Tab.
+            case WebUserSettingsHelpAbout
+            /// Element Web User Settings Ignored Users Tab.
+            case WebUserSettingsIgnoredUsers
+            /// Element Web User Settings Keyboard Tab.
+            case WebUserSettingsKeyboard
+            /// Element Web User Settings Labs Tab.
+            case WebUserSettingsLabs
+            /// Element Web User Settings Notifications Tab.
+            case WebUserSettingsNotifications
+            /// Element Web User Settings Preferences Tab.
+            case WebUserSettingsPreferences
+            /// Element Web User Settings Security & Privacy Tab.
+            case WebUserSettingsSecurityPrivacy
+            /// Element Web User Settings Sidebar Tab.
+            case WebUserSettingsSidebar
+            /// Element Web User Settings Voice & Video Tab.
+            case WebUserSettingsVoiceVideo
             /// The splash screen.
             case Welcome
         }
