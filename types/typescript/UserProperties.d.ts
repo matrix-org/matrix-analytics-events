@@ -17,4 +17,24 @@ export interface UserProperties {
    * Number of spaces (and sub-spaces) the user is joined to
    */
   numSpaces?: number;
+  /**
+   * Whether the user has the home space enabled
+   */
+  WebMetaSpaceHomeEnabled?: boolean;
+  /**
+   * Whether the user has the home space set to all rooms
+   */
+  WebMetaSpaceHomeAllRooms?: boolean;
+  /**
+   * Whether the user has the people space enabled
+   */
+  WebMetaSpacePeopleEnabled?: boolean;
+  /**
+   * Whether the user has the favourites space enabled
+   */
+  WebMetaSpaceFavouritesEnabled?: boolean;
+  /**
+   * Whether the user has the other rooms space enabled
+   */
+  WebMetaSpaceOrphansEnabled?: boolean;
 }

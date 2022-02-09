@@ -31,6 +31,11 @@ export interface Interaction {
     | "WebRoomHeaderContextMenuInviteItem"
     | "WebRightPanelMemberListInviteButton"
     | "WebRightPanelRoomUserInfoInviteButton"
+    | "WebQuickSettingsThemeDropdown"
+    | "WebUserMenuThemeToggleButton"
+    | "WebSettingsAppearanceTabThemeSelector"
+    | "WebQuickSettingsPinToSidebarCheckbox"
+    | "WebSettingsSidebarTabSpacesCheckbox"
     | "SpacePanelSelectedSpace"
     | "SpacePanelSwitchSpace"
   ) &
