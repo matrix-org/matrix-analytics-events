@@ -16,7 +16,7 @@
 
 package im.vector.app.features.analytics.plan
 
-import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
+import im.vector.app.features.analytics.itf.VectorAnalyticsScreen
 
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
@@ -30,7 +30,7 @@ data class MobileScreen(
          */
         val durationMs: Int? = null,
         val screenName: ScreenName,
-) : VectorAnalyticsEvent {
+) : VectorAnalyticsScreen {
 
     enum class ScreenName {
         /**
@@ -236,12 +236,11 @@ data class MobileScreen(
         Welcome,
     }
 
-    override fun getName() = "$screen"
+    override fun getName() = screenName.name
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             durationMs?.let { put("durationMs", it) }
-            put("screenName", screenName.name)
         }.takeIf { it.isNotEmpty() }
     }
 }

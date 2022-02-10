@@ -1,8 +1,8 @@
-from .schema import Schema, is_screen_event, first_letter_up, split_text
+from .schema import Schema, is_mobile_screen_event, first_letter_up, split_text
 
 def compute_kotlin(schema: Schema) -> str:
     """Compute the output for Kotlin."""
-    is_screen = is_screen_event(schema.klass)
+    is_screen = is_mobile_screen_event(schema.klass)
 
     result = """/*
  * Copyright (c) 2021 New Vector Ltd

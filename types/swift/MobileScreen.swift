@@ -21,8 +21,7 @@ import Foundation
 
 /// Triggered when the user changed screen on Element Android/iOS
 extension AnalyticsEvent {
-    public struct MobileScreen: AnalyticsEventProtocol {
-        public let eventName = "$screen"
+    public struct MobileScreen: AnalyticsScreenProtocol {
 
         /// How long the screen was displayed for in milliseconds.
         public let durationMs: Int?
