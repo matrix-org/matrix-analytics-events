@@ -9,7 +9,7 @@
  * Triggered when the user changes rooms.
  */
 export interface ViewRoom {
-  eventName?: "ViewRoom";
+  eventName: "ViewRoom";
   /**
    * The reason for the room change if known.
    */
