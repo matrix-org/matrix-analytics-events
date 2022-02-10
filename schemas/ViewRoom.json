@@ -57,6 +57,6 @@
        {"const": "Meta", "description": "Active space is a meta space."}
     ]
   },
-  "required": [],
+  "required": ["eventName"],
   "additionalProperties": false
 }
