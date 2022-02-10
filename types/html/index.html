@@ -757,115 +757,8 @@
         </section>
     
         <section class="event">            
-            <h2>PerformanceTimer</h2>
-            <p>Triggered after timing an operation in the app.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>context</td>                        
-                            <td>Client defined, can be used for debugging.</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>itemCount</td>                        
-                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td>The timer that is being reported.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>timeMs</td>                        
-                            <td>The time reported by the timer in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
             <h2>$screen</h2>
-            <p>Triggered when the user changed screen</p>
+            <p>Triggered when the user changed screen on Element Android/iOS</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -895,7 +788,7 @@
                                         
                                             <li>
                                                 
-                                                    <b>Home:</b> The Home tab on iOS | possibly the same on Android? | Home page on Web
+                                                    <b>Home:</b> The Home tab on iOS | possibly the same on Android?
                                                     
                                             </li>
                                         
@@ -1021,215 +914,220 @@
                                         
                                             <li>
                                                 
-                                                    <b>MobileSidebar:</b> The sidebar shown on mobile with spaces, settings etc.
+                                                    <b>Sidebar:</b> The sidebar shown on mobile with spaces, settings etc.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileFavourites:</b> The Favourites tab on mobile that lists your favourite people/rooms.
+                                                    <b>Favourites:</b> The Favourites tab on mobile that lists your favourite people/rooms.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobilePeople:</b> The People tab on mobile that lists all the DM rooms you have joined.
+                                                    <b>People:</b> The People tab on mobile that lists all the DM rooms you have joined.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileRooms:</b> The Rooms tab on mobile that lists all the (non-direct) rooms you&#39;ve joined.
+                                                    <b>Rooms:</b> The Rooms tab on mobile that lists all the (non-direct) rooms you&#39;ve joined.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileDialpad:</b> The tab on mobile that displays the dialpad.
+                                                    <b>Dialpad:</b> The tab on mobile that displays the dialpad.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSearchRooms:</b> The Rooms tab shown in the global search screen on Mobile.
+                                                    <b>SearchRooms:</b> The Rooms tab shown in the global search screen on Mobile.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSearchMessages:</b> The Messages tab shown in the global search screen on Mobile.
+                                                    <b>SearchMessages:</b> The Messages tab shown in the global search screen on Mobile.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSearchPeople:</b> The People tab shown in the global search screen on Mobile.
+                                                    <b>SearchPeople:</b> The People tab shown in the global search screen on Mobile.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSearchFiles:</b> The Files tab shown in the global search screen on Mobile.
+                                                    <b>SearchFiles:</b> The Files tab shown in the global search screen on Mobile.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSwitchDirectory:</b> The screen shown to select which room directory you&#39;d like to use.
+                                                    <b>SwitchDirectory:</b> The screen shown to select which room directory you&#39;d like to use.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileInviteFriends:</b> The screen shown to share a link to download the app.
+                                                    <b>InviteFriends:</b> The screen shown to share a link to download the app.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileBreadcrumbs:</b> The screen that displays the user&#39;s breadcrumbs.
+                                                    <b>Breadcrumbs:</b> The screen that displays the user&#39;s breadcrumbs.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSettings:</b> The global settings screen shown in the app.
+                                                    <b>Settings:</b> The global settings screen shown in the app.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSettingsSecurity:</b> The global security settings screen.
+                                                    <b>SettingsSecurity:</b> The global security settings screen.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSettingsDefaultNotifications:</b> The settings screen to change the default notification options.
+                                                    <b>SettingsDefaultNotifications:</b> The settings screen to change the default notification options.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSettingsMentionsAndKeywords:</b> The settings screen to manage notification mentions and keywords.
+                                                    <b>SettingsMentionsAndKeywords:</b> The settings screen to manage notification mentions and keywords.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSpaceMenu:</b> The bottom sheet that list all space options
+                                                    <b>SpaceMenu:</b> The bottom sheet that list all space options
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>MobileSpaceMembers:</b> Screen that displays the list of members of a space
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebLoading:</b> Element Web loading spinner.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebCompleteSecurity:</b> Element Web showing flow to trust this new device with cross-signing.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebE2ESetup:</b> Element Web showing flow to setup SSSS / cross-signing on this account.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSoftLogout:</b> Element Web device has been soft logged out by the server.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsGeneral:</b> Element Web User Settings General Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsAppearance:</b> Element Web User Settings Appearance Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsNotifications:</b> Element Web User Settings Notifications Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsPreferences:</b> Element Web User Settings Preferences Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsKeyboard:</b> Element Web User Settings Keyboard Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsSidebar:</b> Element Web User Settings Sidebar Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsVoiceVideo:</b> Element Web User Settings Voice &amp; Video Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsSecurityPrivacy:</b> Element Web User Settings Security &amp; Privacy Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsLabs:</b> Element Web User Settings Labs Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsIgnoredUsers:</b> Element Web User Settings Ignored Users Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingsHelpAbout:</b> Element Web User Settings Help &amp; About Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingMjolnir:</b> Element Web User Settings Mjolnir (labs) Tab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserSettingFlair:</b> Legacy: Element Web User Settings Flair Tab.
+                                                    <b>SpaceMembers:</b> Screen that displays the list of members of a space
                                                     
                                             </li>
                                         
                                     </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>PerformanceTimer</h2>
+            <p>Triggered after timing an operation in the app.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>context</td>                        
+                            <td>Client defined, can be used for debugging.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>itemCount</td>                        
+                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The timer that is being reported.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>timeMs</td>                        
+                            <td>The time reported by the timer in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
                                                             
                             </td>                            
                         </tr>
@@ -1666,6 +1564,273 @@
                             <td>
                                                                 
                                     boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>$pageview</h2>
+            <p>Triggered when the user changed screen on Element Web/Desktop</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>$current_url</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Home:</b> Home page.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Welcome:</b> The splash screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Login:</b> The screen that displays the login flow (when the user already has an account).
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ForgotPassword:</b> The form for the forgot password use case
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Register:</b> The screen that displays the registration flow (when the user wants to create an account)
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Room:</b> The screen that displays the messages and events received in a room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDetails:</b> The screen shown when tapping the name of a room from the Room screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomMembers:</b> The screen that displays the list of members that are part of a room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>User:</b> A screen that shows information about a room member.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSearch:</b> The screen that allows you to search for messages/files in a specific room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomUploads:</b> The screen that allows you to see all of the files sent in a specific room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettings:</b> The settings screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomNotifications:</b> The notifications settings screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDirectory:</b> The screen that lists public rooms for you to discover.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomFilter:</b> The screen that lists all the user&#39;s rooms and let them filter the rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartChat:</b> The screen shown to create a new direct room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>CreateRoom:</b> The screen shown to create a new (non-direct) room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>DeactivateAccount:</b> The confirmation screen shown before deactivating an account.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Group:</b> Legacy: The screen that shows information about a specific group.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MyGroups:</b> Legacy: The screen that shows all groups/communities you have joined.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceExploreRooms:</b> Screen that displays the list of rooms and spaces of a space
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Loading:</b> Screen showing loading spinner.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>CompleteSecurity:</b> Screen showing flow to trust this new device with cross-signing.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>E2ESetup:</b> Screen showing flow to setup SSSS / cross-signing on this account.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SoftLogout:</b> Screen showing device has been soft logged out by the server.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsGeneral:</b> Screen showing User Settings General Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsAppearance:</b> Screen showing User Settings Appearance Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsNotifications:</b> Screen showing User Settings Notifications Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsPreferences:</b> Screen showing User Settings Preferences Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsKeyboard:</b> Screen showing User Settings Keyboard Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsSidebar:</b> Screen showing User Settings Sidebar Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsVoiceVideo:</b> Screen showing User Settings Voice &amp; Video Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsSecurityPrivacy:</b> Screen showing User Settings Security &amp; Privacy Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsLabs:</b> Screen showing User Settings Labs Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsIgnoredUsers:</b> Screen showing User Settings Ignored Users Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingsHelpAbout:</b> Screen showing User Settings Help &amp; About Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingMjolnir:</b> Screen showing User Settings Mjolnir (labs) Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettingFlair:</b> Legacy: screen showing User Settings Flair Tab.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>How long the screen took to load, if applicable.</td>
+                            <td>
+                                                                
+                                    integer
                                                             
                             </td>                            
                         </tr>

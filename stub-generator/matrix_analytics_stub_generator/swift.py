@@ -1,4 +1,4 @@
-from .schema import Schema, Member, first_letter_up, is_screen_event
+from .schema import Schema, Member, first_letter_up, is_mobile_screen_event
 
 
 def swift_member_definition(member: Member) -> str:
@@ -51,7 +51,7 @@ def swift_member_property(member: Member, protocol) -> str:
 
 def compute_swift(schema: Schema) -> str:
     """Compute the output for Swift."""
-    is_screen = is_screen_event(schema.klass)
+    is_screen = is_mobile_screen_event(schema.klass)
 
     result = """//
 // Copyright 2021 New Vector Ltd

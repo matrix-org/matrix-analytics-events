@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "description": "Triggered when the user changed screen on Element Web/Desktop",
+  "properties": {
+    "eventName": {
+      "enum": ["$pageview"]
+    },
+    "$current_url": {
+      "type": "string",
+      "oneOf": [
+        {"const": "Home", "description": "Home page."},
+        {"const": "Welcome", "description": "The splash screen."},
+        {"const": "Login", "description": "The screen that displays the login flow (when the user already has an account)."},
+        {"const": "ForgotPassword", "description": "The form for the forgot password use case"},
+        {"const": "Register", "description": "The screen that displays the registration flow (when the user wants to create an account)"},
+        {"const": "Room", "description": "The screen that displays the messages and events received in a room."},
+        {"const": "RoomDetails", "description": "The screen shown when tapping the name of a room from the Room screen."},
+        {"const": "RoomMembers", "description": "The screen that displays the list of members that are part of a room."},
+        {"const": "User", "description": "A screen that shows information about a room member."},
+        {"const": "RoomSearch", "description": "The screen that allows you to search for messages/files in a specific room."},
+        {"const": "RoomUploads", "description": "The screen that allows you to see all of the files sent in a specific room."},
+        {"const": "RoomSettings", "description": "The settings screen shown from the Room Details screen."},
+        {"const": "RoomNotifications", "description": "The notifications settings screen shown from the Room Details screen."},
+        {"const": "RoomDirectory", "description": "The screen that lists public rooms for you to discover."},
+        {"const": "RoomFilter", "description": "The screen that lists all the user's rooms and let them filter the rooms."},
+        {"const": "StartChat", "description": "The screen shown to create a new direct room."},
+        {"const": "CreateRoom", "description": "The screen shown to create a new (non-direct) room."},
+        {"const": "DeactivateAccount", "description": "The confirmation screen shown before deactivating an account."},
+        {"const": "Group", "description": "Legacy: The screen that shows information about a specific group."},
+        {"const": "MyGroups", "description": "Legacy: The screen that shows all groups/communities you have joined."},
+        {"const": "SpaceExploreRooms", "description": "Screen that displays the list of rooms and spaces of a space"},
+        {"const": "Loading", "description": "Screen showing loading spinner."},
+        {"const": "CompleteSecurity", "description": "Screen showing flow to trust this new device with cross-signing."},
+        {"const": "E2ESetup", "description": "Screen showing flow to setup SSSS / cross-signing on this account."},
+        {"const": "SoftLogout", "description": "Screen showing device has been soft logged out by the server."},
+        {"const": "UserSettingsGeneral", "description": "Screen showing User Settings General Tab."},
+        {"const": "UserSettingsAppearance", "description": "Screen showing User Settings Appearance Tab."},
+        {"const": "UserSettingsNotifications", "description": "Screen showing User Settings Notifications Tab."},
+        {"const": "UserSettingsPreferences", "description": "Screen showing User Settings Preferences Tab."},
+        {"const": "UserSettingsKeyboard", "description": "Screen showing User Settings Keyboard Tab."},
+        {"const": "UserSettingsSidebar", "description": "Screen showing User Settings Sidebar Tab."},
+        {"const": "UserSettingsVoiceVideo", "description": "Screen showing User Settings Voice & Video Tab."},
+        {"const": "UserSettingsSecurityPrivacy", "description": "Screen showing User Settings Security & Privacy Tab."},
+        {"const": "UserSettingsLabs", "description": "Screen showing User Settings Labs Tab."},
+        {"const": "UserSettingsIgnoredUsers", "description": "Screen showing User Settings Ignored Users Tab."},
+        {"const": "UserSettingsHelpAbout", "description": "Screen showing User Settings Help & About Tab."},
+        {"const": "UserSettingMjolnir", "description": "Screen showing User Settings Mjolnir (labs) Tab."},
+        {"const": "UserSettingFlair", "description": "Legacy: screen showing User Settings Flair Tab."}
+      ]
+    },
+    "durationMs": {
+      "description": "How long the screen took to load, if applicable.",
+      "type": "integer"
+    }
+  },
+  "required": ["$current_url", "eventName"],
+  "additionalProperties": false
+}

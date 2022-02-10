@@ -49,9 +49,9 @@ def split_text(prefix: str, text: str, limit: int = 80):
     # Use str() to avoid this issue: AttributeError: 'set' object has no attribute 'expandtabs'
     return "\n".join(wrap(text=str(text), width=limit, initial_indent=prefix, subsequent_indent=prefix))
 
-def is_screen_event(s) -> str:
-    """Whether the supplied class name is for the Screen event."""
-    return s == "Screen"
+def is_mobile_screen_event(s) -> str:
+    """Whether the supplied class name is for the MobileScreen event."""
+    return s == "MobileScreen"
 
 
 def make_enum(name: str, json_property: dict) -> Enum:
