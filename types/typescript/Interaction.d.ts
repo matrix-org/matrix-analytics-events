@@ -42,7 +42,7 @@ export interface Interaction {
     | "WebRoomListRoomsSublistPlusMenuCreateRoomItem"
     | "WebRoomListHeaderPlusMenuCreateRoomItem"
     | "WebSpaceHomeCreateRoomButton"
-    | "WebSpaceContextMenuNewRoomOption"
+    | "WebSpaceContextMenuNewRoomItem"
     | "WebAddExistingToSpaceDialogCreateRoomButton"
     | "SpacePanelSelectedSpace"
     | "SpacePanelSwitchSpace"

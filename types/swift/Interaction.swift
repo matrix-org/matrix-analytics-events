@@ -97,7 +97,7 @@ extension AnalyticsEvent {
             /// User interacted with the pre-built space checkboxes in the Sidebar tab of Settings in Element Web/Desktop.
             case WebSettingsSidebarTabSpacesCheckbox
             /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
-            case WebSpaceContextMenuNewRoomOption
+            case WebSpaceContextMenuNewRoomItem
             /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
             case WebSpaceHomeCreateRoomButton
             /// User clicked the theme toggle button in the user menu of Element Web/Desktop.

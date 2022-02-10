@@ -38,7 +38,7 @@
         {"const": "WebRoomListHeaderPlusMenuCreateRoomItem", "description": "User clicked the create room button in the + context menu of the room list header in Element Web/Desktop." },
 
         {"const": "WebSpaceHomeCreateRoomButton", "description": "User clicked the create room button in the + context menu of the room list header in Element Web/Desktop." },
-        {"const": "WebSpaceContextMenuNewRoomOption", "description": "User clicked the create room button in the + context menu of the room list header in Element Web/Desktop." },
+        {"const": "WebSpaceContextMenuNewRoomItem", "description": "User clicked the create room button in the + context menu of the room list header in Element Web/Desktop." },
         {"const": "WebAddExistingToSpaceDialogCreateRoomButton", "description": "User clicked the create room button in the + context menu of the room list header in Element Web/Desktop." },
 
         {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},

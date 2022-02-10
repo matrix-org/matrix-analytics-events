@@ -217,7 +217,7 @@ data class Interaction(
          * User clicked the create room button in the + context menu of the room
          * list header in Element Web/Desktop.
          */
-        WebSpaceContextMenuNewRoomOption,
+        WebSpaceContextMenuNewRoomItem,
 
         /**
          * User clicked the create room button in the + context menu of the room
