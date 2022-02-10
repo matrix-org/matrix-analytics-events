@@ -13,5 +13,5 @@ export interface SlashCommand {
   /**
    * The name of this command.
    */
-  command: "part" | "invite";
+  command: "Part" | "Invite";
 }
