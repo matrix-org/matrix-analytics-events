@@ -154,6 +154,12 @@ data class Interaction(
         WebRoomListHeaderPlusMenuCreateRoomItem,
 
         /**
+         * User clicked the explore rooms button in the + context menu of the
+         * room list header in Element Web/Desktop.
+         */
+        WebRoomListHeaderPlusMenuExploreRoomsItem,
+
+        /**
          * User adjusted their favourites using the context menu on a room tile
          * in the room list in Element Web/Desktop.
          */
@@ -190,6 +196,12 @@ data class Interaction(
         WebRoomListRoomsSublistPlusMenuCreateRoomItem,
 
         /**
+         * User clicked the explore rooms button in the + context menu of the
+         * rooms sublist in  Element Web/Desktop.
+         */
+        WebRoomListRoomsSublistPlusMenuExploreRoomsItem,
+
+        /**
          * User interacted with leave action in the general tab of the room
          * settings dialog in Element Web/Desktop.
          */
@@ -212,6 +224,18 @@ data class Interaction(
          * tab of Settings in Element Web/Desktop.
          */
         WebSettingsSidebarTabSpacesCheckbox,
+
+        /**
+         * User clicked the explore rooms button in the context menu of a space
+         * in Element Web/Desktop.
+         */
+        WebSpaceContextMenuExploreRoomsItem,
+
+        /**
+         * User clicked the home button in the context menu of a space in
+         * Element Web/Desktop.
+         */
+        WebSpaceContextMenuHomeItem,
 
         /**
          * User clicked the create room button in the + context menu of the room
