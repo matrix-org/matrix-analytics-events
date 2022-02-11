@@ -24,12 +24,21 @@ extension AnalyticsEvent {
     public struct ViewRoom: AnalyticsEventProtocol {
         public let eventName = "ViewRoom"
 
+        /// active space when user navigated to the room.
+        public let activeSpace: ActiveSpace?
+        /// Whether the room is a DM.
+        public let isDM: Bool?
+        /// Whether the room is a Space.
+        public let isSpace: Bool?
         /// The reason for the room change if known.
         public let trigger: Trigger?
         /// Whether the interaction was performed via the keyboard input.
         public let viaKeyboard: Bool?
 
-        public init(trigger: Trigger?, viaKeyboard: Bool?) {
+        public init(activeSpace: ActiveSpace?, isDM: Bool?, isSpace: Bool?, trigger: Trigger?, viaKeyboard: Bool?) {
+            self.activeSpace = activeSpace
+            self.isDM = isDM
+            self.isSpace = isSpace
             self.trigger = trigger
             self.viaKeyboard = viaKeyboard
         }
@@ -89,8 +98,22 @@ extension AnalyticsEvent {
             case Widget
         }
 
+        public enum ActiveSpace: String {
+            /// Active space is Home.
+            case Home
+            /// Active space is a meta space.
+            case Meta
+            /// Active space is a private space.
+            case Private
+            /// Active space is a public space.
+            case Public
+        }
+
         public var properties: [String: Any] {
             return [
+                "activeSpace": activeSpace?.rawValue as Any,
+                "isDM": isDM as Any,
+                "isSpace": isSpace as Any,
                 "trigger": trigger?.rawValue as Any,
                 "viaKeyboard": viaKeyboard as Any
             ]

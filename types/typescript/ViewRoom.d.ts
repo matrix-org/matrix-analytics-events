@@ -46,4 +46,16 @@ export interface ViewRoom {
    * Whether the interaction was performed via the keyboard input.
    */
   viaKeyboard?: boolean;
+  /**
+   * Whether the room is a DM.
+   */
+  isDM?: boolean;
+  /**
+   * Whether the room is a Space.
+   */
+  isSpace?: boolean;
+  /**
+   * active space when user navigated to the room.
+   */
+  activeSpace?: ("Home" | "Private" | "Public" | "Meta") & string;
 }
