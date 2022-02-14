@@ -6,7 +6,7 @@ from typing import Iterator, List
 from .documentation import generate_documentation
 from .kotlin import compute_kotlin
 from .swift import compute_swift
-from .schema import Schema, parse_schema
+from .schema import Schema, parse_schema, is_pageview
 
 
 def load_schemas(json_schema_paths: List[str]) -> Iterator[Schema]:
@@ -26,6 +26,10 @@ def generate_stub(
         )
     else:
         for schema in load_schemas(json_schema_paths):
+            # don't generate a $pageview event for mobile generators, its web-specific
+            if is_pageview(schema.event_name):
+                continue
+
             if output_language in "kotlin":
                 ext = ".kt"
                 output = compute_kotlin(schema)
@@ -69,7 +73,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # delete and re-create the output directory to ensure it is empty and we don't keep old type stubs
+    # delete and re-create the output directory to ensure it is empty and
+    # we don't keep old type stubs
     shutil.rmtree(args.output_dir)
     os.mkdir(args.output_dir)
 

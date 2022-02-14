@@ -44,14 +44,25 @@ def first_letter_up(s: str) -> str:
     """capitalize() can also change the next letter, and I want to keep camel case."""
     return s[0].upper() + s[1:]
 
+
 def split_text(prefix: str, text: str, limit: int = 80):
     """ensure comment is limited in length"""
-    # Use str() to avoid this issue: AttributeError: 'set' object has no attribute 'expandtabs'
-    return "\n".join(wrap(text=str(text), width=limit, initial_indent=prefix, subsequent_indent=prefix))
+    # Use str() to avoid this issue: AttributeError: 'set' object has no attribute
+    # 'expandtabs'
+    return "\n".join(
+        wrap(
+            text=str(text), width=limit, initial_indent=prefix, subsequent_indent=prefix
+        )
+    )
+
 
 def is_mobile_screen_event(s) -> str:
     """Whether the supplied class name is for the MobileScreen event."""
     return s == "MobileScreen"
+
+
+def is_pageview(s) -> str:
+    return s == "$pageview"
 
 
 def make_enum(name: str, json_property: dict) -> Enum:
