@@ -42,7 +42,7 @@ extension AnalyticsEvent {
             case SpacePanelSelectedSpace
             /// User tapped an unselected space from the space list -> space switching should occur.
             case SpacePanelSwitchSpace
-            /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
+            /// User clicked the create room button in the add existing room to space dialog in Element Web/Desktop.
             case WebAddExistingToSpaceDialogCreateRoomButton
             /// User clicked the create room button in the home page of Element Web/Desktop.
             case WebHomeCreateRoomButton
@@ -104,9 +104,9 @@ extension AnalyticsEvent {
             case WebSpaceContextMenuExploreRoomsItem
             /// User clicked the home button in the context menu of a space in Element Web/Desktop.
             case WebSpaceContextMenuHomeItem
-            /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
+            /// User clicked the new room button in the context menu of a space in Element Web/Desktop.
             case WebSpaceContextMenuNewRoomItem
-            /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
+            /// User clicked the new room button in the context menu on the space home in Element Web/Desktop.
             case WebSpaceHomeCreateRoomButton
             /// User clicked the theme toggle button in the user menu of Element Web/Desktop.
             case WebUserMenuThemeToggleButton

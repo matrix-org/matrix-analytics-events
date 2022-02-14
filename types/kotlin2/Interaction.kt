@@ -52,8 +52,8 @@ data class Interaction(
         SpacePanelSwitchSpace,
 
         /**
-         * User clicked the create room button in the + context menu of the room
-         * list header in Element Web/Desktop.
+         * User clicked the create room button in the add existing room to space
+         * dialog in Element Web/Desktop.
          */
         WebAddExistingToSpaceDialogCreateRoomButton,
 
@@ -238,14 +238,14 @@ data class Interaction(
         WebSpaceContextMenuHomeItem,
 
         /**
-         * User clicked the create room button in the + context menu of the room
-         * list header in Element Web/Desktop.
+         * User clicked the new room button in the context menu of a space in
+         * Element Web/Desktop.
          */
         WebSpaceContextMenuNewRoomItem,
 
         /**
-         * User clicked the create room button in the + context menu of the room
-         * list header in Element Web/Desktop.
+         * User clicked the new room button in the context menu on the space
+         * home in Element Web/Desktop.
          */
         WebSpaceHomeCreateRoomButton,
 
