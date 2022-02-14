@@ -39,6 +39,10 @@
         {"const": "WebSpaceHomeCreateRoomButton", "description": "User clicked the new room button in the context menu on the space home in Element Web/Desktop." },
         {"const": "WebSpaceContextMenuNewRoomItem", "description": "User clicked the new room button in the context menu of a space in Element Web/Desktop." },
         {"const": "WebAddExistingToSpaceDialogCreateRoomButton", "description": "User clicked the create room button in the add existing room to space dialog in Element Web/Desktop." },
+        {"const": "WebSpaceContextMenuHomeItem", "description": "User clicked the home button in the context menu of a space in Element Web/Desktop." },
+        {"const": "WebSpaceContextMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the context menu of a space in Element Web/Desktop." },
+        {"const": "WebRoomListHeaderPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop." },
+        {"const": "WebRoomListRoomsSublistPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the rooms sublist in  Element Web/Desktop." },
 
         {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},
         {"const": "SpacePanelSwitchSpace", "description": "User tapped an unselected space from the space list -> space switching should occur."}

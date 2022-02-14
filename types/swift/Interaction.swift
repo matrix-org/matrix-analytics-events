@@ -76,6 +76,8 @@ extension AnalyticsEvent {
             case WebRoomHeaderContextMenuSettingsItem
             /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
             case WebRoomListHeaderPlusMenuCreateRoomItem
+            /// User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop.
+            case WebRoomListHeaderPlusMenuExploreRoomsItem
             /// User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop.
             case WebRoomListRoomTileContextMenuFavouriteToggle
             /// User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop.
@@ -88,6 +90,8 @@ extension AnalyticsEvent {
             case WebRoomListRoomTileNotificationsMenu
             /// User clicked the create room button in the + context menu of the rooms sublist in Element Web/Desktop.
             case WebRoomListRoomsSublistPlusMenuCreateRoomItem
+            /// User clicked the explore rooms button in the + context menu of the rooms sublist in  Element Web/Desktop.
+            case WebRoomListRoomsSublistPlusMenuExploreRoomsItem
             /// User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
             case WebRoomSettingsLeaveButton
             /// User interacted with the prompt to create a new room when adjusting security settings in an existing room in Element Web/Desktop.
@@ -96,6 +100,10 @@ extension AnalyticsEvent {
             case WebSettingsAppearanceTabThemeSelector
             /// User interacted with the pre-built space checkboxes in the Sidebar tab of Settings in Element Web/Desktop.
             case WebSettingsSidebarTabSpacesCheckbox
+            /// User clicked the explore rooms button in the context menu of a space in Element Web/Desktop.
+            case WebSpaceContextMenuExploreRoomsItem
+            /// User clicked the home button in the context menu of a space in Element Web/Desktop.
+            case WebSpaceContextMenuHomeItem
             /// User clicked the new room button in the context menu of a space in Element Web/Desktop.
             case WebSpaceContextMenuNewRoomItem
             /// User clicked the new room button in the context menu on the space home in Element Web/Desktop.
