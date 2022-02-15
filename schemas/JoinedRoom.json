@@ -9,6 +9,9 @@
      "description": "The trigger for a room being joined if known.",
      "type": "string",
      "oneOf": [
+       {"const": "Invite", "description": "Room joined via an invite."},
+       {"const": "RoomPreview", "description": "Room joined via its preview."},
+       {"const": "SlashCommand", "description": "Room joined via the /join slash command."},
        {"const": "RoomDirectory", "description": "Room joined via the public rooms directory."},
        {"const": "SpaceHierarchy", "description": "Room joined via the space hierarchy view."},
        {"const": "Timeline", "description": "Room joined via a timeline pill or link in another room."},

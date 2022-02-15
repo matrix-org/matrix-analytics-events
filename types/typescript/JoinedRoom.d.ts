@@ -13,7 +13,16 @@ export interface JoinedRoom {
   /**
    * The trigger for a room being joined if known.
    */
-  trigger?: ("RoomDirectory" | "SpaceHierarchy" | "Timeline" | "Notification") & string;
+  trigger?: (
+    | "Invite"
+    | "RoomPreview"
+    | "SlashCommand"
+    | "RoomDirectory"
+    | "SpaceHierarchy"
+    | "Timeline"
+    | "Notification"
+  ) &
+    string;
   /**
    * The size of the room.
    */
