@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "description": "Triggered when the user searches rooms.",
+  "properties": {
+    "eventName": {
+      "enum": ["WebSearch"]
+    },
+    "viaSpotlight": {
+      "description": "Whether the user is using the new search experience beta.",
+      "type": "boolean"
+    },
+    "numResults": {
+      "description": "How many results the user got to their query.",
+      "type": "integer"
+    },
+    "queryLength": {
+      "description": "The length of the user's query.",
+      "type": "integer"
+    }
+  },
+  "required": ["eventName", "viaSpotlight", "numResults", "queryLength"],
+  "additionalProperties": false
+}
