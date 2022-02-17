@@ -749,6 +749,24 @@
                                         
                                             <li>
                                                 
+                                                    <b>Invite:</b> Room joined via an invite.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomPreview:</b> Room joined via its preview.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SlashCommand:</b> Room joined via the /join slash command.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
                                                     <b>RoomDirectory:</b> Room joined via the public rooms directory.
                                                     
                                             </li>
@@ -1740,12 +1758,6 @@
                                         
                                             <li>
                                                 
-                                                    <b>RoomSettings:</b> The settings screen shown from the Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
                                                     <b>RoomNotifications:</b> The notifications settings screen shown from the Room Details screen.
                                                     
                                             </li>
@@ -1819,6 +1831,12 @@
                                             <li>
                                                 
                                                     <b>SoftLogout:</b> Screen showing device has been soft logged out by the server.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UserSettings:</b> Screen showing User Settings (unknown tab).
                                                     
                                             </li>
                                         
@@ -1900,6 +1918,54 @@
                                                     
                                             </li>
                                         
+                                            <li>
+                                                
+                                                    <b>RoomSettings:</b> Screen showing Room Settings (unknown tab).
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettingsGeneral:</b> Screen showing Room Settings General Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettingsSecurityPrivacy:</b> Screen showing Room Settings Security &amp; Privacy Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettingsRolesPermissions:</b> Screen showing Room Settings Roles &amp; Permissions Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettingsNotifications:</b> Screen showing Room Settings Notifications Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettingsBridges:</b> Labs: Screen showing Room Settings Bridges Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettingsAdvanced:</b> Screen showing Room Settings Advanced Tab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UnifiedSearch:</b> Screen showing the new unified search modal (Project Spotlight).
+                                                    
+                                            </li>
+                                        
                                     </ul>                                    
                                                             
                             </td>                            
@@ -1911,6 +1977,53 @@
                             <td>
                                                                 
                                     integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>WebSearch</h2>
+            <p>Triggered when the user searches rooms.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>numResults</td>                        
+                            <td>How many results the user got to their query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>queryLength</td>                        
+                            <td>The length of the user&#39;s query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>viaSpotlight</td>                        
+                            <td>Whether the user is using the new search experience beta.</td>
+                            <td>
+                                                                
+                                    boolean
                                                             
                             </td>                            
                         </tr>

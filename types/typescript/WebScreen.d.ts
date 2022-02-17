@@ -22,7 +22,6 @@ export interface WebScreen {
     | "User"
     | "RoomSearch"
     | "RoomUploads"
-    | "RoomSettings"
     | "RoomNotifications"
     | "RoomDirectory"
     | "RoomFilter"
@@ -36,6 +35,7 @@ export interface WebScreen {
     | "CompleteSecurity"
     | "E2ESetup"
     | "SoftLogout"
+    | "UserSettings"
     | "UserSettingsGeneral"
     | "UserSettingsAppearance"
     | "UserSettingsNotifications"
@@ -49,6 +49,14 @@ export interface WebScreen {
     | "UserSettingsHelpAbout"
     | "UserSettingMjolnir"
     | "UserSettingFlair"
+    | "RoomSettings"
+    | "RoomSettingsGeneral"
+    | "RoomSettingsSecurityPrivacy"
+    | "RoomSettingsRolesPermissions"
+    | "RoomSettingsNotifications"
+    | "RoomSettingsBridges"
+    | "RoomSettingsAdvanced"
+    | "UnifiedSearch"
   ) &
     string;
   /**
