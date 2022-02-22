@@ -90,3 +90,8 @@ yarn build
   ]
 }
 ```
+
+## Publishing to npm
+
+`npm publish --access public` because the package is 
+[scoped](https://docs.npmjs.com/cli/v8/using-npm/scope#publishing-scoped-packages).

@@ -1,5 +1,5 @@
 {
-  "name": "matrix-analytics-events",
+  "name": "@matrixdotorg/analytics-events",
   "version": "0.0.1",
   "description": "JSON schema for analytics events from matrix SDKs",
   "author": "Element",
@@ -15,7 +15,7 @@
     "package.json"
   ],
   "scripts": {
-    "prepublishOnly": "yarn build:ts",
+    "123prepublishOnly": "yarn build:ts",
     "build": "yarn build:ts && yarn build:kt && yarn build:swift && yarn build:kt2 && yarn build:html",
     "build:ts": "./scripts/build-typescript.sh",
     "build:kt": "./scripts/build-kotlin.sh",
