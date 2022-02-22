@@ -19,7 +19,12 @@ data class Composer (
     /**
      * Whether the user's composer interaction was a reply to a previously sent event.
      */
-    val isReply: Boolean
+    val isReply: Boolean,
+
+    /**
+     * Whether this message begins a new thread or not.
+     */
+    val startsThread: Boolean? = null
 )
 
 enum class EventName {

@@ -30,18 +30,22 @@ extension AnalyticsEvent {
         public let isEditing: Bool
         /// Whether the user's composer interaction was a reply to a previously sent event.
         public let isReply: Bool
+        /// Whether this message begins a new thread or not.
+        public let startsThread: Bool?
 
-        public init(inThread: Bool, isEditing: Bool, isReply: Bool) {
+        public init(inThread: Bool, isEditing: Bool, isReply: Bool, startsThread: Bool?) {
             self.inThread = inThread
             self.isEditing = isEditing
             self.isReply = isReply
+            self.startsThread = startsThread
         }
 
         public var properties: [String: Any] {
             return [
                 "inThread": inThread,
                 "isEditing": isEditing,
-                "isReply": isReply
+                "isReply": isReply,
+                "startsThread": startsThread as Any
             ]
         }
     }

@@ -16,6 +16,10 @@
     "inThread": {
       "description": "Whether the user was using the composer inside of a thread.",
       "type": "boolean"
+    },
+    "startsThread": {
+      "description": "Whether this message begins a new thread or not.",
+      "type": "boolean"
     }
   },
   "required": ["eventName", "isEditing", "isReply", "inThread"],
