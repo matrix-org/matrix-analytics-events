@@ -15,7 +15,7 @@
     "package.json"
   ],
   "scripts": {
-    "123prepublishOnly": "yarn build:ts",
+    "prepublishOnly": "yarn build:ts",
     "build": "yarn build:ts && yarn build:kt && yarn build:swift && yarn build:kt2 && yarn build:html",
     "build:ts": "./scripts/build-typescript.sh",
     "build:kt": "./scripts/build-kotlin.sh",
