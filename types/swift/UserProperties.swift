@@ -23,13 +23,31 @@ import Foundation
 extension AnalyticsEvent {
     public struct UserProperties {
 
+        /// Whether the user has the favourites space enabled
+        public let WebMetaSpaceFavouritesEnabled: Bool?
+        /// Whether the user has the home space set to all rooms
+        public let WebMetaSpaceHomeAllRooms: Bool?
+        /// Whether the user has the home space enabled
+        public let WebMetaSpaceHomeEnabled: Bool?
+        /// Whether the user has the other rooms space enabled
+        public let WebMetaSpaceOrphansEnabled: Bool?
+        /// Whether the user has the people space enabled
+        public let WebMetaSpacePeopleEnabled: Bool?
         /// The selected messaging use case during the onboarding flow.
         public let ftueUseCaseSelection: FtueUseCaseSelection?
+        /// Number of joined rooms the user has favourited
+        public let numFavouriteRooms: Int?
         /// Number of spaces (and sub-spaces) the user is joined to
         public let numSpaces: Int?
 
-        public init(ftueUseCaseSelection: FtueUseCaseSelection?, numSpaces: Int?) {
+        public init(WebMetaSpaceFavouritesEnabled: Bool?, WebMetaSpaceHomeAllRooms: Bool?, WebMetaSpaceHomeEnabled: Bool?, WebMetaSpaceOrphansEnabled: Bool?, WebMetaSpacePeopleEnabled: Bool?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
+            self.WebMetaSpaceFavouritesEnabled = WebMetaSpaceFavouritesEnabled
+            self.WebMetaSpaceHomeAllRooms = WebMetaSpaceHomeAllRooms
+            self.WebMetaSpaceHomeEnabled = WebMetaSpaceHomeEnabled
+            self.WebMetaSpaceOrphansEnabled = WebMetaSpaceOrphansEnabled
+            self.WebMetaSpacePeopleEnabled = WebMetaSpacePeopleEnabled
             self.ftueUseCaseSelection = ftueUseCaseSelection
+            self.numFavouriteRooms = numFavouriteRooms
             self.numSpaces = numSpaces
         }
 
@@ -46,7 +64,13 @@ extension AnalyticsEvent {
 
         public var properties: [String: Any?] {
             return [
+                "WebMetaSpaceFavouritesEnabled": WebMetaSpaceFavouritesEnabled,
+                "WebMetaSpaceHomeAllRooms": WebMetaSpaceHomeAllRooms,
+                "WebMetaSpaceHomeEnabled": WebMetaSpaceHomeEnabled,
+                "WebMetaSpaceOrphansEnabled": WebMetaSpaceOrphansEnabled,
+                "WebMetaSpacePeopleEnabled": WebMetaSpacePeopleEnabled,
                 "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue,
+                "numFavouriteRooms": numFavouriteRooms,
                 "numSpaces": numSpaces
             ]
         }

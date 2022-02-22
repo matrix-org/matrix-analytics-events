@@ -32,8 +32,8 @@ extension AnalyticsEvent {
         }
 
         public enum Command: String {
-            case invite
-            case part
+            case Invite
+            case Part
         }
 
         public var properties: [String: Any] {

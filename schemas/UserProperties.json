@@ -15,6 +15,30 @@
       "numSpaces": {
         "description": "Number of spaces (and sub-spaces) the user is joined to",
         "type": "integer"
+      },
+      "numFavouriteRooms": {
+        "description": "Number of joined rooms the user has favourited",
+        "type": "integer"
+      },
+      "WebMetaSpaceHomeEnabled": {
+        "description": "Whether the user has the home space enabled",
+        "type": "boolean"
+      },
+      "WebMetaSpaceHomeAllRooms": {
+        "description": "Whether the user has the home space set to all rooms",
+        "type": "boolean"
+      },
+      "WebMetaSpacePeopleEnabled": {
+        "description": "Whether the user has the people space enabled",
+        "type": "boolean"
+      },
+      "WebMetaSpaceFavouritesEnabled": {
+        "description": "Whether the user has the favourites space enabled",
+        "type": "boolean"
+      },
+      "WebMetaSpaceOrphansEnabled": {
+        "description": "Whether the user has the other rooms space enabled",
+        "type": "boolean"
       }
     },
     "required": [],

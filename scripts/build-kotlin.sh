@@ -3,8 +3,9 @@
 rm types/kotlin/*
 
 set -e
+shopt -s extglob
 
-for json in schemas/*.json
+for json in schemas/!(Web*).json
 do
   json_basename=$(basename $json);
   kotlin_path=types/kotlin/${json_basename%.*}.kt

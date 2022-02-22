@@ -25,9 +25,33 @@ package im.vector.app.features.analytics.plan
  */
 data class UserProperties(
         /**
+         * Whether the user has the favourites space enabled
+         */
+        val WebMetaSpaceFavouritesEnabled: Boolean? = null,
+        /**
+         * Whether the user has the home space set to all rooms
+         */
+        val WebMetaSpaceHomeAllRooms: Boolean? = null,
+        /**
+         * Whether the user has the home space enabled
+         */
+        val WebMetaSpaceHomeEnabled: Boolean? = null,
+        /**
+         * Whether the user has the other rooms space enabled
+         */
+        val WebMetaSpaceOrphansEnabled: Boolean? = null,
+        /**
+         * Whether the user has the people space enabled
+         */
+        val WebMetaSpacePeopleEnabled: Boolean? = null,
+        /**
          * The selected messaging use case during the onboarding flow.
          */
         val ftueUseCaseSelection: FtueUseCaseSelection? = null,
+        /**
+         * Number of joined rooms the user has favourited
+         */
+        val numFavouriteRooms: Int? = null,
         /**
          * Number of spaces (and sub-spaces) the user is joined to
          */
@@ -56,10 +80,15 @@ data class UserProperties(
         WorkMessaging,
     }
 
-
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
+            WebMetaSpaceFavouritesEnabled?.let { put("WebMetaSpaceFavouritesEnabled", it) }
+            WebMetaSpaceHomeAllRooms?.let { put("WebMetaSpaceHomeAllRooms", it) }
+            WebMetaSpaceHomeEnabled?.let { put("WebMetaSpaceHomeEnabled", it) }
+            WebMetaSpaceOrphansEnabled?.let { put("WebMetaSpaceOrphansEnabled", it) }
+            WebMetaSpacePeopleEnabled?.let { put("WebMetaSpacePeopleEnabled", it) }
             ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.name) }
+            numFavouriteRooms?.let { put("numFavouriteRooms", it) }
             numSpaces?.let { put("numSpaces", it) }
         }.takeIf { it.isNotEmpty() }
     }

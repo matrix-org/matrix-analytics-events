@@ -19,9 +19,9 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user changed screen
+/// Triggered when the user changed screen on Element Android/iOS
 extension AnalyticsEvent {
-    public struct Screen: AnalyticsScreenProtocol {
+    public struct MobileScreen: AnalyticsScreenProtocol {
 
         /// How long the screen was displayed for in milliseconds.
         public let durationMs: Int?
@@ -33,48 +33,30 @@ extension AnalyticsEvent {
         }
 
         public enum ScreenName: String {
+            /// The screen that displays the user's breadcrumbs.
+            case Breadcrumbs
             /// The screen shown to create a new (non-direct) room.
             case CreateRoom
             /// The confirmation screen shown before deactivating an account.
             case DeactivateAccount
+            /// The tab on mobile that displays the dialpad.
+            case Dialpad
+            /// The Favourites tab on mobile that lists your favourite people/rooms.
+            case Favourites
             /// The form for the forgot password use case
             case ForgotPassword
             /// Legacy: The screen that shows information about a specific group.
             case Group
-            /// The Home tab on iOS | possibly the same on Android? | The Home space on Web?
+            /// The Home tab on iOS | possibly the same on Android?
             case Home
+            /// The screen shown to share a link to download the app.
+            case InviteFriends
             /// The screen that displays the login flow (when the user already has an account).
             case Login
-            /// The screen that displays the user's breadcrumbs.
-            case MobileBreadcrumbs
-            /// The tab on mobile that displays the dialpad.
-            case MobileDialpad
-            /// The Favourites tab on mobile that lists your favourite people/rooms.
-            case MobileFavourites
-            /// The screen shown to share a link to download the app.
-            case MobileInviteFriends
-            /// The People tab on mobile that lists all the DM rooms you have joined.
-            case MobilePeople
-            /// The Rooms tab on mobile that lists all the (non-direct) rooms you've joined.
-            case MobileRooms
-            /// The Files tab shown in the global search screen on Mobile.
-            case MobileSearchFiles
-            /// The Messages tab shown in the global search screen on Mobile.
-            case MobileSearchMessages
-            /// The People tab shown in the global search screen on Mobile.
-            case MobileSearchPeople
-            /// The Rooms tab shown in the global search screen on Mobile.
-            case MobileSearchRooms
-            /// The sidebar shown on mobile with spaces, settings etc.
-            case MobileSidebar
-            /// Screen that displays the list of memebrs of a space
-            case MobileSpaceMembers
-            /// The bottom sheet that list all space options
-            case MobileSpaceMenu
-            /// The screen shown to select which room directory you'd like to use.
-            case MobileSwitchDirectory
             /// Legacy: The screen that shows all groups/communities you have joined.
             case MyGroups
+            /// The People tab on mobile that lists all the DM rooms you have joined.
+            case People
             /// The screen that displays the registration flow (when the user wants to create an account)
             case Register
             /// The screen that displays the messages and events received in a room.
@@ -95,6 +77,16 @@ extension AnalyticsEvent {
             case RoomSettings
             /// The screen that allows you to see all of the files sent in a specific room.
             case RoomUploads
+            /// The Rooms tab on mobile that lists all the (non-direct) rooms you've joined.
+            case Rooms
+            /// The Files tab shown in the global search screen on Mobile.
+            case SearchFiles
+            /// The Messages tab shown in the global search screen on Mobile.
+            case SearchMessages
+            /// The People tab shown in the global search screen on Mobile.
+            case SearchPeople
+            /// The Rooms tab shown in the global search screen on Mobile.
+            case SearchRooms
             /// The global settings screen shown in the app.
             case Settings
             /// The settings screen to change the default notification options.
@@ -103,20 +95,20 @@ extension AnalyticsEvent {
             case SettingsMentionsAndKeywords
             /// The global security settings screen.
             case SettingsSecurity
+            /// The sidebar shown on mobile with spaces, settings etc.
+            case Sidebar
             /// Screen that displays the list of rooms and spaces of a space
             case SpaceExploreRooms
+            /// Screen that displays the list of members of a space
+            case SpaceMembers
+            /// The bottom sheet that list all space options
+            case SpaceMenu
             /// The screen shown to create a new direct room.
             case StartChat
+            /// The screen shown to select which room directory you'd like to use.
+            case SwitchDirectory
             /// A screen that shows information about a room member.
             case User
-            /// ?
-            case WebCompleteSecurity
-            /// ?
-            case WebE2ESetup
-            /// ?
-            case WebLoading
-            /// ?
-            case WebSoftLogout
             /// The splash screen.
             case Welcome
         }

@@ -22,9 +22,9 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsScreen
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user changed screen
+ * Triggered when the user changed screen on Element Android/iOS
  */
-data class Screen(
+data class MobileScreen(
         /**
          * How long the screen was displayed for in milliseconds.
          */
@@ -34,6 +34,11 @@ data class Screen(
 
     enum class ScreenName {
         /**
+         * The screen that displays the user's breadcrumbs.
+         */
+        Breadcrumbs,
+
+        /**
          * The screen shown to create a new (non-direct) room.
          */
         CreateRoom,
@@ -42,6 +47,16 @@ data class Screen(
          * The confirmation screen shown before deactivating an account.
          */
         DeactivateAccount,
+
+        /**
+         * The tab on mobile that displays the dialpad.
+         */
+        Dialpad,
+
+        /**
+         * The Favourites tab on mobile that lists your favourite people/rooms.
+         */
+        Favourites,
 
         /**
          * The form for the forgot password use case
@@ -54,10 +69,14 @@ data class Screen(
         Group,
 
         /**
-         * The Home tab on iOS | possibly the same on Android? | The Home space
-         * on Web?
+         * The Home tab on iOS | possibly the same on Android?
          */
         Home,
+
+        /**
+         * The screen shown to share a link to download the app.
+         */
+        InviteFriends,
 
         /**
          * The screen that displays the login flow (when the user already has an
@@ -66,80 +85,14 @@ data class Screen(
         Login,
 
         /**
-         * The screen that displays the user's breadcrumbs.
+         * Legacy: The screen that shows all groups/communities you have joined.
          */
-        MobileBreadcrumbs,
-
-        /**
-         * The tab on mobile that displays the dialpad.
-         */
-        MobileDialpad,
-
-        /**
-         * The Favourites tab on mobile that lists your favourite people/rooms.
-         */
-        MobileFavourites,
-
-        /**
-         * The screen shown to share a link to download the app.
-         */
-        MobileInviteFriends,
+        MyGroups,
 
         /**
          * The People tab on mobile that lists all the DM rooms you have joined.
          */
-        MobilePeople,
-
-        /**
-         * The Rooms tab on mobile that lists all the (non-direct) rooms you've
-         * joined.
-         */
-        MobileRooms,
-
-        /**
-         * The Files tab shown in the global search screen on Mobile.
-         */
-        MobileSearchFiles,
-
-        /**
-         * The Messages tab shown in the global search screen on Mobile.
-         */
-        MobileSearchMessages,
-
-        /**
-         * The People tab shown in the global search screen on Mobile.
-         */
-        MobileSearchPeople,
-
-        /**
-         * The Rooms tab shown in the global search screen on Mobile.
-         */
-        MobileSearchRooms,
-
-        /**
-         * The sidebar shown on mobile with spaces, settings etc.
-         */
-        MobileSidebar,
-
-        /**
-         * Screen that displays the list of memebrs of a space
-         */
-        MobileSpaceMembers,
-
-        /**
-         * The bottom sheet that list all space options
-         */
-        MobileSpaceMenu,
-
-        /**
-         * The screen shown to select which room directory you'd like to use.
-         */
-        MobileSwitchDirectory,
-
-        /**
-         * Legacy: The screen that shows all groups/communities you have joined.
-         */
-        MyGroups,
+        People,
 
         /**
          * The screen that displays the registration flow (when the user wants
@@ -197,6 +150,32 @@ data class Screen(
         RoomUploads,
 
         /**
+         * The Rooms tab on mobile that lists all the (non-direct) rooms you've
+         * joined.
+         */
+        Rooms,
+
+        /**
+         * The Files tab shown in the global search screen on Mobile.
+         */
+        SearchFiles,
+
+        /**
+         * The Messages tab shown in the global search screen on Mobile.
+         */
+        SearchMessages,
+
+        /**
+         * The People tab shown in the global search screen on Mobile.
+         */
+        SearchPeople,
+
+        /**
+         * The Rooms tab shown in the global search screen on Mobile.
+         */
+        SearchRooms,
+
+        /**
          * The global settings screen shown in the app.
          */
         Settings,
@@ -217,9 +196,24 @@ data class Screen(
         SettingsSecurity,
 
         /**
+         * The sidebar shown on mobile with spaces, settings etc.
+         */
+        Sidebar,
+
+        /**
          * Screen that displays the list of rooms and spaces of a space
          */
         SpaceExploreRooms,
+
+        /**
+         * Screen that displays the list of members of a space
+         */
+        SpaceMembers,
+
+        /**
+         * The bottom sheet that list all space options
+         */
+        SpaceMenu,
 
         /**
          * The screen shown to create a new direct room.
@@ -227,29 +221,14 @@ data class Screen(
         StartChat,
 
         /**
+         * The screen shown to select which room directory you'd like to use.
+         */
+        SwitchDirectory,
+
+        /**
          * A screen that shows information about a room member.
          */
         User,
-
-        /**
-         * ?
-         */
-        WebCompleteSecurity,
-
-        /**
-         * ?
-         */
-        WebE2ESetup,
-
-        /**
-         * ?
-         */
-        WebLoading,
-
-        /**
-         * ?
-         */
-        WebSoftLogout,
 
         /**
          * The splash screen.

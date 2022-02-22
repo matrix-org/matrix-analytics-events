@@ -26,6 +26,9 @@ def generate_stub(
         )
     else:
         for schema in load_schemas(json_schema_paths):
+            if schema.klass.startswith("Web"):
+                continue
+
             if output_language in "kotlin":
                 ext = ".kt"
                 output = compute_kotlin(schema)

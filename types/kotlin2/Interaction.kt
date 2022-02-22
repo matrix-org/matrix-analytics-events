@@ -52,6 +52,30 @@ data class Interaction(
         SpacePanelSwitchSpace,
 
         /**
+         * User clicked the create room button in the add existing room to space
+         * dialog in Element Web/Desktop.
+         */
+        WebAddExistingToSpaceDialogCreateRoomButton,
+
+        /**
+         * User clicked the create room button in the home page of Element
+         * Web/Desktop.
+         */
+        WebHomeCreateRoomButton,
+
+        /**
+         * User interacted with pin to sidebar checkboxes in the quick settings
+         * menu of Element Web/Desktop.
+         */
+        WebQuickSettingsPinToSidebarCheckbox,
+
+        /**
+         * User interacted with the theme dropdown in the quick settings menu of
+         * Element Web/Desktop.
+         */
+        WebQuickSettingsThemeDropdown,
+
+        /**
          * User accessed the room invite flow using the button at the top of the
          * room member list in the right panel of Element Web/Desktop.
          */
@@ -80,6 +104,12 @@ data class Interaction(
          * user info card in Element Web/Desktop.
          */
         WebRightPanelRoomUserInfoInviteButton,
+
+        /**
+         * User clicked the create room button in the room directory of Element
+         * Web/Desktop.
+         */
+        WebRoomDirectoryCreateRoomButton,
 
         /**
          * User adjusted their favourites using the context menu on the header
@@ -118,6 +148,18 @@ data class Interaction(
         WebRoomHeaderContextMenuSettingsItem,
 
         /**
+         * User clicked the create room button in the + context menu of the room
+         * list header in Element Web/Desktop.
+         */
+        WebRoomListHeaderPlusMenuCreateRoomItem,
+
+        /**
+         * User clicked the explore rooms button in the + context menu of the
+         * room list header in Element Web/Desktop.
+         */
+        WebRoomListHeaderPlusMenuExploreRoomsItem,
+
+        /**
          * User adjusted their favourites using the context menu on a room tile
          * in the room list in Element Web/Desktop.
          */
@@ -148,10 +190,70 @@ data class Interaction(
         WebRoomListRoomTileNotificationsMenu,
 
         /**
+         * User clicked the create room button in the + context menu of the
+         * rooms sublist in Element Web/Desktop.
+         */
+        WebRoomListRoomsSublistPlusMenuCreateRoomItem,
+
+        /**
+         * User clicked the explore rooms button in the + context menu of the
+         * rooms sublist in  Element Web/Desktop.
+         */
+        WebRoomListRoomsSublistPlusMenuExploreRoomsItem,
+
+        /**
          * User interacted with leave action in the general tab of the room
          * settings dialog in Element Web/Desktop.
          */
         WebRoomSettingsLeaveButton,
+
+        /**
+         * User interacted with the prompt to create a new room when adjusting
+         * security settings in an existing room in Element Web/Desktop.
+         */
+        WebRoomSettingsSecurityTabCreateNewRoomButton,
+
+        /**
+         * User interacted with the theme radio selector in the Appearance tab
+         * of Settings in Element Web/Desktop.
+         */
+        WebSettingsAppearanceTabThemeSelector,
+
+        /**
+         * User interacted with the pre-built space checkboxes in the Sidebar
+         * tab of Settings in Element Web/Desktop.
+         */
+        WebSettingsSidebarTabSpacesCheckbox,
+
+        /**
+         * User clicked the explore rooms button in the context menu of a space
+         * in Element Web/Desktop.
+         */
+        WebSpaceContextMenuExploreRoomsItem,
+
+        /**
+         * User clicked the home button in the context menu of a space in
+         * Element Web/Desktop.
+         */
+        WebSpaceContextMenuHomeItem,
+
+        /**
+         * User clicked the new room button in the context menu of a space in
+         * Element Web/Desktop.
+         */
+        WebSpaceContextMenuNewRoomItem,
+
+        /**
+         * User clicked the new room button in the context menu on the space
+         * home in Element Web/Desktop.
+         */
+        WebSpaceHomeCreateRoomButton,
+
+        /**
+         * User clicked the theme toggle button in the user menu of Element
+         * Web/Desktop.
+         */
+        WebUserMenuThemeToggleButton,
     }
 
     enum class InteractionType {

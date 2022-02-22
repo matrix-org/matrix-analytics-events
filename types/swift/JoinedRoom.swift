@@ -41,10 +41,16 @@ extension AnalyticsEvent {
         }
 
         public enum Trigger: String {
+            /// Room joined via an invite.
+            case Invite
             /// Room joined via a push/desktop notification.
             case Notification
             /// Room joined via the public rooms directory.
             case RoomDirectory
+            /// Room joined via its preview.
+            case RoomPreview
+            /// Room joined via the /join slash command.
+            case SlashCommand
             /// Room joined via the space hierarchy view.
             case SpaceHierarchy
             /// Room joined via a timeline pill or link in another room.
