@@ -42,7 +42,8 @@
         {"const": "WebSpaceContextMenuHomeItem", "description": "User clicked the home button in the context menu of a space in Element Web/Desktop." },
         {"const": "WebSpaceContextMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the context menu of a space in Element Web/Desktop." },
         {"const": "WebRoomListHeaderPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop." },
-        {"const": "WebRoomListRoomsSublistPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the rooms sublist in  Element Web/Desktop." },
+        {"const": "WebRoomListRoomsSublistPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop." },
+        {"const": "WebRightPanelThreadPanelFilterDropdown", "description": "User clicked the threads 'show' filter dropdown in the threads panel in Element Web/Desktop." },
 
         {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},
         {"const": "SpacePanelSwitchSpace", "description": "User tapped an unselected space from the space list -> space switching should occur."}

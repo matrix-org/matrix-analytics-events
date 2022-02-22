@@ -60,6 +60,8 @@ extension AnalyticsEvent {
             case WebRightPanelRoomUserInfoBackButton
             /// User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop.
             case WebRightPanelRoomUserInfoInviteButton
+            /// User clicked the threads 'show' filter dropdown in the threads panel in Element Web/Desktop.
+            case WebRightPanelThreadPanelFilterDropdown
             /// User clicked the create room button in the room directory of Element Web/Desktop.
             case WebRoomDirectoryCreateRoomButton
             /// User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop.
@@ -90,7 +92,7 @@ extension AnalyticsEvent {
             case WebRoomListRoomTileNotificationsMenu
             /// User clicked the create room button in the + context menu of the rooms sublist in Element Web/Desktop.
             case WebRoomListRoomsSublistPlusMenuCreateRoomItem
-            /// User clicked the explore rooms button in the + context menu of the rooms sublist in  Element Web/Desktop.
+            /// User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop.
             case WebRoomListRoomsSublistPlusMenuExploreRoomsItem
             /// User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
             case WebRoomSettingsLeaveButton

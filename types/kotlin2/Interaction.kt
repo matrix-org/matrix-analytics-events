@@ -106,6 +106,12 @@ data class Interaction(
         WebRightPanelRoomUserInfoInviteButton,
 
         /**
+         * User clicked the threads 'show' filter dropdown in the threads panel
+         * in Element Web/Desktop.
+         */
+        WebRightPanelThreadPanelFilterDropdown,
+
+        /**
          * User clicked the create room button in the room directory of Element
          * Web/Desktop.
          */
@@ -197,7 +203,7 @@ data class Interaction(
 
         /**
          * User clicked the explore rooms button in the + context menu of the
-         * rooms sublist in  Element Web/Desktop.
+         * rooms sublist in Element Web/Desktop.
          */
         WebRoomListRoomsSublistPlusMenuExploreRoomsItem,
 
