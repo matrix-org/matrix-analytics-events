@@ -18,7 +18,7 @@ def load_schemas(json_schema_paths: List[str]) -> Iterator[Schema]:
 
 
 def generate_stub(
-    output_language: str, json_schema_paths: str, output_dir: str
+    output_language: str, json_schema_paths: list[str], output_dir: str
 ) -> None:
     if output_language == "html":
         generate_documentation(
