@@ -46,8 +46,8 @@
 
         {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},
         {"const": "SpacePanelSwitchSpace", "description": "User tapped an unselected space from the space list -> space switching should occur."},
-        {"const": "RoomLeave", "description": "User tapped on Leave Room button on Room Details screen."},
-        {"const": "RoomAddHome", "description": "User tapped on Add to Home button on Room Details screen."}
+        {"const": "MobileRoomLeave", "description": "User tapped on Leave Room button on Room Details screen."},
+        {"const": "MobileRoomAddHome", "description": "User tapped on Add to Home button on Room Details screen."}
       ]
     },
     "index": {

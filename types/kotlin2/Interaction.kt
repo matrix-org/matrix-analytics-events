@@ -41,6 +41,16 @@ data class Interaction(
 
     enum class Name {
         /**
+         * User tapped on Add to Home button on Room Details screen.
+         */
+        MobileRoomAddHome,
+
+        /**
+         * User tapped on Leave Room button on Room Details screen.
+         */
+        MobileRoomLeave,
+
+        /**
          * User tapped the already selected space from the space list.
          */
         SpacePanelSelectedSpace,
