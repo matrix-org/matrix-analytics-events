@@ -68,6 +68,8 @@ extension AnalyticsEvent {
             case WebRightPanelThreadPanelFilterDropdown
             /// User clicked the create room button in the room directory of Element Web/Desktop.
             case WebRoomDirectoryCreateRoomButton
+            /// User clicked the Threads button in the top right of a room in Element Web/Desktop.
+            case WebRoomHeaderButtonsThreadsButton
             /// User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop.
             case WebRoomHeaderContextMenuFavouriteToggle
             /// User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop.
@@ -102,6 +104,8 @@ extension AnalyticsEvent {
             case WebRoomSettingsLeaveButton
             /// User interacted with the prompt to create a new room when adjusting security settings in an existing room in Element Web/Desktop.
             case WebRoomSettingsSecurityTabCreateNewRoomButton
+            /// User clicked a thread summary in the timeline of a room in Element Web/Desktop.
+            case WebRoomTimelineThreadSummaryButton
             /// User interacted with the theme radio selector in the Appearance tab of Settings in Element Web/Desktop.
             case WebSettingsAppearanceTabThemeSelector
             /// User interacted with the pre-built space checkboxes in the Sidebar tab of Settings in Element Web/Desktop.
@@ -114,6 +118,10 @@ extension AnalyticsEvent {
             case WebSpaceContextMenuNewRoomItem
             /// User clicked the new room button in the context menu on the space home in Element Web/Desktop.
             case WebSpaceHomeCreateRoomButton
+            /// User clicked the back button on a Thread view going back to the Threads Panel of Element Web/Desktop.
+            case WebThreadViewBackButton
+            /// User selected a thread in the Threads panel in Element Web/Desktop.
+            case WebThreadsPanelThreadItem
             /// User clicked the theme toggle button in the user menu of Element Web/Desktop.
             case WebUserMenuThemeToggleButton
         }
