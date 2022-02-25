@@ -51,6 +51,8 @@ export interface Interaction {
     | "WebRightPanelThreadPanelFilterDropdown"
     | "SpacePanelSelectedSpace"
     | "SpacePanelSwitchSpace"
+    | "MobileRoomLeave"
+    | "MobileRoomAddHome"
   ) &
     string;
   /**

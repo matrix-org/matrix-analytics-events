@@ -38,6 +38,10 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
+            /// User tapped on Add to Home button on Room Details screen.
+            case MobileRoomAddHome
+            /// User tapped on Leave Room button on Room Details screen.
+            case MobileRoomLeave
             /// User tapped the already selected space from the space list.
             case SpacePanelSelectedSpace
             /// User tapped an unselected space from the space list -> space switching should occur.
