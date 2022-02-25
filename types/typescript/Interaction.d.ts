@@ -50,6 +50,8 @@ export interface Interaction {
     | "WebRoomListRoomsSublistPlusMenuExploreRoomsItem"
     | "SpacePanelSelectedSpace"
     | "SpacePanelSwitchSpace"
+    | "MobileRoomLeave"
+    | "MobileRoomAddHome"
   ) &
     string;
   /**

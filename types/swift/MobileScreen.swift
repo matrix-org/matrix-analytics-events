@@ -61,6 +61,8 @@ extension AnalyticsEvent {
             case Register
             /// The screen that displays the messages and events received in a room.
             case Room
+            /// The room addresses screen shown from the Room Details screen.
+            case RoomAddresses
             /// The screen shown when tapping the name of a room from the Room screen.
             case RoomDetails
             /// The screen that lists public rooms for you to discover.
@@ -71,6 +73,10 @@ extension AnalyticsEvent {
             case RoomMembers
             /// The notifications settings screen shown from the Room Details screen.
             case RoomNotifications
+            /// The roles permissions screen shown from the Room Details screen.
+            case RoomPermissions
+            /// Screen that displays room preview if user hasn't joined yet
+            case RoomPreview
             /// The screen that allows you to search for messages/files in a specific room.
             case RoomSearch
             /// The settings screen shown from the Room Details screen.
@@ -89,12 +95,30 @@ extension AnalyticsEvent {
             case SearchRooms
             /// The global settings screen shown in the app.
             case Settings
+            /// The advanced settings screen (developer mode, rageshake, push notification rules)
+            case SettingsAdvanced
             /// The settings screen to change the default notification options.
             case SettingsDefaultNotifications
+            /// The settings screen with general profile settings.
+            case SettingsGeneral
+            /// The Help and About screen
+            case SettingsHelp
+            /// The settings screen with list of the ignored users.
+            case SettingsIgnoredUsers
+            /// The experimental features settings screen,
+            case SettingsLabs
+            /// The settings screen with legals information
+            case SettingsLegals
             /// The settings screen to manage notification mentions and keywords.
             case SettingsMentionsAndKeywords
+            /// The notifications settings screen.
+            case SettingsNotifications
+            /// The preferences screen (theme, language, editor preferences, etc.
+            case SettingsPreferences
             /// The global security settings screen.
             case SettingsSecurity
+            /// The calls settings screen.
+            case SettingsVoiceVideo
             /// The sidebar shown on mobile with spaces, settings etc.
             case Sidebar
             /// Screen that displays the list of rooms and spaces of a space
