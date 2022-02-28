@@ -22,4 +22,8 @@ export interface Composer {
    * Whether the user was using the composer inside of a thread.
    */
   inThread: boolean;
+  /**
+   * Whether this message begins a new thread or not.
+   */
+  startsThread?: boolean;
 }
