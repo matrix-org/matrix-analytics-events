@@ -57,6 +57,10 @@ export interface Interaction {
     | "SpacePanelSwitchSpace"
     | "MobileRoomLeave"
     | "MobileRoomAddHome"
+    | "MobileRoomThreadListButton"
+    | "MobileRoomThreadSummaryItem"
+    | "MobileThreadListThreadItem"
+    | "MobileThreadListFilterItem"
   ) &
     string;
   /**

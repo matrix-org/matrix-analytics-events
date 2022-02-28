@@ -30,7 +30,7 @@ public protocol AnalyticsEventProtocol {
 /// An event that can be sent to an analytics service which represents the display of a screen .
 public protocol AnalyticsScreenProtocol {
     /// The name of the event being reported.
-    var screenName: AnalyticsEvent.Screen.ScreenName { get }
+    var screenName: AnalyticsEvent.MobileScreen.ScreenName { get }
     /// A dictionary containing all additional properties that are reported.
     var properties: [String: Any] { get }
 }

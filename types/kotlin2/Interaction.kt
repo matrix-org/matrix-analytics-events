@@ -51,6 +51,26 @@ data class Interaction(
         MobileRoomLeave,
 
         /**
+         * User tapped on Threads button on Room screen.
+         */
+        MobileRoomThreadListButton,
+
+        /**
+         * User tapped on a thread summary item on Room screen.
+         */
+        MobileRoomThreadSummaryItem,
+
+        /**
+         * User tapped on the filter button on ThreadList screen.
+         */
+        MobileThreadListFilterItem,
+
+        /**
+         * User selected a thread on ThreadList screen.
+         */
+        MobileThreadListThreadItem,
+
+        /**
          * User tapped the already selected space from the space list.
          */
         SpacePanelSelectedSpace,

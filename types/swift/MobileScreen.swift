@@ -131,6 +131,8 @@ extension AnalyticsEvent {
             case StartChat
             /// The screen shown to select which room directory you'd like to use.
             case SwitchDirectory
+            /// Screen that displays list of threads for a room
+            case ThreadList
             /// A screen that shows information about a room member.
             case User
             /// The splash screen.

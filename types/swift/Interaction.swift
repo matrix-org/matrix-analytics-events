@@ -42,6 +42,14 @@ extension AnalyticsEvent {
             case MobileRoomAddHome
             /// User tapped on Leave Room button on Room Details screen.
             case MobileRoomLeave
+            /// User tapped on Threads button on Room screen.
+            case MobileRoomThreadListButton
+            /// User tapped on a thread summary item on Room screen.
+            case MobileRoomThreadSummaryItem
+            /// User tapped on the filter button on ThreadList screen.
+            case MobileThreadListFilterItem
+            /// User selected a thread on ThreadList screen.
+            case MobileThreadListThreadItem
             /// User tapped the already selected space from the space list.
             case SpacePanelSelectedSpace
             /// User tapped an unselected space from the space list -> space switching should occur.

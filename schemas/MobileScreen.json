@@ -58,7 +58,8 @@
         {"const": "SettingsMentionsAndKeywords", "description": "The settings screen to manage notification mentions and keywords."},
         {"const": "SpaceMenu", "description": "The bottom sheet that list all space options"},
         {"const": "SpaceMembers", "description": "Screen that displays the list of members of a space"},
-        {"const": "RoomPreview", "description": "Screen that displays room preview if user hasn't joined yet"}
+        {"const": "RoomPreview", "description": "Screen that displays room preview if user hasn't joined yet"},
+        {"const": "ThreadList", "description": "Screen that displays list of threads for a room"}
       ]
     },
     "durationMs": {
