@@ -289,7 +289,7 @@ data class MobileScreen(
         /**
          * Screen that displays list of threads for a room
          */
-        ThreadPanel,
+        ThreadList,
 
         /**
          * A screen that shows information about a room member.
