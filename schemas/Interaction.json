@@ -52,7 +52,11 @@
         {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},
         {"const": "SpacePanelSwitchSpace", "description": "User tapped an unselected space from the space list -> space switching should occur."},
         {"const": "MobileRoomLeave", "description": "User tapped on Leave Room button on Room Details screen."},
-        {"const": "MobileRoomAddHome", "description": "User tapped on Add to Home button on Room Details screen."}
+        {"const": "MobileRoomAddHome", "description": "User tapped on Add to Home button on Room Details screen."},
+        {"const": "MobileRoomThreadPanelButton", "description": "User tapped on Threads button on Room screen."},
+        {"const": "MobileRoomThreadSummaryItem", "description": "User tapped on a thread summary item on Room screen."},
+        {"const": "MobileThreadPanelThreadItem", "description": "User selected a thread on ThreadPanel screen."},
+        {"const": "MobileThreadPanelFilterItem", "description": "User tapped on the filter button on ThreadPanel screen."}
       ]
     },
     "index": {
