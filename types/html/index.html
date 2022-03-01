@@ -33,1306 +33,6 @@
     <h1>Analytics events for Element clients</h1>    
     
         <section class="event">            
-            <h2>CallEnded</h2>
-            <p>Triggered when a call has ended.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>durationMs</td>                        
-                            <td>The duration of the call in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CallError</h2>
-            <p>Triggered when an error occurred in a call.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CallStarted</h2>
-            <p>Triggered when a call is started.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>Composer</h2>
-            <p>Triggered when the user sends a message via the composer.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>inThread</td>                        
-                            <td>Whether the user was using the composer inside of a thread.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isEditing</td>                        
-                            <td>Whether the user&#39;s composer interaction was editing a previously sent event.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isReply</td>                        
-                            <td>Whether the user&#39;s composer interaction was a reply to a previously sent event.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>startsThread</td>                        
-                            <td>Whether this message begins a new thread or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CreatedRoom</h2>
-            <p>Triggered when the user creates a room.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isDM</td>                        
-                            <td>Whether the room is a DM.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>Error</h2>
-            <p>Triggered when an error occurred</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>context</td>                        
-                            <td>Context - client defined, can be used for debugging</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>domain</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    E2EE    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VOIP    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    UnknownError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OlmIndexError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OlmKeysNotSentError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OlmUnspecifiedError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipUserHangup    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipIceFailed    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipInviteTimeout    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipIceTimeout    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipUserMediaFailed    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>Interaction</h2>
-            <p>Triggered when the user clicks/taps/activates a UI element.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>index</td>                        
-                            <td>The index of the element, if its in a list of elements.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>interactionType</td>                        
-                            <td>The manner with which the user activated the UI element.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    Pointer    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Keyboard    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Touch    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td>The unique name of this element.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListRoomTileContextMenuFavouriteToggle:</b> User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomHeaderContextMenuFavouriteToggle:</b> User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListRoomTileNotificationsMenu:</b> User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomHeaderContextMenuNotificationsItem:</b> User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomHeaderContextMenuPeopleItem:</b> User accessed room member list using the context menu on the header of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRightPanelRoomInfoPeopleButton:</b> User accessed room member list using the &#39;People&#39; button in the right panel room summary card of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRightPanelRoomUserInfoBackButton:</b> User accessed room member list using the back button in the right panel user info card of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListRoomTileContextMenuLeaveItem:</b> User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomHeaderContextMenuLeaveItem:</b> User interacted with leave action in the context menu on the header of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomSettingsLeaveButton:</b> User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListRoomTileContextMenuSettingsItem:</b> User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomHeaderContextMenuSettingsItem:</b> User accessed room settings using the context menu on the header of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRightPanelRoomInfoSettingsButton:</b> User accessed room settings using the &#39;Settings&#39; button in the right panel room summary card of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListRoomTileContextMenuInviteItem:</b> User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomHeaderContextMenuInviteItem:</b> User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRightPanelMemberListInviteButton:</b> User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRightPanelRoomUserInfoInviteButton:</b> User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebQuickSettingsThemeDropdown:</b> User interacted with the theme dropdown in the quick settings menu of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUserMenuThemeToggleButton:</b> User clicked the theme toggle button in the user menu of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSettingsAppearanceTabThemeSelector:</b> User interacted with the theme radio selector in the Appearance tab of Settings in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebQuickSettingsPinToSidebarCheckbox:</b> User interacted with pin to sidebar checkboxes in the quick settings menu of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSettingsSidebarTabSpacesCheckbox:</b> User interacted with the pre-built space checkboxes in the Sidebar tab of Settings in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomSettingsSecurityTabCreateNewRoomButton:</b> User interacted with the prompt to create a new room when adjusting security settings in an existing room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebHomeCreateRoomButton:</b> User clicked the create room button in the home page of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomDirectoryCreateRoomButton:</b> User clicked the create room button in the room directory of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListRoomsSublistPlusMenuCreateRoomItem:</b> User clicked the create room button in the + context menu of the rooms sublist in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListHeaderPlusMenuCreateRoomItem:</b> User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSpaceHomeCreateRoomButton:</b> User clicked the new room button in the context menu on the space home in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSpaceContextMenuNewRoomItem:</b> User clicked the new room button in the context menu of a space in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebAddExistingToSpaceDialogCreateRoomButton:</b> User clicked the create room button in the add existing room to space dialog in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSpaceContextMenuHomeItem:</b> User clicked the home button in the context menu of a space in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSpaceContextMenuExploreRoomsItem:</b> User clicked the explore rooms button in the context menu of a space in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListHeaderPlusMenuExploreRoomsItem:</b> User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListRoomsSublistPlusMenuExploreRoomsItem:</b> User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRightPanelThreadPanelFilterDropdown:</b> User clicked the threads &#39;show&#39; filter dropdown in the threads panel in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomHeaderButtonsThreadsButton:</b> User clicked the Threads button in the top right of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebThreadViewBackButton:</b> User clicked the back button on a Thread view going back to the Threads Panel of Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebThreadsPanelThreadItem:</b> User selected a thread in the Threads panel in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomTimelineThreadSummaryButton:</b> User clicked a thread summary in the timeline of a room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpacePanelSelectedSpace:</b> User tapped the already selected space from the space list.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpacePanelSwitchSpace:</b> User tapped an unselected space from the space list -&gt; space switching should occur.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRoomLeave:</b> User tapped on Leave Room button on Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRoomAddHome:</b> User tapped on Add to Home button on Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRoomThreadListButton:</b> User tapped on Threads button on Room screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRoomThreadSummaryItem:</b> User tapped on a thread summary item on Room screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileThreadListThreadItem:</b> User selected a thread on ThreadList screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileThreadListFilterItem:</b> User tapped on the filter button on ThreadList screen.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>JoinedRoom</h2>
-            <p>Triggered when the user joins a room.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isDM</td>                        
-                            <td>Whether the room is a DM.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isSpace</td>                        
-                            <td>Whether the room is a Space.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>roomSize</td>                        
-                            <td>The size of the room.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    One    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Two    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    ThreeToTen    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    ElevenToOneHundred    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OneHundredAndOneToAThousand    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    MoreThanAThousand    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>trigger</td>                        
-                            <td>The trigger for a room being joined if known.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Invite:</b> Room joined via an invite.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomPreview:</b> Room joined via its preview.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SlashCommand:</b> Room joined via the /join slash command.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomDirectory:</b> Room joined via the public rooms directory.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpaceHierarchy:</b> Room joined via the space hierarchy view.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Timeline:</b> Room joined via a timeline pill or link in another room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Notification:</b> Room joined via a push/desktop notification.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>$screen</h2>
-            <p>Triggered when the user changed screen on Element Android/iOS</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>durationMs</td>                        
-                            <td>How long the screen was displayed for in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>screenName</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Home:</b> The Home tab on iOS | possibly the same on Android?
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Welcome:</b> The splash screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Login:</b> The screen that displays the login flow (when the user already has an account).
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ForgotPassword:</b> The form for the forgot password use case
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Register:</b> The screen that displays the registration flow (when the user wants to create an account)
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Room:</b> The screen that displays the messages and events received in a room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomDetails:</b> The screen shown when tapping the name of a room from the Room screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomMembers:</b> The screen that displays the list of members that are part of a room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>User:</b> A screen that shows information about a room member.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomSearch:</b> The screen that allows you to search for messages/files in a specific room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomUploads:</b> The screen that allows you to see all of the files sent in a specific room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomSettings:</b> The settings screen shown from the Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomNotifications:</b> The notifications settings screen shown from the Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomAddresses:</b> The room addresses screen shown from the Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomPermissions:</b> The roles permissions screen shown from the Room Details screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomDirectory:</b> The screen that lists public rooms for you to discover.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomFilter:</b> The screen that lists all the user&#39;s rooms and let them filter the rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartChat:</b> The screen shown to create a new direct room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>CreateRoom:</b> The screen shown to create a new (non-direct) room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>DeactivateAccount:</b> The confirmation screen shown before deactivating an account.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Group:</b> Legacy: The screen that shows information about a specific group.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MyGroups:</b> Legacy: The screen that shows all groups/communities you have joined.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpaceExploreRooms:</b> Screen that displays the list of rooms and spaces of a space
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Sidebar:</b> The sidebar shown on mobile with spaces, settings etc.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Favourites:</b> The Favourites tab on mobile that lists your favourite people/rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>People:</b> The People tab on mobile that lists all the DM rooms you have joined.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Rooms:</b> The Rooms tab on mobile that lists all the (non-direct) rooms you&#39;ve joined.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Dialpad:</b> The tab on mobile that displays the dialpad.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SearchRooms:</b> The Rooms tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SearchMessages:</b> The Messages tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SearchPeople:</b> The People tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SearchFiles:</b> The Files tab shown in the global search screen on Mobile.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SwitchDirectory:</b> The screen shown to select which room directory you&#39;d like to use.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InviteFriends:</b> The screen shown to share a link to download the app.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Breadcrumbs:</b> The screen that displays the user&#39;s breadcrumbs.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Settings:</b> The global settings screen shown in the app.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsSecurity:</b> The global security settings screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsDefaultNotifications:</b> The settings screen to change the default notification options.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsGeneral:</b> The settings screen with general profile settings.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsNotifications:</b> The notifications settings screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsPreferences:</b> The preferences screen (theme, language, editor preferences, etc.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsVoiceVideo:</b> The calls settings screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsIgnoredUsers:</b> The settings screen with list of the ignored users.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsLabs:</b> The experimental features settings screen,
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsAdvanced:</b> The advanced settings screen (developer mode, rageshake, push notification rules)
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsHelp:</b> The Help and About screen
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsLegals:</b> The settings screen with legals information
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SettingsMentionsAndKeywords:</b> The settings screen to manage notification mentions and keywords.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpaceMenu:</b> The bottom sheet that list all space options
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpaceMembers:</b> Screen that displays the list of members of a space
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomPreview:</b> Screen that displays room preview if user hasn&#39;t joined yet
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ThreadList:</b> Screen that displays list of threads for a room
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>PerformanceTimer</h2>
-            <p>Triggered after timing an operation in the app.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>context</td>                        
-                            <td>Client defined, can be used for debugging.</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>itemCount</td>                        
-                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td>The timer that is being reported.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>timeMs</td>                        
-                            <td>The time reported by the timer in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
             <h2>SlashCommand</h2>
             <p>Triggered when the user runs a slash command in their composer.</p>
             <table class="event-table">
@@ -1365,83 +65,6 @@
                                             </li>
                                         
                                     </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>UnauthenticatedError</h2>
-            <p>Triggered when the user becomes unauthenticated without actually clicking sign out(E.g. Due to expiry of an access token without a way to refresh).</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>errorCode</td>                        
-                            <td>The error code as defined in matrix spec. The source of this error is from the homeserver.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    M_UNKNOWN    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    M_FORBIDDEN    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    M_UNKNOWN_TOKEN    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>errorReason</td>                        
-                            <td>The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>refreshTokenAuth</td>                        
-                            <td>Whether the auth mechanism is refresh-token-based.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>softLogout</td>                        
-                            <td>Whether a soft logout or hard logout was triggered.</td>
-                            <td>
-                                                                
-                                    boolean
                                                             
                             </td>                            
                         </tr>
@@ -1825,6 +448,170 @@
         </section>
     
         <section class="event">            
+            <h2>Error</h2>
+            <p>Triggered when an error occurred</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>context</td>                        
+                            <td>Context - client defined, can be used for debugging</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>domain</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    E2EE    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VOIP    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    UnknownError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmIndexError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmKeysNotSentError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmUnspecifiedError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipUserHangup    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipIceFailed    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipInviteTimeout    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipIceTimeout    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipUserMediaFailed    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>WebSearch</h2>
+            <p>Triggered when the user searches rooms.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>numResults</td>                        
+                            <td>How many results the user got to their query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>queryLength</td>                        
+                            <td>The length of the user&#39;s query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>viaSpotlight</td>                        
+                            <td>Whether the user is using the new search experience beta.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>$pageview</h2>
             <p>Triggered when the user changed screen on Element Web/Desktop</p>
             <table class="event-table">
@@ -2140,8 +927,8 @@
         </section>
     
         <section class="event">            
-            <h2>WebSearch</h2>
-            <p>Triggered when the user searches rooms.</p>
+            <h2>UnauthenticatedError</h2>
+            <p>Triggered when the user becomes unauthenticated without actually clicking sign out(E.g. Due to expiry of an access token without a way to refresh).</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -2153,8 +940,85 @@
                 <tbody>
                     
                         <tr>
-                            <td>numResults</td>                        
-                            <td>How many results the user got to their query.</td>
+                            <td>errorCode</td>                        
+                            <td>The error code as defined in matrix spec. The source of this error is from the homeserver.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    M_UNKNOWN    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    M_FORBIDDEN    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    M_UNKNOWN_TOKEN    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>errorReason</td>                        
+                            <td>The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>refreshTokenAuth</td>                        
+                            <td>Whether the auth mechanism is refresh-token-based.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>softLogout</td>                        
+                            <td>Whether a soft logout or hard logout was triggered.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>Interaction</h2>
+            <p>Triggered when the user clicks/taps/activates a UI element.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>index</td>                        
+                            <td>The index of the element, if its in a list of elements.</td>
                             <td>
                                                                 
                                     integer
@@ -2163,8 +1027,359 @@
                         </tr>
                     
                         <tr>
-                            <td>queryLength</td>                        
-                            <td>The length of the user&#39;s query.</td>
+                            <td>interactionType</td>                        
+                            <td>The manner with which the user activated the UI element.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Pointer    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Keyboard    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Touch    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The unique name of this element.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuFavouriteToggle:</b> User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuFavouriteToggle:</b> User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileNotificationsMenu:</b> User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuNotificationsItem:</b> User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuPeopleItem:</b> User accessed room member list using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomInfoPeopleButton:</b> User accessed room member list using the &#39;People&#39; button in the right panel room summary card of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomUserInfoBackButton:</b> User accessed room member list using the back button in the right panel user info card of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuLeaveItem:</b> User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuLeaveItem:</b> User interacted with leave action in the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomSettingsLeaveButton:</b> User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuSettingsItem:</b> User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuSettingsItem:</b> User accessed room settings using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomInfoSettingsButton:</b> User accessed room settings using the &#39;Settings&#39; button in the right panel room summary card of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomTileContextMenuInviteItem:</b> User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderContextMenuInviteItem:</b> User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelMemberListInviteButton:</b> User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelRoomUserInfoInviteButton:</b> User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebQuickSettingsThemeDropdown:</b> User interacted with the theme dropdown in the quick settings menu of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebUserMenuThemeToggleButton:</b> User clicked the theme toggle button in the user menu of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSettingsAppearanceTabThemeSelector:</b> User interacted with the theme radio selector in the Appearance tab of Settings in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebQuickSettingsPinToSidebarCheckbox:</b> User interacted with pin to sidebar checkboxes in the quick settings menu of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSettingsSidebarTabSpacesCheckbox:</b> User interacted with the pre-built space checkboxes in the Sidebar tab of Settings in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomSettingsSecurityTabCreateNewRoomButton:</b> User interacted with the prompt to create a new room when adjusting security settings in an existing room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebHomeCreateRoomButton:</b> User clicked the create room button in the home page of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomDirectoryCreateRoomButton:</b> User clicked the create room button in the room directory of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomsSublistPlusMenuCreateRoomItem:</b> User clicked the create room button in the + context menu of the rooms sublist in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListHeaderPlusMenuCreateRoomItem:</b> User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpaceHomeCreateRoomButton:</b> User clicked the new room button in the context menu on the space home in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpaceContextMenuNewRoomItem:</b> User clicked the new room button in the context menu of a space in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebAddExistingToSpaceDialogCreateRoomButton:</b> User clicked the create room button in the add existing room to space dialog in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpaceContextMenuHomeItem:</b> User clicked the home button in the context menu of a space in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpaceContextMenuExploreRoomsItem:</b> User clicked the explore rooms button in the context menu of a space in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListHeaderPlusMenuExploreRoomsItem:</b> User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListRoomsSublistPlusMenuExploreRoomsItem:</b> User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRightPanelThreadPanelFilterDropdown:</b> User clicked the threads &#39;show&#39; filter dropdown in the threads panel in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomHeaderButtonsThreadsButton:</b> User clicked the Threads button in the top right of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebThreadViewBackButton:</b> User clicked the back button on a Thread view going back to the Threads Panel of Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebThreadsPanelThreadItem:</b> User selected a thread in the Threads panel in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomTimelineThreadSummaryButton:</b> User clicked a thread summary in the timeline of a room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpacePanelSelectedSpace:</b> User tapped the already selected space from the space list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpacePanelSwitchSpace:</b> User tapped an unselected space from the space list -&gt; space switching should occur.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRoomLeave:</b> User tapped on Leave Room button on Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRoomAddHome:</b> User tapped on Add to Home button on Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRoomThreadListButton:</b> User tapped on Threads button on Room screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRoomThreadSummaryItem:</b> User tapped on a thread summary item on Room screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileThreadListThreadItem:</b> User selected a thread on ThreadList screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileThreadListFilterItem:</b> User tapped on the filter button on ThreadList screen.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>PerformanceTimer</h2>
+            <p>Triggered after timing an operation in the app.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>context</td>                        
+                            <td>Client defined, can be used for debugging.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>itemCount</td>                        
+                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
                             <td>
                                                                 
                                     integer
@@ -2173,8 +1388,793 @@
                         </tr>
                     
                         <tr>
-                            <td>viaSpotlight</td>                        
-                            <td>Whether the user is using the new search experience beta.</td>
+                            <td>name</td>                        
+                            <td>The timer that is being reported.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>timeMs</td>                        
+                            <td>The time reported by the timer in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CreatedRoom</h2>
+            <p>Triggered when the user creates a room.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>JoinedRoom</h2>
+            <p>Triggered when the user joins a room.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isSpace</td>                        
+                            <td>Whether the room is a Space.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>roomSize</td>                        
+                            <td>The size of the room.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    One    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Two    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    ThreeToTen    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    ElevenToOneHundred    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OneHundredAndOneToAThousand    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    MoreThanAThousand    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>trigger</td>                        
+                            <td>The trigger for a room being joined if known.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Invite:</b> Room joined via an invite.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomPreview:</b> Room joined via its preview.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SlashCommand:</b> Room joined via the /join slash command.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDirectory:</b> Room joined via the public rooms directory.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceHierarchy:</b> Room joined via the space hierarchy view.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Timeline:</b> Room joined via a timeline pill or link in another room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Notification:</b> Room joined via a push/desktop notification.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallStarted</h2>
+            <p>Triggered when a call is started.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>$screen</h2>
+            <p>Triggered when the user changed screen on Element Android/iOS</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>How long the screen was displayed for in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>screenName</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Home:</b> The Home tab on iOS | possibly the same on Android?
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Welcome:</b> The splash screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Login:</b> The screen that displays the login flow (when the user already has an account).
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ForgotPassword:</b> The form for the forgot password use case
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Register:</b> The screen that displays the registration flow (when the user wants to create an account)
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Room:</b> The screen that displays the messages and events received in a room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDetails:</b> The screen shown when tapping the name of a room from the Room screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomMembers:</b> The screen that displays the list of members that are part of a room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>User:</b> A screen that shows information about a room member.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSearch:</b> The screen that allows you to search for messages/files in a specific room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomUploads:</b> The screen that allows you to see all of the files sent in a specific room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomSettings:</b> The settings screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomNotifications:</b> The notifications settings screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomAddresses:</b> The room addresses screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomPermissions:</b> The roles permissions screen shown from the Room Details screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDirectory:</b> The screen that lists public rooms for you to discover.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomFilter:</b> The screen that lists all the user&#39;s rooms and let them filter the rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartChat:</b> The screen shown to create a new direct room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>CreateRoom:</b> The screen shown to create a new (non-direct) room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>DeactivateAccount:</b> The confirmation screen shown before deactivating an account.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Group:</b> Legacy: The screen that shows information about a specific group.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MyGroups:</b> Legacy: The screen that shows all groups/communities you have joined.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceExploreRooms:</b> Screen that displays the list of rooms and spaces of a space
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Sidebar:</b> The sidebar shown on mobile with spaces, settings etc.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Favourites:</b> The Favourites tab on mobile that lists your favourite people/rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>People:</b> The People tab on mobile that lists all the DM rooms you have joined.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Rooms:</b> The Rooms tab on mobile that lists all the (non-direct) rooms you&#39;ve joined.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Dialpad:</b> The tab on mobile that displays the dialpad.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SearchRooms:</b> The Rooms tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SearchMessages:</b> The Messages tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SearchPeople:</b> The People tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SearchFiles:</b> The Files tab shown in the global search screen on Mobile.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SwitchDirectory:</b> The screen shown to select which room directory you&#39;d like to use.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InviteFriends:</b> The screen shown to share a link to download the app.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Breadcrumbs:</b> The screen that displays the user&#39;s breadcrumbs.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Settings:</b> The global settings screen shown in the app.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsSecurity:</b> The global security settings screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsDefaultNotifications:</b> The settings screen to change the default notification options.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsGeneral:</b> The settings screen with general profile settings.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsNotifications:</b> The notifications settings screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsPreferences:</b> The preferences screen (theme, language, editor preferences, etc.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsVoiceVideo:</b> The calls settings screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsIgnoredUsers:</b> The settings screen with list of the ignored users.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsLabs:</b> The experimental features settings screen,
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsAdvanced:</b> The advanced settings screen (developer mode, rageshake, push notification rules)
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsHelp:</b> The Help and About screen
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsLegals:</b> The settings screen with legals information
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SettingsMentionsAndKeywords:</b> The settings screen to manage notification mentions and keywords.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceMenu:</b> The bottom sheet that list all space options
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceMembers:</b> Screen that displays the list of members of a space
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomPreview:</b> Screen that displays room preview if user hasn&#39;t joined yet
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ThreadList:</b> Screen that displays list of threads for a room
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallError</h2>
+            <p>Triggered when an error occurred in a call.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallEnded</h2>
+            <p>Triggered when a call has ended.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>The duration of the call in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>Composer</h2>
+            <p>Triggered when the user sends a message via the composer.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>inThread</td>                        
+                            <td>Whether the user was using the composer inside of a thread.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isEditing</td>                        
+                            <td>Whether the user&#39;s composer interaction was editing a previously sent event.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isReply</td>                        
+                            <td>Whether the user&#39;s composer interaction was a reply to a previously sent event.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>startsThread</td>                        
+                            <td>Whether this message begins a new thread or not.</td>
                             <td>
                                                                 
                                     boolean

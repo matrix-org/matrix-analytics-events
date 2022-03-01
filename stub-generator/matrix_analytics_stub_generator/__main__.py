@@ -1,15 +1,16 @@
 import argparse
 import json
 import os
+import glob
 import shutil
-from typing import Iterator, List
+from typing import Iterator
 from .documentation import generate_documentation
 from .kotlin import compute_kotlin
 from .swift import compute_swift
 from .schema import Schema, parse_schema
 
 
-def load_schemas(json_schema_paths: List[str]) -> Iterator[Schema]:
+def load_schemas(json_schema_paths: Iterator[str]) -> Iterator[Schema]:
     for json_schema_path in json_schema_paths:
         with open(json_schema_path) as json_file:
             data = json.load(json_file)
@@ -18,7 +19,9 @@ def load_schemas(json_schema_paths: List[str]) -> Iterator[Schema]:
 
 
 def generate_stub(
-    output_language: str, json_schema_paths: str, output_dir: str
+    output_language: str,
+    json_schema_paths: Iterator[str],
+    output_dir: str,
 ) -> None:
     if output_language == "html":
         generate_documentation(
@@ -51,7 +54,11 @@ if __name__ == "__main__":
         description="Create analytics stubs and documentation from JSON schema"
     )
     parser.add_argument(
-        "schema_paths", nargs="+", help="The JSON schema files to process"
+        "-i",
+        "--input",
+        dest="schema_path",
+        help="The directory containing the JSON schema files to process",
+        required=True,
     )
     parser.add_argument(
         "-l",
@@ -76,4 +83,5 @@ if __name__ == "__main__":
     shutil.rmtree(args.output_dir)
     os.mkdir(args.output_dir)
 
-    generate_stub(args.output_language, args.schema_paths, args.output_dir)
+    paths = [os.path.join(args.schema_path, path) for path in glob.iglob("*.json", root_dir=args.schema_path)]
+    generate_stub(args.output_language, paths, args.output_dir)
