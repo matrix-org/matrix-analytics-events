@@ -50,6 +50,22 @@ extension AnalyticsEvent {
             case MessageSearch
             /// Room switched due to user selecting a user to go to a DM with.
             case MessageUser
+            /// Room switched due to user interacting with a file search result.
+            case MobileFileSearch
+            /// Room accessed via interacting with the incall screen.
+            case MobileInCall
+            /// Room accessed via interacting with direct chat item in the room contact detail screen.
+            case MobileRoomMemberDetail
+            /// Room switched due to user interacting with a room search result.
+            case MobileRoomSearch
+            /// Room accessed via interacting with direct chat item in the search contact detail screen.
+            case MobileSearchContactDetail
+            /// Room accessed via interacting with direct chat item in the space contact detail screen.
+            case MobileSpaceMemberDetail
+            /// Space accessed via interacting with the space menu.
+            case MobileSpaceMenu
+            /// Space accessed via interacting with a space settings menu item.
+            case MobileSpaceSettings
             /// Room accessed via a push/desktop notification.
             case Notification
             /// Room accessed via the predecessor link at the top of the upgraded room.
