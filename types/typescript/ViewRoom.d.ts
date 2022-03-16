@@ -40,6 +40,14 @@ export interface ViewRoom {
     | "WebRoomListNotificationBadge"
     | "WebSpacePanelNotificationBadge"
     | "WebFloatingCallWindow"
+    | "MobileFileSearch"
+    | "MobileRoomSearch"
+    | "MobileSearchContactDetail"
+    | "MobileRoomMemberDetail"
+    | "MobileSpaceMemberDetail"
+    | "MobileInCall"
+    | "MobileSpaceMenu"
+    | "MobileSpaceSettings"
   ) &
     string;
   /**
