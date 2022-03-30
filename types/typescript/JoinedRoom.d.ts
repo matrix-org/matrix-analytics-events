@@ -21,6 +21,8 @@ export interface JoinedRoom {
     | "SpaceHierarchy"
     | "Timeline"
     | "Notification"
+    | "MobilePermalink"
+    | "MobileExploreRooms"
   ) &
     string;
   /**
