@@ -48,6 +48,11 @@ export interface ViewRoom {
     | "MobileInCall"
     | "MobileSpaceMenu"
     | "MobileSpaceSettings"
+    | "MobileRoomPreview"
+    | "MobilePermalink"
+    | "MobileLinkShare"
+    | "MobileExploreRooms"
+    | "MobileSpaceMembers"
   ) &
     string;
   /**
