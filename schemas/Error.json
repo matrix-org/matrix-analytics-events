@@ -24,8 +24,7 @@
         "VoipInviteTimeout",
         "VoipIceTimeout",
         "VoipUserMediaFailed"
-      ],
-      "required": true
+      ]
     },
     "context": {
       "description": "Context - client defined, can be used for debugging",
