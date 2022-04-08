@@ -6,22 +6,12 @@
  */
 
 /**
- * Triggered when a new user accepts the analytics prompt that is shown during the registration flow.
+ * Triggered once onboarding has completed, but only if the user registered a new account.
  */
 export interface Signup {
   eventName: "Signup";
   /**
    * The type of authentication that was used to sign up.
    */
-  authenticationType: (
-    | "Password"
-    | "SignInWithApple"
-    | "SignInWithFacebook"
-    | "SignInWithGitHub"
-    | "SignInWithGitLab"
-    | "SignInWithGoogle"
-    | "SSO"
-    | "Other"
-  ) &
-    string;
+  authenticationType: ("Password" | "Apple" | "Facebook" | "GitHub" | "GitLab" | "Google" | "SSO" | "Other") & string;
 }

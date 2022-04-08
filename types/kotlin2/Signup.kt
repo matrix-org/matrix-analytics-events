@@ -22,8 +22,8 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when a new user accepts the analytics prompt that is shown during
- * the registration flow.
+ * Triggered once onboarding has completed, but only if the user registered a
+ * new account.
  */
 data class Signup(
         /**
@@ -33,6 +33,31 @@ data class Signup(
 ) : VectorAnalyticsEvent {
 
     enum class AuthenticationType {
+        /**
+         * Social login using Apple.
+         */
+        Apple,
+
+        /**
+         * Social login using Facebook.
+         */
+        Facebook,
+
+        /**
+         * Social login using GitHub.
+         */
+        GitHub,
+
+        /**
+         * Social login using GitLab.
+         */
+        GitLab,
+
+        /**
+         * Social login using Google.
+         */
+        Google,
+
         /**
          * Registration using some other mechanism such as fallback.
          */
@@ -47,31 +72,6 @@ data class Signup(
          * Registration using another SSO provider.
          */
         SSO,
-
-        /**
-         * Social login using Apple.
-         */
-        SignInWithApple,
-
-        /**
-         * Social login using Facebook.
-         */
-        SignInWithFacebook,
-
-        /**
-         * Social login using GitHub.
-         */
-        SignInWithGitHub,
-
-        /**
-         * Social login using GitLab.
-         */
-        SignInWithGitLab,
-
-        /**
-         * Social login using Google.
-         */
-        SignInWithGoogle,
     }
 
     override fun getName() = "Signup"

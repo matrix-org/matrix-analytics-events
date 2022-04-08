@@ -1,8 +1,7 @@
 package quicktype
 
 /**
- * Triggered when a new user accepts the analytics prompt that is shown during the
- * registration flow.
+ * Triggered once onboarding has completed, but only if the user registered a new account.
  */
 data class Signup (
     /**

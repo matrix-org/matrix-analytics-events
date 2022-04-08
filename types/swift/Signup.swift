@@ -19,7 +19,7 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when a new user accepts the analytics prompt that is shown during the registration flow.
+/// Triggered once onboarding has completed, but only if the user registered a new account.
 extension AnalyticsEvent {
     public struct Signup: AnalyticsEventProtocol {
         public let eventName = "Signup"
@@ -32,22 +32,22 @@ extension AnalyticsEvent {
         }
 
         public enum AuthenticationType: String {
+            /// Social login using Apple.
+            case Apple
+            /// Social login using Facebook.
+            case Facebook
+            /// Social login using GitHub.
+            case GitHub
+            /// Social login using GitLab.
+            case GitLab
+            /// Social login using Google.
+            case Google
             /// Registration using some other mechanism such as fallback.
             case Other
             /// Registration with a username and password.
             case Password
             /// Registration using another SSO provider.
             case SSO
-            /// Social login using Apple.
-            case SignInWithApple
-            /// Social login using Facebook.
-            case SignInWithFacebook
-            /// Social login using GitHub.
-            case SignInWithGitHub
-            /// Social login using GitLab.
-            case SignInWithGitLab
-            /// Social login using Google.
-            case SignInWithGoogle
         }
 
         public var properties: [String: Any] {
