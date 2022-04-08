@@ -32,6 +32,8 @@ extension AnalyticsEvent {
         }
 
         public enum AuthenticationType: String {
+            /// Registration using some other mechanism such as fallback.
+            case Other
             /// Registration with a username and password.
             case Password
             /// Registration using another SSO provider.

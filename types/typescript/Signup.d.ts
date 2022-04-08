@@ -13,7 +13,7 @@ export interface Signup {
   /**
    * The type of authentication that was used to sign up.
    */
-  authenticationType?: (
+  authenticationType: (
     | "Password"
     | "SignInWithApple"
     | "SignInWithFacebook"
@@ -21,6 +21,7 @@ export interface Signup {
     | "SignInWithGitLab"
     | "SignInWithGoogle"
     | "SSO"
+    | "Other"
   ) &
     string;
 }

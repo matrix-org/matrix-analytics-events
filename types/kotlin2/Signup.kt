@@ -34,6 +34,11 @@ data class Signup(
 
     enum class AuthenticationType {
         /**
+         * Registration using some other mechanism such as fallback.
+         */
+        Other,
+
+        /**
          * Registration with a username and password.
          */
         Password,

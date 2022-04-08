@@ -15,11 +15,11 @@
         {"const": "SignInWithGitHub", "description": "Social login using GitHub."},
         {"const": "SignInWithGitLab", "description": "Social login using GitLab."},
         {"const": "SignInWithGoogle", "description": "Social login using Google."},
-        {"const": "SSO", "description": "Registration using another SSO provider."}
-      ],
-      "required": true
+        {"const": "SSO", "description": "Registration using another SSO provider."},
+        {"const": "Other", "description": "Registration using some other mechanism such as fallback."}
+      ]
     }
   },
-  "required": ["eventName"],
+  "required": ["authenticationType", "eventName"],
   "additionalProperties": false
 }
