@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "description": "Triggered once onboarding has completed, but only if the user registered a new account.",
+  "properties": {
+    "eventName": {
+      "enum": ["Signup"]
+    },
+    "authenticationType": {
+      "type": "string",
+      "description": "The type of authentication that was used to sign up.",
+      "oneOf": [
+        {"const": "Password", "description": "Registration with a username and password."},
+        {"const": "Apple", "description": "Social login using Apple."},
+        {"const": "Facebook", "description": "Social login using Facebook."},
+        {"const": "GitHub", "description": "Social login using GitHub."},
+        {"const": "GitLab", "description": "Social login using GitLab."},
+        {"const": "Google", "description": "Social login using Google."},
+        {"const": "SSO", "description": "Registration using another SSO provider."},
+        {"const": "Other", "description": "Registration using some other mechanism such as fallback."}
+      ]
+    }
+  },
+  "required": ["authenticationType", "eventName"],
+  "additionalProperties": false
+}

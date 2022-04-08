@@ -197,6 +197,83 @@
         </section>
     
         <section class="event">            
+            <h2>Signup</h2>
+            <p>Triggered once onboarding has completed, but only if the user registered a new account.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>authenticationType</td>                        
+                            <td>The type of authentication that was used to sign up.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Password:</b> Registration with a username and password.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Apple:</b> Social login using Apple.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Facebook:</b> Social login using Facebook.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>GitHub:</b> Social login using GitHub.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>GitLab:</b> Social login using GitLab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Google:</b> Social login using Google.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SSO:</b> Registration using another SSO provider.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Other:</b> Registration using some other mechanism such as fallback.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>ViewRoom</h2>
             <p>Triggered when the user changes rooms.</p>
             <table class="event-table">
