@@ -56,8 +56,14 @@ extension AnalyticsEvent {
             case SpacePanelSwitchSpace
             /// User clicked the create room button in the add existing room to space dialog in Element Web/Desktop.
             case WebAddExistingToSpaceDialogCreateRoomButton
+            /// User clicked the create DM button in the home page of Element Web/Desktop.
+            case WebHomeCreateChatButton
             /// User clicked the create room button in the home page of Element Web/Desktop.
             case WebHomeCreateRoomButton
+            /// User clicked the explore rooms button in the home page of Element Web/Desktop.
+            case WebHomeExploreRoomsButton
+            /// User clicked the explore rooms button next to the search field at the top of the left panel in Element Web/Desktop.
+            case WebLeftPanelExploreRoomsItem
             /// User interacted with pin to sidebar checkboxes in the quick settings menu of Element Web/Desktop.
             case WebQuickSettingsPinToSidebarCheckbox
             /// User interacted with the theme dropdown in the quick settings menu of Element Web/Desktop.
@@ -90,6 +96,8 @@ extension AnalyticsEvent {
             case WebRoomHeaderContextMenuPeopleItem
             /// User accessed room settings using the context menu on the header of a room in Element Web/Desktop.
             case WebRoomHeaderContextMenuSettingsItem
+            /// User clicked the create DM button in the + context menu of the room list header in Element Web/Desktop.
+            case WebRoomListHeaderPlusMenuCreateChatItem
             /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
             case WebRoomListHeaderPlusMenuCreateRoomItem
             /// User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop.
@@ -104,6 +112,8 @@ extension AnalyticsEvent {
             case WebRoomListRoomTileContextMenuSettingsItem
             /// User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop.
             case WebRoomListRoomTileNotificationsMenu
+            /// User clicked the create DM button in the + context menu of the rooms sublist in Element Web/Desktop.
+            case WebRoomListRoomsSublistPlusMenuCreateChatItem
             /// User clicked the create room button in the + context menu of the rooms sublist in Element Web/Desktop.
             case WebRoomListRoomsSublistPlusMenuCreateRoomItem
             /// User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop.
