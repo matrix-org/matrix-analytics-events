@@ -22,7 +22,6 @@ export interface JoinedRoom {
     | "Timeline"
     | "Notification"
     | "MobilePermalink"
-    | "MobileExploreRooms"
   ) &
     string;
   /**
