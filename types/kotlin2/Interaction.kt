@@ -109,7 +109,7 @@ data class Interaction(
          * User clicked the explore rooms button next to the search field at the
          * top of the left panel in Element Web/Desktop.
          */
-        WebLeftPanelExploreRoomsItem,
+        WebLeftPanelExploreRoomsButton,
 
         /**
          * User interacted with pin to sidebar checkboxes in the quick settings

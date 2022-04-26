@@ -44,7 +44,7 @@
         {"const": "WebRoomListHeaderPlusMenuCreateChatItem", "description": "User clicked the create DM button in the + context menu of the room list header in Element Web/Desktop." },
         {"const": "WebSpaceContextMenuHomeItem", "description": "User clicked the home button in the context menu of a space in Element Web/Desktop." },
         {"const": "WebHomeExploreRoomsButton", "description": "User clicked the explore rooms button in the home page of Element Web/Desktop." },
-        {"const": "WebLeftPanelExploreRoomsItem", "description": "User clicked the explore rooms button next to the search field at the top of the left panel in Element Web/Desktop." },
+        {"const": "WebLeftPanelExploreRoomsButton", "description": "User clicked the explore rooms button next to the search field at the top of the left panel in Element Web/Desktop." },
         {"const": "WebSpaceContextMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the context menu of a space in Element Web/Desktop." },
         {"const": "WebRoomListHeaderPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop." },
         {"const": "WebRoomListRoomsSublistPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop." },
