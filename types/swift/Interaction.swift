@@ -62,6 +62,8 @@ extension AnalyticsEvent {
             case WebHomeCreateRoomButton
             /// User clicked the explore rooms button in the home page of Element Web/Desktop.
             case WebHomeExploreRoomsButton
+            /// User updated their avatar via the mini avatar uploader in the home page of Element Web/Desktop.
+            case WebHomeMiniAvatarUploadButton
             /// User clicked the explore rooms button next to the search field at the top of the left panel in Element Web/Desktop.
             case WebLeftPanelExploreRoomsButton
             /// User interacted with pin to sidebar checkboxes in the quick settings menu of Element Web/Desktop.
