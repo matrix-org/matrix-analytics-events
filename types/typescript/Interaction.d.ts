@@ -49,6 +49,7 @@ export interface Interaction {
     | "WebRoomListHeaderPlusMenuCreateChatItem"
     | "WebSpaceContextMenuHomeItem"
     | "WebHomeExploreRoomsButton"
+    | "WebHomeMiniAvatarUploadButton"
     | "WebLeftPanelExploreRoomsButton"
     | "WebSpaceContextMenuExploreRoomsItem"
     | "WebRoomListHeaderPlusMenuExploreRoomsItem"
