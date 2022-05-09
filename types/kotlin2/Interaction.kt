@@ -106,8 +106,8 @@ data class Interaction(
         WebHomeExploreRoomsButton,
 
         /**
-         * User updated their avatar via the mini avatar uploader in the home
-         * page of Element Web/Desktop.
+         * User clicked on the mini avatar uploader in the home page of Element
+         * Web/Desktop.
          */
         WebHomeMiniAvatarUploadButton,
 
