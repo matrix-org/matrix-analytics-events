@@ -44,7 +44,7 @@
         {"const": "WebRoomListHeaderPlusMenuCreateChatItem", "description": "User clicked the create DM button in the + context menu of the room list header in Element Web/Desktop." },
         {"const": "WebSpaceContextMenuHomeItem", "description": "User clicked the home button in the context menu of a space in Element Web/Desktop." },
         {"const": "WebHomeExploreRoomsButton", "description": "User clicked the explore rooms button in the home page of Element Web/Desktop." },
-        {"const": "WebHomeMiniAvatarUploadButton", "description": "User updated their avatar via the mini avatar uploader in the home page of Element Web/Desktop." },
+        {"const": "WebHomeMiniAvatarUploadButton", "description": "User clicked on the mini avatar uploader in the home page of Element Web/Desktop." },
         {"const": "WebLeftPanelExploreRoomsButton", "description": "User clicked the explore rooms button next to the search field at the top of the left panel in Element Web/Desktop." },
         {"const": "WebSpaceContextMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the context menu of a space in Element Web/Desktop." },
         {"const": "WebRoomListHeaderPlusMenuExploreRoomsItem", "description": "User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop." },
