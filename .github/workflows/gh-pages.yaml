@@ -1,0 +1,25 @@
+name: Update Github Pages
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    name: "Build Element-Web"
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧮 Checkout code
+        uses: actions/checkout@v2
+
+      - name: 🔨 Set up environment
+        uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+
+      - name: 📕 Generate docs
+        run: yarn build:html
+
+      - name: 🚀 Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: types/html
