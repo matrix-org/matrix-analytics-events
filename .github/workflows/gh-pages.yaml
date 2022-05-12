@@ -11,10 +11,16 @@ jobs:
       - name: 🧮 Checkout code
         uses: actions/checkout@v2
 
-      - name: 🔨 Set up environment
+      - name: 🔧Set up node environment
         uses: actions/setup-node@v3
         with:
           cache: 'yarn'
+          
+      - name: 🔨Install Poetry
+        uses: snok/install-poetry@v1
+          
+      - name: 🛠️ Setup
+        uses: snok/install-poetry@v1
 
       - name: 📕 Generate docs
         run: yarn build:html
