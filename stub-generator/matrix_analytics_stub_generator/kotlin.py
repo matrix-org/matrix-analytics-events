@@ -1,4 +1,4 @@
-from .schema import Schema, is_mobile_screen_event, first_letter_up, split_text
+from .schema import Schema, is_mobile_screen_event, first_letter_up, first_letter_down, split_text
 
 def compute_kotlin(schema: Schema) -> str:
     """Compute the output for Kotlin."""
@@ -44,6 +44,7 @@ package im.vector.app.features.analytics.plan
     )
 
     for member in schema.members:
+        validName = first_letter_down(member.name)
         if member.description:
             result += f"        /**\n"
             result += f"{split_text('         * ', member.description)}\n"
@@ -55,15 +56,15 @@ package im.vector.app.features.analytics.plan
         result += "        "
         if member.type == "string":
             if member.enum:
-                result += f"val {member.name}: {first_letter_up(member.name)}"
+                result += f"val {validName}: {first_letter_up(member.name)}"
             else:
-                result += f"val {member.name}: String"
+                result += f"val {validName}: String"
         elif member.type == "number":
-            result += f"val {member.name}: Double"
+            result += f"val {validName}: Double"
         elif member.type == "integer":
-            result += f"val {member.name}: Int"
+            result += f"val {validName}: Int"
         elif member.type == "boolean":
-            result += f"val {member.name}: Boolean"
+            result += f"val {validName}: Boolean"
         else:
             raise Exception(f"Not handled yet: {member.type}")
         result += f"{defaultValue},\n"
@@ -107,22 +108,24 @@ package im.vector.app.features.analytics.plan
 
         result += "        return mutableMapOf<String, Any>().apply {\n"
         for member in schema.members:
+            validName = first_letter_down(member.name)
+
             if member.name == "screenName" and is_screen:
                 continue
             if member.required:
                 if member.enum:
-                    result += f'            put("{member.name}", {member.name}.name)\n'
+                    result += f'            put("{validName}", {member.name}.name)\n'
                 else:
-                    result += f'            put("{member.name}", {member.name})\n'
+                    result += f'            put("{validName}", {member.name})\n'
             else:
                 if member.enum:
                     result += '            %s?.let { put("%s", it.name) }\n' % (
-                        member.name,
+                        validName,
                         member.name,
                     )
                 else:
                     result += '            %s?.let { put("%s", it) }\n' % (
-                        member.name,
+                        validName,
                         member.name,
                     )
         result += "        }.takeIf { it.isNotEmpty() }\n"
