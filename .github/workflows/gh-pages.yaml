@@ -4,8 +4,8 @@ on:
     branches: [ main ]
 concurrency: gh-pages
 jobs:
-  build:
-    name: "Build Element-Web"
+  pages:
+    name: "Build & Deploy Github Pages"
     runs-on: ubuntu-latest
     steps:
       - name: 🧮 Checkout code
