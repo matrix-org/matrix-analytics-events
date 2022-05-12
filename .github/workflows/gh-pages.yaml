@@ -2,6 +2,7 @@ name: Update Github Pages
 on:
   push:
     branches: [ main ]
+concurrency: gh-pages
 jobs:
   build:
     name: "Build Element-Web"
