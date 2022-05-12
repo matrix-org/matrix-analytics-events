@@ -4,17 +4,28 @@ on:
     branches: [ main ]
 concurrency: gh-pages
 jobs:
-  build:
-    name: "Build Element-Web"
+  pages:
+    name: "Build & Deploy Github Pages"
     runs-on: ubuntu-latest
     steps:
       - name: 🧮 Checkout code
         uses: actions/checkout@v2
 
-      - name: 🔨 Set up environment
+      - name: 🔧 Set up node environment
         uses: actions/setup-node@v3
         with:
           cache: 'yarn'
+
+      - name: 🗜️ Set up python environment
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: 🔨 Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: 🛠️ Setup
+        run: "./scripts/setup.sh"
 
       - name: 📕 Generate docs
         run: yarn build:html
