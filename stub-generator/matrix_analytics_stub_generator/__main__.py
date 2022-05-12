@@ -80,7 +80,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # delete and re-create the output directory to ensure it is empty and we don't keep old type stubs
-    shutil.rmtree(args.output_dir)
+    shutil.rmtree(args.output_dir, ignore_errors=True)
     os.mkdir(args.output_dir)
 
     paths = [os.path.join(args.schema_path, path) for path in glob.iglob("*.json", root_dir=args.schema_path)]
