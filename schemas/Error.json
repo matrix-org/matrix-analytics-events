@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Triggered when an error occurred",
+  "description": "Triggered when an error occurred.",
   "properties": {
     "eventName": {
       "enum": ["Error"]
@@ -27,7 +27,7 @@
       ]
     },
     "context": {
-      "description": "Context - client defined, can be used for debugging",
+      "description": "Context - client defined, can be used for debugging.",
       "type": "string"
     }
   },

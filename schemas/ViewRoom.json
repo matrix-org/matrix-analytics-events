@@ -45,11 +45,11 @@
         {"const": "MobileInCall", "description": "Room accessed via interacting with the incall screen."},
         {"const": "MobileSpaceMenu", "description": "Space accessed via interacting with the space menu."},
         {"const": "MobileSpaceSettings", "description": "Space accessed via interacting with a space settings menu item."},
-        {"const": "MobileRoomPreview", "description": "Room accessed via preview"},
-        {"const": "MobilePermalink", "description": "Room accessed via link"},
-        {"const": "MobileLinkShare", "description": "Room accessed during external sharing"},
-        {"const": "MobileExploreRooms", "description": "Room accessed via space explore"},
-        {"const": "MobileSpaceMembers", "description": "Room accessed via space members list"}
+        {"const": "MobileRoomPreview", "description": "Room accessed via preview."},
+        {"const": "MobilePermalink", "description": "Room accessed via link."},
+        {"const": "MobileLinkShare", "description": "Room accessed during external sharing."},
+        {"const": "MobileExploreRooms", "description": "Room accessed via space explore."},
+        {"const": "MobileSpaceMembers", "description": "Room accessed via space members list."}
       ]
     },
     "viaKeyboard": {
