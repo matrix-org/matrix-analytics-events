@@ -53,7 +53,7 @@ yarn build
 ```
 
 * You must describe your event using `description` fields. Your audience might be unfamiliar with the codebase, 
-  or non-technical, so don't refer to code concepts and try to describe things in general but accurate terms.
+  or non-technical, so don't refer to code concepts and try to describe things in general but accurate terms. English grammar must be respected, in particular sentences must end with punctuation (eg a period).
 
 ### Description examples
 
@@ -62,7 +62,7 @@ yarn build
 ```json
 {
   "type": "object",
-  "description": "Triggered when the user changed screen",
+  "description": "Triggered when the user changed screen.",
   "properties": {
     "eventName": {
       "enum": ["Screen"]
