@@ -14,31 +14,31 @@ export interface UserProperties {
    */
   ftueUseCaseSelection?: ("PersonalMessaging" | "WorkMessaging" | "CommunityMessaging" | "Skip") & string;
   /**
-   * Number of spaces (and sub-spaces) the user is joined to
+   * Number of spaces (and sub-spaces) the user is joined to.
    */
   numSpaces?: number;
   /**
-   * Number of joined rooms the user has favourited
+   * Number of joined rooms the user has favourited.
    */
   numFavouriteRooms?: number;
   /**
-   * Whether the user has the home space enabled
+   * Whether the user has the home space enabled.
    */
   WebMetaSpaceHomeEnabled?: boolean;
   /**
-   * Whether the user has the home space set to all rooms
+   * Whether the user has the home space set to all rooms.
    */
   WebMetaSpaceHomeAllRooms?: boolean;
   /**
-   * Whether the user has the people space enabled
+   * Whether the user has the people space enabled.
    */
   WebMetaSpacePeopleEnabled?: boolean;
   /**
-   * Whether the user has the favourites space enabled
+   * Whether the user has the favourites space enabled.
    */
   WebMetaSpaceFavouritesEnabled?: boolean;
   /**
-   * Whether the user has the other rooms space enabled
+   * Whether the user has the other rooms space enabled.
    */
   WebMetaSpaceOrphansEnabled?: boolean;
 }

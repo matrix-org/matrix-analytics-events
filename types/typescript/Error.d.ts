@@ -6,7 +6,7 @@
  */
 
 /**
- * Triggered when an error occurred
+ * Triggered when an error occurred.
  */
 export interface Error {
   eventName: "Error";
@@ -22,7 +22,7 @@ export interface Error {
     | "VoipIceTimeout"
     | "VoipUserMediaFailed";
   /**
-   * Context - client defined, can be used for debugging
+   * Context - client defined, can be used for debugging.
    */
   context?: string;
 }

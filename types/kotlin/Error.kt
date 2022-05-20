@@ -1,11 +1,11 @@
 package quicktype
 
 /**
- * Triggered when an error occurred
+ * Triggered when an error occurred.
  */
 data class Error (
     /**
-     * Context - client defined, can be used for debugging
+     * Context - client defined, can be used for debugging.
      */
     val context: String? = null,
 

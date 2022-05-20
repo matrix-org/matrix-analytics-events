@@ -1,7 +1,7 @@
 package quicktype
 
 /**
- * Triggered when the user changed screen on Element Android/iOS
+ * Triggered when the user changed screen on Element Android/iOS.
  */
 data class MobileScreen (
     /**

@@ -19,7 +19,7 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user changed screen on Element Android/iOS
+/// Triggered when the user changed screen on Element Android/iOS.
 extension AnalyticsEvent {
     public struct MobileScreen: AnalyticsScreenProtocol {
 
@@ -43,7 +43,7 @@ extension AnalyticsEvent {
             case Dialpad
             /// The Favourites tab on mobile that lists your favourite people/rooms.
             case Favourites
-            /// The form for the forgot password use case
+            /// The form for the forgot password use case.
             case ForgotPassword
             /// Legacy: The screen that shows information about a specific group.
             case Group
@@ -57,7 +57,7 @@ extension AnalyticsEvent {
             case MyGroups
             /// The People tab on mobile that lists all the DM rooms you have joined.
             case People
-            /// The screen that displays the registration flow (when the user wants to create an account)
+            /// The screen that displays the registration flow (when the user wants to create an account).
             case Register
             /// The screen that displays the messages and events received in a room.
             case Room
@@ -75,7 +75,7 @@ extension AnalyticsEvent {
             case RoomNotifications
             /// The roles permissions screen shown from the Room Details screen.
             case RoomPermissions
-            /// Screen that displays room preview if user hasn't joined yet
+            /// Screen that displays room preview if user hasn't joined yet.
             case RoomPreview
             /// The screen that allows you to search for messages/files in a specific room.
             case RoomSearch
@@ -95,19 +95,19 @@ extension AnalyticsEvent {
             case SearchRooms
             /// The global settings screen shown in the app.
             case Settings
-            /// The advanced settings screen (developer mode, rageshake, push notification rules)
+            /// The advanced settings screen (developer mode, rageshake, push notification rules).
             case SettingsAdvanced
             /// The settings screen to change the default notification options.
             case SettingsDefaultNotifications
             /// The settings screen with general profile settings.
             case SettingsGeneral
-            /// The Help and About screen
+            /// The Help and About screen.
             case SettingsHelp
             /// The settings screen with list of the ignored users.
             case SettingsIgnoredUsers
-            /// The experimental features settings screen,
+            /// The experimental features settings screen.
             case SettingsLabs
-            /// The settings screen with legals information
+            /// The settings screen with legals information.
             case SettingsLegals
             /// The settings screen to manage notification mentions and keywords.
             case SettingsMentionsAndKeywords
@@ -121,17 +121,17 @@ extension AnalyticsEvent {
             case SettingsVoiceVideo
             /// The sidebar shown on mobile with spaces, settings etc.
             case Sidebar
-            /// Screen that displays the list of rooms and spaces of a space
+            /// Screen that displays the list of rooms and spaces of a space.
             case SpaceExploreRooms
-            /// Screen that displays the list of members of a space
+            /// Screen that displays the list of members of a space.
             case SpaceMembers
-            /// The bottom sheet that list all space options
+            /// The bottom sheet that list all space options.
             case SpaceMenu
             /// The screen shown to create a new direct room.
             case StartChat
             /// The screen shown to select which room directory you'd like to use.
             case SwitchDirectory
-            /// Screen that displays list of threads for a room
+            /// Screen that displays list of threads for a room.
             case ThreadList
             /// A screen that shows information about a room member.
             case User
