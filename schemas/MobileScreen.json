@@ -59,7 +59,8 @@
         {"const": "SpaceMenu", "description": "The bottom sheet that list all space options"},
         {"const": "SpaceMembers", "description": "Screen that displays the list of members of a space"},
         {"const": "RoomPreview", "description": "Screen that displays room preview if user hasn't joined yet"},
-        {"const": "ThreadList", "description": "Screen that displays list of threads for a room"}
+        {"const": "ThreadList", "description": "Screen that displays list of threads for a room"},
+        {"const": "EditLayout", "description": "Screen that displays the settings of home screen layout"}
       ]
     },
     "durationMs": {

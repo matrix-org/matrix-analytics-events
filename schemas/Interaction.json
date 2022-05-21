@@ -62,7 +62,32 @@
         {"const": "MobileRoomThreadListButton", "description": "User tapped on Threads button on Room screen."},
         {"const": "MobileRoomThreadSummaryItem", "description": "User tapped on a thread summary item on Room screen."},
         {"const": "MobileThreadListThreadItem", "description": "User selected a thread on ThreadList screen."},
-        {"const": "MobileThreadListFilterItem", "description": "User tapped on the filter button on ThreadList screen."}
+        {"const": "MobileThreadListFilterItem", "description": "User tapped on the filter button on ThreadList screen."},
+
+        {"const": "EditLayoutRecentsSectionSelected", "description": "User validated the home screen layout settings and selected the recents section."},
+        {"const": "EditLayoutRecentsSectionUnselected", "description": "User validated the home screen layout settings and unselected the recents section."},
+        {"const": "EditLayoutFavouritesSectionSelected", "description": "User validated the home screen layout settings and selected the favourites section."},
+        {"const": "EditLayoutFavouritesSectionUnselected", "description": "User validated the home screen layout settings and unselected the favourites section."},
+        {"const": "EditLayoutPeopleFilterSelected", "description": "User validated the home screen layout settings and selected the people filter."},
+        {"const": "EditLayoutPeopleFilterUnselected", "description": "User validated the home screen layout settings and unselected the people filter."},
+        {"const": "EditLayoutRoomsFilterSelected", "description": "User validated the home screen layout settings and selected the rooms filter."},
+        {"const": "EditLayoutRoomsFilterUnselected", "description": "User validated the home screen layout settings and unselected the rooms filter."},
+        {"const": "EditLayoutFavouritesFilterSelected", "description": "User validated the home screen layout settings and selected the favourites filter."},
+        {"const": "EditLayoutFavouritesFilterUnselected", "description": "User validated the home screen layout settings and unselected the favourites filter."},
+        {"const": "EditLayoutUnreadsFilterSelected", "description": "User validated the home screen layout settings and selected the unreads filter."},
+        {"const": "EditLayoutUnreadsFilterUnselected", "description": "User validated the home screen layout settings and unselected the unreads filter."},
+
+        {"const": "AllChatAllOptionActivated", "description": "User tapped the all filter option."},
+        {"const": "AllChatRoomsOptionActivated", "description": "User activated the rooms filter option."},
+        {"const": "AllChatRoomsOptionDeactivated", "description": "User deactivated the rooms filter option."},
+        {"const": "AllChatPeopleOptionActivated", "description": "User activated the people filter option."},
+        {"const": "AllChatPeopleOptionDeactivated", "description": "User deactivated the people filter option."},
+        {"const": "AllChatUnreadsOptionActivated", "description": "User activated the unreads filter option."},
+        {"const": "AllChatUnreadsOptionDeactivated", "description": "User deactivated the unreads filter option."},
+        {"const": "AllChatFavouritesOptionActivated", "description": "User activated the favourites filter option."},
+        {"const": "AllChatFavouritesOptionDeactivated", "description": "User deactivated the favourites filter option."},
+        {"const": "AllChatAllSpacesActivated", "description": "User activated the all spaces filter option."},
+        {"const": "AllChatPinnedSpaceActivated", "description": "User selected pinned space filter option."}
       ]
     },
     "index": {

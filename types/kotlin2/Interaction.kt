@@ -41,6 +41,133 @@ data class Interaction(
 
     enum class Name {
         /**
+         * User tapped the all filter option.
+         */
+        AllChatAllOptionActivated,
+
+        /**
+         * User activated the all spaces filter option.
+         */
+        AllChatAllSpacesActivated,
+
+        /**
+         * User activated the favourites filter option.
+         */
+        AllChatFavouritesOptionActivated,
+
+        /**
+         * User deactivated the favourites filter option.
+         */
+        AllChatFavouritesOptionDeactivated,
+
+        /**
+         * User activated the people filter option.
+         */
+        AllChatPeopleOptionActivated,
+
+        /**
+         * User deactivated the people filter option.
+         */
+        AllChatPeopleOptionDeactivated,
+
+        /**
+         * User selected pinned space filter option.
+         */
+        AllChatPinnedSpaceActivated,
+
+        /**
+         * User activated the rooms filter option.
+         */
+        AllChatRoomsOptionActivated,
+
+        /**
+         * User deactivated the rooms filter option.
+         */
+        AllChatRoomsOptionDeactivated,
+
+        /**
+         * User activated the unreads filter option.
+         */
+        AllChatUnreadsOptionActivated,
+
+        /**
+         * User deactivated the unreads filter option.
+         */
+        AllChatUnreadsOptionDeactivated,
+
+        /**
+         * User validated the home screen layout settings and selected the
+         * favourites filter.
+         */
+        EditLayoutFavouritesFilterSelected,
+
+        /**
+         * User validated the home screen layout settings and unselected the
+         * favourites filter.
+         */
+        EditLayoutFavouritesFilterUnselected,
+
+        /**
+         * User validated the home screen layout settings and selected the
+         * favourites section.
+         */
+        EditLayoutFavouritesSectionSelected,
+
+        /**
+         * User validated the home screen layout settings and unselected the
+         * favourites section.
+         */
+        EditLayoutFavouritesSectionUnselected,
+
+        /**
+         * User validated the home screen layout settings and selected the
+         * people filter.
+         */
+        EditLayoutPeopleFilterSelected,
+
+        /**
+         * User validated the home screen layout settings and unselected the
+         * people filter.
+         */
+        EditLayoutPeopleFilterUnselected,
+
+        /**
+         * User validated the home screen layout settings and selected the
+         * recents section.
+         */
+        EditLayoutRecentsSectionSelected,
+
+        /**
+         * User validated the home screen layout settings and unselected the
+         * recents section.
+         */
+        EditLayoutRecentsSectionUnselected,
+
+        /**
+         * User validated the home screen layout settings and selected the rooms
+         * filter.
+         */
+        EditLayoutRoomsFilterSelected,
+
+        /**
+         * User validated the home screen layout settings and unselected the
+         * rooms filter.
+         */
+        EditLayoutRoomsFilterUnselected,
+
+        /**
+         * User validated the home screen layout settings and selected the
+         * unreads filter.
+         */
+        EditLayoutUnreadsFilterSelected,
+
+        /**
+         * User validated the home screen layout settings and unselected the
+         * unreads filter.
+         */
+        EditLayoutUnreadsFilterUnselected,
+
+        /**
          * User tapped on Add to Home button on Room Details screen.
          */
         MobileRoomAddHome,

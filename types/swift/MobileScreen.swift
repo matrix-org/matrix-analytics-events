@@ -41,6 +41,8 @@ extension AnalyticsEvent {
             case DeactivateAccount
             /// The tab on mobile that displays the dialpad.
             case Dialpad
+            /// Screen that displays the settings of home screen layout
+            case EditLayout
             /// The Favourites tab on mobile that lists your favourite people/rooms.
             case Favourites
             /// The form for the forgot password use case

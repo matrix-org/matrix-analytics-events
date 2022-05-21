@@ -38,6 +38,52 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
+            /// User tapped the all filter option.
+            case AllChatAllOptionActivated
+            /// User activated the all spaces filter option.
+            case AllChatAllSpacesActivated
+            /// User activated the favourites filter option.
+            case AllChatFavouritesOptionActivated
+            /// User deactivated the favourites filter option.
+            case AllChatFavouritesOptionDeactivated
+            /// User activated the people filter option.
+            case AllChatPeopleOptionActivated
+            /// User deactivated the people filter option.
+            case AllChatPeopleOptionDeactivated
+            /// User selected pinned space filter option.
+            case AllChatPinnedSpaceActivated
+            /// User activated the rooms filter option.
+            case AllChatRoomsOptionActivated
+            /// User deactivated the rooms filter option.
+            case AllChatRoomsOptionDeactivated
+            /// User activated the unreads filter option.
+            case AllChatUnreadsOptionActivated
+            /// User deactivated the unreads filter option.
+            case AllChatUnreadsOptionDeactivated
+            /// User validated the home screen layout settings and selected the favourites filter.
+            case EditLayoutFavouritesFilterSelected
+            /// User validated the home screen layout settings and unselected the favourites filter.
+            case EditLayoutFavouritesFilterUnselected
+            /// User validated the home screen layout settings and selected the favourites section.
+            case EditLayoutFavouritesSectionSelected
+            /// User validated the home screen layout settings and unselected the favourites section.
+            case EditLayoutFavouritesSectionUnselected
+            /// User validated the home screen layout settings and selected the people filter.
+            case EditLayoutPeopleFilterSelected
+            /// User validated the home screen layout settings and unselected the people filter.
+            case EditLayoutPeopleFilterUnselected
+            /// User validated the home screen layout settings and selected the recents section.
+            case EditLayoutRecentsSectionSelected
+            /// User validated the home screen layout settings and unselected the recents section.
+            case EditLayoutRecentsSectionUnselected
+            /// User validated the home screen layout settings and selected the rooms filter.
+            case EditLayoutRoomsFilterSelected
+            /// User validated the home screen layout settings and unselected the rooms filter.
+            case EditLayoutRoomsFilterUnselected
+            /// User validated the home screen layout settings and selected the unreads filter.
+            case EditLayoutUnreadsFilterSelected
+            /// User validated the home screen layout settings and unselected the unreads filter.
+            case EditLayoutUnreadsFilterUnselected
             /// User tapped on Add to Home button on Room Details screen.
             case MobileRoomAddHome
             /// User tapped on Leave Room button on Room Details screen.

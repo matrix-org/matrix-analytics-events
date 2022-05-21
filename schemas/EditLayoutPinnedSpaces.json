@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "description": "Triggered when the user validate the all chat screen layout.",
+  "properties": {
+    "eventName": {
+      "enum": ["EditLayoutPinnedSpaces"]
+    },
+    "spaceNumber": {
+      "description": "Number of spaces pinned.",
+      "type": "integer"
+    }
+  },
+  "required": ["eventName", "spaceNumber"],
+  "additionalProperties": false
+}

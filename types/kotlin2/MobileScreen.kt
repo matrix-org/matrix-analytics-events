@@ -54,6 +54,11 @@ data class MobileScreen(
         Dialpad,
 
         /**
+         * Screen that displays the settings of home screen layout
+         */
+        EditLayout,
+
+        /**
          * The Favourites tab on mobile that lists your favourite people/rooms.
          */
         Favourites,
