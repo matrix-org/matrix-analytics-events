@@ -5,6 +5,8 @@ This repository contains JSON schema defining analytics events raised by the Mat
 It also contains a generator of type stubs for these events which can be used by the client SDKs. Using these stubs 
 ensures events raised comply with the schema via compile-time type verification.
 
+You can find an [overview of the analytics events here](https://matrix-org.github.io/matrix-analytics-events/).
+
 ## Schemas
 
 `/schemas` contains one JSON schema file per event, each named exactly according to the name of that event 
