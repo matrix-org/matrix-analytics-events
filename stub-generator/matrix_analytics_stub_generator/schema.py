@@ -44,6 +44,10 @@ def first_letter_up(s: str) -> str:
     """capitalize() can also change the next letter, and I want to keep camel case."""
     return s[0].upper() + s[1:]
 
+def first_letter_down(s: str) -> str:
+    """Ensure the first letter is not upper case."""
+    return s[0].lower() + s[1:]
+
 def split_text(prefix: str, text: str, limit: int = 80):
     """ensure comment is limited in length"""
     # Use str() to avoid this issue: AttributeError: 'set' object has no attribute 'expandtabs'
