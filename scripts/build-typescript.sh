@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm types/typescript/*
+rm -f types/typescript/*
 
 set -e
 shopt -s extglob
