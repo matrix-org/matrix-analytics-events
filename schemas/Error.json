@@ -9,7 +9,8 @@
       "type": "string",
       "enum": [
         "E2EE",
-        "VOIP"
+        "VOIP",
+        "TO_DEVICE"
       ]
     },
     "name": {
@@ -23,7 +24,8 @@
         "VoipIceFailed",
         "VoipInviteTimeout",
         "VoipIceTimeout",
-        "VoipUserMediaFailed"
+        "VoipUserMediaFailed",
+        "ToDeviceFailedToDecrypt"
       ]
     },
     "context": {
