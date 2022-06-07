@@ -58,8 +58,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.npm-publish.version }}
-          release_name: Release ${{ steps.npm-publish.version }}
-          body: ${{ steps.npm-publish.version }} Release
+          tag_name: v${{ steps.npm-publish.outputs.version }}
+          release_name: Release ${{ steps.npm-publish.outputs.version }}
+          body: ${{ steps.npm-publish.outputs.version }} Release
           draft: false
           prerelease: false
