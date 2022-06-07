@@ -1,11 +1,11 @@
-name: Update Github Pages
+name: Validate schemas
 on:
   push:
     branches: [ main ]
-concurrency: gh-pages
+  pull_request: { }
+concurrency: ${{ github.ref }}
 jobs:
-  pages:
-    name: "Build & Deploy Github Pages"
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: 🧮 Checkout code
@@ -27,11 +27,11 @@ jobs:
       - name: 🛠️ Setup
         run: "./scripts/setup.sh"
 
-      - name: 📕 Generate docs
-        run: yarn build:html
+      - name: 📕 Validate
+        run: yarn build
 
-      - name: 🚀 Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: gh-pages
-          folder: types/html
+      - name: 📕 Validate TS
+        run: yarn build:ts
+
+      - name: 📕 Validate HTML
+        run: yarn build:html
