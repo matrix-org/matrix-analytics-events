@@ -23,21 +23,21 @@ import Foundation
 extension AnalyticsEvent {
     public struct UserProperties {
 
-        /// Whether the user has the favourites space enabled
+        /// Whether the user has the favourites space enabled.
         public let WebMetaSpaceFavouritesEnabled: Bool?
-        /// Whether the user has the home space set to all rooms
+        /// Whether the user has the home space set to all rooms.
         public let WebMetaSpaceHomeAllRooms: Bool?
-        /// Whether the user has the home space enabled
+        /// Whether the user has the home space enabled.
         public let WebMetaSpaceHomeEnabled: Bool?
-        /// Whether the user has the other rooms space enabled
+        /// Whether the user has the other rooms space enabled.
         public let WebMetaSpaceOrphansEnabled: Bool?
-        /// Whether the user has the people space enabled
+        /// Whether the user has the people space enabled.
         public let WebMetaSpacePeopleEnabled: Bool?
         /// The selected messaging use case during the onboarding flow.
         public let ftueUseCaseSelection: FtueUseCaseSelection?
-        /// Number of joined rooms the user has favourited
+        /// Number of joined rooms the user has favourited.
         public let numFavouriteRooms: Int?
-        /// Number of spaces (and sub-spaces) the user is joined to
+        /// Number of spaces (and sub-spaces) the user is joined to.
         public let numSpaces: Int?
 
         public init(WebMetaSpaceFavouritesEnabled: Bool?, WebMetaSpaceHomeAllRooms: Bool?, WebMetaSpaceHomeEnabled: Bool?, WebMetaSpaceOrphansEnabled: Bool?, WebMetaSpacePeopleEnabled: Bool?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {

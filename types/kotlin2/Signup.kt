@@ -22,37 +22,63 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user sends a message via the composer.
+ * Triggered once onboarding has completed, but only if the user registered a
+ * new account.
  */
-data class Composer(
+data class Signup(
         /**
-         * Whether the user was using the composer inside of a thread.
+         * The type of authentication that was used to sign up.
          */
-        val inThread: Boolean,
-        /**
-         * Whether the user's composer interaction was editing a previously sent
-         * event.
-         */
-        val isEditing: Boolean,
-        /**
-         * Whether the user's composer interaction was a reply to a previously
-         * sent event.
-         */
-        val isReply: Boolean,
-        /**
-         * Whether this message begins a new thread or not.
-         */
-        val startsThread: Boolean? = null,
+        val authenticationType: AuthenticationType,
 ) : VectorAnalyticsEvent {
 
-    override fun getName() = "Composer"
+    enum class AuthenticationType {
+        /**
+         * Social login using Apple.
+         */
+        Apple,
+
+        /**
+         * Social login using Facebook.
+         */
+        Facebook,
+
+        /**
+         * Social login using GitHub.
+         */
+        GitHub,
+
+        /**
+         * Social login using GitLab.
+         */
+        GitLab,
+
+        /**
+         * Social login using Google.
+         */
+        Google,
+
+        /**
+         * Registration using some other mechanism such as fallback.
+         */
+        Other,
+
+        /**
+         * Registration with a username and password.
+         */
+        Password,
+
+        /**
+         * Registration using another SSO provider.
+         */
+        SSO,
+    }
+
+    override fun getName() = "Signup"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("inThread", inThread)
-            put("isEditing", isEditing)
-            put("isReply", isReply)
-            startsThread?.let { put("startsThread", it) }
+            put("authenticationType", authenticationType.name)
         }.takeIf { it.isNotEmpty() }
     }
 }

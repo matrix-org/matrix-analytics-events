@@ -1,0 +1,37 @@
+name: Update Github Pages
+on:
+  push:
+    branches: [ main ]
+concurrency: gh-pages
+jobs:
+  pages:
+    name: "Build & Deploy Github Pages"
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧮 Checkout code
+        uses: actions/checkout@v2
+
+      - name: 🔧 Set up node environment
+        uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+
+      - name: 🗜️ Set up python environment
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+
+      - name: 🔨 Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: 🛠️ Setup
+        run: "./scripts/setup.sh"
+
+      - name: 📕 Generate docs
+        run: yarn build:html
+
+      - name: 🚀 Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: types/html

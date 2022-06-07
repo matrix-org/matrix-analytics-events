@@ -5,6 +5,8 @@ This repository contains JSON schema defining analytics events raised by the Mat
 It also contains a generator of type stubs for these events which can be used by the client SDKs. Using these stubs 
 ensures events raised comply with the schema via compile-time type verification.
 
+You can find an [overview of the analytics events here](https://matrix-org.github.io/matrix-analytics-events/).
+
 ## Schemas
 
 `/schemas` contains one JSON schema file per event, each named exactly according to the name of that event 
@@ -53,7 +55,7 @@ yarn build
 ```
 
 * You must describe your event using `description` fields. Your audience might be unfamiliar with the codebase, 
-  or non-technical, so don't refer to code concepts and try to describe things in general but accurate terms.
+  or non-technical, so don't refer to code concepts and try to describe things in general but accurate terms. English grammar must be respected, in particular sentences must end with punctuation (eg a period).
 
 ### Description examples
 
@@ -62,7 +64,7 @@ yarn build
 ```json
 {
   "type": "object",
-  "description": "Triggered when the user changed screen",
+  "description": "Triggered when the user changed screen.",
   "properties": {
     "eventName": {
       "enum": ["Screen"]

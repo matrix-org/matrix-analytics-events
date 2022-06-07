@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Triggered when the user changed screen on Element Android/iOS",
+  "description": "Triggered when the user changed screen on Element Android/iOS.",
   "properties": {
     "eventName": {
       "enum": ["$screen"]
@@ -11,8 +11,8 @@
         {"const": "Home", "description": "The Home tab on iOS | possibly the same on Android?"},
         {"const": "Welcome", "description": "The splash screen."},
         {"const": "Login", "description": "The screen that displays the login flow (when the user already has an account)."},
-        {"const": "ForgotPassword", "description": "The form for the forgot password use case"},
-        {"const": "Register", "description": "The screen that displays the registration flow (when the user wants to create an account)"},
+        {"const": "ForgotPassword", "description": "The form for the forgot password use case."},
+        {"const": "Register", "description": "The screen that displays the registration flow (when the user wants to create an account)."},
         {"const": "Room", "description": "The screen that displays the messages and events received in a room."},
         {"const": "RoomDetails", "description": "The screen shown when tapping the name of a room from the Room screen."},
         {"const": "RoomMembers", "description": "The screen that displays the list of members that are part of a room."},
@@ -21,6 +21,8 @@
         {"const": "RoomUploads", "description": "The screen that allows you to see all of the files sent in a specific room."},
         {"const": "RoomSettings", "description": "The settings screen shown from the Room Details screen."},
         {"const": "RoomNotifications", "description": "The notifications settings screen shown from the Room Details screen."},
+        {"const": "RoomAddresses", "description": "The room addresses screen shown from the Room Details screen."},
+        {"const": "RoomPermissions", "description": "The roles permissions screen shown from the Room Details screen."},
         {"const": "RoomDirectory", "description": "The screen that lists public rooms for you to discover."},
         {"const": "RoomFilter", "description": "The screen that lists all the user's rooms and let them filter the rooms."},
         {"const": "StartChat", "description": "The screen shown to create a new direct room."},
@@ -28,7 +30,7 @@
         {"const": "DeactivateAccount", "description": "The confirmation screen shown before deactivating an account."},
         {"const": "Group", "description": "Legacy: The screen that shows information about a specific group."},
         {"const": "MyGroups", "description": "Legacy: The screen that shows all groups/communities you have joined."},
-        {"const": "SpaceExploreRooms", "description": "Screen that displays the list of rooms and spaces of a space"},
+        {"const": "SpaceExploreRooms", "description": "Screen that displays the list of rooms and spaces of a space."},
         {"const": "Sidebar", "description": "The sidebar shown on mobile with spaces, settings etc."},
         {"const": "Favourites", "description": "The Favourites tab on mobile that lists your favourite people/rooms."},
         {"const": "People", "description": "The People tab on mobile that lists all the DM rooms you have joined."},
@@ -44,9 +46,20 @@
         {"const": "Settings", "description": "The global settings screen shown in the app."},
         {"const": "SettingsSecurity", "description": "The global security settings screen."},
         {"const": "SettingsDefaultNotifications", "description": "The settings screen to change the default notification options."},
+        {"const": "SettingsGeneral", "description": "The settings screen with general profile settings."},
+        {"const": "SettingsNotifications", "description": "The notifications settings screen."},
+        {"const": "SettingsPreferences", "description": "The preferences screen (theme, language, editor preferences, etc."},
+        {"const": "SettingsVoiceVideo", "description": "The calls settings screen."},
+        {"const": "SettingsIgnoredUsers", "description": "The settings screen with list of the ignored users."},
+        {"const": "SettingsLabs", "description": "The experimental features settings screen."},
+        {"const": "SettingsAdvanced", "description": "The advanced settings screen (developer mode, rageshake, push notification rules)."},
+        {"const": "SettingsHelp", "description": "The Help and About screen."},
+        {"const": "SettingsLegals", "description": "The settings screen with legals information."},
         {"const": "SettingsMentionsAndKeywords", "description": "The settings screen to manage notification mentions and keywords."},
-        {"const": "SpaceMenu", "description": "The bottom sheet that list all space options"},
-        {"const": "SpaceMembers", "description": "Screen that displays the list of members of a space"}
+        {"const": "SpaceMenu", "description": "The bottom sheet that list all space options."},
+        {"const": "SpaceMembers", "description": "Screen that displays the list of members of a space."},
+        {"const": "RoomPreview", "description": "Screen that displays room preview if user hasn't joined yet."},
+        {"const": "ThreadList", "description": "Screen that displays list of threads for a room."}
       ]
     },
     "durationMs": {

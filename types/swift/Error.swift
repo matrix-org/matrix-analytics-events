@@ -19,12 +19,12 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when an error occurred
+/// Triggered when an error occurred.
 extension AnalyticsEvent {
     public struct Error: AnalyticsEventProtocol {
         public let eventName = "Error"
 
-        /// Context - client defined, can be used for debugging
+        /// Context - client defined, can be used for debugging.
         public let context: String?
         public let domain: Domain
         public let name: Name

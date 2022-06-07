@@ -35,7 +35,21 @@
         {"const": "WebSpaceContextSwitch", "description": "Room switched due to the user changing space in Element Web/Desktop."},
         {"const": "WebRoomListNotificationBadge", "description": "Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop."},
         {"const": "WebSpacePanelNotificationBadge", "description": "Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop."},
-        {"const": "WebFloatingCallWindow", "description": "Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop."}
+        {"const": "WebFloatingCallWindow", "description": "Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop."},
+
+        {"const": "MobileFileSearch", "description": "Room switched due to user interacting with a file search result."},
+        {"const": "MobileRoomSearch", "description": "Room switched due to user interacting with a room search result."},
+        {"const": "MobileSearchContactDetail", "description": "Room accessed via interacting with direct chat item in the search contact detail screen."},
+        {"const": "MobileRoomMemberDetail", "description": "Room accessed via interacting with direct chat item in the room contact detail screen."},
+        {"const": "MobileSpaceMemberDetail", "description": "Room accessed via interacting with direct chat item in the space contact detail screen."},
+        {"const": "MobileInCall", "description": "Room accessed via interacting with the incall screen."},
+        {"const": "MobileSpaceMenu", "description": "Space accessed via interacting with the space menu."},
+        {"const": "MobileSpaceSettings", "description": "Space accessed via interacting with a space settings menu item."},
+        {"const": "MobileRoomPreview", "description": "Room accessed via preview."},
+        {"const": "MobilePermalink", "description": "Room accessed via link."},
+        {"const": "MobileLinkShare", "description": "Room accessed during external sharing."},
+        {"const": "MobileExploreRooms", "description": "Room accessed via space explore."},
+        {"const": "MobileSpaceMembers", "description": "Room accessed via space members list."}
       ]
     },
     "viaKeyboard": {

@@ -15,7 +15,8 @@
        {"const": "RoomDirectory", "description": "Room joined via the public rooms directory."},
        {"const": "SpaceHierarchy", "description": "Room joined via the space hierarchy view."},
        {"const": "Timeline", "description": "Room joined via a timeline pill or link in another room."},
-       {"const": "Notification", "description": "Room joined via a push/desktop notification."}
+       {"const": "Notification", "description": "Room joined via a push/desktop notification."},
+       {"const": "MobilePermalink", "description": "Room joined via link."}
      ]
     },
     "roomSize": {
