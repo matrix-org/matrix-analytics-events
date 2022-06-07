@@ -37,6 +37,7 @@ extension AnalyticsEvent {
 
         public enum Domain: String {
             case E2EE
+            case TO_DEVICE
             case VOIP
         }
 
@@ -44,6 +45,7 @@ extension AnalyticsEvent {
             case OlmIndexError
             case OlmKeysNotSentError
             case OlmUnspecifiedError
+            case ToDeviceFailedToDecrypt
             case UnknownError
             case VoipIceFailed
             case VoipIceTimeout

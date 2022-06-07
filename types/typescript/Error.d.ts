@@ -10,7 +10,7 @@
  */
 export interface Error {
   eventName: "Error";
-  domain: "E2EE" | "VOIP";
+  domain: "E2EE" | "VOIP" | "TO_DEVICE";
   name:
     | "UnknownError"
     | "OlmIndexError"
@@ -20,7 +20,8 @@ export interface Error {
     | "VoipIceFailed"
     | "VoipInviteTimeout"
     | "VoipIceTimeout"
-    | "VoipUserMediaFailed";
+    | "VoipUserMediaFailed"
+    | "ToDeviceFailedToDecrypt";
   /**
    * Context - client defined, can be used for debugging.
    */
