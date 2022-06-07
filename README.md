@@ -93,7 +93,9 @@ yarn build
 }
 ```
 
-## Publishing to npm
+## Releasing
 
-`npm publish --access public` because the package is
-[scoped](https://docs.npmjs.com/cli/v8/using-npm/scope#publishing-scoped-packages).
+Use "[Run workflow](https://github.com/matrix-org/matrix-analytics-events/actions/workflows/release.yaml)".
+Refer to [SemVer](https://semver.org/) for versioning semantics.
+This workflow will bump the version, publish NPM and create a GitHub release.
+The Swift consumer relies on the git tag, the Kotlin consumer pulls this repo weekly.
