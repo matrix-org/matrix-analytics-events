@@ -34,7 +34,6 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           access: public
-          greater-version-only: true
 
       - name: 🧬 Create release
         uses: actions/create-release@v1
@@ -42,7 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.npm-publish.version }}
-          release_name: Release ${{ github.ref }}
+          release_name: Release ${{ steps.npm-publish.version }}
           body: ${{ steps.npm-publish.version }} Release
           draft: false
           prerelease: false
