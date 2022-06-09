@@ -43,7 +43,7 @@ jobs:
           yarn version --no-git-tag-version --${{ github.event.inputs.version-bump }}
           git config --global user.name 'ElementRobot'
           git config --global user.email 'releases@riot.im'
-          git commit -am "{{ github.event.inputs.version-bump }} version bump"
+          git commit -am "${{ github.event.inputs.version-bump }} version bump"
           git push
 
       - name: 🚀 Publish to npm
