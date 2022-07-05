@@ -13,7 +13,7 @@
         {"const": "Login", "description": "The screen that displays the login flow (when the user already has an account)."},
         {"const": "ForgotPassword", "description": "The form for the forgot password use case"},
         {"const": "Register", "description": "The screen that displays the registration flow (when the user wants to create an account)"},
-        {"const": "UseCaseChoice", "description": "The screen where users choose their expected use case for Element."},
+        {"const": "UseCaseSelection", "description": "The screen where users choose their expected use case for Element."},
         {"const": "Room", "description": "The screen that displays the messages and events received in a room."},
         {"const": "RoomDetails", "description": "The screen shown when tapping the name of a room from the Room screen."},
         {"const": "RoomMembers", "description": "The screen that displays the list of members that are part of a room."},
