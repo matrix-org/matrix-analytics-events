@@ -33,8 +33,8 @@
     <h1>Analytics events for Element clients</h1>    
     
         <section class="event">            
-            <h2>CallEnded</h2>
-            <p>Triggered when a call has ended.</p>
+            <h2>CreatedRoom</h2>
+            <p>Triggered when the user creates a room.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -46,455 +46,8 @@
                 <tbody>
                     
                         <tr>
-                            <td>durationMs</td>                        
-                            <td>The duration of the call in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>UnauthenticatedError</h2>
-            <p>Triggered when the user becomes unauthenticated without actually clicking sign out(E.g. Due to expiry of an access token without a way to refresh).</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>errorCode</td>                        
-                            <td>The error code as defined in matrix spec. The source of this error is from the homeserver.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    M_UNKNOWN    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    M_FORBIDDEN    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    M_UNKNOWN_TOKEN    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>errorReason</td>                        
-                            <td>The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>refreshTokenAuth</td>                        
-                            <td>Whether the auth mechanism is refresh-token-based.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>softLogout</td>                        
-                            <td>Whether a soft logout or hard logout was triggered.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>UserProperties</h2>
-            <p>The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>WebMetaSpaceFavouritesEnabled</td>                        
-                            <td>Whether the user has the favourites space enabled.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>WebMetaSpaceHomeAllRooms</td>                        
-                            <td>Whether the user has the home space set to all rooms.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>WebMetaSpaceHomeEnabled</td>                        
-                            <td>Whether the user has the home space enabled.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>WebMetaSpaceOrphansEnabled</td>                        
-                            <td>Whether the user has the other rooms space enabled.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>WebMetaSpacePeopleEnabled</td>                        
-                            <td>Whether the user has the people space enabled.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>ftueUseCaseSelection</td>                        
-                            <td>The selected messaging use case during the onboarding flow.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>PersonalMessaging:</b> The first option, Friends and family.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WorkMessaging:</b> The second option, Teams.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>CommunityMessaging:</b> The third option, Communities.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Skip:</b> The footer option to skip the question.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numFavouriteRooms</td>                        
-                            <td>Number of joined rooms the user has favourited.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numSpaces</td>                        
-                            <td>Number of spaces (and sub-spaces) the user is joined to.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>SlashCommand</h2>
-            <p>Triggered when the user runs a slash command in their composer.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>command</td>                        
-                            <td>The name of this command.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    Part    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Invite    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>Error</h2>
-            <p>Triggered when an error occurred.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>context</td>                        
-                            <td>Context - client defined, can be used for debugging.</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>domain</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    E2EE    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VOIP    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    TO_DEVICE    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    UnknownError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OlmIndexError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OlmKeysNotSentError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OlmUnspecifiedError    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipUserHangup    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipIceFailed    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipInviteTimeout    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipIceTimeout    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    VoipUserMediaFailed    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    ToDeviceFailedToDecrypt    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CallError</h2>
-            <p>Triggered when an error occurred in a call.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
                             <td>
                                                                 
                                     boolean
@@ -643,110 +196,6 @@
                                             </li>
                                         
                                     </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>Signup</h2>
-            <p>Triggered once onboarding has completed, but only if the user registered a new account.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>authenticationType</td>                        
-                            <td>The type of authentication that was used to sign up.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Password:</b> Registration with a username and password.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Apple:</b> Social login using Apple.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Facebook:</b> Social login using Facebook.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>GitHub:</b> Social login using GitHub.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>GitLab:</b> Social login using GitLab.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Google:</b> Social login using Google.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SSO:</b> Registration using another SSO provider.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Other:</b> Registration using some other mechanism such as fallback.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CreatedRoom</h2>
-            <p>Triggered when the user creates a room.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isDM</td>                        
-                            <td>Whether the room is a DM.</td>
-                            <td>
-                                                                
-                                    boolean
                                                             
                             </td>                            
                         </tr>
@@ -1143,6 +592,100 @@
         </section>
     
         <section class="event">            
+            <h2>CallStarted</h2>
+            <p>Triggered when a call is started.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>WebSearch</h2>
+            <p>Triggered when the user searches rooms.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>numResults</td>                        
+                            <td>How many results the user got to their query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>queryLength</td>                        
+                            <td>The length of the user&#39;s query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>viaSpotlight</td>                        
+                            <td>Whether the user is using the new search experience beta.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>ViewRoom</h2>
             <p>Triggered when the user changes rooms.</p>
             <table class="event-table">
@@ -1472,8 +1015,162 @@
         </section>
     
         <section class="event">            
-            <h2>PerformanceTimer</h2>
-            <p>Triggered after timing an operation in the app.</p>
+            <h2>Signup</h2>
+            <p>Triggered once onboarding has completed, but only if the user registered a new account.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>authenticationType</td>                        
+                            <td>The type of authentication that was used to sign up.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Password:</b> Registration with a username and password.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Apple:</b> Social login using Apple.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Facebook:</b> Social login using Facebook.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>GitHub:</b> Social login using GitHub.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>GitLab:</b> Social login using GitLab.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Google:</b> Social login using Google.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SSO:</b> Registration using another SSO provider.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Other:</b> Registration using some other mechanism such as fallback.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>UnauthenticatedError</h2>
+            <p>Triggered when the user becomes unauthenticated without actually clicking sign out(E.g. Due to expiry of an access token without a way to refresh).</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>errorCode</td>                        
+                            <td>The error code as defined in matrix spec. The source of this error is from the homeserver.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    M_UNKNOWN    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    M_FORBIDDEN    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    M_UNKNOWN_TOKEN    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>errorReason</td>                        
+                            <td>The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>refreshTokenAuth</td>                        
+                            <td>Whether the auth mechanism is refresh-token-based.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>softLogout</td>                        
+                            <td>Whether a soft logout or hard logout was triggered.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>Error</h2>
+            <p>Triggered when an error occurred.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -1486,7 +1183,7 @@
                     
                         <tr>
                             <td>context</td>                        
-                            <td>Client defined, can be used for debugging.</td>
+                            <td>Context - client defined, can be used for debugging.</td>
                             <td>
                                                                 
                                     string
@@ -1495,67 +1192,27 @@
                         </tr>
                     
                         <tr>
-                            <td>itemCount</td>                        
-                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td>The timer that is being reported.</td>
+                            <td>domain</td>                        
+                            <td></td>
                             <td>
                                 
                                     <ul>
                                         
                                             <li>
                                                 
-                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
+                                                    E2EE    
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
+                                                    VOIP    
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
+                                                    TO_DEVICE    
                                                     
                                             </li>
                                         
@@ -1565,11 +1222,73 @@
                         </tr>
                     
                         <tr>
-                            <td>timeMs</td>                        
-                            <td>The time reported by the timer in milliseconds.</td>
+                            <td>name</td>                        
+                            <td></td>
                             <td>
-                                                                
-                                    integer
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    UnknownError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmIndexError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmKeysNotSentError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OlmUnspecifiedError    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipUserHangup    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipIceFailed    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipInviteTimeout    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipIceTimeout    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    VoipUserMediaFailed    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    ToDeviceFailedToDecrypt    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
@@ -1930,8 +1649,8 @@
         </section>
     
         <section class="event">            
-            <h2>CallStarted</h2>
-            <p>Triggered when a call is started.</p>
+            <h2>CallError</h2>
+            <p>Triggered when an error occurred in a call.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -2023,6 +1742,12 @@
                                             <li>
                                                 
                                                     <b>Register:</b> The screen that displays the registration flow (when the user wants to create an account)
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UseCaseSelection:</b> The screen where users choose their expected use case for Element.
                                                     
                                             </li>
                                         
@@ -2292,6 +2017,293 @@
         </section>
     
         <section class="event">            
+            <h2>PerformanceTimer</h2>
+            <p>Triggered after timing an operation in the app.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>context</td>                        
+                            <td>Client defined, can be used for debugging.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>itemCount</td>                        
+                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The timer that is being reported.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>timeMs</td>                        
+                            <td>The time reported by the timer in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>UserProperties</h2>
+            <p>The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>WebMetaSpaceFavouritesEnabled</td>                        
+                            <td>Whether the user has the favourites space enabled.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>WebMetaSpaceHomeAllRooms</td>                        
+                            <td>Whether the user has the home space set to all rooms.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>WebMetaSpaceHomeEnabled</td>                        
+                            <td>Whether the user has the home space enabled.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>WebMetaSpaceOrphansEnabled</td>                        
+                            <td>Whether the user has the other rooms space enabled.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>WebMetaSpacePeopleEnabled</td>                        
+                            <td>Whether the user has the people space enabled.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>ftueUseCaseSelection</td>                        
+                            <td>The selected messaging use case during the onboarding flow.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>PersonalMessaging:</b> The first option, Friends and family.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WorkMessaging:</b> The second option, Teams.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>CommunityMessaging:</b> The third option, Communities.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Skip:</b> The footer option to skip the question.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numFavouriteRooms</td>                        
+                            <td>Number of joined rooms the user has favourited.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numSpaces</td>                        
+                            <td>Number of spaces (and sub-spaces) the user is joined to.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallEnded</h2>
+            <p>Triggered when a call has ended.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>The duration of the call in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>Composer</h2>
             <p>Triggered when the user sends a message via the composer.</p>
             <table class="event-table">
@@ -2349,8 +2361,8 @@
         </section>
     
         <section class="event">            
-            <h2>WebSearch</h2>
-            <p>Triggered when the user searches rooms.</p>
+            <h2>SlashCommand</h2>
+            <p>Triggered when the user runs a slash command in their composer.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -2362,31 +2374,25 @@
                 <tbody>
                     
                         <tr>
-                            <td>numResults</td>                        
-                            <td>How many results the user got to their query.</td>
+                            <td>command</td>                        
+                            <td>The name of this command.</td>
                             <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>queryLength</td>                        
-                            <td>The length of the user&#39;s query.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>viaSpotlight</td>                        
-                            <td>Whether the user is using the new search experience beta.</td>
-                            <td>
-                                                                
-                                    boolean
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Part    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Invite    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
