@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "description": "Triggered when the user changes the notification permission status.",
+  "properties": {
+    "eventName": {
+      "enum": ["NotificationPermissionChanged"]
+    },
+    "enabled": {
+      "description": "Whether the notification permission has been granted by the user.",
+      "type": "boolean"
+    }
+  },
+  "required": ["enabled", "eventName"],
+  "additionalProperties": false
+}

@@ -66,6 +66,8 @@ extension AnalyticsEvent {
             case WebHomeMiniAvatarUploadButton
             /// User clicked the explore rooms button next to the search field at the top of the left panel in Element Web/Desktop.
             case WebLeftPanelExploreRoomsButton
+            /// User clicked on the avatar uploader in the profile settings of Element Web/Desktop.
+            case WebProfileSettingsAvatarUploadButton
             /// User interacted with pin to sidebar checkboxes in the quick settings menu of Element Web/Desktop.
             case WebQuickSettingsPinToSidebarCheckbox
             /// User interacted with the theme dropdown in the quick settings menu of Element Web/Desktop.
@@ -120,6 +122,10 @@ extension AnalyticsEvent {
             case WebRoomListRoomsSublistPlusMenuCreateRoomItem
             /// User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop.
             case WebRoomListRoomsSublistPlusMenuExploreRoomsItem
+            /// User clicked on the button to return to the user onboarding list in the room list in Element Web/Desktop.
+            case WebRoomListUserOnboardingButton
+            /// User clicked on the button to close the user onboarding button in the room list in Element Web/Desktop.
+            case WebRoomListUserOnboardingIgnoreButton
             /// User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
             case WebRoomSettingsLeaveButton
             /// User interacted with the prompt to create a new room when adjusting security settings in an existing room in Element Web/Desktop.
@@ -144,6 +150,16 @@ extension AnalyticsEvent {
             case WebThreadsPanelThreadItem
             /// User clicked the theme toggle button in the user menu of Element Web/Desktop.
             case WebUserMenuThemeToggleButton
+            /// User clicked on the send DM CTA in the header of the new user onboarding page in Element Web/Desktop.
+            case WebUserOnboardingHeaderSendDm
+            /// User clicked on the action of the download apps task on the new user onboarding page in Element Web/Desktop.
+            case WebUserOnboardingTaskDownloadApps
+            /// User clicked on the action of the enable notifications task on the new user onboarding page in Element Web/Desktop.
+            case WebUserOnboardingTaskEnableNotifications
+            /// User clicked on the action of the find people task on the new user onboarding page in Element Web/Desktop.
+            case WebUserOnboardingTaskSendDm
+            /// User clicked on the action of the your profile task on the new user onboarding page in Element Web/Desktop.
+            case WebUserOnboardingTaskSetupProfile
         }
 
         public enum InteractionType: String {
