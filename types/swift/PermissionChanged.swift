@@ -35,7 +35,7 @@ extension AnalyticsEvent {
         }
 
         public enum Permission: String {
-            /// Permission for the web notifications has changed
+            /// Permissions related to sending notifications have changed
             case Notification
         }
 
