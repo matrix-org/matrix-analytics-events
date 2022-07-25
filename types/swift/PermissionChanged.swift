@@ -19,21 +19,30 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user changes the notification permission status.
+/// Triggered when the user changes a permission status.
 extension AnalyticsEvent {
-    public struct NotificationPermissionChanged: AnalyticsEventProtocol {
-        public let eventName = "NotificationPermissionChanged"
+    public struct PermissionChanged: AnalyticsEventProtocol {
+        public let eventName = "PermissionChanged"
 
-        /// Whether the notification permission has been granted by the user.
-        public let enabled: Bool
+        /// Whether the permission has been granted by the user.
+        public let granted: Bool
+        /// The name of the permission.
+        public let permission: Permission
 
-        public init(enabled: Bool) {
-            self.enabled = enabled
+        public init(granted: Bool, permission: Permission) {
+            self.granted = granted
+            self.permission = permission
+        }
+
+        public enum Permission: String {
+            /// Permission for the web notifications has changed
+            case Notification
         }
 
         public var properties: [String: Any] {
             return [
-                "enabled": enabled
+                "granted": granted,
+                "permission": permission.rawValue
             ]
         }
     }

@@ -22,20 +22,32 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user changes the notification permission status.
+ * Triggered when the user changes a permission status.
  */
-data class NotificationPermissionChanged(
+data class PermissionChanged(
         /**
-         * Whether the notification permission has been granted by the user.
+         * Whether the permission has been granted by the user.
          */
-        val enabled: Boolean,
+        val granted: Boolean,
+        /**
+         * The name of the permission.
+         */
+        val permission: Permission,
 ) : VectorAnalyticsEvent {
 
-    override fun getName() = "NotificationPermissionChanged"
+    enum class Permission {
+        /**
+         * Permission for the web notifications has changed
+         */
+        Notification,
+    }
+
+    override fun getName() = "PermissionChanged"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("enabled", enabled)
+            put("granted", granted)
+            put("permission", permission.name)
         }.takeIf { it.isNotEmpty() }
     }
 }
