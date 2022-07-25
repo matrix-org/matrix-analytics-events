@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "description": "Triggered when the user changes a permission status.",
+    "properties": {
+        "eventName": {
+            "enum": [
+                "PermissionChanged"
+            ]
+        },
+        "permission": {
+            "description": "The name of the permission.",
+            "type": "string",
+            "oneOf": [
+                {
+                    "const": "Notification",
+                    "description": "Permissions related to sending notifications have changed"
+                }
+            ]
+        },
+        "granted": {
+            "description": "Whether the permission has been granted by the user.",
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "eventName",
+        "permission",
+        "granted"
+    ],
+    "additionalProperties": false
+}
