@@ -84,6 +84,8 @@ extension AnalyticsEvent {
             case RoomDirectory
             /// Room accessed via the room list.
             case RoomList
+            /// Room accessed via a shortcut.
+            case Shortcut
             /// Room accessed via a slash command in Element Web/Desktop like /goto.
             case SlashCommand
             /// Room accessed via the space hierarchy view.

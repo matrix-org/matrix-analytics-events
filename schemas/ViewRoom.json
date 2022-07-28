@@ -22,6 +22,7 @@
         {"const": "MessageUser", "description": "Room switched due to user selecting a user to go to a DM with."},
         {"const": "VerificationRequest", "description": "Room switched due to user interacting with incoming verification request."},
         {"const": "SlashCommand", "description": "Room accessed via a slash command in Element Web/Desktop like /goto."},
+        {"const": "Shortcut", "description": "Room accessed via a shortcut."},
 
         {"const": "WebNotificationPanel", "description": "Room accessed via Element Web/Desktop's notification panel."},
         {"const": "WebKeyboardShortcut", "description": "Room accessed via an Element Web/Desktop keyboard shortcut like go to next room with unread messages."},
