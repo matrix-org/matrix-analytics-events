@@ -13,7 +13,7 @@
             "oneOf": [
                 {
                     "const": "Notification",
-                    "description": "Permissions related to sending notifications have changed"
+                    "description": "Permissions related to sending notifications have changed."
                 }
             ]
         },
