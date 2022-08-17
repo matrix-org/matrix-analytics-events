@@ -1,0 +1,27 @@
+name: Validate Swift
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      # When running on main, use the sha to allow all runs of this workflow to run concurrently.
+      # Otherwise only allow a single run of this workflow on each branch, automatically cancelling older runs.
+      group: ${{ github.ref == 'refs/heads/main' && format('swift-main-{0}', github.sha) || format('swift-{0}', github.ref) }}
+      cancel-in-progress: true
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Swift
+      uses: slashmo/install-swift@v0.2.1
+      with:
+        version: 5.6
+
+    - name: Build for Swift
+      run: swift build
