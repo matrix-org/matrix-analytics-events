@@ -37,7 +37,7 @@ data class PermissionChanged(
 
     enum class Permission {
         /**
-         * Permissions related to sending notifications have changed
+         * Permissions related to sending notifications have changed.
          */
         Notification,
     }
