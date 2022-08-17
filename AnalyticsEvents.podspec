@@ -17,5 +17,5 @@ This pod provides the Matrix analytics events generated in Swift.
 
   s.ios.deployment_target = '12.1'
 
-  s.source_files = 'types/swift/**/*.swift', 'base_types/swift/**/*.swift'
+  s.source_files = 'types/swift/**/*.swift'
 end
