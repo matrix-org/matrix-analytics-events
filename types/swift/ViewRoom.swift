@@ -68,6 +68,8 @@ extension AnalyticsEvent {
             case MobileRoomSearch
             /// Room accessed via interacting with direct chat item in the search contact detail screen.
             case MobileSearchContactDetail
+            /// Room accessed via space bottom sheet list.
+            case MobileSpaceBottomSheet
             /// Room accessed via interacting with direct chat item in the space contact detail screen.
             case MobileSpaceMemberDetail
             /// Room accessed via space members list.

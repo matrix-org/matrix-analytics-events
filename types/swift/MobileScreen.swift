@@ -37,6 +37,8 @@ extension AnalyticsEvent {
             case Breadcrumbs
             /// The screen shown to create a new (non-direct) room.
             case CreateRoom
+            /// The screen shown to create a new space.
+            case CreateSpace
             /// The confirmation screen shown before deactivating an account.
             case DeactivateAccount
             /// The tab on mobile that displays the dialpad.
@@ -51,6 +53,8 @@ extension AnalyticsEvent {
             case Home
             /// The screen shown to share a link to download the app.
             case InviteFriends
+            /// Room accessed via space bottom sheet list.
+            case Invites
             /// The screen that displays the login flow (when the user already has an account).
             case Login
             /// Legacy: The screen that shows all groups/communities you have joined.
@@ -121,6 +125,8 @@ extension AnalyticsEvent {
             case SettingsVoiceVideo
             /// The sidebar shown on mobile with spaces, settings etc.
             case Sidebar
+            /// Room accessed via space bottom sheet list.
+            case SpaceBottomSheet
             /// Screen that displays the list of rooms and spaces of a space.
             case SpaceExploreRooms
             /// Screen that displays the list of members of a space.

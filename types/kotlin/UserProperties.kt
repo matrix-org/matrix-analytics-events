@@ -6,6 +6,11 @@ package quicktype
  */
 data class UserProperties (
     /**
+     * The active filter in the All Chats screen
+     */
+    val allChatsActiveFilter: String? = null,
+
+    /**
      * The selected messaging use case during the onboarding flow.
      */
     val ftueUseCaseSelection: String? = null,
