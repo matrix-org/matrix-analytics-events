@@ -59,7 +59,10 @@
         {"const": "SpaceMenu", "description": "The bottom sheet that list all space options."},
         {"const": "SpaceMembers", "description": "Screen that displays the list of members of a space."},
         {"const": "RoomPreview", "description": "Screen that displays room preview if user hasn't joined yet."},
-        {"const": "ThreadList", "description": "Screen that displays list of threads for a room."}
+        {"const": "ThreadList", "description": "Screen that displays list of threads for a room."},
+        {"const": "SpaceBottomSheet", "description": "Room accessed via space bottom sheet list."},
+        {"const": "Invites", "description": "Room accessed via space bottom sheet list."},
+        {"const": "CreateSpace", "description": "The screen shown to create a new space."}
       ]
     },
     "durationMs": {

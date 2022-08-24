@@ -38,6 +38,22 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
+            /// User tapped the All filter in the All Chats filter tab.
+            case MobileAllChatsFilterAll
+            /// User tapped the Favourites filter in the All Chats filter tab.
+            case MobileAllChatsFilterFavourites
+            /// User tapped the People filter in the All Chats filter tab.
+            case MobileAllChatsFilterPeople
+            /// User tapped the Unreads filter in the All Chats filter tab.
+            case MobileAllChatsFilterUnreads
+            /// User disabled filters from the all chats layout settings.
+            case MobileAllChatsFiltersDisabled
+            /// User enabled filters from the all chats layout settings.
+            case MobileAllChatsFiltersEnabled
+            /// User disabled recents from the all chats layout settings.
+            case MobileAllChatsRecentsDisabled
+            /// User enabled recents from the all chats layout settings.
+            case MobileAllChatsRecentsEnabled
             /// User tapped on Add to Home button on Room Details screen.
             case MobileRoomAddHome
             /// User tapped on Leave Room button on Room Details screen.
@@ -46,6 +62,8 @@ extension AnalyticsEvent {
             case MobileRoomThreadListButton
             /// User tapped on a thread summary item on Room screen.
             case MobileRoomThreadSummaryItem
+            /// User validated the creation of a new space.
+            case MobileSpaceCreationValidated
             /// User tapped on the filter button on ThreadList screen.
             case MobileThreadListFilterItem
             /// User selected a thread on ThreadList screen.
@@ -54,6 +72,8 @@ extension AnalyticsEvent {
             case SpacePanelSelectedSpace
             /// User tapped an unselected space from the space list -> space switching should occur.
             case SpacePanelSwitchSpace
+            /// User tapped an unselected sub space from the space list -> space switching should occur.
+            case SpacePanelSwitchSubSpace
             /// User clicked the create room button in the add existing room to space dialog in Element Web/Desktop.
             case WebAddExistingToSpaceDialogCreateRoomButton
             /// User clicked the create DM button in the home page of Element Web/Desktop.

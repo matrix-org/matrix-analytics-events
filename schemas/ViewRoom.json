@@ -50,7 +50,8 @@
         {"const": "MobilePermalink", "description": "Room accessed via link."},
         {"const": "MobileLinkShare", "description": "Room accessed during external sharing."},
         {"const": "MobileExploreRooms", "description": "Room accessed via space explore."},
-        {"const": "MobileSpaceMembers", "description": "Room accessed via space members list."}
+        {"const": "MobileSpaceMembers", "description": "Room accessed via space members list."},
+        {"const": "MobileSpaceBottomSheet", "description": "Room accessed via space bottom sheet list."}
       ]
     },
     "viaKeyboard": {
