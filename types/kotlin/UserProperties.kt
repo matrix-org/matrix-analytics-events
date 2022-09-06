@@ -6,7 +6,7 @@ package quicktype
  */
 data class UserProperties (
     /**
-     * The active filter in the All Chats screen
+     * The active filter in the All Chats screen.
      */
     val allChatsActiveFilter: String? = null,
 
