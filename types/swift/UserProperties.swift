@@ -33,7 +33,7 @@ extension AnalyticsEvent {
         public let WebMetaSpaceOrphansEnabled: Bool?
         /// Whether the user has the people space enabled.
         public let WebMetaSpacePeopleEnabled: Bool?
-        /// The active filter in the All Chats screen
+        /// The active filter in the All Chats screen.
         public let allChatsActiveFilter: AllChatsActiveFilter?
         /// The selected messaging use case during the onboarding flow.
         public let ftueUseCaseSelection: FtueUseCaseSelection?
@@ -66,13 +66,13 @@ extension AnalyticsEvent {
         }
 
         public enum AllChatsActiveFilter: String {
-            /// Filters are activated and All is selected
+            /// Filters are activated and All is selected.
             case All
-            /// Filters are activated and Favourites is selected
+            /// Filters are activated and Favourites is selected.
             case Favourites
-            /// Filters are activated and People is selected
+            /// Filters are activated and People is selected.
             case People
-            /// Filters are activated and Unreads is selected
+            /// Filters are activated and Unreads is selected.
             case Unreads
         }
 

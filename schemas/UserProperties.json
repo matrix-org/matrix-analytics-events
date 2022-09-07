@@ -41,13 +41,13 @@
         "type": "boolean"
       },
       "allChatsActiveFilter": {
-        "description": "The active filter in the All Chats screen",
+        "description": "The active filter in the All Chats screen.",
         "type": "string",
         "oneOf": [
-          {"const": "All", "description": "Filters are activated and All is selected"},
-          {"const": "Unreads", "description": "Filters are activated and Unreads is selected"},
-          {"const": "Favourites", "description": "Filters are activated and Favourites is selected"},
-          {"const": "People", "description": "Filters are activated and People is selected"}
+          {"const": "All", "description": "Filters are activated and All is selected."},
+          {"const": "Unreads", "description": "Filters are activated and Unreads is selected."},
+          {"const": "Favourites", "description": "Filters are activated and Favourites is selected."},
+          {"const": "People", "description": "Filters are activated and People is selected."}
         ]
       }
     },
