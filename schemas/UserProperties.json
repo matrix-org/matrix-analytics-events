@@ -49,9 +49,18 @@
           {"const": "Favourites", "description": "Filters are activated and Favourites is selected."},
           {"const": "People", "description": "Filters are activated and People is selected."}
         ]
+      },
+      "WebLayout": {
+        "description": "Which layout the user is using in Element Web/Desktop. This is known to clobber between devices.",
+        "type": "string",
+        "oneOf": [
+          {"const": "IRC", "description": "IRC layout."},
+          {"const": "Bubble", "description": "Bubble layout."},
+          {"const": "Group", "description": "Modern layout."},
+          {"const": "Compact", "description": "Modern layout with compact option enabled."}
+        ]
       }
     },
     "required": [],
     "additionalProperties": false
   }
-  
