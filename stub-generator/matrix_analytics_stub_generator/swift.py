@@ -1,4 +1,4 @@
-from .schema import Schema, Member, first_letter_up, is_mobile_screen_event
+from .schema import Schema, Member, is_mobile_screen_event
 
 
 def swift_member_definition(member: Member) -> str:
@@ -8,7 +8,7 @@ def swift_member_definition(member: Member) -> str:
         optionalSuffix = "?"
     if member.type == "string":
         if member.enum:
-            definition = f"{member.name}: {first_letter_up(member.name)}"
+            definition = f"{member.name}: {member.enum.name}"
         else:
             definition = f"{member.name}: String"
     elif member.type == "number":
@@ -45,7 +45,7 @@ def swift_member_property(member: Member, protocol) -> str:
             property = f'"{member.name}": {member.name} as Any'
         else:
             property = f'"{member.name}": {member.name}'
-    
+
     return property
 
 
@@ -85,7 +85,7 @@ def compute_swift(schema: Schema) -> str:
         f"/// {schema.data.get('description')}\n"
         f"extension AnalyticsEvent {{\n"
     )
-    
+
     # Protocol conformance
     if protocol:
         result += f"    public struct {schema.klass}: {protocol} {{\n"

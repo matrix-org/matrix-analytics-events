@@ -24,7 +24,7 @@ extension AnalyticsEvent {
     public struct UserProperties {
 
         /// Which layout the user is using in Element Web/Desktop. This is known to clobber between devices.
-        public let WebLayout: WebLayout?
+        public let WebLayout: WebLayoutEnum?
         /// Whether the user has the favourites space enabled.
         public let WebMetaSpaceFavouritesEnabled: Bool?
         /// Whether the user has the home space set to all rooms.
@@ -44,7 +44,7 @@ extension AnalyticsEvent {
         /// Number of spaces (and sub-spaces) the user is joined to.
         public let numSpaces: Int?
 
-        public init(WebLayout: WebLayout?, WebMetaSpaceFavouritesEnabled: Bool?, WebMetaSpaceHomeAllRooms: Bool?, WebMetaSpaceHomeEnabled: Bool?, WebMetaSpaceOrphansEnabled: Bool?, WebMetaSpacePeopleEnabled: Bool?, allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
+        public init(WebLayout: WebLayoutEnum?, WebMetaSpaceFavouritesEnabled: Bool?, WebMetaSpaceHomeAllRooms: Bool?, WebMetaSpaceHomeEnabled: Bool?, WebMetaSpaceOrphansEnabled: Bool?, WebMetaSpacePeopleEnabled: Bool?, allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
             self.WebLayout = WebLayout
             self.WebMetaSpaceFavouritesEnabled = WebMetaSpaceFavouritesEnabled
             self.WebMetaSpaceHomeAllRooms = WebMetaSpaceHomeAllRooms
