@@ -23,16 +23,6 @@ import Foundation
 extension AnalyticsEvent {
     public struct UserProperties {
 
-        /// Whether the user has the favourites space enabled.
-        public let WebMetaSpaceFavouritesEnabled: Bool?
-        /// Whether the user has the home space set to all rooms.
-        public let WebMetaSpaceHomeAllRooms: Bool?
-        /// Whether the user has the home space enabled.
-        public let WebMetaSpaceHomeEnabled: Bool?
-        /// Whether the user has the other rooms space enabled.
-        public let WebMetaSpaceOrphansEnabled: Bool?
-        /// Whether the user has the people space enabled.
-        public let WebMetaSpacePeopleEnabled: Bool?
         /// The active filter in the All Chats screen.
         public let allChatsActiveFilter: AllChatsActiveFilter?
         /// The selected messaging use case during the onboarding flow.
@@ -42,12 +32,7 @@ extension AnalyticsEvent {
         /// Number of spaces (and sub-spaces) the user is joined to.
         public let numSpaces: Int?
 
-        public init(WebMetaSpaceFavouritesEnabled: Bool?, WebMetaSpaceHomeAllRooms: Bool?, WebMetaSpaceHomeEnabled: Bool?, WebMetaSpaceOrphansEnabled: Bool?, WebMetaSpacePeopleEnabled: Bool?, allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
-            self.WebMetaSpaceFavouritesEnabled = WebMetaSpaceFavouritesEnabled
-            self.WebMetaSpaceHomeAllRooms = WebMetaSpaceHomeAllRooms
-            self.WebMetaSpaceHomeEnabled = WebMetaSpaceHomeEnabled
-            self.WebMetaSpaceOrphansEnabled = WebMetaSpaceOrphansEnabled
-            self.WebMetaSpacePeopleEnabled = WebMetaSpacePeopleEnabled
+        public init(allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
             self.allChatsActiveFilter = allChatsActiveFilter
             self.ftueUseCaseSelection = ftueUseCaseSelection
             self.numFavouriteRooms = numFavouriteRooms
@@ -78,11 +63,6 @@ extension AnalyticsEvent {
 
         public var properties: [String: Any?] {
             return [
-                "WebMetaSpaceFavouritesEnabled": WebMetaSpaceFavouritesEnabled,
-                "WebMetaSpaceHomeAllRooms": WebMetaSpaceHomeAllRooms,
-                "WebMetaSpaceHomeEnabled": WebMetaSpaceHomeEnabled,
-                "WebMetaSpaceOrphansEnabled": WebMetaSpaceOrphansEnabled,
-                "WebMetaSpacePeopleEnabled": WebMetaSpacePeopleEnabled,
                 "allChatsActiveFilter": allChatsActiveFilter?.rawValue,
                 "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue,
                 "numFavouriteRooms": numFavouriteRooms,

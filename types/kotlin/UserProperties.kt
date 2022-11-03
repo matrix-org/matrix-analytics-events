@@ -26,6 +26,12 @@ data class UserProperties (
     val numSpaces: Long? = null,
 
     /**
+     * Which layout the user is using in Element Web/Desktop. This is known to clobber between
+     * devices.
+     */
+    val webLayout: String? = null,
+
+    /**
      * Whether the user has the favourites space enabled.
      */
     val webMetaSpaceFavouritesEnabled: Boolean? = null,

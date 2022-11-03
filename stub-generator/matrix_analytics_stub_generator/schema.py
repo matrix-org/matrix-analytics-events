@@ -78,16 +78,24 @@ def make_enum(name: str, json_property: dict) -> Enum:
         return Enum(first_letter_up(name), values)
 
 
-def parse_schema(data: dict, klass: str) -> Schema:
+def parse_schema(data: dict, klass: str, include_web_prefixed = False) -> Schema:
     """Parse the schema into members, enums and the event name."""
     members = []
     enums = []
     event_name = data["properties"].get("eventName", {}).get("enum", [None])[0]
     required = data.get("required")
     for p in data["properties"]:
+        if p.startswith("Web") and not include_web_prefixed:
+            continue
+
         if p == "eventName":
             continue
-        enum = make_enum(p, data["properties"][p])
+        if p == first_letter_up(p):
+            # The field name would conflict with the enum name, this causes ambiguity in Swift
+            enum = make_enum(p + "Enum", data["properties"][p])
+        else:
+            enum = make_enum(p, data["properties"][p])
+
         if enum:
             enums.append(enum)
         members.append(
