@@ -10,12 +10,12 @@ from .swift import compute_swift
 from .schema import Schema, parse_schema
 
 
-def load_schemas(json_schema_paths: Iterator[str]) -> Iterator[Schema]:
+def load_schemas(json_schema_paths: Iterator[str], include_web_prefixed = False) -> Iterator[Schema]:
     for json_schema_path in json_schema_paths:
         with open(json_schema_path) as json_file:
             data = json.load(json_file)
             klass = os.path.basename(json_schema_path).removesuffix(".json")
-            yield parse_schema(data, klass)
+            yield parse_schema(data, klass, include_web_prefixed)
 
 
 def generate_stub(
@@ -25,7 +25,7 @@ def generate_stub(
 ) -> None:
     if output_language == "html":
         generate_documentation(
-            load_schemas(json_schema_paths), os.path.join(args.output_dir, "index.html")
+            load_schemas(json_schema_paths, include_web_prefixed=True), os.path.join(args.output_dir, "index.html")
         )
     else:
         for schema in load_schemas(json_schema_paths):
