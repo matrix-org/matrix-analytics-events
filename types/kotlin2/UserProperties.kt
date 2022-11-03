@@ -25,6 +25,11 @@ package im.vector.app.features.analytics.plan
  */
 data class UserProperties(
         /**
+         * Which layout the user is using in Element Web/Desktop. This is known
+         * to clobber between devices.
+         */
+        val webLayout: WebLayout? = null,
+        /**
          * Whether the user has the favourites space enabled.
          */
         val webMetaSpaceFavouritesEnabled: Boolean? = null,
@@ -107,8 +112,32 @@ data class UserProperties(
         Unreads,
     }
 
+    enum class WebLayout {
+
+        /**
+         * Bubble layout.
+         */
+        Bubble,
+
+        /**
+         * Modern layout with compact option enabled.
+         */
+        Compact,
+
+        /**
+         * Modern layout.
+         */
+        Group,
+
+        /**
+         * IRC layout.
+         */
+        IRC,
+    }
+
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
+            webLayout?.let { put("WebLayout", it.name) }
             webMetaSpaceFavouritesEnabled?.let { put("WebMetaSpaceFavouritesEnabled", it) }
             webMetaSpaceHomeAllRooms?.let { put("WebMetaSpaceHomeAllRooms", it) }
             webMetaSpaceHomeEnabled?.let { put("WebMetaSpaceHomeEnabled", it) }
