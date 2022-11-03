@@ -79,7 +79,7 @@ extension AnalyticsEvent {
             case Unreads
         }
 
-        public enum WebLayout: String {
+        public enum WebLayoutEnum: String {
             /// Bubble layout.
             case Bubble
             /// Modern layout with compact option enabled.

@@ -87,7 +87,12 @@ def parse_schema(data: dict, klass: str) -> Schema:
     for p in data["properties"]:
         if p == "eventName":
             continue
-        enum = make_enum(p, data["properties"][p])
+        if p == first_letter_up(p):
+            # The field name would conflict with the enum name, this causes ambiguity in Swift
+            enum = make_enum(p + "Enum", data["properties"][p])
+        else:
+            enum = make_enum(p, data["properties"][p])
+
         if enum:
             enums.append(enum)
         members.append(

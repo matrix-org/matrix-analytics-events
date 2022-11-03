@@ -112,7 +112,7 @@ data class UserProperties(
         Unreads,
     }
 
-    enum class WebLayout {
+    enum class WebLayoutEnum {
 
         /**
          * Bubble layout.
