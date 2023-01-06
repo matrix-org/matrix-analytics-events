@@ -54,7 +54,8 @@
         {"const": "RoomSettingsNotifications", "description": "Screen showing Room Settings Notifications Tab."},
         {"const": "RoomSettingsBridges", "description": "Labs: Screen showing Room Settings Bridges Tab."},
         {"const": "RoomSettingsAdvanced", "description": "Screen showing Room Settings Advanced Tab."},
-        {"const": "UnifiedSearch", "description": "Screen showing the new unified search modal (Project Spotlight)."}
+        {"const": "UnifiedSearch", "description": "Screen showing the new unified search modal (Project Spotlight)."},
+        {"const": "FavouriteMessages", "description": "Screen showing all messages that have been added to favourites."}
       ]
     },
     "durationMs": {
