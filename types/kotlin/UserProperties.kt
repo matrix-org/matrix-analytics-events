@@ -11,6 +11,11 @@ data class UserProperties (
     val allChatsActiveFilter: String? = null,
 
     /**
+     * Which crypto module is the client currently using.
+     */
+    val cryptoModule: String? = null,
+
+    /**
      * The selected messaging use case during the onboarding flow.
      */
     val ftueUseCaseSelection: String? = null,

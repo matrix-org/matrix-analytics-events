@@ -59,6 +59,14 @@
           {"const": "Group", "description": "Modern layout."},
           {"const": "Compact", "description": "Modern layout with compact option enabled."}
         ]
+      },
+      "cryptoModule": {
+        "description": "Which crypto module is the client currently using.",
+        "type": "string",
+        "oneOf": [
+          {"const": "Native", "description": "Native / legacy crypto module specific to each platform."},
+          {"const": "Rust", "description": "Shared / cross-platform crypto module written in Rust."}
+        ]
       }
     },
     "required": [],
