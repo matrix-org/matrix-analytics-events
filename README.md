@@ -98,4 +98,4 @@ yarn build
 Use "[Run workflow](https://github.com/matrix-org/matrix-analytics-events/actions/workflows/release.yaml)".
 Refer to [SemVer](https://semver.org/) for versioning semantics.
 This workflow will bump the version, publish NPM and create a GitHub release.
-The Swift consumer relies on the git tag, the Kotlin consumer pulls this repo weekly.
+The Swift consumer uses [SwiftPM](./Package.swift) and can target the latest released version, the Kotlin consumer pulls this repo weekly.
