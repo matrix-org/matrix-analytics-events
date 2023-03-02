@@ -31,6 +31,14 @@
     "context": {
       "description": "Context - client defined, can be used for debugging.",
       "type": "string"
+    },
+    "cryptoModule": {
+      "description": "Which crypto module is the client currently using.",
+      "type": "string",
+      "oneOf": [
+        {"const": "Native", "description": "Native / legacy crypto module specific to each platform."},
+        {"const": "Rust", "description": "Shared / cross-platform crypto module written in Rust."}
+      ]
     }
   },
   "required": ["domain", "name", "eventName"],

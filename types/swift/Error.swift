@@ -26,11 +26,14 @@ extension AnalyticsEvent {
 
         /// Context - client defined, can be used for debugging.
         public let context: String?
+        /// Which crypto module is the client currently using.
+        public let cryptoModule: CryptoModule?
         public let domain: Domain
         public let name: Name
 
-        public init(context: String?, domain: Domain, name: Name) {
+        public init(context: String?, cryptoModule: CryptoModule?, domain: Domain, name: Name) {
             self.context = context
+            self.cryptoModule = cryptoModule
             self.domain = domain
             self.name = name
         }
@@ -54,9 +57,17 @@ extension AnalyticsEvent {
             case VoipUserMediaFailed
         }
 
+        public enum CryptoModule: String {
+            /// Native / legacy crypto module specific to each platform.
+            case Native
+            /// Shared / cross-platform crypto module written in Rust.
+            case Rust
+        }
+
         public var properties: [String: Any] {
             return [
                 "context": context as Any,
+                "cryptoModule": cryptoModule?.rawValue as Any,
                 "domain": domain.rawValue,
                 "name": name.rawValue
             ]
