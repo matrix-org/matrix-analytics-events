@@ -29,10 +29,6 @@ data class UserProperties(
          */
         val allChatsActiveFilter: AllChatsActiveFilter? = null,
         /**
-         * Which crypto module is the client currently using.
-         */
-        val cryptoModule: CryptoModule? = null,
-        /**
          * The selected messaging use case during the onboarding flow.
          */
         val ftueUseCaseSelection: FtueUseCaseSelection? = null,
@@ -91,23 +87,9 @@ data class UserProperties(
         Unreads,
     }
 
-    enum class CryptoModule {
-
-        /**
-         * Native / legacy crypto module specific to each platform.
-         */
-        Native,
-
-        /**
-         * Shared / cross-platform crypto module written in Rust.
-         */
-        Rust,
-    }
-
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             allChatsActiveFilter?.let { put("allChatsActiveFilter", it.name) }
-            cryptoModule?.let { put("cryptoModule", it.name) }
             ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.name) }
             numFavouriteRooms?.let { put("numFavouriteRooms", it) }
             numSpaces?.let { put("numSpaces", it) }

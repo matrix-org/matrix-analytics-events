@@ -9,6 +9,11 @@ data class Error (
      */
     val context: String? = null,
 
+    /**
+     * Which crypto module is the client currently using.
+     */
+    val cryptoModule: String? = null,
+
     val domain: Domain,
     val eventName: EventName,
     val name: Name

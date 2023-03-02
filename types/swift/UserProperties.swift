@@ -25,8 +25,6 @@ extension AnalyticsEvent {
 
         /// The active filter in the All Chats screen.
         public let allChatsActiveFilter: AllChatsActiveFilter?
-        /// Which crypto module is the client currently using.
-        public let cryptoModule: CryptoModule?
         /// The selected messaging use case during the onboarding flow.
         public let ftueUseCaseSelection: FtueUseCaseSelection?
         /// Number of joined rooms the user has favourited.
@@ -34,9 +32,8 @@ extension AnalyticsEvent {
         /// Number of spaces (and sub-spaces) the user is joined to.
         public let numSpaces: Int?
 
-        public init(allChatsActiveFilter: AllChatsActiveFilter?, cryptoModule: CryptoModule?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
+        public init(allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
             self.allChatsActiveFilter = allChatsActiveFilter
-            self.cryptoModule = cryptoModule
             self.ftueUseCaseSelection = ftueUseCaseSelection
             self.numFavouriteRooms = numFavouriteRooms
             self.numSpaces = numSpaces
@@ -64,17 +61,9 @@ extension AnalyticsEvent {
             case Unreads
         }
 
-        public enum CryptoModule: String {
-            /// Native / legacy crypto module specific to each platform.
-            case Native
-            /// Shared / cross-platform crypto module written in Rust.
-            case Rust
-        }
-
         public var properties: [String: Any?] {
             return [
                 "allChatsActiveFilter": allChatsActiveFilter?.rawValue,
-                "cryptoModule": cryptoModule?.rawValue,
                 "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue,
                 "numFavouriteRooms": numFavouriteRooms,
                 "numSpaces": numSpaces
