@@ -22,30 +22,77 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user runs a slash command in their composer.
+ * Triggered when the user formats the message content within the composer.
  */
-data class SlashCommand(
+data class FormattedMessage(
         /**
-         * The name of this command.
+         * The format action taken.
          */
-        val command: Command,
+        val formatAction: FormatAction,
         /**
-         * Whether this message was composed in the WYSIWYG-style rich text
-         * editor.
+         * Whether this message was composed in the rich text editor(as opposed
+         * to the predateding markdown-based edtior).
          */
         val isRichTextEditor: Boolean,
 ) : VectorAnalyticsEvent {
 
-    enum class Command {
-        Invite,
-        Part,
+    enum class FormatAction {
+        /**
+         * Bold
+         */
+        Bold,
+
+        /**
+         * Code block
+         */
+        CodeBlock,
+
+        /**
+         * Inline code
+         */
+        InlineCode,
+
+        /**
+         * Italic
+         */
+        Italic,
+
+        /**
+         * Link
+         */
+        Link,
+
+        /**
+         * Ordered list
+         */
+        OrderedList,
+
+        /**
+         * Quote
+         */
+        Quote,
+
+        /**
+         * Strikethrough
+         */
+        Strikethrough,
+
+        /**
+         * Underline
+         */
+        Underline,
+
+        /**
+         * Unordered list
+         */
+        UnorderedList,
     }
 
-    override fun getName() = "SlashCommand"
+    override fun getName() = "FormattedMessage"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("command", command.name)
+            put("formatAction", formatAction.name)
             put("isRichTextEditor", isRichTextEditor)
         }.takeIf { it.isNotEmpty() }
     }

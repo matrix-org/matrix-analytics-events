@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "description": "Triggered when the user mentions another user or room using the @ or # symbols respectively.",
+    "properties": {
+      "eventName": {
+        "enum": ["Mention"]
+      },
+      "targetType": {
+        "description": "The type of object targeted by the mention.",
+        "type": "string",
+        "enum": [
+          "User",
+          "Room"
+        ]
+      },
+      "isRichTextEditor": {
+        "description": "Whether this message was composed in the WYSIWYG-style rich text editor.",
+        "type": "boolean"
+      }
+    },
+    "required": ["targetType", "eventName", "isRichTextEditor"],
+    "additionalProperties": false
+  }
+  

@@ -9,7 +9,12 @@ data class SlashCommand (
      */
     val command: Command,
 
-    val eventName: EventName
+    val eventName: EventName,
+
+    /**
+     * Whether this message was composed in the WYSIWYG-style rich text editor.
+     */
+    val isRichTextEditor: Boolean
 )
 
 /**

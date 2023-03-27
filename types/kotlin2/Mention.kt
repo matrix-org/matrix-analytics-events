@@ -22,31 +22,32 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user runs a slash command in their composer.
+ * Triggered when the user mentions another user or room using the @ or #
+ * symbols respectively.
  */
-data class SlashCommand(
-        /**
-         * The name of this command.
-         */
-        val command: Command,
+data class Mention(
         /**
          * Whether this message was composed in the WYSIWYG-style rich text
          * editor.
          */
         val isRichTextEditor: Boolean,
+        /**
+         * The type of object targeted by the mention.
+         */
+        val targetType: TargetType,
 ) : VectorAnalyticsEvent {
 
-    enum class Command {
-        Invite,
-        Part,
+    enum class TargetType {
+        Room,
+        User,
     }
 
-    override fun getName() = "SlashCommand"
+    override fun getName() = "Mention"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("command", command.name)
             put("isRichTextEditor", isRichTextEditor)
+            put("targetType", targetType.name)
         }.takeIf { it.isNotEmpty() }
     }
 }

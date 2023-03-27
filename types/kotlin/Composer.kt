@@ -22,6 +22,11 @@ data class Composer (
     val isReply: Boolean,
 
     /**
+     * Whether this message was composed in the WYSIWYG-style rich text editor.
+     */
+    val isRichTextEditor: Boolean,
+
+    /**
      * Whether this message begins a new thread or not.
      */
     val startsThread: Boolean? = null

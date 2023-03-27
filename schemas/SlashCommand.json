@@ -12,8 +12,12 @@
         "Part",
         "Invite"
       ]
+    },
+    "isRichTextEditor": {
+      "description": "Whether this message was composed in the WYSIWYG-style rich text editor.",
+      "type": "boolean"
     }
   },
-  "required": ["command", "eventName"],
+  "required": ["command", "eventName", "isRichTextEditor"],
   "additionalProperties": false
 }

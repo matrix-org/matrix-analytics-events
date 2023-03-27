@@ -19,30 +19,30 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user runs a slash command in their composer.
+/// Triggered when the user mentions another user or room using the @ or # symbols respectively.
 extension AnalyticsEvent {
-    public struct SlashCommand: AnalyticsEventProtocol {
-        public let eventName = "SlashCommand"
+    public struct Mention: AnalyticsEventProtocol {
+        public let eventName = "Mention"
 
-        /// The name of this command.
-        public let command: Command
         /// Whether this message was composed in the WYSIWYG-style rich text editor.
         public let isRichTextEditor: Bool
+        /// The type of object targeted by the mention.
+        public let targetType: TargetType
 
-        public init(command: Command, isRichTextEditor: Bool) {
-            self.command = command
+        public init(isRichTextEditor: Bool, targetType: TargetType) {
             self.isRichTextEditor = isRichTextEditor
+            self.targetType = targetType
         }
 
-        public enum Command: String {
-            case Invite
-            case Part
+        public enum TargetType: String {
+            case Room
+            case User
         }
 
         public var properties: [String: Any] {
             return [
-                "command": command.rawValue,
-                "isRichTextEditor": isRichTextEditor
+                "isRichTextEditor": isRichTextEditor,
+                "targetType": targetType.rawValue
             ]
         }
     }

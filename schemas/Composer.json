@@ -20,8 +20,12 @@
     "startsThread": {
       "description": "Whether this message begins a new thread or not.",
       "type": "boolean"
+    },
+    "isRichTextEditor": {
+      "description": "Whether this message was composed in the WYSIWYG-style rich text editor.",
+      "type": "boolean"
     }
   },
-  "required": ["eventName", "isEditing", "isReply", "inThread"],
+  "required": ["eventName", "isEditing", "isReply", "inThread", "isRichTextEditor"],
   "additionalProperties": false
 }
