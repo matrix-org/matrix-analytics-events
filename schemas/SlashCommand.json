@@ -14,7 +14,7 @@
       ]
     },
     "isRichTextEditor": {
-      "description": "Whether this message was composed in the WYSIWYG-style rich text editor.",
+      "description": "Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).",
       "type": "boolean"
     }
   },

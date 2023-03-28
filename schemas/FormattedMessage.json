@@ -6,7 +6,7 @@
         "enum": ["FormattedMessage"]
       },
       "isRichTextEditor": {
-        "description": "Whether this message was composed in the rich text editor(as opposed to the predateding markdown-based edtior).",
+        "description": "Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).",
         "type": "boolean"
       },
       "formatAction": {
@@ -26,7 +26,7 @@
         ]
       }
     },
-    "required": [ "eventName", "formatAction", "isRichTextEditor"],
+    "required": ["eventName", "formatAction", "isRichTextEditor"],
     "additionalProperties": false
   }
   

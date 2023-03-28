@@ -26,7 +26,7 @@ extension AnalyticsEvent {
 
         /// The name of this command.
         public let command: Command
-        /// Whether this message was composed in the WYSIWYG-style rich text editor.
+        /// Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).
         public let isRichTextEditor: Bool
 
         public init(command: Command, isRichTextEditor: Bool) {

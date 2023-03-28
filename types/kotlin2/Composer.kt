@@ -35,13 +35,23 @@ data class Composer(
          */
         val isEditing: Boolean,
         /**
+         * Whether markdown is supported in the editor. This value is not
+         * applicable (always false) if isPlainTextMode is false.
+         */
+        val isMarkdownEnabled: Boolean,
+        /**
+         * Whether the rich text editor is in rich or plain text mode. This
+         * value is not applicable (always true) if isRichTextEditor is false.
+         */
+        val isPlainTextMode: Boolean,
+        /**
          * Whether the user's composer interaction was a reply to a previously
          * sent event.
          */
         val isReply: Boolean,
         /**
-         * Whether this message was composed in the WYSIWYG-style rich text
-         * editor.
+         * Whether this message was composed in the rich text editor (as opposed
+         * to the predating markdown-based editor).
          */
         val isRichTextEditor: Boolean,
         /**
@@ -56,6 +66,8 @@ data class Composer(
         return mutableMapOf<String, Any>().apply {
             put("inThread", inThread)
             put("isEditing", isEditing)
+            put("isMarkdownEnabled", isMarkdownEnabled)
+            put("isPlainTextMode", isPlainTextMode)
             put("isReply", isReply)
             put("isRichTextEditor", isRichTextEditor)
             startsThread?.let { put("startsThread", it) }

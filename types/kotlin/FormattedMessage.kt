@@ -12,8 +12,8 @@ data class FormattedMessage (
     val formatAction: String,
 
     /**
-     * Whether this message was composed in the rich text editor(as opposed to the predateding
-     * markdown-based edtior).
+     * Whether this message was composed in the rich text editor (as opposed to the predating
+     * markdown-based editor).
      */
     val isRichTextEditor: Boolean
 )

@@ -30,8 +30,8 @@ data class SlashCommand(
          */
         val command: Command,
         /**
-         * Whether this message was composed in the WYSIWYG-style rich text
-         * editor.
+         * Whether this message was composed in the rich text editor (as opposed
+         * to the predating markdown-based editor).
          */
         val isRichTextEditor: Boolean,
 ) : VectorAnalyticsEvent {
