@@ -18,15 +18,9 @@ data class Composer (
 
     /**
      * Whether markdown is supported in the editor. This value is not applicable (always false)
-     * if isPlainTextMode is false.
+     * if isRichTextEditorFormattingEnabled is true.
      */
     val isMarkdownEnabled: Boolean,
-
-    /**
-     * Whether the rich text editor is in rich or plain text mode. This value is not applicable
-     * (always true) if isRichTextEditor is false.
-     */
-    val isPlainTextMode: Boolean,
 
     /**
      * Whether the user's composer interaction was a reply to a previously sent event.
@@ -38,6 +32,12 @@ data class Composer (
      * markdown-based editor).
      */
     val isRichTextEditor: Boolean,
+
+    /**
+     * Whether the rich text editor is in rich or plain text mode. This value is not applicable
+     * (always false) if isRichTextEditor is false.
+     */
+    val isRichTextEditorFormattingEnabled: Boolean,
 
     /**
      * Whether this message begins a new thread or not.

@@ -36,14 +36,10 @@ data class Composer(
         val isEditing: Boolean,
         /**
          * Whether markdown is supported in the editor. This value is not
-         * applicable (always false) if isPlainTextMode is false.
+         * applicable (always false) if isRichTextEditorFormattingEnabled is
+         * true.
          */
         val isMarkdownEnabled: Boolean,
-        /**
-         * Whether the rich text editor is in rich or plain text mode. This
-         * value is not applicable (always true) if isRichTextEditor is false.
-         */
-        val isPlainTextMode: Boolean,
         /**
          * Whether the user's composer interaction was a reply to a previously
          * sent event.
@@ -54,6 +50,11 @@ data class Composer(
          * to the predating markdown-based editor).
          */
         val isRichTextEditor: Boolean,
+        /**
+         * Whether the rich text editor is in rich or plain text mode. This
+         * value is not applicable (always false) if isRichTextEditor is false.
+         */
+        val isRichTextEditorFormattingEnabled: Boolean,
         /**
          * Whether this message begins a new thread or not.
          */
@@ -67,9 +68,9 @@ data class Composer(
             put("inThread", inThread)
             put("isEditing", isEditing)
             put("isMarkdownEnabled", isMarkdownEnabled)
-            put("isPlainTextMode", isPlainTextMode)
             put("isReply", isReply)
             put("isRichTextEditor", isRichTextEditor)
+            put("isRichTextEditorFormattingEnabled", isRichTextEditorFormattingEnabled)
             startsThread?.let { put("startsThread", it) }
         }.takeIf { it.isNotEmpty() }
     }

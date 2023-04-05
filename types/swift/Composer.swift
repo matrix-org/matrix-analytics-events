@@ -28,24 +28,24 @@ extension AnalyticsEvent {
         public let inThread: Bool
         /// Whether the user's composer interaction was editing a previously sent event.
         public let isEditing: Bool
-        /// Whether markdown is supported in the editor. This value is not applicable (always false) if isPlainTextMode is false.
+        /// Whether markdown is supported in the editor. This value is not applicable (always false) if isRichTextEditorFormattingEnabled is true.
         public let isMarkdownEnabled: Bool
-        /// Whether the rich text editor is in rich or plain text mode. This value is not applicable (always true) if isRichTextEditor is false.
-        public let isPlainTextMode: Bool
         /// Whether the user's composer interaction was a reply to a previously sent event.
         public let isReply: Bool
         /// Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).
         public let isRichTextEditor: Bool
+        /// Whether the rich text editor is in rich or plain text mode. This value is not applicable (always false) if isRichTextEditor is false.
+        public let isRichTextEditorFormattingEnabled: Bool
         /// Whether this message begins a new thread or not.
         public let startsThread: Bool?
 
-        public init(inThread: Bool, isEditing: Bool, isMarkdownEnabled: Bool, isPlainTextMode: Bool, isReply: Bool, isRichTextEditor: Bool, startsThread: Bool?) {
+        public init(inThread: Bool, isEditing: Bool, isMarkdownEnabled: Bool, isReply: Bool, isRichTextEditor: Bool, isRichTextEditorFormattingEnabled: Bool, startsThread: Bool?) {
             self.inThread = inThread
             self.isEditing = isEditing
             self.isMarkdownEnabled = isMarkdownEnabled
-            self.isPlainTextMode = isPlainTextMode
             self.isReply = isReply
             self.isRichTextEditor = isRichTextEditor
+            self.isRichTextEditorFormattingEnabled = isRichTextEditorFormattingEnabled
             self.startsThread = startsThread
         }
 
@@ -54,9 +54,9 @@ extension AnalyticsEvent {
                 "inThread": inThread,
                 "isEditing": isEditing,
                 "isMarkdownEnabled": isMarkdownEnabled,
-                "isPlainTextMode": isPlainTextMode,
                 "isReply": isReply,
                 "isRichTextEditor": isRichTextEditor,
+                "isRichTextEditorFormattingEnabled": isRichTextEditorFormattingEnabled,
                 "startsThread": startsThread as Any
             ]
         }

@@ -25,15 +25,15 @@
       "description": "Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).",
       "type": "boolean"
     },
-    "isPlainTextMode": {
-      "description": "Whether the rich text editor is in rich or plain text mode. This value is not applicable (always true) if isRichTextEditor is false.",
+    "isRichTextEditorFormattingEnabled": {
+      "description": "Whether the rich text editor is in rich or plain text mode. This value is not applicable (always false) if isRichTextEditor is false.",
       "type": "boolean"
     },
     "isMarkdownEnabled": {
-      "description": "Whether markdown is supported in the editor. This value is not applicable (always false) if isPlainTextMode is false.",
+      "description": "Whether markdown is supported in the editor. This value is not applicable (always false) if isRichTextEditorFormattingEnabled is true.",
       "type": "boolean"
     }
   },
-  "required": ["eventName", "isEditing", "isReply", "inThread", "isRichTextEditor", "isPlainTextMode", "isMarkdownEnabled"],
+  "required": ["eventName", "isEditing", "isReply", "inThread", "isRichTextEditor", "isRichTextEditorFormattingEnabled", "isMarkdownEnabled"],
   "additionalProperties": false
 }
