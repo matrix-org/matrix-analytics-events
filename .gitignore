@@ -5,3 +5,9 @@ node_modules/
 .build
 /types/html
 /types/typescript
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
