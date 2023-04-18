@@ -1,2 +1,2 @@
-rootProject.name = "AnalyticsEvents"
-include("lib")
+rootProject.name = "analytics-events"
+include(":types")
