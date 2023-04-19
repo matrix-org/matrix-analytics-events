@@ -7,10 +7,7 @@ on:
 
 jobs:
   gradle:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-20.04
 
     concurrency:
       # When running on main, use the sha to allow all runs of this workflow to run concurrently.
