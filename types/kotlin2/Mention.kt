@@ -27,10 +27,10 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  */
 data class Mention(
         /**
-         * Whether this message was composed in the WYSIWYG-style rich text
-         * editor.
+         * Whether this message was composed in legacy editor, the new the rich
+         * text editor or the new plain text editor
          */
-        val isRichTextEditor: Boolean,
+        val editor: Editor,
         /**
          * The type of object targeted by the mention.
          */
@@ -42,11 +42,17 @@ data class Mention(
         User,
     }
 
+    enum class Editor {
+        Legacy,
+        RteFormatting,
+        RtePlain,
+    }
+
     override fun getName() = "Mention"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("isRichTextEditor", isRichTextEditor)
+            put("editor", editor.name)
             put("targetType", targetType.name)
         }.takeIf { it.isNotEmpty() }
     }

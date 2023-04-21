@@ -5,9 +5,14 @@
       "eventName": {
         "enum": ["FormattedMessage"]
       },
-      "isRichTextEditor": {
-        "description": "Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).",
-        "type": "boolean"
+      "editor": {
+        "description": "Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor",
+        "type": "string",
+        "enum": [
+          "Legacy",
+          "RteFormatting",
+          "RtePlain"
+        ]
       },
       "formatAction": {
         "description": "The format action taken.",
@@ -26,7 +31,7 @@
         ]
       }
     },
-    "required": ["eventName", "formatAction", "isRichTextEditor"],
+    "required": ["eventName", "formatAction", "editor"],
     "additionalProperties": false
   }
   

@@ -13,12 +13,17 @@
           "Room"
         ]
       },
-      "isRichTextEditor": {
-        "description": "Whether this message was composed in the WYSIWYG-style rich text editor.",
-        "type": "boolean"
+      "editor": {
+        "description": "Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor",
+        "type": "string",
+        "enum": [
+          "Legacy",
+          "RteFormatting",
+          "RtePlain"
+        ]
       }
     },
-    "required": ["targetType", "eventName", "isRichTextEditor"],
+    "required": ["targetType", "eventName", "editor"],
     "additionalProperties": false
   }
   

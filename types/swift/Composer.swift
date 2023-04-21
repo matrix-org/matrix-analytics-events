@@ -24,39 +24,41 @@ extension AnalyticsEvent {
     public struct Composer: AnalyticsEventProtocol {
         public let eventName = "Composer"
 
+        /// Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor
+        public let editor: Editor
         /// Whether the user was using the composer inside of a thread.
         public let inThread: Bool
         /// Whether the user's composer interaction was editing a previously sent event.
         public let isEditing: Bool
-        /// Whether markdown is supported in the editor. This value is not applicable (always false) if isRichTextEditorFormattingEnabled is true.
+        /// Whether markdown is supported in the editor. This value is not applicable (always false) if editor is RteFormatting.
         public let isMarkdownEnabled: Bool
         /// Whether the user's composer interaction was a reply to a previously sent event.
         public let isReply: Bool
-        /// Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).
-        public let isRichTextEditor: Bool
-        /// Whether the rich text editor is in rich or plain text mode. This value is not applicable (always false) if isRichTextEditor is false.
-        public let isRichTextEditorFormattingEnabled: Bool
         /// Whether this message begins a new thread or not.
         public let startsThread: Bool?
 
-        public init(inThread: Bool, isEditing: Bool, isMarkdownEnabled: Bool, isReply: Bool, isRichTextEditor: Bool, isRichTextEditorFormattingEnabled: Bool, startsThread: Bool?) {
+        public init(editor: Editor, inThread: Bool, isEditing: Bool, isMarkdownEnabled: Bool, isReply: Bool, startsThread: Bool?) {
+            self.editor = editor
             self.inThread = inThread
             self.isEditing = isEditing
             self.isMarkdownEnabled = isMarkdownEnabled
             self.isReply = isReply
-            self.isRichTextEditor = isRichTextEditor
-            self.isRichTextEditorFormattingEnabled = isRichTextEditorFormattingEnabled
             self.startsThread = startsThread
+        }
+
+        public enum Editor: String {
+            case Legacy
+            case RteFormatting
+            case RtePlain
         }
 
         public var properties: [String: Any] {
             return [
+                "editor": editor.rawValue,
                 "inThread": inThread,
                 "isEditing": isEditing,
                 "isMarkdownEnabled": isMarkdownEnabled,
                 "isReply": isReply,
-                "isRichTextEditor": isRichTextEditor,
-                "isRichTextEditorFormattingEnabled": isRichTextEditorFormattingEnabled,
                 "startsThread": startsThread as Any
             ]
         }

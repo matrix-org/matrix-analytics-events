@@ -4,6 +4,12 @@ package quicktype
  * Triggered when the user sends a message via the composer.
  */
 data class Composer (
+    /**
+     * Whether this message was composed in legacy editor, the new the rich text editor or the
+     * new plain text editor
+     */
+    val editor: Editor,
+
     val eventName: EventName,
 
     /**
@@ -18,7 +24,7 @@ data class Composer (
 
     /**
      * Whether markdown is supported in the editor. This value is not applicable (always false)
-     * if isRichTextEditorFormattingEnabled is true.
+     * if editor is RteFormatting.
      */
     val isMarkdownEnabled: Boolean,
 
@@ -28,22 +34,20 @@ data class Composer (
     val isReply: Boolean,
 
     /**
-     * Whether this message was composed in the rich text editor (as opposed to the predating
-     * markdown-based editor).
-     */
-    val isRichTextEditor: Boolean,
-
-    /**
-     * Whether the rich text editor is in rich or plain text mode. This value is not applicable
-     * (always false) if isRichTextEditor is false.
-     */
-    val isRichTextEditorFormattingEnabled: Boolean,
-
-    /**
      * Whether this message begins a new thread or not.
      */
     val startsThread: Boolean? = null
 )
+
+/**
+ * Whether this message was composed in legacy editor, the new the rich text editor or the
+ * new plain text editor
+ */
+enum class Editor {
+    Legacy,
+    RTEFormatting,
+    RTEPlain
+}
 
 enum class EventName {
     Composer

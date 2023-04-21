@@ -24,14 +24,20 @@ extension AnalyticsEvent {
     public struct FormattedMessage: AnalyticsEventProtocol {
         public let eventName = "FormattedMessage"
 
+        /// Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor
+        public let editor: Editor
         /// The format action taken.
         public let formatAction: FormatAction
-        /// Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).
-        public let isRichTextEditor: Bool
 
-        public init(formatAction: FormatAction, isRichTextEditor: Bool) {
+        public init(editor: Editor, formatAction: FormatAction) {
+            self.editor = editor
             self.formatAction = formatAction
-            self.isRichTextEditor = isRichTextEditor
+        }
+
+        public enum Editor: String {
+            case Legacy
+            case RteFormatting
+            case RtePlain
         }
 
         public enum FormatAction: String {
@@ -59,8 +65,8 @@ extension AnalyticsEvent {
 
         public var properties: [String: Any] {
             return [
-                "formatAction": formatAction.rawValue,
-                "isRichTextEditor": isRichTextEditor
+                "editor": editor.rawValue,
+                "formatAction": formatAction.rawValue
             ]
         }
     }

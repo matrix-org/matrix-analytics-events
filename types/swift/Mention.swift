@@ -24,13 +24,13 @@ extension AnalyticsEvent {
     public struct Mention: AnalyticsEventProtocol {
         public let eventName = "Mention"
 
-        /// Whether this message was composed in the WYSIWYG-style rich text editor.
-        public let isRichTextEditor: Bool
+        /// Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor
+        public let editor: Editor
         /// The type of object targeted by the mention.
         public let targetType: TargetType
 
-        public init(isRichTextEditor: Bool, targetType: TargetType) {
-            self.isRichTextEditor = isRichTextEditor
+        public init(editor: Editor, targetType: TargetType) {
+            self.editor = editor
             self.targetType = targetType
         }
 
@@ -39,9 +39,15 @@ extension AnalyticsEvent {
             case User
         }
 
+        public enum Editor: String {
+            case Legacy
+            case RteFormatting
+            case RtePlain
+        }
+
         public var properties: [String: Any] {
             return [
-                "isRichTextEditor": isRichTextEditor,
+                "editor": editor.rawValue,
                 "targetType": targetType.rawValue
             ]
         }

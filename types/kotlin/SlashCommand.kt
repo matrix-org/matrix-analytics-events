@@ -9,13 +9,13 @@ data class SlashCommand (
      */
     val command: Command,
 
-    val eventName: EventName,
-
     /**
-     * Whether this message was composed in the rich text editor (as opposed to the predating
-     * markdown-based editor).
+     * Whether this message was composed in legacy editor, the new the rich text editor or the
+     * new plain text editor
      */
-    val isRichTextEditor: Boolean
+    val editor: Editor,
+
+    val eventName: EventName
 )
 
 /**
@@ -24,6 +24,16 @@ data class SlashCommand (
 enum class Command {
     Invite,
     Part
+}
+
+/**
+ * Whether this message was composed in legacy editor, the new the rich text editor or the
+ * new plain text editor
+ */
+enum class Editor {
+    Legacy,
+    RTEFormatting,
+    RTEPlain
 }
 
 enum class EventName {

@@ -26,17 +26,24 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  */
 data class FormattedMessage(
         /**
+         * Whether this message was composed in legacy editor, the new the rich
+         * text editor or the new plain text editor
+         */
+        val editor: Editor,
+        /**
          * The format action taken.
          */
         val formatAction: FormatAction,
-        /**
-         * Whether this message was composed in the rich text editor (as opposed
-         * to the predating markdown-based editor).
-         */
-        val isRichTextEditor: Boolean,
 ) : VectorAnalyticsEvent {
 
+    enum class Editor {
+        Legacy,
+        RteFormatting,
+        RtePlain,
+    }
+
     enum class FormatAction {
+
         /**
          * Bold
          */
@@ -92,8 +99,8 @@ data class FormattedMessage(
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
+            put("editor", editor.name)
             put("formatAction", formatAction.name)
-            put("isRichTextEditor", isRichTextEditor)
         }.takeIf { it.isNotEmpty() }
     }
 }

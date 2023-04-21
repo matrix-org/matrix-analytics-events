@@ -26,12 +26,12 @@ extension AnalyticsEvent {
 
         /// The name of this command.
         public let command: Command
-        /// Whether this message was composed in the rich text editor (as opposed to the predating markdown-based editor).
-        public let isRichTextEditor: Bool
+        /// Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor
+        public let editor: Editor
 
-        public init(command: Command, isRichTextEditor: Bool) {
+        public init(command: Command, editor: Editor) {
             self.command = command
-            self.isRichTextEditor = isRichTextEditor
+            self.editor = editor
         }
 
         public enum Command: String {
@@ -39,10 +39,16 @@ extension AnalyticsEvent {
             case Part
         }
 
+        public enum Editor: String {
+            case Legacy
+            case RteFormatting
+            case RtePlain
+        }
+
         public var properties: [String: Any] {
             return [
                 "command": command.rawValue,
-                "isRichTextEditor": isRichTextEditor
+                "editor": editor.rawValue
             ]
         }
     }

@@ -30,10 +30,10 @@ data class SlashCommand(
          */
         val command: Command,
         /**
-         * Whether this message was composed in the rich text editor (as opposed
-         * to the predating markdown-based editor).
+         * Whether this message was composed in legacy editor, the new the rich
+         * text editor or the new plain text editor
          */
-        val isRichTextEditor: Boolean,
+        val editor: Editor,
 ) : VectorAnalyticsEvent {
 
     enum class Command {
@@ -41,12 +41,18 @@ data class SlashCommand(
         Part,
     }
 
+    enum class Editor {
+        Legacy,
+        RteFormatting,
+        RtePlain,
+    }
+
     override fun getName() = "SlashCommand"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             put("command", command.name)
-            put("isRichTextEditor", isRichTextEditor)
+            put("editor", editor.name)
         }.takeIf { it.isNotEmpty() }
     }
 }

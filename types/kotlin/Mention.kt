@@ -5,18 +5,29 @@ package quicktype
  * respectively.
  */
 data class Mention (
-    val eventName: EventName,
-
     /**
-     * Whether this message was composed in the WYSIWYG-style rich text editor.
+     * Whether this message was composed in legacy editor, the new the rich text editor or the
+     * new plain text editor
      */
-    val isRichTextEditor: Boolean,
+    val editor: Editor,
+
+    val eventName: EventName,
 
     /**
      * The type of object targeted by the mention.
      */
     val targetType: TargetType
 )
+
+/**
+ * Whether this message was composed in legacy editor, the new the rich text editor or the
+ * new plain text editor
+ */
+enum class Editor {
+    Legacy,
+    RTEFormatting,
+    RTEPlain
+}
 
 enum class EventName {
     Mention
