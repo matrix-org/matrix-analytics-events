@@ -32,8 +32,8 @@ java {
 
 sourceSets {
     getByName("main") {
-        java.srcDir("types/kotlin2")
-        java.srcDir("base_types/kotlin")
+        java.srcDir("../types/kotlin2")
+        java.srcDir("../base_types/kotlin")
     }
 }
 
