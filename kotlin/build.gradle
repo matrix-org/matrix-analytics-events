@@ -15,9 +15,9 @@
  */
 
 plugins {
-    kotlin("jvm") version "1.8.20"
-    `java-library`
-    `maven-publish`
+    id "org.jetbrains.kotlin.jvm" version "1.8.20"
+    id 'java-library'
+    id 'maven-publish'
 }
 
 repositories {
@@ -26,25 +26,26 @@ repositories {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion = JavaLanguageVersion.of(11)
     }
 }
 
 sourceSets {
-    getByName("main") {
-        java.srcDir("../types/kotlin2")
-        java.srcDir("../base_types/kotlin")
+    main {
+        java {
+            srcDir '../types/kotlin2'
+            srcDir '../base_types/kotlin'
+        }
     }
 }
 
 publishing {
     publications {
-        create<MavenPublication>("maven") {
-            groupId = "im.vector.app.features.analytics.plan"
-            artifactId = "analytics-events"
-            version = "0.5.0"
-
-            from(components["java"])
+        mavenJava(MavenPublication) {
+            from components.java
+            groupId = 'im.vector.app.features.analytics.plan'
+            artifactId = 'analytics-events'
+            version = '0.5.0'
         }
     }
 }
