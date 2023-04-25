@@ -45,6 +45,8 @@ extension AnalyticsEvent {
             case Bold
             /// Code block
             case CodeBlock
+            /// Indent list item
+            case Indent
             /// Inline code
             case InlineCode
             /// Italic
@@ -59,6 +61,8 @@ extension AnalyticsEvent {
             case Strikethrough
             /// Underline
             case Underline
+            /// Unindent list item
+            case Unindent
             /// Unordered list
             case UnorderedList
         }

@@ -55,6 +55,11 @@ data class FormattedMessage(
         CodeBlock,
 
         /**
+         * Indent list item
+         */
+        Indent,
+
+        /**
          * Inline code
          */
         InlineCode,
@@ -88,6 +93,11 @@ data class FormattedMessage(
          * Underline
          */
         Underline,
+
+        /**
+         * Unindent list item
+         */
+        Unindent,
 
         /**
          * Unordered list

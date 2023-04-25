@@ -24,6 +24,8 @@
           {"const": "Strikethrough", "description": "Strikethrough" },
           {"const": "UnorderedList", "description": "Unordered list" },
           {"const": "OrderedList", "description": "Ordered list" },
+          {"const": "Indent", "description": "Indent list item" },
+          {"const": "Unindent", "description": "Unindent list item" },
           {"const": "Quote", "description": "Quote" },
           {"const": "InlineCode", "description": "Inline code" },
           {"const": "CodeBlock", "description": "Code block" },
