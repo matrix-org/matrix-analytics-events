@@ -35,8 +35,56 @@ extension AnalyticsEvent {
         }
 
         public enum Command: String {
+            case AddWidget
+            case Ban
+            case Confetti
+            case ConvertToDM
+            case ConvertToRoom
+            case Deop
+            case DevTools
+            case DiscardSession
+            case Fireworks
+            case Hearts
+            case Help
+            case HoldCall
+            case Html
+            case Ignore
             case Invite
+            case Join
+            case JumpToDate
+            case Lenny
+            case Me
+            case Msg
+            case MyAvatar
+            case MyRoomAvatar
+            case MyRoomNick
+            case Nick
+            case Op
             case Part
+            case Plain
+            case Query
+            case Rageshake
+            case Rainbow
+            case RainbowMe
+            case Rainfall
+            case RemakeOlm
+            case Remove
+            case RoomAvatar
+            case RoomName
+            case Shrug
+            case Snowfall
+            case SpaceInvaders
+            case Spoiler
+            case TableFlip
+            case ToVirtual
+            case Topic
+            case Unban
+            case Unflip
+            case UnholdCall
+            case Unignore
+            case UpgradeRoom
+            case Verify
+            case Whois
         }
 
         public enum Editor: String {
