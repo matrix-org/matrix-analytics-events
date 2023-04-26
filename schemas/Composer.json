@@ -20,8 +20,21 @@
     "startsThread": {
       "description": "Whether this message begins a new thread or not.",
       "type": "boolean"
+    },
+    "editor": {
+      "description": "Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor",
+      "type": "string",
+      "enum": [
+        "Legacy",
+        "RteFormatting",
+        "RtePlain"
+      ]
+    },
+    "isMarkdownEnabled": {
+      "description": "Whether markdown is supported in the editor. This value is not applicable (always false) if editor is RteFormatting.",
+      "type": "boolean"
     }
   },
-  "required": ["eventName", "isEditing", "isReply", "inThread"],
+  "required": ["eventName", "isEditing", "isReply", "inThread", "editor", "isMarkdownEnabled"],
   "additionalProperties": false
 }

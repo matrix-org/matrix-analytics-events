@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "description": "Triggered when the user formats the message content within the composer.",
+    "properties": {
+      "eventName": {
+        "enum": ["FormattedMessage"]
+      },
+      "editor": {
+        "description": "Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor",
+        "type": "string",
+        "enum": [
+          "Legacy",
+          "RteFormatting",
+          "RtePlain"
+        ]
+      },
+      "formatAction": {
+        "description": "The format action taken.",
+        "type": "string",
+        "oneOf": [
+          {"const": "Bold", "description": "Bold" },
+          {"const": "Italic", "description": "Italic" },
+          {"const": "Underline", "description": "Underline" },
+          {"const": "Strikethrough", "description": "Strikethrough" },
+          {"const": "UnorderedList", "description": "Unordered list" },
+          {"const": "OrderedList", "description": "Ordered list" },
+          {"const": "Indent", "description": "Indent list item" },
+          {"const": "Unindent", "description": "Unindent list item" },
+          {"const": "Quote", "description": "Quote" },
+          {"const": "InlineCode", "description": "Inline code" },
+          {"const": "CodeBlock", "description": "Code block" },
+          {"const": "Link", "description": "Link" }
+        ]
+      }
+    },
+    "required": ["eventName", "formatAction", "editor"],
+    "additionalProperties": false
+  }
+  

@@ -6,14 +6,19 @@
       "enum": ["SlashCommand"]
     },
     "command": {
-      "description": "The name of this command.",
+      "description": "The the slash command text. e.g. /me ",
+      "type": "string"
+    },
+    "editor": {
+      "description": "Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor",
       "type": "string",
       "enum": [
-        "Part",
-        "Invite"
+        "Legacy",
+        "RteFormatting",
+        "RtePlain"
       ]
     }
   },
-  "required": ["command", "eventName"],
+  "required": ["command", "eventName", "editor"],
   "additionalProperties": false
 }

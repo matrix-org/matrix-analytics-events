@@ -26,6 +26,11 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  */
 data class Composer(
         /**
+         * Whether this message was composed in legacy editor, the new the rich
+         * text editor or the new plain text editor
+         */
+        val editor: Editor,
+        /**
          * Whether the user was using the composer inside of a thread.
          */
         val inThread: Boolean,
@@ -34,6 +39,11 @@ data class Composer(
          * event.
          */
         val isEditing: Boolean,
+        /**
+         * Whether markdown is supported in the editor. This value is not
+         * applicable (always false) if editor is RteFormatting.
+         */
+        val isMarkdownEnabled: Boolean,
         /**
          * Whether the user's composer interaction was a reply to a previously
          * sent event.
@@ -45,12 +55,20 @@ data class Composer(
         val startsThread: Boolean? = null,
 ) : VectorAnalyticsEvent {
 
+    enum class Editor {
+        Legacy,
+        RteFormatting,
+        RtePlain,
+    }
+
     override fun getName() = "Composer"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
+            put("editor", editor.name)
             put("inThread", inThread)
             put("isEditing", isEditing)
+            put("isMarkdownEnabled", isMarkdownEnabled)
             put("isReply", isReply)
             startsThread?.let { put("startsThread", it) }
         }.takeIf { it.isNotEmpty() }

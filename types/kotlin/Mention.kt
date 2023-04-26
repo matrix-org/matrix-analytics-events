@@ -1,21 +1,22 @@
 package quicktype
 
 /**
- * Triggered when the user runs a slash command in their composer.
+ * Triggered when the user mentions another user or room using the @ or # symbols
+ * respectively.
  */
-data class SlashCommand (
-    /**
-     * The the slash command text. e.g. /me
-     */
-    val command: String,
-
+data class Mention (
     /**
      * Whether this message was composed in legacy editor, the new the rich text editor or the
      * new plain text editor
      */
     val editor: Editor,
 
-    val eventName: EventName
+    val eventName: EventName,
+
+    /**
+     * The type of object targeted by the mention.
+     */
+    val targetType: TargetType
 )
 
 /**
@@ -29,5 +30,13 @@ enum class Editor {
 }
 
 enum class EventName {
-    SlashCommand
+    Mention
+}
+
+/**
+ * The type of object targeted by the mention.
+ */
+enum class TargetType {
+    Room,
+    User
 }

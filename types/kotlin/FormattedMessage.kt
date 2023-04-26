@@ -1,21 +1,21 @@
 package quicktype
 
 /**
- * Triggered when the user runs a slash command in their composer.
+ * Triggered when the user formats the message content within the composer.
  */
-data class SlashCommand (
-    /**
-     * The the slash command text. e.g. /me
-     */
-    val command: String,
-
+data class FormattedMessage (
     /**
      * Whether this message was composed in legacy editor, the new the rich text editor or the
      * new plain text editor
      */
     val editor: Editor,
 
-    val eventName: EventName
+    val eventName: EventName,
+
+    /**
+     * The format action taken.
+     */
+    val formatAction: String
 )
 
 /**
@@ -29,5 +29,5 @@ enum class Editor {
 }
 
 enum class EventName {
-    SlashCommand
+    FormattedMessage
 }

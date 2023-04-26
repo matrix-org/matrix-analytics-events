@@ -22,18 +22,18 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user runs a slash command in their composer.
+ * Triggered when the user formats the message content within the composer.
  */
-data class SlashCommand(
-        /**
-         * The the slash command text. e.g. /me
-         */
-        val command: String,
+data class FormattedMessage(
         /**
          * Whether this message was composed in legacy editor, the new the rich
          * text editor or the new plain text editor
          */
         val editor: Editor,
+        /**
+         * The format action taken.
+         */
+        val formatAction: FormatAction,
 ) : VectorAnalyticsEvent {
 
     enum class Editor {
@@ -42,12 +42,75 @@ data class SlashCommand(
         RtePlain,
     }
 
-    override fun getName() = "SlashCommand"
+    enum class FormatAction {
+
+        /**
+         * Bold
+         */
+        Bold,
+
+        /**
+         * Code block
+         */
+        CodeBlock,
+
+        /**
+         * Indent list item
+         */
+        Indent,
+
+        /**
+         * Inline code
+         */
+        InlineCode,
+
+        /**
+         * Italic
+         */
+        Italic,
+
+        /**
+         * Link
+         */
+        Link,
+
+        /**
+         * Ordered list
+         */
+        OrderedList,
+
+        /**
+         * Quote
+         */
+        Quote,
+
+        /**
+         * Strikethrough
+         */
+        Strikethrough,
+
+        /**
+         * Underline
+         */
+        Underline,
+
+        /**
+         * Unindent list item
+         */
+        Unindent,
+
+        /**
+         * Unordered list
+         */
+        UnorderedList,
+    }
+
+    override fun getName() = "FormattedMessage"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("command", command)
             put("editor", editor.name)
+            put("formatAction", formatAction.name)
         }.takeIf { it.isNotEmpty() }
     }
 }

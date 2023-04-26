@@ -19,19 +19,19 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user runs a slash command in their composer.
+/// Triggered when the user formats the message content within the composer.
 extension AnalyticsEvent {
-    public struct SlashCommand: AnalyticsEventProtocol {
-        public let eventName = "SlashCommand"
+    public struct FormattedMessage: AnalyticsEventProtocol {
+        public let eventName = "FormattedMessage"
 
-        /// The the slash command text. e.g. /me 
-        public let command: String
         /// Whether this message was composed in legacy editor, the new the rich text editor or the new plain text editor
         public let editor: Editor
+        /// The format action taken.
+        public let formatAction: FormatAction
 
-        public init(command: String, editor: Editor) {
-            self.command = command
+        public init(editor: Editor, formatAction: FormatAction) {
             self.editor = editor
+            self.formatAction = formatAction
         }
 
         public enum Editor: String {
@@ -40,10 +40,37 @@ extension AnalyticsEvent {
             case RtePlain
         }
 
+        public enum FormatAction: String {
+            /// Bold
+            case Bold
+            /// Code block
+            case CodeBlock
+            /// Indent list item
+            case Indent
+            /// Inline code
+            case InlineCode
+            /// Italic
+            case Italic
+            /// Link
+            case Link
+            /// Ordered list
+            case OrderedList
+            /// Quote
+            case Quote
+            /// Strikethrough
+            case Strikethrough
+            /// Underline
+            case Underline
+            /// Unindent list item
+            case Unindent
+            /// Unordered list
+            case UnorderedList
+        }
+
         public var properties: [String: Any] {
             return [
-                "command": command,
-                "editor": editor.rawValue
+                "editor": editor.rawValue,
+                "formatAction": formatAction.rawValue
             ]
         }
     }
