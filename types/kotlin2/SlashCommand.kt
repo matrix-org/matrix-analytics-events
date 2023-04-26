@@ -26,68 +26,15 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  */
 data class SlashCommand(
         /**
-         * The name of this command.
+         * The the slash command text. e.g. /me
          */
-        val command: Command,
+        val command: String,
         /**
          * Whether this message was composed in legacy editor, the new the rich
          * text editor or the new plain text editor
          */
         val editor: Editor,
 ) : VectorAnalyticsEvent {
-
-    enum class Command {
-        AddWidget,
-        Ban,
-        Confetti,
-        ConvertToDM,
-        ConvertToRoom,
-        Deop,
-        DevTools,
-        DiscardSession,
-        Fireworks,
-        Hearts,
-        Help,
-        HoldCall,
-        Html,
-        Ignore,
-        Invite,
-        Join,
-        JumpToDate,
-        Lenny,
-        Me,
-        Msg,
-        MyAvatar,
-        MyRoomAvatar,
-        MyRoomNick,
-        Nick,
-        Op,
-        Part,
-        Plain,
-        Query,
-        Rageshake,
-        Rainbow,
-        RainbowMe,
-        Rainfall,
-        RemakeOlm,
-        Remove,
-        RoomAvatar,
-        RoomName,
-        Shrug,
-        Snowfall,
-        SpaceInvaders,
-        Spoiler,
-        TableFlip,
-        ToVirtual,
-        Topic,
-        Unban,
-        Unflip,
-        UnholdCall,
-        Unignore,
-        UpgradeRoom,
-        Verify,
-        Whois,
-    }
 
     enum class Editor {
         Legacy,
@@ -99,7 +46,7 @@ data class SlashCommand(
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("command", command.name)
+            put("command", command)
             put("editor", editor.name)
         }.takeIf { it.isNotEmpty() }
     }

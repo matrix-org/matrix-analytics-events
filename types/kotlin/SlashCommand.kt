@@ -5,9 +5,9 @@ package quicktype
  */
 data class SlashCommand (
     /**
-     * The name of this command.
+     * The the slash command text. e.g. /me
      */
-    val command: Command,
+    val command: String,
 
     /**
      * Whether this message was composed in legacy editor, the new the rich text editor or the
@@ -17,62 +17,6 @@ data class SlashCommand (
 
     val eventName: EventName
 )
-
-/**
- * The name of this command.
- */
-enum class Command {
-    AddWidget,
-    Ban,
-    Confetti,
-    ConvertToDM,
-    ConvertToRoom,
-    Deop,
-    DevTools,
-    DiscardSession,
-    Fireworks,
-    HTML,
-    Hearts,
-    Help,
-    HoldCall,
-    Ignore,
-    Invite,
-    Join,
-    JumpToDate,
-    Lenny,
-    Me,
-    Msg,
-    MyAvatar,
-    MyRoomAvatar,
-    MyRoomNick,
-    Nick,
-    Op,
-    Part,
-    Plain,
-    Query,
-    Rageshake,
-    Rainbow,
-    RainbowMe,
-    Rainfall,
-    RemakeOlm,
-    Remove,
-    RoomAvatar,
-    RoomName,
-    Shrug,
-    Snowfall,
-    SpaceInvaders,
-    Spoiler,
-    TableFlip,
-    ToVirtual,
-    Topic,
-    Unban,
-    Unflip,
-    UnholdCall,
-    Unignore,
-    UpgradeRoom,
-    Verify,
-    Whois
-}
 
 /**
  * Whether this message was composed in legacy editor, the new the rich text editor or the
