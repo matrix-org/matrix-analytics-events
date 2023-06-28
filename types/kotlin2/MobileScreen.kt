@@ -89,6 +89,11 @@ data class MobileScreen(
         Invites,
 
         /**
+         * The screen shown to share location.
+         */
+        LocationSend,
+
+        /**
          * The screen that displays the login flow (when the user already has an
          * account).
          */
