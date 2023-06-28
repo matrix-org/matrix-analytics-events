@@ -57,6 +57,8 @@ extension AnalyticsEvent {
             case Invites
             /// The screen shown to share location.
             case LocationSend
+            /// The screen shown to view a shared location.
+            case LocationView
             /// The screen that displays the login flow (when the user already has an account).
             case Login
             /// Legacy: The screen that shows all groups/communities you have joined.
