@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "description": "Triggered when a poll is ended.",
+  "properties": {
+    "eventName": {
+      "enum": ["PollEnded"]
+    }
+  },
+  "required": ["eventName"],
+  "additionalProperties": false
+}

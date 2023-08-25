@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "description": "Triggered when a poll is answered.",
+  "properties": {
+    "eventName": {
+      "enum": ["PollAnswered"]
+    }
+  },
+  "required": ["eventName"],
+  "additionalProperties": false
+}
