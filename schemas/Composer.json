@@ -25,6 +25,10 @@
         "description": "Whether this message it's a shared location.",
         "type": "boolean"
     },
+    "isPoll": {
+      "description": "Whether this message iss a poll.",
+      "type": "boolean"
+  },
     "locationType": {
         "description": "The type of the shared location",
         "type": "string",
