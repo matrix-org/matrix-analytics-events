@@ -1,12 +1,12 @@
 package quicktype
 
 /**
- * Triggered when a poll is answered.
+ * Triggered when a poll vote has been cast.
  */
-data class PollAnswered (
+data class PollVote (
     val eventName: EventName
 )
 
 enum class EventName {
-    PollAnswered
+    PollVote
 }

@@ -22,24 +22,24 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when a poll is edited.
+ * Triggered when a poll is created or edited.
  */
-data class PollEdited(
+data class PollCreation(
         /**
-         * Whether this poll is anonymous.
+         * Whether this poll is undisclosed.
          */
-        val isAnonymous: Boolean,
+        val isUndisclosed: Boolean,
         /**
          * Number of answers in the poll.
          */
         val numberOfAnswers: Int,
 ) : VectorAnalyticsEvent {
 
-    override fun getName() = "PollEdited"
+    override fun getName() = "PollCreate"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("isAnonymous", isAnonymous)
+            put("isUndisclosed", isUndisclosed)
             put("numberOfAnswers", numberOfAnswers)
         }.takeIf { it.isNotEmpty() }
     }

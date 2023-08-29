@@ -1,9 +1,9 @@
 {
   "type": "object",
-  "description": "Triggered when a poll is answered.",
+  "description": "Triggered when a poll has been ended.",
   "properties": {
     "eventName": {
-      "enum": ["PollAnswered"]
+      "enum": ["PollEnd"]
     }
   },
   "required": ["eventName"],

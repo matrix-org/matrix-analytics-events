@@ -19,10 +19,10 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when a poll is ended.
+/// Triggered when a poll has been ended.
 extension AnalyticsEvent {
-    public struct PollEnded: AnalyticsEventProtocol {
-        public let eventName = "PollEnded"
+    public struct PollEnd: AnalyticsEventProtocol {
+        public let eventName = "PollEnd"
 
 
         public init() {

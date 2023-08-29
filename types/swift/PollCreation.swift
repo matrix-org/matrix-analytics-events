@@ -19,24 +19,24 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when a poll is edited.
+/// Triggered when a poll is created or edited.
 extension AnalyticsEvent {
-    public struct PollEdited: AnalyticsEventProtocol {
-        public let eventName = "PollEdited"
+    public struct PollCreation: AnalyticsEventProtocol {
+        public let eventName = "PollCreate"
 
-        /// Whether this poll is anonymous.
-        public let isAnonymous: Bool
+        /// Whether this poll is undisclosed.
+        public let isUndisclosed: Bool
         /// Number of answers in the poll.
         public let numberOfAnswers: Int
 
-        public init(isAnonymous: Bool, numberOfAnswers: Int) {
-            self.isAnonymous = isAnonymous
+        public init(isUndisclosed: Bool, numberOfAnswers: Int) {
+            self.isUndisclosed = isUndisclosed
             self.numberOfAnswers = numberOfAnswers
         }
 
         public var properties: [String: Any] {
             return [
-                "isAnonymous": isAnonymous,
+                "isUndisclosed": isUndisclosed,
                 "numberOfAnswers": numberOfAnswers
             ]
         }

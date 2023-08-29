@@ -22,12 +22,12 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when a poll is answered.
+ * Triggered when a poll has been ended.
  */
-data class PollAnswered(
+data class PollEnd(
 ) : VectorAnalyticsEvent {
 
-    override fun getName() = "PollAnswered"
+    override fun getName() = "PollEnd"
 
     override fun getProperties(): Map<String, Any>? = null
 }

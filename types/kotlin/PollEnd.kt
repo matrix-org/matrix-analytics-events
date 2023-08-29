@@ -1,12 +1,12 @@
 package quicktype
 
 /**
- * Triggered when a poll is ended.
+ * Triggered when a poll has been ended.
  */
-data class PollEnded (
+data class PollEnd (
     val eventName: EventName
 )
 
 enum class EventName {
-    PollEnded
+    PollEnd
 }

@@ -64,6 +64,11 @@ data class MobileScreen(
         Dialpad,
 
         /**
+         * The screen shown to edit a poll.
+         */
+        EditPollView,
+
+        /**
          * The Favourites tab on mobile that lists your favourite people/rooms.
          */
         Favourites,
