@@ -25,9 +25,19 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  * Triggered when a poll has been ended.
  */
 data class PollEnd(
+        /**
+         * Do not use this. Remove this property when the kotlin type generator
+         * can properly generate types without proprties other than the event
+         * name.
+         */
+        val doNotUse: Boolean? = null,
 ) : VectorAnalyticsEvent {
 
     override fun getName() = "PollEnd"
 
-    override fun getProperties(): Map<String, Any>? = null
+    override fun getProperties(): Map<String, Any>? {
+        return mutableMapOf<String, Any>().apply {
+            doNotUse?.let { put("doNotUse", it) }
+        }.takeIf { it.isNotEmpty() }
+    }
 }
