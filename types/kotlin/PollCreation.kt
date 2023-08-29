@@ -7,6 +7,8 @@ data class PollCreation (
     /**
      * Whether this poll has been created or edited.
      */
+    val action: String,
+
     val eventName: EventName,
 
     /**
@@ -20,10 +22,6 @@ data class PollCreation (
     val numberOfAnswers: Long
 )
 
-/**
- * Whether this poll has been created or edited.
- */
 enum class EventName {
-    PollCreate,
-    PollEdit
+    PollCreation
 }

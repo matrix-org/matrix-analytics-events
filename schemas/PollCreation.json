@@ -3,8 +3,15 @@
   "description": "Triggered when a poll is created or edited.",
   "properties": {
     "eventName": {
-      "enum": ["PollCreate", "PollEdit"],
-      "description": "Whether this poll has been created or edited."
+      "enum": ["PollCreation"]
+    },
+    "action": {
+      "description": "Whether this poll has been created or edited.",
+      "type": "string",
+      "oneOf": [
+        {"const": "Create", "description": "Newly created poll"},
+        {"const": "Edit", "description": "Edit of an existing poll"}
+      ]
     },
     "isUndisclosed": {
       "description": "Whether this poll is undisclosed.",
@@ -15,6 +22,6 @@
       "type": "integer"
     }
   },
-  "required": ["numberOfAnswers", "isUndisclosed", "eventName"],
+  "required": ["action", "numberOfAnswers", "isUndisclosed", "eventName"],
   "additionalProperties": false
 }

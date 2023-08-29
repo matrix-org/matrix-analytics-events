@@ -22,20 +22,31 @@ import Foundation
 /// Triggered when a poll is created or edited.
 extension AnalyticsEvent {
     public struct PollCreation: AnalyticsEventProtocol {
-        public let eventName = "PollCreate"
+        public let eventName = "PollCreation"
 
+        /// Whether this poll has been created or edited.
+        public let action: Action
         /// Whether this poll is undisclosed.
         public let isUndisclosed: Bool
         /// Number of answers in the poll.
         public let numberOfAnswers: Int
 
-        public init(isUndisclosed: Bool, numberOfAnswers: Int) {
+        public init(action: Action, isUndisclosed: Bool, numberOfAnswers: Int) {
+            self.action = action
             self.isUndisclosed = isUndisclosed
             self.numberOfAnswers = numberOfAnswers
         }
 
+        public enum Action: String {
+            /// Newly created poll
+            case Create
+            /// Edit of an existing poll
+            case Edit
+        }
+
         public var properties: [String: Any] {
             return [
+                "action": action.rawValue,
                 "isUndisclosed": isUndisclosed,
                 "numberOfAnswers": numberOfAnswers
             ]

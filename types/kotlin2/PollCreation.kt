@@ -26,6 +26,10 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  */
 data class PollCreation(
         /**
+         * Whether this poll has been created or edited.
+         */
+        val action: Action,
+        /**
          * Whether this poll is undisclosed.
          */
         val isUndisclosed: Boolean,
@@ -35,10 +39,23 @@ data class PollCreation(
         val numberOfAnswers: Int,
 ) : VectorAnalyticsEvent {
 
-    override fun getName() = "PollCreate"
+    enum class Action {
+        /**
+         * Newly created poll
+         */
+        Create,
+
+        /**
+         * Edit of an existing poll
+         */
+        Edit,
+    }
+
+    override fun getName() = "PollCreation"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
+            put("action", action.name)
             put("isUndisclosed", isUndisclosed)
             put("numberOfAnswers", numberOfAnswers)
         }.takeIf { it.isNotEmpty() }
