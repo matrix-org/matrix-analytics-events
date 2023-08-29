@@ -26,7 +26,7 @@
         "type": "boolean"
     },
     "isPoll": {
-      "description": "Whether this message iss a poll.",
+      "description": "Whether this message is a poll.",
       "type": "boolean"
   },
     "locationType": {
