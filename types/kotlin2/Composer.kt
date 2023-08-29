@@ -39,6 +39,10 @@ data class Composer(
          */
         val isLocation: Boolean,
         /**
+         * Whether this message is a poll.
+         */
+        val isPoll: Boolean? = null,
+        /**
          * Whether the user's composer interaction was a reply to a previously
          * sent event.
          */
@@ -72,6 +76,7 @@ data class Composer(
             put("inThread", inThread)
             put("isEditing", isEditing)
             put("isLocation", isLocation)
+            isPoll?.let { put("isPoll", it) }
             put("isReply", isReply)
             locationType?.let { put("locationType", it.name) }
             startsThread?.let { put("startsThread", it) }

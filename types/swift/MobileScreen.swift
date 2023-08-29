@@ -35,6 +35,8 @@ extension AnalyticsEvent {
         public enum ScreenName: String {
             /// The screen that displays the user's breadcrumbs.
             case Breadcrumbs
+            /// The screen shown to create a poll.
+            case CreatePollView
             /// The screen shown to create a new (non-direct) room.
             case CreateRoom
             /// The screen shown to create a new space.

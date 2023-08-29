@@ -39,6 +39,11 @@ data class MobileScreen(
         Breadcrumbs,
 
         /**
+         * The screen shown to create a poll.
+         */
+        CreatePollView,
+
+        /**
          * The screen shown to create a new (non-direct) room.
          */
         CreateRoom,

@@ -30,6 +30,8 @@ extension AnalyticsEvent {
         public let isEditing: Bool
         /// Whether this message it's a shared location.
         public let isLocation: Bool
+        /// Whether this message is a poll.
+        public let isPoll: Bool?
         /// Whether the user's composer interaction was a reply to a previously sent event.
         public let isReply: Bool
         /// The type of the shared location
@@ -37,10 +39,11 @@ extension AnalyticsEvent {
         /// Whether this message begins a new thread or not.
         public let startsThread: Bool?
 
-        public init(inThread: Bool, isEditing: Bool, isLocation: Bool, isReply: Bool, locationType: LocationType?, startsThread: Bool?) {
+        public init(inThread: Bool, isEditing: Bool, isLocation: Bool, isPoll: Bool?, isReply: Bool, locationType: LocationType?, startsThread: Bool?) {
             self.inThread = inThread
             self.isEditing = isEditing
             self.isLocation = isLocation
+            self.isPoll = isPoll
             self.isReply = isReply
             self.locationType = locationType
             self.startsThread = startsThread
@@ -58,6 +61,7 @@ extension AnalyticsEvent {
                 "inThread": inThread,
                 "isEditing": isEditing,
                 "isLocation": isLocation,
+                "isPoll": isPoll as Any,
                 "isReply": isReply,
                 "locationType": locationType?.rawValue as Any,
                 "startsThread": startsThread as Any
