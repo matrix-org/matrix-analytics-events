@@ -22,6 +22,11 @@ data class Composer (
     val isLocation: Boolean,
 
     /**
+     * Whether this message is a poll.
+     */
+    val isPoll: Boolean? = null,
+
+    /**
      * Whether the user's composer interaction was a reply to a previously sent event.
      */
     val isReply: Boolean,
