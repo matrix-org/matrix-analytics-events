@@ -35,38 +35,40 @@ data class Composer(
          */
         val isEditing: Boolean,
         /**
-         * Whether this message it's a shared location.
-         */
-        val isLocation: Boolean,
-        /**
-         * Whether this message is a poll.
-         */
-        val isPoll: Boolean? = null,
-        /**
          * Whether the user's composer interaction was a reply to a previously
          * sent event.
          */
         val isReply: Boolean,
         /**
-         * The type of the shared location
+         * The type of the message.
          */
-        val locationType: LocationType? = null,
+        val messageType: MessageType,
         /**
          * Whether this message begins a new thread or not.
          */
         val startsThread: Boolean? = null,
 ) : VectorAnalyticsEvent {
 
-    enum class LocationType {
+    enum class MessageType {
         /**
-         * User current location
+         * A pin drop location message.
          */
-        MyLocation,
+        LocationPin,
 
         /**
-         * Pin drop location
+         * A user current location message.
          */
-        PinDrop,
+        LocationUser,
+
+        /**
+         * A poll message.
+         */
+        Poll,
+
+        /**
+         * A text message.
+         */
+        Text,
     }
 
     override fun getName() = "Composer"
@@ -75,10 +77,8 @@ data class Composer(
         return mutableMapOf<String, Any>().apply {
             put("inThread", inThread)
             put("isEditing", isEditing)
-            put("isLocation", isLocation)
-            isPoll?.let { put("isPoll", it) }
             put("isReply", isReply)
-            locationType?.let { put("locationType", it.name) }
+            put("messageType", messageType.name)
             startsThread?.let { put("startsThread", it) }
         }.takeIf { it.isNotEmpty() }
     }
