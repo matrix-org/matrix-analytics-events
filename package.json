@@ -1,6 +1,6 @@
 {
   "name": "@matrix-org/analytics-events",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "JSON schema for analytics events from matrix SDKs",
   "author": "Element",
   "license": "Apache-2.0",
