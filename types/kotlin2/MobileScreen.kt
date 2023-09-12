@@ -39,6 +39,11 @@ data class MobileScreen(
         Breadcrumbs,
 
         /**
+         * The screen shown to create a poll.
+         */
+        CreatePollView,
+
+        /**
          * The screen shown to create a new (non-direct) room.
          */
         CreateRoom,
@@ -57,6 +62,11 @@ data class MobileScreen(
          * The tab on mobile that displays the dialpad.
          */
         Dialpad,
+
+        /**
+         * The screen shown to edit a poll.
+         */
+        EditPollView,
 
         /**
          * The Favourites tab on mobile that lists your favourite people/rooms.

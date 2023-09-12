@@ -17,19 +17,14 @@ data class Composer (
     val isEditing: Boolean,
 
     /**
-     * Whether this message it's a shared location.
-     */
-    val isLocation: Boolean,
-
-    /**
      * Whether the user's composer interaction was a reply to a previously sent event.
      */
     val isReply: Boolean,
 
     /**
-     * The type of the shared location
+     * The type of the message.
      */
-    val locationType: String? = null,
+    val messageType: String,
 
     /**
      * Whether this message begins a new thread or not.

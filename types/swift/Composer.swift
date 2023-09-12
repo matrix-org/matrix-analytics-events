@@ -28,38 +28,38 @@ extension AnalyticsEvent {
         public let inThread: Bool
         /// Whether the user's composer interaction was editing a previously sent event.
         public let isEditing: Bool
-        /// Whether this message it's a shared location.
-        public let isLocation: Bool
         /// Whether the user's composer interaction was a reply to a previously sent event.
         public let isReply: Bool
-        /// The type of the shared location
-        public let locationType: LocationType?
+        /// The type of the message.
+        public let messageType: MessageType
         /// Whether this message begins a new thread or not.
         public let startsThread: Bool?
 
-        public init(inThread: Bool, isEditing: Bool, isLocation: Bool, isReply: Bool, locationType: LocationType?, startsThread: Bool?) {
+        public init(inThread: Bool, isEditing: Bool, isReply: Bool, messageType: MessageType, startsThread: Bool?) {
             self.inThread = inThread
             self.isEditing = isEditing
-            self.isLocation = isLocation
             self.isReply = isReply
-            self.locationType = locationType
+            self.messageType = messageType
             self.startsThread = startsThread
         }
 
-        public enum LocationType: String {
-            /// User current location
-            case MyLocation
-            /// Pin drop location
-            case PinDrop
+        public enum MessageType: String {
+            /// A pin drop location message.
+            case LocationPin
+            /// A user current location message.
+            case LocationUser
+            /// A poll message.
+            case Poll
+            /// A text message.
+            case Text
         }
 
         public var properties: [String: Any] {
             return [
                 "inThread": inThread,
                 "isEditing": isEditing,
-                "isLocation": isLocation,
                 "isReply": isReply,
-                "locationType": locationType?.rawValue as Any,
+                "messageType": messageType.rawValue,
                 "startsThread": startsThread as Any
             ]
         }

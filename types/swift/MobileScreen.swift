@@ -35,6 +35,8 @@ extension AnalyticsEvent {
         public enum ScreenName: String {
             /// The screen that displays the user's breadcrumbs.
             case Breadcrumbs
+            /// The screen shown to create a poll.
+            case CreatePollView
             /// The screen shown to create a new (non-direct) room.
             case CreateRoom
             /// The screen shown to create a new space.
@@ -43,6 +45,8 @@ extension AnalyticsEvent {
             case DeactivateAccount
             /// The tab on mobile that displays the dialpad.
             case Dialpad
+            /// The screen shown to edit a poll.
+            case EditPollView
             /// The Favourites tab on mobile that lists your favourite people/rooms.
             case Favourites
             /// The form for the forgot password use case.

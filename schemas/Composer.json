@@ -21,19 +21,17 @@
       "description": "Whether this message begins a new thread or not.",
       "type": "boolean"
     },
-    "isLocation": {
-        "description": "Whether this message it's a shared location.",
-        "type": "boolean"
-    },
-    "locationType": {
-        "description": "The type of the shared location",
-        "type": "string",
+    "messageType": {
+      "description": "The type of the message.",
+      "type": "string",
         "oneOf": [
-          {"const": "PinDrop", "description": "Pin drop location"},
-          {"const": "MyLocation", "description": "User current location"}
+          {"const": "Text", "description": "A text message."},
+          {"const": "LocationPin", "description": "A pin drop location message."},
+          {"const": "LocationUser", "description": "A user current location message."},
+          {"const": "Poll", "description": "A poll message."}
         ]
     }
   },
-  "required": ["eventName", "isEditing", "isReply", "inThread", "isLocation"],
+  "required": ["eventName", "isEditing", "isReply", "inThread", "messageType"],
   "additionalProperties": false
 }
