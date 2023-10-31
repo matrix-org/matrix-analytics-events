@@ -52,6 +52,8 @@ extension AnalyticsEvent {
             case Poll
             /// A text message.
             case Text
+            /// A voice message.
+            case VoiceMessage
         }
 
         public var properties: [String: Any] {

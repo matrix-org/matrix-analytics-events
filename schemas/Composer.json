@@ -28,7 +28,8 @@
           {"const": "Text", "description": "A text message."},
           {"const": "LocationPin", "description": "A pin drop location message."},
           {"const": "LocationUser", "description": "A user current location message."},
-          {"const": "Poll", "description": "A poll message."}
+          {"const": "Poll", "description": "A poll message."},
+          {"const": "VoiceMessage", "description": "A voice message."}
         ]
     }
   },
