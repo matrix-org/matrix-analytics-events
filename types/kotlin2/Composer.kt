@@ -69,6 +69,11 @@ data class Composer(
          * A text message.
          */
         Text,
+
+        /**
+         * A voice message.
+         */
+        VoiceMessage,
     }
 
     override fun getName() = "Composer"
