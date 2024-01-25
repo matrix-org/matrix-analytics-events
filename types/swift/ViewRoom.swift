@@ -120,6 +120,8 @@ extension AnalyticsEvent {
             case WebSpaceContextSwitch
             /// Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop.
             case WebSpacePanelNotificationBadge
+            /// Room accessed via interacting with the Threads Activity Centre in Element Web/Desktop.
+            case WebThreadsActivityCentre
             /// Room accessed via Element Web/Desktop's Unified Search modal.
             case WebUnifiedSearch
             /// Room accessed via the Element Web/Desktop vertical breadcrumb hover menu.
