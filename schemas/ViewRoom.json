@@ -37,6 +37,7 @@
         {"const": "WebRoomListNotificationBadge", "description": "Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop."},
         {"const": "WebSpacePanelNotificationBadge", "description": "Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop."},
         {"const": "WebFloatingCallWindow", "description": "Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop."},
+        {"const": "WebThreadsActivityCentre", "description": "Room accessed via interacting with the Threads Activity Centre in Element Web/Desktop."},
 
         {"const": "MobileFileSearch", "description": "Room switched due to user interacting with a file search result."},
         {"const": "MobileRoomSearch", "description": "Room switched due to user interacting with a room search result."},

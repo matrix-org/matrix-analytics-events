@@ -54,6 +54,8 @@
         {"const": "WebRoomHeaderButtonsThreadsButton", "description": "User clicked the Threads button in the top right of a room in Element Web/Desktop." },
         {"const": "WebThreadViewBackButton", "description": "User clicked the back button on a Thread view going back to the Threads Panel of Element Web/Desktop." },
         {"const": "WebThreadsPanelThreadItem", "description": "User selected a thread in the Threads panel in Element Web/Desktop." },
+        {"const": "WebThreadsActivityCentreButton", "description": "User clicked on the Threads Activity Centre button of Element Web/Desktop." },
+        {"const": "WebThreadsActivityCentreRoomItem", "description": "User clicked on a room in the Threads Activity Centre of Element Web/Desktop." },
         {"const": "WebRoomTimelineThreadSummaryButton", "description": "User clicked a thread summary in the timeline of a room in Element Web/Desktop." },
         {"const": "WebUserOnboardingHeaderSendDm", "description": "User clicked on the send DM CTA in the header of the new user onboarding page in Element Web/Desktop." },
         {"const": "WebUserOnboardingTaskSendDm", "description": "User clicked on the action of the find people task on the new user onboarding page in Element Web/Desktop." },

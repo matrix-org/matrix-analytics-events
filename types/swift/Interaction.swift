@@ -166,6 +166,10 @@ extension AnalyticsEvent {
             case WebSpaceHomeCreateRoomButton
             /// User clicked the back button on a Thread view going back to the Threads Panel of Element Web/Desktop.
             case WebThreadViewBackButton
+            /// User clicked on the Threads Activity Centre button of Element Web/Desktop.
+            case WebThreadsActivityCentreButton
+            /// User clicked on a room in the Threads Activity Centre of Element Web/Desktop.
+            case WebThreadsActivityCentreRoomItem
             /// User selected a thread in the Threads panel in Element Web/Desktop.
             case WebThreadsPanelThreadItem
             /// User clicked the theme toggle button in the user menu of Element Web/Desktop.
