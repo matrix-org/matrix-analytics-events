@@ -58,6 +58,8 @@ extension AnalyticsEvent {
             case MobileRoomAddHome
             /// User tapped on Leave Room button on Room Details screen.
             case MobileRoomLeave
+            /// User adjusted their unread rooms using the context menu on a room in the room list.
+            case MobileRoomListRoomContextMenuUnreadToggle
             /// User tapped on Threads button on Room screen.
             case MobileRoomThreadListButton
             /// User tapped on a thread summary item on Room screen.

@@ -91,6 +91,12 @@ data class Interaction(
         MobileRoomLeave,
 
         /**
+         * User adjusted their unread rooms using the context menu on a room in
+         * the room list.
+         */
+        MobileRoomListRoomContextMenuUnreadToggle,
+
+        /**
          * User tapped on Threads button on Room screen.
          */
         MobileRoomThreadListButton,
