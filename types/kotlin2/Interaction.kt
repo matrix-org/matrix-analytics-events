@@ -86,9 +86,20 @@ data class Interaction(
         MobileRoomAddHome,
 
         /**
+         * User switched the favourite toggle on Room Details screen.
+         */
+        MobileRoomFavouriteToggle,
+
+        /**
          * User tapped on Leave Room button on Room Details screen.
          */
         MobileRoomLeave,
+
+        /**
+         * User adjusted their favourite rooms using the context menu on a room
+         * in the room list.
+         */
+        MobileRoomListRoomContextMenuFavouriteToggle,
 
         /**
          * User adjusted their unread rooms using the context menu on a room in
