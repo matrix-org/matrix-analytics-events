@@ -56,8 +56,12 @@ extension AnalyticsEvent {
             case MobileAllChatsRecentsEnabled
             /// User tapped on Add to Home button on Room Details screen.
             case MobileRoomAddHome
+            /// User switched the favourite toggle on Room Details screen.
+            case MobileRoomFavouriteToggle
             /// User tapped on Leave Room button on Room Details screen.
             case MobileRoomLeave
+            /// User adjusted their favourite rooms using the context menu on a room in the room list.
+            case MobileRoomListRoomContextMenuFavouriteToggle
             /// User adjusted their unread rooms using the context menu on a room in the room list.
             case MobileRoomListRoomContextMenuUnreadToggle
             /// User tapped on Threads button on Room screen.

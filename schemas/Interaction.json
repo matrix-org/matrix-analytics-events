@@ -70,6 +70,7 @@
         {"const": "SpacePanelSwitchSubSpace", "description": "User tapped an unselected sub space from the space list -> space switching should occur."},
         {"const": "MobileRoomLeave", "description": "User tapped on Leave Room button on Room Details screen."},
         {"const": "MobileRoomAddHome", "description": "User tapped on Add to Home button on Room Details screen."},
+        {"const": "MobileRoomFavouriteToggle", "description": "User switched the favourite toggle on Room Details screen."},
         {"const": "MobileRoomThreadListButton", "description": "User tapped on Threads button on Room screen."},
         {"const": "MobileRoomThreadSummaryItem", "description": "User tapped on a thread summary item on Room screen."},
         {"const": "MobileThreadListThreadItem", "description": "User selected a thread on ThreadList screen."},
@@ -83,7 +84,8 @@
         {"const": "MobileAllChatsFilterUnreads", "description": "User tapped the Unreads filter in the All Chats filter tab."},
         {"const": "MobileAllChatsFilterPeople", "description": "User tapped the People filter in the All Chats filter tab."},
         {"const": "MobileSpaceCreationValidated", "description": "User validated the creation of a new space."},
-        {"const": "MobileRoomListRoomContextMenuUnreadToggle", "description": "User adjusted their unread rooms using the context menu on a room in the room list."}
+        {"const": "MobileRoomListRoomContextMenuUnreadToggle", "description": "User adjusted their unread rooms using the context menu on a room in the room list."},
+        {"const": "MobileRoomListRoomContextMenuFavouriteToggle", "description": "User adjusted their favourite rooms using the context menu on a room in the room list."}
       ]
     },
     "index": {
