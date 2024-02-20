@@ -138,6 +138,10 @@ extension AnalyticsEvent {
             case WebRoomListRoomTileContextMenuInviteItem
             /// User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop.
             case WebRoomListRoomTileContextMenuLeaveItem
+            /// User marked a message as read using the context menu on a room tile in the room list in Element Web/Desktop.
+            case WebRoomListRoomTileContextMenuMarkRead
+            /// User marked a room as unread using the context menu on a room tile in the room list in Element Web/Desktop.
+            case WebRoomListRoomTileContextMenuMarkUnread
             /// User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop.
             case WebRoomListRoomTileContextMenuSettingsItem
             /// User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop.
