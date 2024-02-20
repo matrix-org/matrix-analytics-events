@@ -324,6 +324,18 @@ data class Interaction(
         WebRoomListRoomTileContextMenuLeaveItem,
 
         /**
+         * User marked a message as read using the context menu on a room tile
+         * in the room list in Element Web/Desktop.
+         */
+        WebRoomListRoomTileContextMenuMarkRead,
+
+        /**
+         * User marked a room as unread using the context menu on a room tile in
+         * the room list in Element Web/Desktop.
+         */
+        WebRoomListRoomTileContextMenuMarkUnread,
+
+        /**
          * User accessed room settings using the context menu on a room tile in
          * the room list in Element Web/Desktop.
          */
