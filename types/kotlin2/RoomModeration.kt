@@ -53,42 +53,42 @@ data class RoomModeration(
         ChangeMemberRoleUser,
 
         /**
-         * Changed the rights to ban room members.
+         * Changed the permissions for banning room members.
          */
         ChangePermissionsBanMembers,
 
         /**
-         * Changed the rights to invite users to the room.
+         * Changed the permissions for inviting users to the room.
          */
         ChangePermissionsInviteUsers,
 
         /**
-         * Changed the rights to kick room members.
+         * Changed the permissions for kicking room members.
          */
         ChangePermissionsKickMembers,
 
         /**
-         * Changed the rights to redact messages in the room.
+         * Changed the permissions for redacting messages in the room.
          */
         ChangePermissionsRedactMessages,
 
         /**
-         * Changed the rights to set the room's avatar.
+         * Changed the permissions for setting the room's avatar.
          */
         ChangePermissionsRoomAvatar,
 
         /**
-         * Changed the rights to set the room's name.
+         * Changed the permissions for setting the room's name.
          */
         ChangePermissionsRoomName,
 
         /**
-         * Changed the rights to set the room's topic.
+         * Changed the permissions for setting the room's topic.
          */
         ChangePermissionsRoomTopic,
 
         /**
-         * Changed the rights to send messages in the room.
+         * Changed the permissions for sending messages in the room.
          */
         ChangePermissionsSendMessages,
 
@@ -96,6 +96,11 @@ data class RoomModeration(
          * Kicked a room member.
          */
         KickMember,
+
+        /**
+         * Reset the all of the room permissions back to their default values.
+         */
+        ResetPermissions,
 
         /**
          * Unbanned a room member.

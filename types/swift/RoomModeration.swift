@@ -40,24 +40,26 @@ extension AnalyticsEvent {
             case ChangeMemberRoleModerator
             /// Changed a room member's role to user.
             case ChangeMemberRoleUser
-            /// Changed the rights to ban room members.
+            /// Changed the permissions for banning room members.
             case ChangePermissionsBanMembers
-            /// Changed the rights to invite users to the room.
+            /// Changed the permissions for inviting users to the room.
             case ChangePermissionsInviteUsers
-            /// Changed the rights to kick room members.
+            /// Changed the permissions for kicking room members.
             case ChangePermissionsKickMembers
-            /// Changed the rights to redact messages in the room.
+            /// Changed the permissions for redacting messages in the room.
             case ChangePermissionsRedactMessages
-            /// Changed the rights to set the room's avatar.
+            /// Changed the permissions for setting the room's avatar.
             case ChangePermissionsRoomAvatar
-            /// Changed the rights to set the room's name.
+            /// Changed the permissions for setting the room's name.
             case ChangePermissionsRoomName
-            /// Changed the rights to set the room's topic.
+            /// Changed the permissions for setting the room's topic.
             case ChangePermissionsRoomTopic
-            /// Changed the rights to send messages in the room.
+            /// Changed the permissions for sending messages in the room.
             case ChangePermissionsSendMessages
             /// Kicked a room member.
             case KickMember
+            /// Reset the all of the room permissions back to their default values.
+            case ResetPermissions
             /// Unbanned a room member.
             case UnbanMember
         }
