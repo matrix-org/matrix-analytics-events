@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "description": "Triggered when a moderation action is performed within a room.",
+  "properties": {
+    "eventName": {
+      "enum": ["RoomModeration"]
+    },
+    "action": {
+      "description": "The action that was performed.",
+      "type": "string",
+      "oneOf": [
+        {"const": "ChangeMemberRoleAdmin", "description": "Changed a room member's role to administrator."},
+        {"const": "ChangeMemberRoleModerator", "description": "Changed a room member's role to moderator."},
+        {"const": "ChangeMemberRoleUser", "description": "Changed a room member's role to user."},
+        {"const": "KickMember", "description": "Kicked a room member."},
+        {"const": "BanMember", "description": "Banned a room member."},
+        {"const": "UnbanMember", "description": "Unbanned a room member."},
+        {"const": "ChangePermissionsRoomName", "description": "Changed the rights to set the room's name."},
+        {"const": "ChangePermissionsRoomAvatar", "description": "Changed the rights to set the room's avatar."},
+        {"const": "ChangePermissionsRoomTopic", "description": "Changed the rights to set the room's topic."},
+        {"const": "ChangePermissionsSendMessages", "description": "Changed the rights to send messages in the room."},
+        {"const": "ChangePermissionsRedactMessages", "description": "Changed the rights to redact messages in the room."},
+        {"const": "ChangePermissionsInviteUsers", "description": "Changed the rights to invite users to the room."},
+        {"const": "ChangePermissionsKickMembers", "description": "Changed the rights to kick room members."},
+        {"const": "ChangePermissionsBanMembers", "description": "Changed the rights to ban room members."}
+      ]
+    }
+  },
+  "required": ["action", "eventName"],
+  "additionalProperties": false
+}
