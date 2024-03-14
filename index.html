@@ -2895,7 +2895,7 @@
                     
                         <tr>
                             <td>cryptoModule</td>                        
-                            <td>Which crypto module is the client currently using.</td>
+                            <td>DEPRECATED: Which crypto module is the client currently using.</td>
                             <td>
                                 
                                     <ul>
@@ -2909,6 +2909,30 @@
                                             <li>
                                                 
                                                     <b>Rust:</b> Shared / cross-platform crypto module written in Rust.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>cryptoSDK</td>                        
+                            <td>Which crypto backend is the client currently using.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Legacy:</b> Legacy crypto backend specific to each platform.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Rust:</b> Cross-platform crypto backend written in Rust.
                                                     
                                             </li>
                                         
@@ -3015,6 +3039,16 @@
                                             </li>
                                         
                                     </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>timeToDecryptMillis</td>                        
+                            <td>UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1</td>
+                            <td>
+                                                                
+                                    integer
                                                             
                             </td>                            
                         </tr>
