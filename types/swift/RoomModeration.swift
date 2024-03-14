@@ -26,35 +26,34 @@ extension AnalyticsEvent {
 
         /// The action that was performed.
         public let action: Action
+        /// When the action set a particular power level, this is the suggested role for that the power level.
+        public let role: Role?
 
-        public init(action: Action) {
+        public init(action: Action, role: Role?) {
             self.action = action
+            self.role = role
         }
 
         public enum Action: String {
             /// Banned a room member.
             case BanMember
-            /// Changed a room member's role to administrator.
-            case ChangeMemberRoleAdmin
-            /// Changed a room member's role to moderator.
-            case ChangeMemberRoleModerator
-            /// Changed a room member's role to user.
-            case ChangeMemberRoleUser
-            /// Changed the permissions for banning room members.
+            /// Changed a room member's power level.
+            case ChangeMemberRole
+            /// Changed the power level required to ban room members.
             case ChangePermissionsBanMembers
-            /// Changed the permissions for inviting users to the room.
+            /// Changed the power level required to invite users to the room.
             case ChangePermissionsInviteUsers
-            /// Changed the permissions for kicking room members.
+            /// Changed the power level required to kick room members.
             case ChangePermissionsKickMembers
-            /// Changed the permissions for redacting messages in the room.
+            /// Changed the power level required to redact messages in the room.
             case ChangePermissionsRedactMessages
-            /// Changed the permissions for setting the room's avatar.
+            /// Changed the power level required to set the room's avatar.
             case ChangePermissionsRoomAvatar
-            /// Changed the permissions for setting the room's name.
+            /// Changed the power level required to set the room's name.
             case ChangePermissionsRoomName
-            /// Changed the permissions for setting the room's topic.
+            /// Changed the power level required to set the room's topic.
             case ChangePermissionsRoomTopic
-            /// Changed the permissions for sending messages in the room.
+            /// Changed the power level required to send messages in the room.
             case ChangePermissionsSendMessages
             /// Kicked a room member.
             case KickMember
@@ -64,9 +63,21 @@ extension AnalyticsEvent {
             case UnbanMember
         }
 
+        public enum Role: String {
+            /// A power level of 100.
+            case Administrator
+            /// A power level of 50.
+            case Moderator
+            /// Any other power level.
+            case Other
+            /// A power level of 0.
+            case User
+        }
+
         public var properties: [String: Any] {
             return [
-                "action": action.rawValue
+                "action": action.rawValue,
+                "role": role?.rawValue as Any
             ]
         }
     }

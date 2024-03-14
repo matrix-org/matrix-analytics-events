@@ -29,6 +29,11 @@ data class RoomModeration(
          * The action that was performed.
          */
         val action: Action,
+        /**
+         * When the action set a particular power level, this is the suggested
+         * role for that the power level.
+         */
+        val role: Role? = null,
 ) : VectorAnalyticsEvent {
 
     enum class Action {
@@ -38,57 +43,47 @@ data class RoomModeration(
         BanMember,
 
         /**
-         * Changed a room member's role to administrator.
+         * Changed a room member's power level.
          */
-        ChangeMemberRoleAdmin,
+        ChangeMemberRole,
 
         /**
-         * Changed a room member's role to moderator.
-         */
-        ChangeMemberRoleModerator,
-
-        /**
-         * Changed a room member's role to user.
-         */
-        ChangeMemberRoleUser,
-
-        /**
-         * Changed the permissions for banning room members.
+         * Changed the power level required to ban room members.
          */
         ChangePermissionsBanMembers,
 
         /**
-         * Changed the permissions for inviting users to the room.
+         * Changed the power level required to invite users to the room.
          */
         ChangePermissionsInviteUsers,
 
         /**
-         * Changed the permissions for kicking room members.
+         * Changed the power level required to kick room members.
          */
         ChangePermissionsKickMembers,
 
         /**
-         * Changed the permissions for redacting messages in the room.
+         * Changed the power level required to redact messages in the room.
          */
         ChangePermissionsRedactMessages,
 
         /**
-         * Changed the permissions for setting the room's avatar.
+         * Changed the power level required to set the room's avatar.
          */
         ChangePermissionsRoomAvatar,
 
         /**
-         * Changed the permissions for setting the room's name.
+         * Changed the power level required to set the room's name.
          */
         ChangePermissionsRoomName,
 
         /**
-         * Changed the permissions for setting the room's topic.
+         * Changed the power level required to set the room's topic.
          */
         ChangePermissionsRoomTopic,
 
         /**
-         * Changed the permissions for sending messages in the room.
+         * Changed the power level required to send messages in the room.
          */
         ChangePermissionsSendMessages,
 
@@ -108,11 +103,35 @@ data class RoomModeration(
         UnbanMember,
     }
 
+    enum class Role {
+
+        /**
+         * A power level of 100.
+         */
+        Administrator,
+
+        /**
+         * A power level of 50.
+         */
+        Moderator,
+
+        /**
+         * Any other power level.
+         */
+        Other,
+
+        /**
+         * A power level of 0.
+         */
+        User,
+    }
+
     override fun getName() = "RoomModeration"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             put("action", action.name)
+            role?.let { put("role", it.name) }
         }.takeIf { it.isNotEmpty() }
     }
 }
