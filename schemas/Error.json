@@ -32,8 +32,20 @@
       "description": "Context - client defined, can be used for debugging.",
       "type": "string"
     },
+    "timeToDecryptMillis": {
+      "description": "UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1",
+      "type": "integer"
+    },
+    "cryptoSDK": {
+      "description": "Which crypto backend is the client currently using.",
+      "type": "string",
+      "oneOf": [
+        {"const": "Legacy", "description": "Legacy crypto backend specific to each platform."},
+        {"const": "Rust", "description": "Cross-platform crypto backend written in Rust."}
+      ]
+    },
     "cryptoModule": {
-      "description": "Which crypto module is the client currently using.",
+      "description": "DEPRECATED: Which crypto module is the client currently using.",
       "type": "string",
       "oneOf": [
         {"const": "Native", "description": "Native / legacy crypto module specific to each platform."},

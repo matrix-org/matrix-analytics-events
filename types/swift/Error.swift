@@ -26,16 +26,22 @@ extension AnalyticsEvent {
 
         /// Context - client defined, can be used for debugging.
         public let context: String?
-        /// Which crypto module is the client currently using.
+        /// DEPRECATED: Which crypto module is the client currently using.
         public let cryptoModule: CryptoModule?
+        /// Which crypto backend is the client currently using.
+        public let cryptoSDK: CryptoSDK?
         public let domain: Domain
         public let name: Name
+        /// UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1
+        public let timeToDecryptMillis: Int?
 
-        public init(context: String?, cryptoModule: CryptoModule?, domain: Domain, name: Name) {
+        public init(context: String?, cryptoModule: CryptoModule?, cryptoSDK: CryptoSDK?, domain: Domain, name: Name, timeToDecryptMillis: Int?) {
             self.context = context
             self.cryptoModule = cryptoModule
+            self.cryptoSDK = cryptoSDK
             self.domain = domain
             self.name = name
+            self.timeToDecryptMillis = timeToDecryptMillis
         }
 
         public enum Domain: String {
@@ -57,6 +63,13 @@ extension AnalyticsEvent {
             case VoipUserMediaFailed
         }
 
+        public enum CryptoSDK: String {
+            /// Legacy crypto backend specific to each platform.
+            case Legacy
+            /// Cross-platform crypto backend written in Rust.
+            case Rust
+        }
+
         public enum CryptoModule: String {
             /// Native / legacy crypto module specific to each platform.
             case Native
@@ -68,8 +81,10 @@ extension AnalyticsEvent {
             return [
                 "context": context as Any,
                 "cryptoModule": cryptoModule?.rawValue as Any,
+                "cryptoSDK": cryptoSDK?.rawValue as Any,
                 "domain": domain.rawValue,
-                "name": name.rawValue
+                "name": name.rawValue,
+                "timeToDecryptMillis": timeToDecryptMillis as Any
             ]
         }
     }

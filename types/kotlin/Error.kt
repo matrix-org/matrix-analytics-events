@@ -10,13 +10,24 @@ data class Error (
     val context: String? = null,
 
     /**
-     * Which crypto module is the client currently using.
+     * DEPRECATED: Which crypto module is the client currently using.
      */
     val cryptoModule: String? = null,
 
+    /**
+     * Which crypto backend is the client currently using.
+     */
+    val cryptoSDK: String? = null,
+
     val domain: Domain,
     val eventName: EventName,
-    val name: Name
+    val name: Name,
+
+    /**
+     * UTDs can be permanent or temporary. If temporary, this field will contain the time it
+     * took to decrypt the message in milliseconds. If permanent should be -1
+     */
+    val timeToDecryptMillis: Long? = null
 )
 
 enum class Domain {
