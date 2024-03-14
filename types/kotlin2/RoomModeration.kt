@@ -30,7 +30,7 @@ data class RoomModeration(
          */
         val action: Action,
         /**
-         * When the action set a particular power level, this is the suggested
+         * When the action sets a particular power level, this is the suggested
          * role for that the power level.
          */
         val role: Role? = null,
@@ -93,7 +93,7 @@ data class RoomModeration(
         KickMember,
 
         /**
-         * Reset the all of the room permissions back to their default values.
+         * Reset all of the room permissions back to their default values.
          */
         ResetPermissions,
 

@@ -26,7 +26,7 @@ extension AnalyticsEvent {
 
         /// The action that was performed.
         public let action: Action
-        /// When the action set a particular power level, this is the suggested role for that the power level.
+        /// When the action sets a particular power level, this is the suggested role for that the power level.
         public let role: Role?
 
         public init(action: Action, role: Role?) {
@@ -57,7 +57,7 @@ extension AnalyticsEvent {
             case ChangePermissionsSendMessages
             /// Kicked a room member.
             case KickMember
-            /// Reset the all of the room permissions back to their default values.
+            /// Reset all of the room permissions back to their default values.
             case ResetPermissions
             /// Unbanned a room member.
             case UnbanMember

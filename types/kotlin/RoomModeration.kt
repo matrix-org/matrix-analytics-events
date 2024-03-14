@@ -12,7 +12,7 @@ data class RoomModeration (
     val eventName: EventName,
 
     /**
-     * When the action set a particular power level, this is the suggested role for that the
+     * When the action sets a particular power level, this is the suggested role for that the
      * power level.
      */
     val role: String? = null
