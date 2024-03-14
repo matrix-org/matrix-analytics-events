@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "description": "Triggered when a moderation action is performed within a room.",
+  "properties": {
+    "eventName": {
+      "enum": ["RoomModeration"]
+    },
+    "action": {
+      "description": "The action that was performed.",
+      "type": "string",
+      "oneOf": [
+        {"const": "ChangeMemberRole", "description": "Changed a room member's power level."},
+        {"const": "KickMember", "description": "Kicked a room member."},
+        {"const": "BanMember", "description": "Banned a room member."},
+        {"const": "UnbanMember", "description": "Unbanned a room member."},
+        {"const": "ChangePermissionsRoomName", "description": "Changed the power level required to set the room's name."},
+        {"const": "ChangePermissionsRoomAvatar", "description": "Changed the power level required to set the room's avatar."},
+        {"const": "ChangePermissionsRoomTopic", "description": "Changed the power level required to set the room's topic."},
+        {"const": "ChangePermissionsSendMessages", "description": "Changed the power level required to send messages in the room."},
+        {"const": "ChangePermissionsRedactMessages", "description": "Changed the power level required to redact messages in the room."},
+        {"const": "ChangePermissionsInviteUsers", "description": "Changed the power level required to invite users to the room."},
+        {"const": "ChangePermissionsKickMembers", "description": "Changed the power level required to kick room members."},
+        {"const": "ChangePermissionsBanMembers", "description": "Changed the power level required to ban room members."},
+        {"const": "ResetPermissions", "description": "Reset all of the room permissions back to their default values."}
+      ]
+    },
+    "role": {
+      "description": "When the action sets a particular power level, this is the suggested role for that the power level.",
+      "type": "string",
+      "oneOf": [
+        {"const": "Administrator", "description": "A power level of 100."},
+        {"const": "Moderator", "description": "A power level of 50."},
+        {"const": "User", "description": "A power level of 0."},
+        {"const": "Other", "description": "Any other power level."}
+      ]
+    }
+  },
+  "required": ["action", "eventName"],
+  "additionalProperties": false
+}
