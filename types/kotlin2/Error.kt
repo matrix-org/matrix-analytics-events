@@ -54,15 +54,62 @@ data class Error(
     }
 
     enum class Name {
+
+        /**
+         * E2E domain error. Decryption fails for historical message and there
+         * is no backup.
+         */
+        HistoricalMessage,
+
+        /**
+         * E2E domain error. The room key is known but is ratcheted (index > 0).
+         */
         OlmIndexError,
+
+        /**
+         * E2E domain error. Generic unknown inbound group session error.
+         */
         OlmKeysNotSentError,
+
+        /**
+         * E2E domain error. Any other decryption error (missing field, format
+         * errors...).
+         */
         OlmUnspecifiedError,
+
+        /**
+         * TO_DEVICE domain error. The to-device message failed to decrypt.
+         */
         ToDeviceFailedToDecrypt,
+
+        /**
+         * E2E domain error. Decryption fails due to unknown error.
+         */
         UnknownError,
+
+        /**
+         * VOIP domain error. ICE negotiation failed.
+         */
         VoipIceFailed,
+
+        /**
+         * VOIP domain error. ICE negotiation timed out.
+         */
         VoipIceTimeout,
+
+        /**
+         * VOIP domain error. The call invite timed out.
+         */
         VoipInviteTimeout,
+
+        /**
+         * VOIP domain error. The user hung up the call.
+         */
         VoipUserHangup,
+
+        /**
+         * VOIP domain error. The user's media failed to start.
+         */
         VoipUserMediaFailed,
     }
 
