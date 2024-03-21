@@ -51,17 +51,17 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
-            /// E2E domain error. Decryption fails for historical message and there is no backup.
+            /// E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled.
             case HistoricalMessage
-            /// E2E domain error. The room key is known but is ratcheted (index > 0).
+            /// E2EE domain error. The room key is known but is ratcheted (index > 0).
             case OlmIndexError
-            /// E2E domain error. Generic unknown inbound group session error.
+            /// E2EE domain error. Generic unknown inbound group session error.
             case OlmKeysNotSentError
-            /// E2E domain error. Any other decryption error (missing field, format errors...).
+            /// E2EE domain error. Any other decryption error (missing field, format errors...).
             case OlmUnspecifiedError
             /// TO_DEVICE domain error. The to-device message failed to decrypt.
             case ToDeviceFailedToDecrypt
-            /// E2E domain error. Decryption fails due to unknown error.
+            /// E2EE domain error. Decryption failed due to unknown error.
             case UnknownError
             /// VOIP domain error. ICE negotiation failed.
             case VoipIceFailed

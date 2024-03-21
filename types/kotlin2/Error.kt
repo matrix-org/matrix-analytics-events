@@ -56,23 +56,24 @@ data class Error(
     enum class Name {
 
         /**
-         * E2E domain error. Decryption fails for historical message and there
-         * is no backup.
+         * E2EE domain error. Decryption failed for a message sent before the
+         * device logged in, and key backup is not enabled.
          */
         HistoricalMessage,
 
         /**
-         * E2E domain error. The room key is known but is ratcheted (index > 0).
+         * E2EE domain error. The room key is known but is ratcheted (index >
+         * 0).
          */
         OlmIndexError,
 
         /**
-         * E2E domain error. Generic unknown inbound group session error.
+         * E2EE domain error. Generic unknown inbound group session error.
          */
         OlmKeysNotSentError,
 
         /**
-         * E2E domain error. Any other decryption error (missing field, format
+         * E2EE domain error. Any other decryption error (missing field, format
          * errors...).
          */
         OlmUnspecifiedError,
@@ -83,7 +84,7 @@ data class Error(
         ToDeviceFailedToDecrypt,
 
         /**
-         * E2E domain error. Decryption fails due to unknown error.
+         * E2EE domain error. Decryption failed due to unknown error.
          */
         UnknownError,
 
