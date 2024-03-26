@@ -67,6 +67,8 @@ extension AnalyticsEvent {
             case Login
             /// Legacy: The screen that shows all groups/communities you have joined.
             case MyGroups
+            /// The screen containing tests to help user to fix issues around notifications.
+            case NotificationTroubleshoot
             /// The People tab on mobile that lists all the DM rooms you have joined.
             case People
             /// The screen that displays the registration flow (when the user wants to create an account).

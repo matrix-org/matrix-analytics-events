@@ -24,7 +24,7 @@ extension AnalyticsEvent {
     public struct PollEnd: AnalyticsEventProtocol {
         public let eventName = "PollEnd"
 
-        /// Do not use this. Remove this property when the kotlin type generator can properly generate types without proprties other than the event name.
+        /// Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.
         public let doNotUse: Bool?
 
         public init(doNotUse: Bool?) {

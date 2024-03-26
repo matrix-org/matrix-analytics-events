@@ -19,21 +19,21 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when a poll vote has been cast.
+/// Triggered when the user runs the troubleshoot notification test suite.
 extension AnalyticsEvent {
-    public struct PollVote: AnalyticsEventProtocol {
-        public let eventName = "PollVote"
+    public struct NotificationTroubleshoot: AnalyticsEventProtocol {
+        public let eventName = "NotificationTroubleshoot"
 
-        /// Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.
-        public let doNotUse: Bool?
+        /// Whether one or more tests are in error.
+        public let hasError: Bool
 
-        public init(doNotUse: Bool?) {
-            self.doNotUse = doNotUse
+        public init(hasError: Bool) {
+            self.hasError = hasError
         }
 
         public var properties: [String: Any] {
             return [
-                "doNotUse": doNotUse as Any
+                "hasError": hasError
             ]
         }
     }
