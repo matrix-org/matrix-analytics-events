@@ -26,9 +26,9 @@ package im.vector.app.features.analytics.plan
  */
 data class SuperProperties(
         /**
-         * Used by web to identify the platform (Web/Electron)
+         * Used by web to identify the platform (Web Platform/Electron Platform)
          */
-        val appPlatform: AppPlatform? = null,
+        val appPlatform: String? = null,
         /**
          * Which crypto backend is the client currently using.
          */
@@ -51,22 +51,9 @@ data class SuperProperties(
         Rust,
     }
 
-    enum class AppPlatform {
-
-        /**
-         * Desktop version of the app.
-         */
-        Electron Platform,
-
-        /**
-         * Web version of the app.
-         */
-        Web Platform,
-    }
-
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            appPlatform?.let { put("appPlatform", it.name) }
+            appPlatform?.let { put("appPlatform", it) }
             cryptoSDK?.let { put("cryptoSDK", it.name) }
             cryptoSDKVersion?.let { put("cryptoSDKVersion", it) }
         }.takeIf { it.isNotEmpty() }

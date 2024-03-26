@@ -15,12 +15,8 @@
       "type": "string"
     },
     "appPlatform": {
-      "description": "Used by web to identify the platform (Web/Electron)",
-      "type": "string",
-      "oneOf": [
-        {"const": "Web Platform", "description": "Web version of the app."},
-        {"const": "Electron Platform", "description": "Desktop version of the app."}
-      ]
+      "description": "Used by web to identify the platform (Web Platform/Electron Platform)",
+      "type": "string"
     }
   },
   "required": [],

@@ -23,14 +23,14 @@ import Foundation
 extension AnalyticsEvent {
     public struct SuperProperties {
 
-        /// Used by web to identify the platform (Web/Electron)
-        public let appPlatform: AppPlatform?
+        /// Used by web to identify the platform (Web Platform/Electron Platform)
+        public let appPlatform: String?
         /// Which crypto backend is the client currently using.
         public let cryptoSDK: CryptoSDK?
         /// Version of the crypto backend.
         public let cryptoSDKVersion: String?
 
-        public init(appPlatform: AppPlatform?, cryptoSDK: CryptoSDK?, cryptoSDKVersion: String?) {
+        public init(appPlatform: String?, cryptoSDK: CryptoSDK?, cryptoSDKVersion: String?) {
             self.appPlatform = appPlatform
             self.cryptoSDK = cryptoSDK
             self.cryptoSDKVersion = cryptoSDKVersion
@@ -43,16 +43,9 @@ extension AnalyticsEvent {
             case Rust
         }
 
-        public enum AppPlatform: String {
-            /// Desktop version of the app.
-            case Electron Platform
-            /// Web version of the app.
-            case Web Platform
-        }
-
         public var properties: [String: Any?] {
             return [
-                "appPlatform": appPlatform?.rawValue,
+                "appPlatform": appPlatform,
                 "cryptoSDK": cryptoSDK?.rawValue,
                 "cryptoSDKVersion": cryptoSDKVersion
             ]

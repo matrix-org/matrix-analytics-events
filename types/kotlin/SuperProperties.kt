@@ -7,7 +7,7 @@ package quicktype
  */
 data class SuperProperties (
     /**
-     * Used by web to identify the platform (Web/Electron)
+     * Used by web to identify the platform (Web Platform/Electron Platform)
      */
     val appPlatform: String? = null,
 
