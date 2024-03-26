@@ -375,6 +375,12 @@
                                         
                                             <li>
                                                 
+                                                    <b>NotificationTroubleshoot:</b> The screen containing tests to help user to fix issues around notifications.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
                                                     <b>SettingsNotifications:</b> The notifications settings screen.
                                                     
                                             </li>
@@ -930,6 +936,33 @@
                         <tr>
                             <td>startsThread</td>                        
                             <td>Whether this message begins a new thread or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>NotificationTroubleshoot</h2>
+            <p>Triggered when the user runs the troubleshoot notification test suite.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>hasError</td>                        
+                            <td>Whether one or more tests are in error.</td>
                             <td>
                                                                 
                                     boolean
@@ -2003,7 +2036,7 @@
                     
                         <tr>
                             <td>doNotUse</td>                        
-                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without proprties other than the event name.</td>
+                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.</td>
                             <td>
                                                                 
                                     boolean
@@ -2669,7 +2702,7 @@
                     
                         <tr>
                             <td>doNotUse</td>                        
-                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without proprties other than the event name.</td>
+                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.</td>
                             <td>
                                                                 
                                     boolean
