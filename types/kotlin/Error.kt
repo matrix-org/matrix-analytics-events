@@ -21,7 +21,7 @@ data class Error (
 
     val domain: Domain,
     val eventName: EventName,
-    val name: Name,
+    val name: String,
 
     /**
      * UTDs can be permanent or temporary. If temporary, this field will contain the time it
@@ -38,17 +38,4 @@ enum class Domain {
 
 enum class EventName {
     Error
-}
-
-enum class Name {
-    OlmIndexError,
-    OlmKeysNotSentError,
-    OlmUnspecifiedError,
-    ToDeviceFailedToDecrypt,
-    UnknownError,
-    VoipIceFailed,
-    VoipIceTimeout,
-    VoipInviteTimeout,
-    VoipUserHangup,
-    VoipUserMediaFailed
 }

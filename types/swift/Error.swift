@@ -51,15 +51,27 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
+            /// E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled.
+            case HistoricalMessage
+            /// E2EE domain error. The room key is known but is ratcheted (index > 0).
             case OlmIndexError
+            /// E2EE domain error. Generic unknown inbound group session error.
             case OlmKeysNotSentError
+            /// E2EE domain error. Any other decryption error (missing field, format errors...).
             case OlmUnspecifiedError
+            /// TO_DEVICE domain error. The to-device message failed to decrypt.
             case ToDeviceFailedToDecrypt
+            /// E2EE domain error. Decryption failed due to unknown error.
             case UnknownError
+            /// VOIP domain error. ICE negotiation failed.
             case VoipIceFailed
+            /// VOIP domain error. ICE negotiation timed out.
             case VoipIceTimeout
+            /// VOIP domain error. The call invite timed out.
             case VoipInviteTimeout
+            /// VOIP domain error. The user hung up the call.
             case VoipUserHangup
+            /// VOIP domain error. The user's media failed to start.
             case VoipUserMediaFailed
         }
 
