@@ -3033,6 +3033,36 @@
                         </tr>
                     
                         <tr>
+                            <td>eventLocalAgeMillis</td>                        
+                            <td>An heuristic based on event origin_server_ts and the current device creation time (origin_server_ts - device_ts). This would be used to get the source of the event scroll-back/live/initialSync.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isFederated</td>                        
+                            <td>true if userDomain != senderDomain.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isMatrixDotOrg</td>                        
+                            <td>true if the current user is using matrix.org</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
                             <td>name</td>                        
                             <td></td>
                             <td>
@@ -3116,6 +3146,26 @@
                             <td>
                                                                 
                                     integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>userTrustsOwnIdentity</td>                        
+                            <td>true if the current user trusts their own identity (verified session) at time of decryption.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>wasVisibleToUser</td>                        
+                            <td>true if that unable to decrypt error was visible to the user</td>
+                            <td>
+                                                                
+                                    boolean
                                                             
                             </td>                            
                         </tr>
