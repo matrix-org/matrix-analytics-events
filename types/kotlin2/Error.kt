@@ -43,13 +43,13 @@ data class Error(
          * creation time (origin_server_ts - device_ts). This would be used to
          * get the source of the event scroll-back/live/initialSync.
          */
-        val eventLocalAge: Int? = null,
+        val eventLocalAgeMillis: Int? = null,
         /**
          * true if userDomain != senderDomain.
          */
         val isFederated: Boolean? = null,
         /**
-         * true if the current user is using Matrix.org
+         * true if the current user is using matrix.org
          */
         val isMatrixDotOrg: Boolean? = null,
         val name: Name,
@@ -171,7 +171,7 @@ data class Error(
             cryptoModule?.let { put("cryptoModule", it.name) }
             cryptoSDK?.let { put("cryptoSDK", it.name) }
             put("domain", domain.name)
-            eventLocalAge?.let { put("eventLocalAge", it) }
+            eventLocalAgeMillis?.let { put("eventLocalAgeMillis", it) }
             isFederated?.let { put("isFederated", it) }
             isMatrixDotOrg?.let { put("isMatrixDotOrg", it) }
             put("name", name.name)

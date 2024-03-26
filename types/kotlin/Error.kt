@@ -26,7 +26,7 @@ data class Error (
      * (origin_server_ts - device_ts). This would be used to get the source of the event
      * scroll-back/live/initialSync.
      */
-    val eventLocalAge: Long? = null,
+    val eventLocalAgeMillis: Long? = null,
 
     val eventName: EventName,
 
@@ -36,7 +36,7 @@ data class Error (
     val isFederated: Boolean? = null,
 
     /**
-     * true if the current user is using Matrix.org
+     * true if the current user is using matrix.org
      */
     val isMatrixDotOrg: Boolean? = null,
 

@@ -53,7 +53,7 @@
         {"const": "Rust", "description": "Shared / cross-platform crypto module written in Rust."}
       ]
     },
-    "eventLocalAge": {
+    "eventLocalAgeMillis": {
       "description": "An heuristic based on event origin_server_ts and the current device creation time (origin_server_ts - device_ts). This would be used to get the source of the event scroll-back/live/initialSync.",
       "type": "integer"
     },
@@ -62,7 +62,7 @@
       "type": "boolean"
     },
     "isMatrixDotOrg": {
-      "description": "true if the current user is using Matrix.org",
+      "description": "true if the current user is using matrix.org",
       "type": "boolean"
     },
     "isFederated": {
