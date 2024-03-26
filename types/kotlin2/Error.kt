@@ -38,6 +38,20 @@ data class Error(
          */
         val cryptoSDK: CryptoSDK? = null,
         val domain: Domain,
+        /**
+         * An heuristic based on event origin_server_ts and the current device
+         * creation time (origin_server_ts - device_ts). This would be used to
+         * get the source of the event scroll-back/live/initialSync.
+         */
+        val eventLocalAgeMillis: Int? = null,
+        /**
+         * true if userDomain != senderDomain.
+         */
+        val isFederated: Boolean? = null,
+        /**
+         * true if the current user is using matrix.org
+         */
+        val isMatrixDotOrg: Boolean? = null,
         val name: Name,
         /**
          * UTDs can be permanent or temporary. If temporary, this field will
@@ -45,6 +59,15 @@ data class Error(
          * permanent should be -1
          */
         val timeToDecryptMillis: Int? = null,
+        /**
+         * true if the current user trusts their own identity (verified session)
+         * at time of decryption.
+         */
+        val userTrustsOwnIdentity: Boolean? = null,
+        /**
+         * true if that unable to decrypt error was visible to the user
+         */
+        val wasVisibleToUser: Boolean? = null,
 ) : VectorAnalyticsEvent {
 
     enum class Domain {
@@ -148,8 +171,13 @@ data class Error(
             cryptoModule?.let { put("cryptoModule", it.name) }
             cryptoSDK?.let { put("cryptoSDK", it.name) }
             put("domain", domain.name)
+            eventLocalAgeMillis?.let { put("eventLocalAgeMillis", it) }
+            isFederated?.let { put("isFederated", it) }
+            isMatrixDotOrg?.let { put("isMatrixDotOrg", it) }
             put("name", name.name)
             timeToDecryptMillis?.let { put("timeToDecryptMillis", it) }
+            userTrustsOwnIdentity?.let { put("userTrustsOwnIdentity", it) }
+            wasVisibleToUser?.let { put("wasVisibleToUser", it) }
         }.takeIf { it.isNotEmpty() }
     }
 }
