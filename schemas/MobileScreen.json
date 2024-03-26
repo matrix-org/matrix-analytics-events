@@ -47,6 +47,7 @@
         {"const": "SettingsSecurity", "description": "The global security settings screen."},
         {"const": "SettingsDefaultNotifications", "description": "The settings screen to change the default notification options."},
         {"const": "SettingsGeneral", "description": "The settings screen with general profile settings."},
+        {"const": "NotificationTroubleshoot", "description": "The screen containing tests to help user to fix issues around notifications."},
         {"const": "SettingsNotifications", "description": "The notifications settings screen."},
         {"const": "SettingsPreferences", "description": "The preferences screen (theme, language, editor preferences, etc."},
         {"const": "SettingsVoiceVideo", "description": "The calls settings screen."},

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "description": "Triggered when the user runs the troubleshoot notification test suite.",
+  "properties": {
+    "eventName": {
+      "enum": ["NotificationTroubleshoot"]
+    },
+    "hasError": {
+      "description": "Whether one or more tests are in error.",
+      "type": "boolean"
+    }
+  },
+  "required": ["hasError", "eventName"],
+  "additionalProperties": false
+}
