@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Super Properties are properties associated with events that are set once and then sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.",
+  "description": "Super Properties are properties associated with events that are sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.",
   "properties": {
     "cryptoSDK": {
       "description": "Which crypto backend is the client currently using.",

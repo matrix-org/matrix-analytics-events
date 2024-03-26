@@ -19,7 +19,7 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Super Properties are properties associated with events that are set once and then sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.
+/// Super Properties are properties associated with events that are sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.
 extension AnalyticsEvent {
     public struct SuperProperties {
 
