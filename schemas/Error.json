@@ -15,17 +15,18 @@
     },
     "name": {
       "type": "string",
-      "enum": [
-        "UnknownError",
-        "OlmIndexError",
-        "OlmKeysNotSentError",
-        "OlmUnspecifiedError",
-        "VoipUserHangup",
-        "VoipIceFailed",
-        "VoipInviteTimeout",
-        "VoipIceTimeout",
-        "VoipUserMediaFailed",
-        "ToDeviceFailedToDecrypt"
+      "oneOf": [
+        {"const": "OlmIndexError", "description": "E2EE domain error. The room key is known but is ratcheted (index > 0)."},
+        {"const": "OlmKeysNotSentError", "description": "E2EE domain error. Generic unknown inbound group session error."},
+        {"const": "OlmUnspecifiedError", "description": "E2EE domain error. Any other decryption error (missing field, format errors...)."},
+        {"const": "UnknownError", "description": "E2EE domain error. Decryption failed due to unknown error."},
+        {"const": "HistoricalMessage", "description": "E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled."},
+        {"const": "VoipUserHangup", "description": "VOIP domain error. The user hung up the call."},
+        {"const": "VoipIceFailed", "description": "VOIP domain error. ICE negotiation failed."},
+        {"const": "VoipInviteTimeout", "description": "VOIP domain error. The call invite timed out."},
+        {"const": "VoipIceTimeout", "description": "VOIP domain error. ICE negotiation timed out."},
+        {"const": "VoipUserMediaFailed", "description": "VOIP domain error. The user's media failed to start."},
+        {"const": "ToDeviceFailedToDecrypt", "description": "TO_DEVICE domain error. The to-device message failed to decrypt."}
       ]
     },
     "context": {
@@ -51,6 +52,26 @@
         {"const": "Native", "description": "Native / legacy crypto module specific to each platform."},
         {"const": "Rust", "description": "Shared / cross-platform crypto module written in Rust."}
       ]
+    },
+    "eventLocalAgeMillis": {
+      "description": "An heuristic based on event origin_server_ts and the current device creation time (origin_server_ts - device_ts). This would be used to get the source of the event scroll-back/live/initialSync.",
+      "type": "integer"
+    },
+    "userTrustsOwnIdentity": {
+      "description": "true if the current user trusts their own identity (verified session) at time of decryption.",
+      "type": "boolean"
+    },
+    "isMatrixDotOrg": {
+      "description": "true if the current user is using matrix.org",
+      "type": "boolean"
+    },
+    "isFederated": {
+      "description": "true if userDomain != senderDomain.",
+      "type": "boolean"
+    },
+    "wasVisibleToUser": {
+      "description": "true if that unable to decrypt error was visible to the user",
+      "type": "boolean"
     }
   },
   "required": ["domain", "name", "eventName"],

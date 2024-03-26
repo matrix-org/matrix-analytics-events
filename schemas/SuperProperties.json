@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "description": "Super Properties are properties associated with events that are sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.",
+  "properties": {
+    "cryptoSDK": {
+      "description": "Which crypto backend is the client currently using.",
+      "type": "string",
+      "oneOf": [
+        {"const": "Legacy", "description": "Legacy crypto backend specific to each platform."},
+        {"const": "Rust", "description": "Cross-platform crypto backend written in Rust."}
+      ]
+    },
+    "cryptoSDKVersion": {
+      "description": "Version of the crypto backend.",
+      "type": "string"
+    },
+    "appPlatform": {
+      "description": "Used by web to identify the platform (Web Platform/Electron Platform)",
+      "type": "string"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}
