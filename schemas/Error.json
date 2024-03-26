@@ -52,6 +52,26 @@
         {"const": "Native", "description": "Native / legacy crypto module specific to each platform."},
         {"const": "Rust", "description": "Shared / cross-platform crypto module written in Rust."}
       ]
+    },
+    "eventLocalAge": {
+      "description": "An heuristic based on event origin_server_ts and the current device creation time (origin_server_ts - device_ts). This would be used to get the source of the event scroll-back/live/initialSync.",
+      "type": "integer"
+    },
+    "userTrustsOwnIdentity": {
+      "description": "true if the current user trusts their own identity (verified session) at time of decryption.",
+      "type": "boolean"
+    },
+    "isMatrixDotOrg": {
+      "description": "true if the current user is using Matrix.org",
+      "type": "boolean"
+    },
+    "isFederated": {
+      "description": "true if userDomain != senderDomain.",
+      "type": "boolean"
+    },
+    "wasVisibleToUser": {
+      "description": "true if that unable to decrypt error was visible to the user",
+      "type": "boolean"
     }
   },
   "required": ["domain", "name", "eventName"],

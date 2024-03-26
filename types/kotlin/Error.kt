@@ -20,14 +20,44 @@ data class Error (
     val cryptoSDK: String? = null,
 
     val domain: Domain,
+
+    /**
+     * An heuristic based on event origin_server_ts and the current device creation time
+     * (origin_server_ts - device_ts). This would be used to get the source of the event
+     * scroll-back/live/initialSync.
+     */
+    val eventLocalAge: Long? = null,
+
     val eventName: EventName,
+
+    /**
+     * true if userDomain != senderDomain.
+     */
+    val isFederated: Boolean? = null,
+
+    /**
+     * true if the current user is using Matrix.org
+     */
+    val isMatrixDotOrg: Boolean? = null,
+
     val name: String,
 
     /**
      * UTDs can be permanent or temporary. If temporary, this field will contain the time it
      * took to decrypt the message in milliseconds. If permanent should be -1
      */
-    val timeToDecryptMillis: Long? = null
+    val timeToDecryptMillis: Long? = null,
+
+    /**
+     * true if the current user trusts their own identity (verified session) at time of
+     * decryption.
+     */
+    val userTrustsOwnIdentity: Boolean? = null,
+
+    /**
+     * true if that unable to decrypt error was visible to the user
+     */
+    val wasVisibleToUser: Boolean? = null
 )
 
 enum class Domain {

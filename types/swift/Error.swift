@@ -31,17 +31,32 @@ extension AnalyticsEvent {
         /// Which crypto backend is the client currently using.
         public let cryptoSDK: CryptoSDK?
         public let domain: Domain
+        /// An heuristic based on event origin_server_ts and the current device creation time (origin_server_ts - device_ts). This would be used to get the source of the event scroll-back/live/initialSync.
+        public let eventLocalAge: Int?
+        /// true if userDomain != senderDomain.
+        public let isFederated: Bool?
+        /// true if the current user is using Matrix.org
+        public let isMatrixDotOrg: Bool?
         public let name: Name
         /// UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1
         public let timeToDecryptMillis: Int?
+        /// true if the current user trusts their own identity (verified session) at time of decryption.
+        public let userTrustsOwnIdentity: Bool?
+        /// true if that unable to decrypt error was visible to the user
+        public let wasVisibleToUser: Bool?
 
-        public init(context: String?, cryptoModule: CryptoModule?, cryptoSDK: CryptoSDK?, domain: Domain, name: Name, timeToDecryptMillis: Int?) {
+        public init(context: String?, cryptoModule: CryptoModule?, cryptoSDK: CryptoSDK?, domain: Domain, eventLocalAge: Int?, isFederated: Bool?, isMatrixDotOrg: Bool?, name: Name, timeToDecryptMillis: Int?, userTrustsOwnIdentity: Bool?, wasVisibleToUser: Bool?) {
             self.context = context
             self.cryptoModule = cryptoModule
             self.cryptoSDK = cryptoSDK
             self.domain = domain
+            self.eventLocalAge = eventLocalAge
+            self.isFederated = isFederated
+            self.isMatrixDotOrg = isMatrixDotOrg
             self.name = name
             self.timeToDecryptMillis = timeToDecryptMillis
+            self.userTrustsOwnIdentity = userTrustsOwnIdentity
+            self.wasVisibleToUser = wasVisibleToUser
         }
 
         public enum Domain: String {
@@ -95,8 +110,13 @@ extension AnalyticsEvent {
                 "cryptoModule": cryptoModule?.rawValue as Any,
                 "cryptoSDK": cryptoSDK?.rawValue as Any,
                 "domain": domain.rawValue,
+                "eventLocalAge": eventLocalAge as Any,
+                "isFederated": isFederated as Any,
+                "isMatrixDotOrg": isMatrixDotOrg as Any,
                 "name": name.rawValue,
-                "timeToDecryptMillis": timeToDecryptMillis as Any
+                "timeToDecryptMillis": timeToDecryptMillis as Any,
+                "userTrustsOwnIdentity": userTrustsOwnIdentity as Any,
+                "wasVisibleToUser": wasVisibleToUser as Any
             ]
         }
     }
