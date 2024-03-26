@@ -1589,6 +1589,67 @@
         </section>
     
         <section class="event">            
+            <h2>SuperProperties</h2>
+            <p>Super Properties are properties associated with events that are sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>appPlatform</td>                        
+                            <td>Used by web to identify the platform (Web Platform/Electron Platform)</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>cryptoSDK</td>                        
+                            <td>Which crypto backend is the client currently using.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Legacy:</b> Legacy crypto backend specific to each platform.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Rust:</b> Cross-platform crypto backend written in Rust.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>cryptoSDKVersion</td>                        
+                            <td>Version of the crypto backend.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>$pageview</h2>
             <p>Triggered when the user changed screen on Element Web/Desktop</p>
             <table class="event-table">
