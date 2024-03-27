@@ -23,7 +23,7 @@ import Foundation
 extension AnalyticsEvent {
     public struct SuperProperties {
 
-        /// Used by web to identify the platform (Web Platform/Electron Platform)
+        /// Used by web to identify the platform (Web Platform/Electron Platform).
         public let appPlatform: String?
         /// Which crypto backend is the client currently using.
         public let cryptoSDK: CryptoSDK?

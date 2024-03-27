@@ -35,14 +35,14 @@ extension AnalyticsEvent {
         public let eventLocalAgeMillis: Int?
         /// true if userDomain != senderDomain.
         public let isFederated: Bool?
-        /// true if the current user is using matrix.org
+        /// true if the current user is using matrix.org.
         public let isMatrixDotOrg: Bool?
         public let name: Name
-        /// UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1
+        /// UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1.
         public let timeToDecryptMillis: Int?
         /// true if the current user trusts their own identity (verified session) at time of decryption.
         public let userTrustsOwnIdentity: Bool?
-        /// true if that unable to decrypt error was visible to the user
+        /// true if that unable to decrypt error was visible to the user.
         public let wasVisibleToUser: Bool?
 
         public init(context: String?, cryptoModule: CryptoModule?, cryptoSDK: CryptoSDK?, domain: Domain, eventLocalAgeMillis: Int?, isFederated: Bool?, isMatrixDotOrg: Bool?, name: Name, timeToDecryptMillis: Int?, userTrustsOwnIdentity: Bool?, wasVisibleToUser: Bool?) {
