@@ -16,7 +16,6 @@
 
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.8.20"
-    id 'java-library'
     id 'maven-publish'
 }
 
@@ -24,16 +23,9 @@ repositories {
     mavenCentral()
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
-    }
-}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            from components.java
             groupId = 'im.vector.app.features.analytics.plan'
             artifactId = 'analytics-events'
             version = '0.5.0'

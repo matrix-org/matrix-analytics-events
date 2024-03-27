@@ -1,0 +1,15 @@
+# Default rules: https://github.com/detekt/detekt/blob/main/detekt-core/src/main/resources/default-detekt-config.yml
+
+style:
+  DataClassContainsFunctions:
+    active: false
+
+comments:
+  EndOfSentenceFormat:
+    active: true
+  UndocumentedPublicClass:
+    active: false
+  UndocumentedPublicFunction:
+    active: false
+  UndocumentedPublicProperty:
+    active: false

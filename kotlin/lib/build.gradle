@@ -16,8 +16,14 @@
 
 plugins {
     id 'kotlin'
+    id "io.gitlab.arturbosch.detekt" version "1.22.0"
 }
 
 repositories {
     mavenCentral()
+}
+
+detekt {
+    allRules = true
+    config = files("../detekt.yml")
 }
