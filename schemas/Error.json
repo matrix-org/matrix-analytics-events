@@ -34,7 +34,7 @@
       "type": "string"
     },
     "timeToDecryptMillis": {
-      "description": "UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1",
+      "description": "UTDs can be permanent or temporary. If temporary, this field will contain the time it took to decrypt the message in milliseconds. If permanent should be -1.",
       "type": "integer"
     },
     "cryptoSDK": {
@@ -62,7 +62,7 @@
       "type": "boolean"
     },
     "isMatrixDotOrg": {
-      "description": "true if the current user is using matrix.org",
+      "description": "true if the current user is using matrix.org.",
       "type": "boolean"
     },
     "isFederated": {
@@ -70,7 +70,7 @@
       "type": "boolean"
     },
     "wasVisibleToUser": {
-      "description": "true if that unable to decrypt error was visible to the user",
+      "description": "true if that unable to decrypt error was visible to the user.",
       "type": "boolean"
     }
   },

@@ -9,8 +9,8 @@
       "description": "Whether this poll has been created or edited.",
       "type": "string",
       "oneOf": [
-        {"const": "Create", "description": "Newly created poll"},
-        {"const": "Edit", "description": "Edit of an existing poll"}
+        {"const": "Create", "description": "Newly created poll."},
+        {"const": "Edit", "description": "Edit of an existing poll."}
       ]
     },
     "isUndisclosed": {

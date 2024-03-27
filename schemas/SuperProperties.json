@@ -15,7 +15,7 @@
       "type": "string"
     },
     "appPlatform": {
-      "description": "Used by web to identify the platform (Web Platform/Electron Platform)",
+      "description": "Used by web to identify the platform (Web Platform/Electron Platform).",
       "type": "string"
     }
   },
