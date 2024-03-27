@@ -24,6 +24,15 @@ repositories {
     mavenCentral()
 }
 
+// Need to add this for the classes to be included in the jar
+sourceSets {
+    main {
+        java {
+            srcDirs("lib/src/main/java")
+        }
+    }
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
