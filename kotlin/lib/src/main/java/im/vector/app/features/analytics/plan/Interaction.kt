@@ -450,6 +450,12 @@ data class Interaction(
         WebThreadsActivityCentreRoomItem,
 
         /**
+         * User clicked on the button to mark all threads in a room as read in
+         * Element Web/Desktop.
+         */
+        WebThreadsMarkAllReadButton,
+
+        /**
          * User selected a thread in the Threads panel in Element Web/Desktop.
          */
         WebThreadsPanelThreadItem,
