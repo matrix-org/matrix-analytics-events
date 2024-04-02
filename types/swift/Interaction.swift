@@ -180,6 +180,8 @@ extension AnalyticsEvent {
             case WebThreadsActivityCentreButton
             /// User clicked on a room in the Threads Activity Centre of Element Web/Desktop.
             case WebThreadsActivityCentreRoomItem
+            /// User clicked on the button to mark all threads in a room as read in Element Web/Desktop.
+            case WebThreadsMarkAllReadButton
             /// User selected a thread in the Threads panel in Element Web/Desktop.
             case WebThreadsPanelThreadItem
             /// User clicked the theme toggle button in the user menu of Element Web/Desktop.
