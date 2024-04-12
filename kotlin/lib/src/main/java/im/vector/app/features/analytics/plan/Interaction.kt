@@ -402,6 +402,17 @@ data class Interaction(
         WebSettingsAppearanceTabThemeSelector,
 
         /**
+         * User toggled the 'Notifications.showbold' in Element Web/Desktop.
+         */
+        WebSettingsNotificationsShowBoldToggle,
+
+        /**
+         * User toggled the 'Notifications.tac_only_notifications' in Element
+         * Web/Desktop.
+         */
+        WebSettingsNotificationsTACOnlyNotificationsToggle,
+
+        /**
          * User interacted with the pre-built space checkboxes in the Sidebar
          * tab of Settings in Element Web/Desktop.
          */

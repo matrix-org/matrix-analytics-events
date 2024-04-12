@@ -11,6 +11,8 @@
       "oneOf": [
         {"const": "WebRoomListRoomTileContextMenuFavouriteToggle", "description": "User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuFavouriteToggle", "description": "User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop." },
+        {"const": "WebSettingsNotificationsShowBoldToggle", "description": "User toggled the 'Notifications.showbold' in Element Web/Desktop." },
+        {"const": "WebSettingsNotificationsTACOnlyNotificationsToggle", "description": "User toggled the 'Notifications.tac_only_notifications' in Element Web/Desktop." },
         {"const": "WebRoomListRoomTileNotificationsMenu", "description": "User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuNotificationsItem", "description": "User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop." },
         {"const": "WebRoomHeaderContextMenuPeopleItem", "description": "User accessed room member list using the context menu on the header of a room in Element Web/Desktop." },
