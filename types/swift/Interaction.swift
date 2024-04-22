@@ -164,6 +164,10 @@ extension AnalyticsEvent {
             case WebRoomTimelineThreadSummaryButton
             /// User interacted with the theme radio selector in the Appearance tab of Settings in Element Web/Desktop.
             case WebSettingsAppearanceTabThemeSelector
+            /// User toggled the 'Notifications.showbold' in Element Web/Desktop.
+            case WebSettingsNotificationsShowBoldToggle
+            /// User toggled the 'Notifications.tac_only_notifications' in Element Web/Desktop.
+            case WebSettingsNotificationsTACOnlyNotificationsToggle
             /// User interacted with the pre-built space checkboxes in the Sidebar tab of Settings in Element Web/Desktop.
             case WebSettingsSidebarTabSpacesCheckbox
             /// User clicked the explore rooms button in the context menu of a space in Element Web/Desktop.
