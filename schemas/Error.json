@@ -21,6 +21,7 @@
         {"const": "OlmUnspecifiedError", "description": "E2EE domain error. Any other decryption error (missing field, format errors...)."},
         {"const": "UnknownError", "description": "E2EE domain error. Decryption failed due to unknown error."},
         {"const": "HistoricalMessage", "description": "E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled."},
+        {"const": "ExpectedDueToMembership", "description": "E2EE domain error. Decryption failed for a message sent before you were in the room (shared history visibility)."},
         {"const": "VoipUserHangup", "description": "VOIP domain error. The user hung up the call."},
         {"const": "VoipIceFailed", "description": "VOIP domain error. ICE negotiation failed."},
         {"const": "VoipInviteTimeout", "description": "VOIP domain error. The call invite timed out."},
