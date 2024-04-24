@@ -79,6 +79,13 @@ data class Error(
     enum class Name {
 
         /**
+         * E2EE domain error. Decryption failed for a message sent before you
+         * were in the room (shared history visibility and support for sharing
+         * past keys is not available/supported).
+         */
+        ExpectedDueToMembership,
+
+        /**
          * E2EE domain error. Decryption failed for a message sent before the
          * device logged in, and key backup is not enabled.
          */
