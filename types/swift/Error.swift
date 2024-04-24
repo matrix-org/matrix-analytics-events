@@ -66,7 +66,7 @@ extension AnalyticsEvent {
         }
 
         public enum Name: String {
-            /// E2EE domain error. Decryption failed for a message sent before you were in the room (shared history visibility).
+            /// E2EE domain error. Decryption failed for a message sent before you were in the room (shared history visibility and support for sharing past keys is not available/supported).
             case ExpectedDueToMembership
             /// E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled.
             case HistoricalMessage

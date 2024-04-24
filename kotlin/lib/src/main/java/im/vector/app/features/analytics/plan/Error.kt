@@ -80,7 +80,8 @@ data class Error(
 
         /**
          * E2EE domain error. Decryption failed for a message sent before you
-         * were in the room (shared history visibility).
+         * were in the room (shared history visibility and support for sharing
+         * past keys is not available/supported).
          */
         ExpectedDueToMembership,
 
