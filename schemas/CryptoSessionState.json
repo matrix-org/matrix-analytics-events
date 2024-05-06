@@ -8,7 +8,6 @@
     "verificationState": {
       "type": "string",
       "oneOf": [
-        {"const": "Unknown", "description": "The state is unknown for now."},
         {"const": "Verified", "description": "The device is considered to be verified, it has been signed by its user identity."},
         {"const": "NotVerified", "description": "The device is unverified."}
       ]
@@ -16,7 +15,6 @@
     "recoveryState": {
       "type": "string",
       "oneOf": [
-        {"const": "Unknown", "description": "The state is unknown for now."},
         {"const": "Enabled", "description": "Secret storage is set up and we have all the secrets locally."},
         {"const": "Disabled", "description": "No default secret storage key exists or it is disabled explicitly using the account data event."},
         {"const": "Incomplete", "description": "Secret storage is set up but we're missing some secrets."}

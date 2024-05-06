@@ -40,6 +40,8 @@ data class UserProperties(
          * Number of spaces (and sub-spaces) the user is joined to.
          */
         val numSpaces: Int? = null,
+        val recoveryState: RecoveryState? = null,
+        val verificationState: VerificationState? = null,
 ) {
 
     enum class FtueUseCaseSelection {
@@ -87,12 +89,47 @@ data class UserProperties(
         Unreads,
     }
 
+    enum class VerificationState {
+
+        /**
+         * The device is unverified.
+         */
+        NotVerified,
+
+        /**
+         * The device is considered to be verified, it has been signed by its
+         * user identity.
+         */
+        Verified,
+    }
+
+    enum class RecoveryState {
+
+        /**
+         * No default secret storage key exists or it is disabled explicitly
+         * using the account data event.
+         */
+        Disabled,
+
+        /**
+         * Secret storage is set up and we have all the secrets locally.
+         */
+        Enabled,
+
+        /**
+         * Secret storage is set up but we're missing some secrets.
+         */
+        Incomplete,
+    }
+
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             allChatsActiveFilter?.let { put("allChatsActiveFilter", it.name) }
             ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.name) }
             numFavouriteRooms?.let { put("numFavouriteRooms", it) }
             numSpaces?.let { put("numSpaces", it) }
+            recoveryState?.let { put("recoveryState", it.name) }
+            verificationState?.let { put("verificationState", it.name) }
         }.takeIf { it.isNotEmpty() }
     }
 }

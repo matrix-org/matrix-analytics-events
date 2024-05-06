@@ -35,8 +35,6 @@ extension AnalyticsEvent {
         public enum VerificationState: String {
             /// The device is unverified.
             case NotVerified
-            /// The state is unknown for now.
-            case Unknown
             /// The device is considered to be verified, it has been signed by its user identity.
             case Verified
         }
@@ -48,8 +46,6 @@ extension AnalyticsEvent {
             case Enabled
             /// Secret storage is set up but we're missing some secrets.
             case Incomplete
-            /// The state is unknown for now.
-            case Unknown
         }
 
         public var properties: [String: Any] {

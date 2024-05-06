@@ -37,11 +37,6 @@ data class CryptoSessionState(
         NotVerified,
 
         /**
-         * The state is unknown for now.
-         */
-        Unknown,
-
-        /**
          * The device is considered to be verified, it has been signed by its
          * user identity.
          */
@@ -65,11 +60,6 @@ data class CryptoSessionState(
          * Secret storage is set up but we're missing some secrets.
          */
         Incomplete,
-
-        /**
-         * The state is unknown for now.
-         */
-        Unknown,
     }
 
     override fun getName() = "CryptoSessionState"
