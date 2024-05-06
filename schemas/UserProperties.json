@@ -59,6 +59,23 @@
           {"const": "Group", "description": "Modern layout."},
           {"const": "Compact", "description": "Modern layout with compact option enabled."}
         ]
+      },
+      "verificationState": {
+        "description": "Describe the current session verification state, that is if the session is verified or not.",
+        "type": "string",
+        "oneOf": [
+          {"const": "Verified", "description": "The device is considered to be verified, it has been signed by its user identity."},
+          {"const": "NotVerified", "description": "The device is unverified."}
+        ]
+      },
+      "recoveryState": {
+        "description": "Describe the current session recovery state, that if 4S is setup, complete (all secrets cached) or not.",
+        "type": "string",
+        "oneOf": [
+          {"const": "Enabled", "description": "Secret storage is set up and we have all the secrets locally."},
+          {"const": "Disabled", "description": "No default secret storage key exists or it is disabled explicitly using the account data event."},
+          {"const": "Incomplete", "description": "Secret storage is set up but we're missing some secrets."}
+        ]
       }
     },
     "required": [],

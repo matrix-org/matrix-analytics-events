@@ -31,12 +31,18 @@ extension AnalyticsEvent {
         public let numFavouriteRooms: Int?
         /// Number of spaces (and sub-spaces) the user is joined to.
         public let numSpaces: Int?
+        /// Describe the current session recovery state, that if 4S is setup, complete (all secrets cached) or not.
+        public let recoveryState: RecoveryState?
+        /// Describe the current session verification state, that is if the session is verified or not.
+        public let verificationState: VerificationState?
 
-        public init(allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?) {
+        public init(allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?, recoveryState: RecoveryState?, verificationState: VerificationState?) {
             self.allChatsActiveFilter = allChatsActiveFilter
             self.ftueUseCaseSelection = ftueUseCaseSelection
             self.numFavouriteRooms = numFavouriteRooms
             self.numSpaces = numSpaces
+            self.recoveryState = recoveryState
+            self.verificationState = verificationState
         }
 
         public enum FtueUseCaseSelection: String {
@@ -61,12 +67,30 @@ extension AnalyticsEvent {
             case Unreads
         }
 
+        public enum VerificationState: String {
+            /// The device is unverified.
+            case NotVerified
+            /// The device is considered to be verified, it has been signed by its user identity.
+            case Verified
+        }
+
+        public enum RecoveryState: String {
+            /// No default secret storage key exists or it is disabled explicitly using the account data event.
+            case Disabled
+            /// Secret storage is set up and we have all the secrets locally.
+            case Enabled
+            /// Secret storage is set up but we're missing some secrets.
+            case Incomplete
+        }
+
         public var properties: [String: Any?] {
             return [
                 "allChatsActiveFilter": allChatsActiveFilter?.rawValue,
                 "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue,
                 "numFavouriteRooms": numFavouriteRooms,
-                "numSpaces": numSpaces
+                "numSpaces": numSpaces,
+                "recoveryState": recoveryState?.rawValue,
+                "verificationState": verificationState?.rawValue
             ]
         }
     }
