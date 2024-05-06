@@ -1158,6 +1158,77 @@
         </section>
     
         <section class="event">            
+            <h2>CryptoSessionState</h2>
+            <p>Describe the current session crypto state, that is if the session is verified or not, if recovery is correctly setup.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>recoveryState</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Enabled:</b> Secret storage is set up and we have all the secrets locally.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Disabled:</b> No default secret storage key exists or it is disabled explicitly using the account data event.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Incomplete:</b> Secret storage is set up but we&#39;re missing some secrets.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>verificationState</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Verified:</b> The device is considered to be verified, it has been signed by its user identity.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotVerified:</b> The device is unverified.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>PollEnd</h2>
             <p>Triggered when a poll has been ended.</p>
             <table class="event-table">
@@ -2385,6 +2456,60 @@
                             <td>
                                                                 
                                     integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>recoveryState</td>                        
+                            <td>Describe the current session recovery state, that if 4S is setup, complete (all secrets cached) or not.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Enabled:</b> Secret storage is set up and we have all the secrets locally.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Disabled:</b> No default secret storage key exists or it is disabled explicitly using the account data event.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Incomplete:</b> Secret storage is set up but we&#39;re missing some secrets.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>verificationState</td>                        
+                            <td>Describe the current session verification state, that is if the session is verified or not.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Verified:</b> The device is considered to be verified, it has been signed by its user identity.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotVerified:</b> The device is unverified.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
