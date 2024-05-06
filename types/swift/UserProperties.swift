@@ -31,7 +31,9 @@ extension AnalyticsEvent {
         public let numFavouriteRooms: Int?
         /// Number of spaces (and sub-spaces) the user is joined to.
         public let numSpaces: Int?
+        /// Describe the current session recovery state, that if 4S is setup, complete (all secrets cached) or not.
         public let recoveryState: RecoveryState?
+        /// Describe the current session verification state, that is if the session is verified or not.
         public let verificationState: VerificationState?
 
         public init(allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?, recoveryState: RecoveryState?, verificationState: VerificationState?) {

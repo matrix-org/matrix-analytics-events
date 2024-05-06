@@ -21,7 +21,7 @@ import Foundation
 
 /// Describe the current session crypto state, that is if the session is verified or not, if recovery is correctly setup.
 extension AnalyticsEvent {
-    public struct CryptoSessionState: AnalyticsEventProtocol {
+    public struct CryptoSessionStateChange: AnalyticsEventProtocol {
         public let eventName = "CryptoSessionState"
 
         public let recoveryState: RecoveryState

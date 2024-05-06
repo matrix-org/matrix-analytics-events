@@ -40,7 +40,15 @@ data class UserProperties(
          * Number of spaces (and sub-spaces) the user is joined to.
          */
         val numSpaces: Int? = null,
+        /**
+         * Describe the current session recovery state, that if 4S is setup,
+         * complete (all secrets cached) or not.
+         */
         val recoveryState: RecoveryState? = null,
+        /**
+         * Describe the current session verification state, that is if the
+         * session is verified or not.
+         */
         val verificationState: VerificationState? = null,
 ) {
 

@@ -25,7 +25,7 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
  * Describe the current session crypto state, that is if the session is verified
  * or not, if recovery is correctly setup.
  */
-data class CryptoSessionState(
+data class CryptoSessionStateChange(
         val recoveryState: RecoveryState,
         val verificationState: VerificationState,
 ) : VectorAnalyticsEvent {

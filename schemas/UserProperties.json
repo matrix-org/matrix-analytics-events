@@ -61,6 +61,7 @@
         ]
       },
       "verificationState": {
+        "description": "Describe the current session verification state, that is if the session is verified or not.",
         "type": "string",
         "oneOf": [
           {"const": "Verified", "description": "The device is considered to be verified, it has been signed by its user identity."},
@@ -68,6 +69,7 @@
         ]
       },
       "recoveryState": {
+        "description": "Describe the current session recovery state, that if 4S is setup, complete (all secrets cached) or not.",
         "type": "string",
         "oneOf": [
           {"const": "Enabled", "description": "Secret storage is set up and we have all the secrets locally."},
