@@ -29,11 +29,14 @@ extension AnalyticsEvent {
         public let cryptoSDK: CryptoSDK?
         /// Version of the crypto backend.
         public let cryptoSDKVersion: String?
+        /// Used as a discriminant to breakdown usage per client.
+        public let platformCodeName: PlatformCodeName?
 
-        public init(appPlatform: String?, cryptoSDK: CryptoSDK?, cryptoSDKVersion: String?) {
+        public init(appPlatform: String?, cryptoSDK: CryptoSDK?, cryptoSDKVersion: String?, platformCodeName: PlatformCodeName?) {
             self.appPlatform = appPlatform
             self.cryptoSDK = cryptoSDK
             self.cryptoSDKVersion = cryptoSDKVersion
+            self.platformCodeName = platformCodeName
         }
 
         public enum CryptoSDK: String {
@@ -43,11 +46,29 @@ extension AnalyticsEvent {
             case Rust
         }
 
+        public enum PlatformCodeName: String {
+            /// Element Desktop platform code.
+            case Desktop
+            /// Element Android platform code.
+            case EA
+            /// Element iOS platform code.
+            case EI
+            /// Element-X Android platform code.
+            case EXA
+            /// Element-X iOS platform code.
+            case EXI
+            /// Other Platform code.
+            case Other
+            /// Element Web platform code.
+            case Web
+        }
+
         public var properties: [String: Any?] {
             return [
                 "appPlatform": appPlatform,
                 "cryptoSDK": cryptoSDK?.rawValue,
-                "cryptoSDKVersion": cryptoSDKVersion
+                "cryptoSDKVersion": cryptoSDKVersion,
+                "platformCodeName": platformCodeName?.rawValue
             ]
         }
     }
