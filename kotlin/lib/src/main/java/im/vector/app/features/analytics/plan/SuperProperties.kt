@@ -38,6 +38,10 @@ data class SuperProperties(
          * Version of the crypto backend.
          */
         val cryptoSDKVersion: String? = null,
+        /**
+         * Used as a discriminant to breakdown usage per client.
+         */
+        val platformCodeName: PlatformCodeName? = null,
 ) {
 
     enum class CryptoSDK {
@@ -52,11 +56,50 @@ data class SuperProperties(
         Rust,
     }
 
+    enum class PlatformCodeName {
+
+        /**
+         * Element Desktop platform code.
+         */
+        Desktop,
+
+        /**
+         * Element Android platform code.
+         */
+        EA,
+
+        /**
+         * Element iOS platform code.
+         */
+        EI,
+
+        /**
+         * Element-X Android platform code.
+         */
+        EXA,
+
+        /**
+         * Element-X iOS platform code.
+         */
+        EXI,
+
+        /**
+         * Other Platform code.
+         */
+        Other,
+
+        /**
+         * Element Web platform code.
+         */
+        Web,
+    }
+
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             appPlatform?.let { put("appPlatform", it) }
             cryptoSDK?.let { put("cryptoSDK", it.name) }
             cryptoSDKVersion?.let { put("cryptoSDKVersion", it) }
+            platformCodeName?.let { put("platformCodeName", it.name) }
         }.takeIf { it.isNotEmpty() }
     }
 }
