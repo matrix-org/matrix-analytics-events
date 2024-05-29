@@ -15,21 +15,16 @@
       "type": "string"
     },
     "appPlatform": {
-      "description": "Used by web to identify the platform (Web Platform/Electron Platform).",
-      "type": "string"
-    },
-
-    "platformCodeName": {
       "description": "Used as a discriminant to breakdown usage per client.",
       "type": "string",
       "oneOf": [
-        {"const": "Web", "description": "Element Web platform code."},
-        {"const": "Desktop", "description": "Element Desktop platform code."},
-        {"const": "EI", "description": "Element iOS platform code."},
-        {"const": "EXI", "description": "Element-X iOS platform code."},
-        {"const": "EA", "description": "Element Android platform code."},
-        {"const": "EXA", "description": "Element-X Android platform code."},
-        {"const": "Other", "description": "Other Platform code."}
+        {"const": "Web Platform", "description": "Element Web platform."},
+        {"const": "Electron Platform", "description": "Element Desktop platform."},
+        {"const": "EI", "description": "Element iOS platform."},
+        {"const": "EXI", "description": "Element-X iOS platform."},
+        {"const": "EA", "description": "Element Android platform."},
+        {"const": "EXA", "description": "Element-X Android platform."},
+        {"const": "Other", "description": "Other Platform."}
       ]
     }
   },
