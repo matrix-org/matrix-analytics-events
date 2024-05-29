@@ -86,6 +86,16 @@ data class Interaction(
         MobileRoomAddHome("MobileRoomAddHome"),
 
         /**
+         * The user tapped the room's call button.
+         */
+        MobileRoomCallButton("MobileRoomCallButton"),
+
+        /**
+         * The user enabled the formatting options on the message composer.
+         */
+        MobileRoomComposerFormattingEnabled("MobileRoomComposerFormattingEnabled"),
+
+        /**
          * User switched the favourite toggle on Room Details screen.
          */
         MobileRoomFavouriteToggle("MobileRoomFavouriteToggle"),
