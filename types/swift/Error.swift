@@ -60,50 +60,50 @@ extension AnalyticsEvent {
         }
 
         public enum Domain: String {
-            case E2EE
-            case TO_DEVICE
-            case VOIP
+            case E2EE = "E2EE"
+            case TO_DEVICE = "TO_DEVICE"
+            case VOIP = "VOIP"
         }
 
         public enum Name: String {
             /// E2EE domain error. Decryption failed for a message sent before you were in the room (shared history visibility and support for sharing past keys is not available/supported).
-            case ExpectedDueToMembership
+            case ExpectedDueToMembership = "ExpectedDueToMembership"
             /// E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled.
-            case HistoricalMessage
+            case HistoricalMessage = "HistoricalMessage"
             /// E2EE domain error. The room key is known but is ratcheted (index > 0).
-            case OlmIndexError
+            case OlmIndexError = "OlmIndexError"
             /// E2EE domain error. Generic unknown inbound group session error.
-            case OlmKeysNotSentError
+            case OlmKeysNotSentError = "OlmKeysNotSentError"
             /// E2EE domain error. Any other decryption error (missing field, format errors...).
-            case OlmUnspecifiedError
+            case OlmUnspecifiedError = "OlmUnspecifiedError"
             /// TO_DEVICE domain error. The to-device message failed to decrypt.
-            case ToDeviceFailedToDecrypt
+            case ToDeviceFailedToDecrypt = "ToDeviceFailedToDecrypt"
             /// E2EE domain error. Decryption failed due to unknown error.
-            case UnknownError
+            case UnknownError = "UnknownError"
             /// VOIP domain error. ICE negotiation failed.
-            case VoipIceFailed
+            case VoipIceFailed = "VoipIceFailed"
             /// VOIP domain error. ICE negotiation timed out.
-            case VoipIceTimeout
+            case VoipIceTimeout = "VoipIceTimeout"
             /// VOIP domain error. The call invite timed out.
-            case VoipInviteTimeout
+            case VoipInviteTimeout = "VoipInviteTimeout"
             /// VOIP domain error. The user hung up the call.
-            case VoipUserHangup
+            case VoipUserHangup = "VoipUserHangup"
             /// VOIP domain error. The user's media failed to start.
-            case VoipUserMediaFailed
+            case VoipUserMediaFailed = "VoipUserMediaFailed"
         }
 
         public enum CryptoSDK: String {
             /// Legacy crypto backend specific to each platform.
-            case Legacy
+            case Legacy = "Legacy"
             /// Cross-platform crypto backend written in Rust.
-            case Rust
+            case Rust = "Rust"
         }
 
         public enum CryptoModule: String {
             /// Native / legacy crypto module specific to each platform.
-            case Native
+            case Native = "Native"
             /// Shared / cross-platform crypto module written in Rust.
-            case Rust
+            case Rust = "Rust"
         }
 
         public var properties: [String: Any] {

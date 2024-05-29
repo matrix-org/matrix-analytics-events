@@ -43,55 +43,55 @@ data class JoinedRoom(
         val trigger: Trigger? = null,
 ) : VectorAnalyticsEvent {
 
-    enum class Trigger {
+    enum class Trigger(val rawValue: String) {
         /**
          * Room joined via an invite.
          */
-        Invite,
+        Invite("Invite"),
 
         /**
          * Room joined via link.
          */
-        MobilePermalink,
+        MobilePermalink("MobilePermalink"),
 
         /**
          * Room joined via a push/desktop notification.
          */
-        Notification,
+        Notification("Notification"),
 
         /**
          * Room joined via the public rooms directory.
          */
-        RoomDirectory,
+        RoomDirectory("RoomDirectory"),
 
         /**
          * Room joined via its preview.
          */
-        RoomPreview,
+        RoomPreview("RoomPreview"),
 
         /**
          * Room joined via the /join slash command.
          */
-        SlashCommand,
+        SlashCommand("SlashCommand"),
 
         /**
          * Room joined via the space hierarchy view.
          */
-        SpaceHierarchy,
+        SpaceHierarchy("SpaceHierarchy"),
 
         /**
          * Room joined via a timeline pill or link in another room.
          */
-        Timeline,
+        Timeline("Timeline"),
     }
 
-    enum class RoomSize {
-        ElevenToOneHundred,
-        MoreThanAThousand,
-        One,
-        OneHundredAndOneToAThousand,
-        ThreeToTen,
-        Two,
+    enum class RoomSize(val rawValue: String) {
+        ElevenToOneHundred("ElevenToOneHundred"),
+        MoreThanAThousand("MoreThanAThousand"),
+        One("One"),
+        OneHundredAndOneToAThousand("OneHundredAndOneToAThousand"),
+        ThreeToTen("ThreeToTen"),
+        Two("Two"),
     }
 
     override fun getName() = "JoinedRoom"
@@ -100,8 +100,8 @@ data class JoinedRoom(
         return mutableMapOf<String, Any>().apply {
             put("isDM", isDM)
             put("isSpace", isSpace)
-            put("roomSize", roomSize.name)
-            trigger?.let { put("trigger", it.name) }
+            put("roomSize", roomSize.rawValue)
+            trigger?.let { put("trigger", it.rawValue) }
         }.takeIf { it.isNotEmpty() }
     }
 }

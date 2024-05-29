@@ -35,11 +35,11 @@ data class PermissionChanged(
         val permission: Permission,
 ) : VectorAnalyticsEvent {
 
-    enum class Permission {
+    enum class Permission(val rawValue: String) {
         /**
          * Permissions related to sending notifications have changed.
          */
-        Notification,
+        Notification("Notification"),
     }
 
     override fun getName() = "PermissionChanged"
@@ -47,7 +47,7 @@ data class PermissionChanged(
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             put("granted", granted)
-            put("permission", permission.name)
+            put("permission", permission.rawValue)
         }.takeIf { it.isNotEmpty() }
     }
 }

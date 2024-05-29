@@ -30,44 +30,44 @@ data class CryptoSessionStateChange(
         val verificationState: VerificationState,
 ) : VectorAnalyticsEvent {
 
-    enum class VerificationState {
+    enum class VerificationState(val rawValue: String) {
         /**
          * The device is unverified.
          */
-        NotVerified,
+        NotVerified("NotVerified"),
 
         /**
          * The device is considered to be verified, it has been signed by its
          * user identity.
          */
-        Verified,
+        Verified("Verified"),
     }
 
-    enum class RecoveryState {
+    enum class RecoveryState(val rawValue: String) {
 
         /**
          * No default secret storage key exists or it is disabled explicitly
          * using the account data event.
          */
-        Disabled,
+        Disabled("Disabled"),
 
         /**
          * Secret storage is set up and we have all the secrets locally.
          */
-        Enabled,
+        Enabled("Enabled"),
 
         /**
          * Secret storage is set up but we're missing some secrets.
          */
-        Incomplete,
+        Incomplete("Incomplete"),
     }
 
     override fun getName() = "CryptoSessionState"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("recoveryState", recoveryState.name)
-            put("verificationState", verificationState.name)
+            put("recoveryState", recoveryState.rawValue)
+            put("verificationState", verificationState.rawValue)
         }.takeIf { it.isNotEmpty() }
     }
 }

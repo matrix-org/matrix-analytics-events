@@ -36,7 +36,7 @@ extension AnalyticsEvent {
 
         public enum Permission: String {
             /// Permissions related to sending notifications have changed.
-            case Notification
+            case Notification = "Notification"
         }
 
         public var properties: [String: Any] {

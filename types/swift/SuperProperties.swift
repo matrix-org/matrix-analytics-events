@@ -41,26 +41,26 @@ extension AnalyticsEvent {
 
         public enum CryptoSDK: String {
             /// Legacy crypto backend specific to each platform.
-            case Legacy
+            case Legacy = "Legacy"
             /// Cross-platform crypto backend written in Rust.
-            case Rust
+            case Rust = "Rust"
         }
 
         public enum PlatformCodeName: String {
             /// Element Desktop platform code.
-            case Desktop
+            case Desktop = "Desktop"
             /// Element Android platform code.
-            case EA
+            case EA = "EA"
             /// Element iOS platform code.
-            case EI
+            case EI = "EI"
             /// Element-X Android platform code.
-            case EXA
+            case EXA = "EXA"
             /// Element-X iOS platform code.
-            case EXI
+            case EXI = "EXI"
             /// Other Platform code.
-            case Other
+            case Other = "Other"
             /// Element Web platform code.
-            case Web
+            case Web = "Web"
         }
 
         public var properties: [String: Any?] {

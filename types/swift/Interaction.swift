@@ -39,173 +39,173 @@ extension AnalyticsEvent {
 
         public enum Name: String {
             /// User tapped the All filter in the All Chats filter tab.
-            case MobileAllChatsFilterAll
+            case MobileAllChatsFilterAll = "MobileAllChatsFilterAll"
             /// User tapped the Favourites filter in the All Chats filter tab.
-            case MobileAllChatsFilterFavourites
+            case MobileAllChatsFilterFavourites = "MobileAllChatsFilterFavourites"
             /// User tapped the People filter in the All Chats filter tab.
-            case MobileAllChatsFilterPeople
+            case MobileAllChatsFilterPeople = "MobileAllChatsFilterPeople"
             /// User tapped the Unreads filter in the All Chats filter tab.
-            case MobileAllChatsFilterUnreads
+            case MobileAllChatsFilterUnreads = "MobileAllChatsFilterUnreads"
             /// User disabled filters from the all chats layout settings.
-            case MobileAllChatsFiltersDisabled
+            case MobileAllChatsFiltersDisabled = "MobileAllChatsFiltersDisabled"
             /// User enabled filters from the all chats layout settings.
-            case MobileAllChatsFiltersEnabled
+            case MobileAllChatsFiltersEnabled = "MobileAllChatsFiltersEnabled"
             /// User disabled recents from the all chats layout settings.
-            case MobileAllChatsRecentsDisabled
+            case MobileAllChatsRecentsDisabled = "MobileAllChatsRecentsDisabled"
             /// User enabled recents from the all chats layout settings.
-            case MobileAllChatsRecentsEnabled
+            case MobileAllChatsRecentsEnabled = "MobileAllChatsRecentsEnabled"
             /// User tapped on Add to Home button on Room Details screen.
-            case MobileRoomAddHome
+            case MobileRoomAddHome = "MobileRoomAddHome"
             /// User switched the favourite toggle on Room Details screen.
-            case MobileRoomFavouriteToggle
+            case MobileRoomFavouriteToggle = "MobileRoomFavouriteToggle"
             /// User tapped on Leave Room button on Room Details screen.
-            case MobileRoomLeave
+            case MobileRoomLeave = "MobileRoomLeave"
             /// User adjusted their favourite rooms using the context menu on a room in the room list.
-            case MobileRoomListRoomContextMenuFavouriteToggle
+            case MobileRoomListRoomContextMenuFavouriteToggle = "MobileRoomListRoomContextMenuFavouriteToggle"
             /// User adjusted their unread rooms using the context menu on a room in the room list.
-            case MobileRoomListRoomContextMenuUnreadToggle
+            case MobileRoomListRoomContextMenuUnreadToggle = "MobileRoomListRoomContextMenuUnreadToggle"
             /// User tapped on Threads button on Room screen.
-            case MobileRoomThreadListButton
+            case MobileRoomThreadListButton = "MobileRoomThreadListButton"
             /// User tapped on a thread summary item on Room screen.
-            case MobileRoomThreadSummaryItem
+            case MobileRoomThreadSummaryItem = "MobileRoomThreadSummaryItem"
             /// User validated the creation of a new space.
-            case MobileSpaceCreationValidated
+            case MobileSpaceCreationValidated = "MobileSpaceCreationValidated"
             /// User tapped on the filter button on ThreadList screen.
-            case MobileThreadListFilterItem
+            case MobileThreadListFilterItem = "MobileThreadListFilterItem"
             /// User selected a thread on ThreadList screen.
-            case MobileThreadListThreadItem
+            case MobileThreadListThreadItem = "MobileThreadListThreadItem"
             /// User tapped the already selected space from the space list.
-            case SpacePanelSelectedSpace
+            case SpacePanelSelectedSpace = "SpacePanelSelectedSpace"
             /// User tapped an unselected space from the space list -> space switching should occur.
-            case SpacePanelSwitchSpace
+            case SpacePanelSwitchSpace = "SpacePanelSwitchSpace"
             /// User tapped an unselected sub space from the space list -> space switching should occur.
-            case SpacePanelSwitchSubSpace
+            case SpacePanelSwitchSubSpace = "SpacePanelSwitchSubSpace"
             /// User clicked the create room button in the add existing room to space dialog in Element Web/Desktop.
-            case WebAddExistingToSpaceDialogCreateRoomButton
+            case WebAddExistingToSpaceDialogCreateRoomButton = "WebAddExistingToSpaceDialogCreateRoomButton"
             /// User clicked the create DM button in the home page of Element Web/Desktop.
-            case WebHomeCreateChatButton
+            case WebHomeCreateChatButton = "WebHomeCreateChatButton"
             /// User clicked the create room button in the home page of Element Web/Desktop.
-            case WebHomeCreateRoomButton
+            case WebHomeCreateRoomButton = "WebHomeCreateRoomButton"
             /// User clicked the explore rooms button in the home page of Element Web/Desktop.
-            case WebHomeExploreRoomsButton
+            case WebHomeExploreRoomsButton = "WebHomeExploreRoomsButton"
             /// User clicked on the mini avatar uploader in the home page of Element Web/Desktop.
-            case WebHomeMiniAvatarUploadButton
+            case WebHomeMiniAvatarUploadButton = "WebHomeMiniAvatarUploadButton"
             /// User clicked the explore rooms button next to the search field at the top of the left panel in Element Web/Desktop.
-            case WebLeftPanelExploreRoomsButton
+            case WebLeftPanelExploreRoomsButton = "WebLeftPanelExploreRoomsButton"
             /// User clicked on the avatar uploader in the profile settings of Element Web/Desktop.
-            case WebProfileSettingsAvatarUploadButton
+            case WebProfileSettingsAvatarUploadButton = "WebProfileSettingsAvatarUploadButton"
             /// User interacted with pin to sidebar checkboxes in the quick settings menu of Element Web/Desktop.
-            case WebQuickSettingsPinToSidebarCheckbox
+            case WebQuickSettingsPinToSidebarCheckbox = "WebQuickSettingsPinToSidebarCheckbox"
             /// User interacted with the theme dropdown in the quick settings menu of Element Web/Desktop.
-            case WebQuickSettingsThemeDropdown
+            case WebQuickSettingsThemeDropdown = "WebQuickSettingsThemeDropdown"
             /// User accessed the room invite flow using the button at the top of the room member list in the right panel of Element Web/Desktop.
-            case WebRightPanelMemberListInviteButton
+            case WebRightPanelMemberListInviteButton = "WebRightPanelMemberListInviteButton"
             /// User accessed room member list using the 'People' button in the right panel room summary card of Element Web/Desktop.
-            case WebRightPanelRoomInfoPeopleButton
+            case WebRightPanelRoomInfoPeopleButton = "WebRightPanelRoomInfoPeopleButton"
             /// User accessed room settings using the 'Settings' button in the right panel room summary card of Element Web/Desktop.
-            case WebRightPanelRoomInfoSettingsButton
+            case WebRightPanelRoomInfoSettingsButton = "WebRightPanelRoomInfoSettingsButton"
             /// User accessed room member list using the back button in the right panel user info card of Element Web/Desktop.
-            case WebRightPanelRoomUserInfoBackButton
+            case WebRightPanelRoomUserInfoBackButton = "WebRightPanelRoomUserInfoBackButton"
             /// User invited someone to room by clicking invite on the right panel user info card in Element Web/Desktop.
-            case WebRightPanelRoomUserInfoInviteButton
+            case WebRightPanelRoomUserInfoInviteButton = "WebRightPanelRoomUserInfoInviteButton"
             /// User clicked the threads 'show' filter dropdown in the threads panel in Element Web/Desktop.
-            case WebRightPanelThreadPanelFilterDropdown
+            case WebRightPanelThreadPanelFilterDropdown = "WebRightPanelThreadPanelFilterDropdown"
             /// User clicked the create room button in the room directory of Element Web/Desktop.
-            case WebRoomDirectoryCreateRoomButton
+            case WebRoomDirectoryCreateRoomButton = "WebRoomDirectoryCreateRoomButton"
             /// User clicked the Threads button in the top right of a room in Element Web/Desktop.
-            case WebRoomHeaderButtonsThreadsButton
+            case WebRoomHeaderButtonsThreadsButton = "WebRoomHeaderButtonsThreadsButton"
             /// User adjusted their favourites using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuFavouriteToggle
+            case WebRoomHeaderContextMenuFavouriteToggle = "WebRoomHeaderContextMenuFavouriteToggle"
             /// User accessed the room invite flow using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuInviteItem
+            case WebRoomHeaderContextMenuInviteItem = "WebRoomHeaderContextMenuInviteItem"
             /// User interacted with leave action in the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuLeaveItem
+            case WebRoomHeaderContextMenuLeaveItem = "WebRoomHeaderContextMenuLeaveItem"
             /// User accessed their room notification settings via the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuNotificationsItem
+            case WebRoomHeaderContextMenuNotificationsItem = "WebRoomHeaderContextMenuNotificationsItem"
             /// User accessed room member list using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuPeopleItem
+            case WebRoomHeaderContextMenuPeopleItem = "WebRoomHeaderContextMenuPeopleItem"
             /// User accessed room settings using the context menu on the header of a room in Element Web/Desktop.
-            case WebRoomHeaderContextMenuSettingsItem
+            case WebRoomHeaderContextMenuSettingsItem = "WebRoomHeaderContextMenuSettingsItem"
             /// User clicked the create DM button in the + context menu of the room list header in Element Web/Desktop.
-            case WebRoomListHeaderPlusMenuCreateChatItem
+            case WebRoomListHeaderPlusMenuCreateChatItem = "WebRoomListHeaderPlusMenuCreateChatItem"
             /// User clicked the create room button in the + context menu of the room list header in Element Web/Desktop.
-            case WebRoomListHeaderPlusMenuCreateRoomItem
+            case WebRoomListHeaderPlusMenuCreateRoomItem = "WebRoomListHeaderPlusMenuCreateRoomItem"
             /// User clicked the explore rooms button in the + context menu of the room list header in Element Web/Desktop.
-            case WebRoomListHeaderPlusMenuExploreRoomsItem
+            case WebRoomListHeaderPlusMenuExploreRoomsItem = "WebRoomListHeaderPlusMenuExploreRoomsItem"
             /// User adjusted their favourites using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuFavouriteToggle
+            case WebRoomListRoomTileContextMenuFavouriteToggle = "WebRoomListRoomTileContextMenuFavouriteToggle"
             /// User accessed the room invite flow using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuInviteItem
+            case WebRoomListRoomTileContextMenuInviteItem = "WebRoomListRoomTileContextMenuInviteItem"
             /// User interacted with leave action in the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuLeaveItem
+            case WebRoomListRoomTileContextMenuLeaveItem = "WebRoomListRoomTileContextMenuLeaveItem"
             /// User marked a message as read using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuMarkRead
+            case WebRoomListRoomTileContextMenuMarkRead = "WebRoomListRoomTileContextMenuMarkRead"
             /// User marked a room as unread using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuMarkUnread
+            case WebRoomListRoomTileContextMenuMarkUnread = "WebRoomListRoomTileContextMenuMarkUnread"
             /// User accessed room settings using the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileContextMenuSettingsItem
+            case WebRoomListRoomTileContextMenuSettingsItem = "WebRoomListRoomTileContextMenuSettingsItem"
             /// User accessed their room notification settings via the context menu on a room tile in the room list in Element Web/Desktop.
-            case WebRoomListRoomTileNotificationsMenu
+            case WebRoomListRoomTileNotificationsMenu = "WebRoomListRoomTileNotificationsMenu"
             /// User clicked the create DM button in the + context menu of the rooms sublist in Element Web/Desktop.
-            case WebRoomListRoomsSublistPlusMenuCreateChatItem
+            case WebRoomListRoomsSublistPlusMenuCreateChatItem = "WebRoomListRoomsSublistPlusMenuCreateChatItem"
             /// User clicked the create room button in the + context menu of the rooms sublist in Element Web/Desktop.
-            case WebRoomListRoomsSublistPlusMenuCreateRoomItem
+            case WebRoomListRoomsSublistPlusMenuCreateRoomItem = "WebRoomListRoomsSublistPlusMenuCreateRoomItem"
             /// User clicked the explore rooms button in the + context menu of the rooms sublist in Element Web/Desktop.
-            case WebRoomListRoomsSublistPlusMenuExploreRoomsItem
+            case WebRoomListRoomsSublistPlusMenuExploreRoomsItem = "WebRoomListRoomsSublistPlusMenuExploreRoomsItem"
             /// User clicked on the button to return to the user onboarding list in the room list in Element Web/Desktop.
-            case WebRoomListUserOnboardingButton
+            case WebRoomListUserOnboardingButton = "WebRoomListUserOnboardingButton"
             /// User clicked on the button to close the user onboarding button in the room list in Element Web/Desktop.
-            case WebRoomListUserOnboardingIgnoreButton
+            case WebRoomListUserOnboardingIgnoreButton = "WebRoomListUserOnboardingIgnoreButton"
             /// User interacted with leave action in the general tab of the room settings dialog in Element Web/Desktop.
-            case WebRoomSettingsLeaveButton
+            case WebRoomSettingsLeaveButton = "WebRoomSettingsLeaveButton"
             /// User interacted with the prompt to create a new room when adjusting security settings in an existing room in Element Web/Desktop.
-            case WebRoomSettingsSecurityTabCreateNewRoomButton
+            case WebRoomSettingsSecurityTabCreateNewRoomButton = "WebRoomSettingsSecurityTabCreateNewRoomButton"
             /// User clicked a thread summary in the timeline of a room in Element Web/Desktop.
-            case WebRoomTimelineThreadSummaryButton
+            case WebRoomTimelineThreadSummaryButton = "WebRoomTimelineThreadSummaryButton"
             /// User interacted with the theme radio selector in the Appearance tab of Settings in Element Web/Desktop.
-            case WebSettingsAppearanceTabThemeSelector
+            case WebSettingsAppearanceTabThemeSelector = "WebSettingsAppearanceTabThemeSelector"
             /// User toggled the 'Notifications.showbold' in Element Web/Desktop.
-            case WebSettingsNotificationsShowBoldToggle
+            case WebSettingsNotificationsShowBoldToggle = "WebSettingsNotificationsShowBoldToggle"
             /// User toggled the 'Notifications.tac_only_notifications' in Element Web/Desktop.
-            case WebSettingsNotificationsTACOnlyNotificationsToggle
+            case WebSettingsNotificationsTACOnlyNotificationsToggle = "WebSettingsNotificationsTACOnlyNotificationsToggle"
             /// User interacted with the pre-built space checkboxes in the Sidebar tab of Settings in Element Web/Desktop.
-            case WebSettingsSidebarTabSpacesCheckbox
+            case WebSettingsSidebarTabSpacesCheckbox = "WebSettingsSidebarTabSpacesCheckbox"
             /// User clicked the explore rooms button in the context menu of a space in Element Web/Desktop.
-            case WebSpaceContextMenuExploreRoomsItem
+            case WebSpaceContextMenuExploreRoomsItem = "WebSpaceContextMenuExploreRoomsItem"
             /// User clicked the home button in the context menu of a space in Element Web/Desktop.
-            case WebSpaceContextMenuHomeItem
+            case WebSpaceContextMenuHomeItem = "WebSpaceContextMenuHomeItem"
             /// User clicked the new room button in the context menu of a space in Element Web/Desktop.
-            case WebSpaceContextMenuNewRoomItem
+            case WebSpaceContextMenuNewRoomItem = "WebSpaceContextMenuNewRoomItem"
             /// User clicked the new room button in the context menu on the space home in Element Web/Desktop.
-            case WebSpaceHomeCreateRoomButton
+            case WebSpaceHomeCreateRoomButton = "WebSpaceHomeCreateRoomButton"
             /// User clicked the back button on a Thread view going back to the Threads Panel of Element Web/Desktop.
-            case WebThreadViewBackButton
+            case WebThreadViewBackButton = "WebThreadViewBackButton"
             /// User clicked on the Threads Activity Centre button of Element Web/Desktop.
-            case WebThreadsActivityCentreButton
+            case WebThreadsActivityCentreButton = "WebThreadsActivityCentreButton"
             /// User clicked on a room in the Threads Activity Centre of Element Web/Desktop.
-            case WebThreadsActivityCentreRoomItem
+            case WebThreadsActivityCentreRoomItem = "WebThreadsActivityCentreRoomItem"
             /// User clicked on the button to mark all threads in a room as read in Element Web/Desktop.
-            case WebThreadsMarkAllReadButton
+            case WebThreadsMarkAllReadButton = "WebThreadsMarkAllReadButton"
             /// User selected a thread in the Threads panel in Element Web/Desktop.
-            case WebThreadsPanelThreadItem
+            case WebThreadsPanelThreadItem = "WebThreadsPanelThreadItem"
             /// User clicked the theme toggle button in the user menu of Element Web/Desktop.
-            case WebUserMenuThemeToggleButton
+            case WebUserMenuThemeToggleButton = "WebUserMenuThemeToggleButton"
             /// User clicked on the send DM CTA in the header of the new user onboarding page in Element Web/Desktop.
-            case WebUserOnboardingHeaderSendDm
+            case WebUserOnboardingHeaderSendDm = "WebUserOnboardingHeaderSendDm"
             /// User clicked on the action of the download apps task on the new user onboarding page in Element Web/Desktop.
-            case WebUserOnboardingTaskDownloadApps
+            case WebUserOnboardingTaskDownloadApps = "WebUserOnboardingTaskDownloadApps"
             /// User clicked on the action of the enable notifications task on the new user onboarding page in Element Web/Desktop.
-            case WebUserOnboardingTaskEnableNotifications
+            case WebUserOnboardingTaskEnableNotifications = "WebUserOnboardingTaskEnableNotifications"
             /// User clicked on the action of the find people task on the new user onboarding page in Element Web/Desktop.
-            case WebUserOnboardingTaskSendDm
+            case WebUserOnboardingTaskSendDm = "WebUserOnboardingTaskSendDm"
             /// User clicked on the action of the your profile task on the new user onboarding page in Element Web/Desktop.
-            case WebUserOnboardingTaskSetupProfile
+            case WebUserOnboardingTaskSetupProfile = "WebUserOnboardingTaskSetupProfile"
         }
 
         public enum InteractionType: String {
-            case Keyboard
-            case Pointer
-            case Touch
+            case Keyboard = "Keyboard"
+            case Pointer = "Pointer"
+            case Touch = "Touch"
         }
 
         public var properties: [String: Any] {

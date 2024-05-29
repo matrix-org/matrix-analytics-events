@@ -39,479 +39,479 @@ data class Interaction(
         val name: Name,
 ) : VectorAnalyticsEvent {
 
-    enum class Name {
+    enum class Name(val rawValue: String) {
         /**
          * User tapped the All filter in the All Chats filter tab.
          */
-        MobileAllChatsFilterAll,
+        MobileAllChatsFilterAll("MobileAllChatsFilterAll"),
 
         /**
          * User tapped the Favourites filter in the All Chats filter tab.
          */
-        MobileAllChatsFilterFavourites,
+        MobileAllChatsFilterFavourites("MobileAllChatsFilterFavourites"),
 
         /**
          * User tapped the People filter in the All Chats filter tab.
          */
-        MobileAllChatsFilterPeople,
+        MobileAllChatsFilterPeople("MobileAllChatsFilterPeople"),
 
         /**
          * User tapped the Unreads filter in the All Chats filter tab.
          */
-        MobileAllChatsFilterUnreads,
+        MobileAllChatsFilterUnreads("MobileAllChatsFilterUnreads"),
 
         /**
          * User disabled filters from the all chats layout settings.
          */
-        MobileAllChatsFiltersDisabled,
+        MobileAllChatsFiltersDisabled("MobileAllChatsFiltersDisabled"),
 
         /**
          * User enabled filters from the all chats layout settings.
          */
-        MobileAllChatsFiltersEnabled,
+        MobileAllChatsFiltersEnabled("MobileAllChatsFiltersEnabled"),
 
         /**
          * User disabled recents from the all chats layout settings.
          */
-        MobileAllChatsRecentsDisabled,
+        MobileAllChatsRecentsDisabled("MobileAllChatsRecentsDisabled"),
 
         /**
          * User enabled recents from the all chats layout settings.
          */
-        MobileAllChatsRecentsEnabled,
+        MobileAllChatsRecentsEnabled("MobileAllChatsRecentsEnabled"),
 
         /**
          * User tapped on Add to Home button on Room Details screen.
          */
-        MobileRoomAddHome,
+        MobileRoomAddHome("MobileRoomAddHome"),
 
         /**
          * User switched the favourite toggle on Room Details screen.
          */
-        MobileRoomFavouriteToggle,
+        MobileRoomFavouriteToggle("MobileRoomFavouriteToggle"),
 
         /**
          * User tapped on Leave Room button on Room Details screen.
          */
-        MobileRoomLeave,
+        MobileRoomLeave("MobileRoomLeave"),
 
         /**
          * User adjusted their favourite rooms using the context menu on a room
          * in the room list.
          */
-        MobileRoomListRoomContextMenuFavouriteToggle,
+        MobileRoomListRoomContextMenuFavouriteToggle("MobileRoomListRoomContextMenuFavouriteToggle"),
 
         /**
          * User adjusted their unread rooms using the context menu on a room in
          * the room list.
          */
-        MobileRoomListRoomContextMenuUnreadToggle,
+        MobileRoomListRoomContextMenuUnreadToggle("MobileRoomListRoomContextMenuUnreadToggle"),
 
         /**
          * User tapped on Threads button on Room screen.
          */
-        MobileRoomThreadListButton,
+        MobileRoomThreadListButton("MobileRoomThreadListButton"),
 
         /**
          * User tapped on a thread summary item on Room screen.
          */
-        MobileRoomThreadSummaryItem,
+        MobileRoomThreadSummaryItem("MobileRoomThreadSummaryItem"),
 
         /**
          * User validated the creation of a new space.
          */
-        MobileSpaceCreationValidated,
+        MobileSpaceCreationValidated("MobileSpaceCreationValidated"),
 
         /**
          * User tapped on the filter button on ThreadList screen.
          */
-        MobileThreadListFilterItem,
+        MobileThreadListFilterItem("MobileThreadListFilterItem"),
 
         /**
          * User selected a thread on ThreadList screen.
          */
-        MobileThreadListThreadItem,
+        MobileThreadListThreadItem("MobileThreadListThreadItem"),
 
         /**
          * User tapped the already selected space from the space list.
          */
-        SpacePanelSelectedSpace,
+        SpacePanelSelectedSpace("SpacePanelSelectedSpace"),
 
         /**
          * User tapped an unselected space from the space list -> space
          * switching should occur.
          */
-        SpacePanelSwitchSpace,
+        SpacePanelSwitchSpace("SpacePanelSwitchSpace"),
 
         /**
          * User tapped an unselected sub space from the space list -> space
          * switching should occur.
          */
-        SpacePanelSwitchSubSpace,
+        SpacePanelSwitchSubSpace("SpacePanelSwitchSubSpace"),
 
         /**
          * User clicked the create room button in the add existing room to space
          * dialog in Element Web/Desktop.
          */
-        WebAddExistingToSpaceDialogCreateRoomButton,
+        WebAddExistingToSpaceDialogCreateRoomButton("WebAddExistingToSpaceDialogCreateRoomButton"),
 
         /**
          * User clicked the create DM button in the home page of Element
          * Web/Desktop.
          */
-        WebHomeCreateChatButton,
+        WebHomeCreateChatButton("WebHomeCreateChatButton"),
 
         /**
          * User clicked the create room button in the home page of Element
          * Web/Desktop.
          */
-        WebHomeCreateRoomButton,
+        WebHomeCreateRoomButton("WebHomeCreateRoomButton"),
 
         /**
          * User clicked the explore rooms button in the home page of Element
          * Web/Desktop.
          */
-        WebHomeExploreRoomsButton,
+        WebHomeExploreRoomsButton("WebHomeExploreRoomsButton"),
 
         /**
          * User clicked on the mini avatar uploader in the home page of Element
          * Web/Desktop.
          */
-        WebHomeMiniAvatarUploadButton,
+        WebHomeMiniAvatarUploadButton("WebHomeMiniAvatarUploadButton"),
 
         /**
          * User clicked the explore rooms button next to the search field at the
          * top of the left panel in Element Web/Desktop.
          */
-        WebLeftPanelExploreRoomsButton,
+        WebLeftPanelExploreRoomsButton("WebLeftPanelExploreRoomsButton"),
 
         /**
          * User clicked on the avatar uploader in the profile settings of
          * Element Web/Desktop.
          */
-        WebProfileSettingsAvatarUploadButton,
+        WebProfileSettingsAvatarUploadButton("WebProfileSettingsAvatarUploadButton"),
 
         /**
          * User interacted with pin to sidebar checkboxes in the quick settings
          * menu of Element Web/Desktop.
          */
-        WebQuickSettingsPinToSidebarCheckbox,
+        WebQuickSettingsPinToSidebarCheckbox("WebQuickSettingsPinToSidebarCheckbox"),
 
         /**
          * User interacted with the theme dropdown in the quick settings menu of
          * Element Web/Desktop.
          */
-        WebQuickSettingsThemeDropdown,
+        WebQuickSettingsThemeDropdown("WebQuickSettingsThemeDropdown"),
 
         /**
          * User accessed the room invite flow using the button at the top of the
          * room member list in the right panel of Element Web/Desktop.
          */
-        WebRightPanelMemberListInviteButton,
+        WebRightPanelMemberListInviteButton("WebRightPanelMemberListInviteButton"),
 
         /**
          * User accessed room member list using the 'People' button in the right
          * panel room summary card of Element Web/Desktop.
          */
-        WebRightPanelRoomInfoPeopleButton,
+        WebRightPanelRoomInfoPeopleButton("WebRightPanelRoomInfoPeopleButton"),
 
         /**
          * User accessed room settings using the 'Settings' button in the right
          * panel room summary card of Element Web/Desktop.
          */
-        WebRightPanelRoomInfoSettingsButton,
+        WebRightPanelRoomInfoSettingsButton("WebRightPanelRoomInfoSettingsButton"),
 
         /**
          * User accessed room member list using the back button in the right
          * panel user info card of Element Web/Desktop.
          */
-        WebRightPanelRoomUserInfoBackButton,
+        WebRightPanelRoomUserInfoBackButton("WebRightPanelRoomUserInfoBackButton"),
 
         /**
          * User invited someone to room by clicking invite on the right panel
          * user info card in Element Web/Desktop.
          */
-        WebRightPanelRoomUserInfoInviteButton,
+        WebRightPanelRoomUserInfoInviteButton("WebRightPanelRoomUserInfoInviteButton"),
 
         /**
          * User clicked the threads 'show' filter dropdown in the threads panel
          * in Element Web/Desktop.
          */
-        WebRightPanelThreadPanelFilterDropdown,
+        WebRightPanelThreadPanelFilterDropdown("WebRightPanelThreadPanelFilterDropdown"),
 
         /**
          * User clicked the create room button in the room directory of Element
          * Web/Desktop.
          */
-        WebRoomDirectoryCreateRoomButton,
+        WebRoomDirectoryCreateRoomButton("WebRoomDirectoryCreateRoomButton"),
 
         /**
          * User clicked the Threads button in the top right of a room in Element
          * Web/Desktop.
          */
-        WebRoomHeaderButtonsThreadsButton,
+        WebRoomHeaderButtonsThreadsButton("WebRoomHeaderButtonsThreadsButton"),
 
         /**
          * User adjusted their favourites using the context menu on the header
          * of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuFavouriteToggle,
+        WebRoomHeaderContextMenuFavouriteToggle("WebRoomHeaderContextMenuFavouriteToggle"),
 
         /**
          * User accessed the room invite flow using the context menu on the
          * header of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuInviteItem,
+        WebRoomHeaderContextMenuInviteItem("WebRoomHeaderContextMenuInviteItem"),
 
         /**
          * User interacted with leave action in the context menu on the header
          * of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuLeaveItem,
+        WebRoomHeaderContextMenuLeaveItem("WebRoomHeaderContextMenuLeaveItem"),
 
         /**
          * User accessed their room notification settings via the context menu
          * on the header of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuNotificationsItem,
+        WebRoomHeaderContextMenuNotificationsItem("WebRoomHeaderContextMenuNotificationsItem"),
 
         /**
          * User accessed room member list using the context menu on the header
          * of a room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuPeopleItem,
+        WebRoomHeaderContextMenuPeopleItem("WebRoomHeaderContextMenuPeopleItem"),
 
         /**
          * User accessed room settings using the context menu on the header of a
          * room in Element Web/Desktop.
          */
-        WebRoomHeaderContextMenuSettingsItem,
+        WebRoomHeaderContextMenuSettingsItem("WebRoomHeaderContextMenuSettingsItem"),
 
         /**
          * User clicked the create DM button in the + context menu of the room
          * list header in Element Web/Desktop.
          */
-        WebRoomListHeaderPlusMenuCreateChatItem,
+        WebRoomListHeaderPlusMenuCreateChatItem("WebRoomListHeaderPlusMenuCreateChatItem"),
 
         /**
          * User clicked the create room button in the + context menu of the room
          * list header in Element Web/Desktop.
          */
-        WebRoomListHeaderPlusMenuCreateRoomItem,
+        WebRoomListHeaderPlusMenuCreateRoomItem("WebRoomListHeaderPlusMenuCreateRoomItem"),
 
         /**
          * User clicked the explore rooms button in the + context menu of the
          * room list header in Element Web/Desktop.
          */
-        WebRoomListHeaderPlusMenuExploreRoomsItem,
+        WebRoomListHeaderPlusMenuExploreRoomsItem("WebRoomListHeaderPlusMenuExploreRoomsItem"),
 
         /**
          * User adjusted their favourites using the context menu on a room tile
          * in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuFavouriteToggle,
+        WebRoomListRoomTileContextMenuFavouriteToggle("WebRoomListRoomTileContextMenuFavouriteToggle"),
 
         /**
          * User accessed the room invite flow using the context menu on a room
          * tile in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuInviteItem,
+        WebRoomListRoomTileContextMenuInviteItem("WebRoomListRoomTileContextMenuInviteItem"),
 
         /**
          * User interacted with leave action in the context menu on a room tile
          * in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuLeaveItem,
+        WebRoomListRoomTileContextMenuLeaveItem("WebRoomListRoomTileContextMenuLeaveItem"),
 
         /**
          * User marked a message as read using the context menu on a room tile
          * in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuMarkRead,
+        WebRoomListRoomTileContextMenuMarkRead("WebRoomListRoomTileContextMenuMarkRead"),
 
         /**
          * User marked a room as unread using the context menu on a room tile in
          * the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuMarkUnread,
+        WebRoomListRoomTileContextMenuMarkUnread("WebRoomListRoomTileContextMenuMarkUnread"),
 
         /**
          * User accessed room settings using the context menu on a room tile in
          * the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileContextMenuSettingsItem,
+        WebRoomListRoomTileContextMenuSettingsItem("WebRoomListRoomTileContextMenuSettingsItem"),
 
         /**
          * User accessed their room notification settings via the context menu
          * on a room tile in the room list in Element Web/Desktop.
          */
-        WebRoomListRoomTileNotificationsMenu,
+        WebRoomListRoomTileNotificationsMenu("WebRoomListRoomTileNotificationsMenu"),
 
         /**
          * User clicked the create DM button in the + context menu of the rooms
          * sublist in Element Web/Desktop.
          */
-        WebRoomListRoomsSublistPlusMenuCreateChatItem,
+        WebRoomListRoomsSublistPlusMenuCreateChatItem("WebRoomListRoomsSublistPlusMenuCreateChatItem"),
 
         /**
          * User clicked the create room button in the + context menu of the
          * rooms sublist in Element Web/Desktop.
          */
-        WebRoomListRoomsSublistPlusMenuCreateRoomItem,
+        WebRoomListRoomsSublistPlusMenuCreateRoomItem("WebRoomListRoomsSublistPlusMenuCreateRoomItem"),
 
         /**
          * User clicked the explore rooms button in the + context menu of the
          * rooms sublist in Element Web/Desktop.
          */
-        WebRoomListRoomsSublistPlusMenuExploreRoomsItem,
+        WebRoomListRoomsSublistPlusMenuExploreRoomsItem("WebRoomListRoomsSublistPlusMenuExploreRoomsItem"),
 
         /**
          * User clicked on the button to return to the user onboarding list in
          * the room list in Element Web/Desktop.
          */
-        WebRoomListUserOnboardingButton,
+        WebRoomListUserOnboardingButton("WebRoomListUserOnboardingButton"),
 
         /**
          * User clicked on the button to close the user onboarding button in the
          * room list in Element Web/Desktop.
          */
-        WebRoomListUserOnboardingIgnoreButton,
+        WebRoomListUserOnboardingIgnoreButton("WebRoomListUserOnboardingIgnoreButton"),
 
         /**
          * User interacted with leave action in the general tab of the room
          * settings dialog in Element Web/Desktop.
          */
-        WebRoomSettingsLeaveButton,
+        WebRoomSettingsLeaveButton("WebRoomSettingsLeaveButton"),
 
         /**
          * User interacted with the prompt to create a new room when adjusting
          * security settings in an existing room in Element Web/Desktop.
          */
-        WebRoomSettingsSecurityTabCreateNewRoomButton,
+        WebRoomSettingsSecurityTabCreateNewRoomButton("WebRoomSettingsSecurityTabCreateNewRoomButton"),
 
         /**
          * User clicked a thread summary in the timeline of a room in Element
          * Web/Desktop.
          */
-        WebRoomTimelineThreadSummaryButton,
+        WebRoomTimelineThreadSummaryButton("WebRoomTimelineThreadSummaryButton"),
 
         /**
          * User interacted with the theme radio selector in the Appearance tab
          * of Settings in Element Web/Desktop.
          */
-        WebSettingsAppearanceTabThemeSelector,
+        WebSettingsAppearanceTabThemeSelector("WebSettingsAppearanceTabThemeSelector"),
 
         /**
          * User toggled the 'Notifications.showbold' in Element Web/Desktop.
          */
-        WebSettingsNotificationsShowBoldToggle,
+        WebSettingsNotificationsShowBoldToggle("WebSettingsNotificationsShowBoldToggle"),
 
         /**
          * User toggled the 'Notifications.tac_only_notifications' in Element
          * Web/Desktop.
          */
-        WebSettingsNotificationsTACOnlyNotificationsToggle,
+        WebSettingsNotificationsTACOnlyNotificationsToggle("WebSettingsNotificationsTACOnlyNotificationsToggle"),
 
         /**
          * User interacted with the pre-built space checkboxes in the Sidebar
          * tab of Settings in Element Web/Desktop.
          */
-        WebSettingsSidebarTabSpacesCheckbox,
+        WebSettingsSidebarTabSpacesCheckbox("WebSettingsSidebarTabSpacesCheckbox"),
 
         /**
          * User clicked the explore rooms button in the context menu of a space
          * in Element Web/Desktop.
          */
-        WebSpaceContextMenuExploreRoomsItem,
+        WebSpaceContextMenuExploreRoomsItem("WebSpaceContextMenuExploreRoomsItem"),
 
         /**
          * User clicked the home button in the context menu of a space in
          * Element Web/Desktop.
          */
-        WebSpaceContextMenuHomeItem,
+        WebSpaceContextMenuHomeItem("WebSpaceContextMenuHomeItem"),
 
         /**
          * User clicked the new room button in the context menu of a space in
          * Element Web/Desktop.
          */
-        WebSpaceContextMenuNewRoomItem,
+        WebSpaceContextMenuNewRoomItem("WebSpaceContextMenuNewRoomItem"),
 
         /**
          * User clicked the new room button in the context menu on the space
          * home in Element Web/Desktop.
          */
-        WebSpaceHomeCreateRoomButton,
+        WebSpaceHomeCreateRoomButton("WebSpaceHomeCreateRoomButton"),
 
         /**
          * User clicked the back button on a Thread view going back to the
          * Threads Panel of Element Web/Desktop.
          */
-        WebThreadViewBackButton,
+        WebThreadViewBackButton("WebThreadViewBackButton"),
 
         /**
          * User clicked on the Threads Activity Centre button of Element
          * Web/Desktop.
          */
-        WebThreadsActivityCentreButton,
+        WebThreadsActivityCentreButton("WebThreadsActivityCentreButton"),
 
         /**
          * User clicked on a room in the Threads Activity Centre of Element
          * Web/Desktop.
          */
-        WebThreadsActivityCentreRoomItem,
+        WebThreadsActivityCentreRoomItem("WebThreadsActivityCentreRoomItem"),
 
         /**
          * User clicked on the button to mark all threads in a room as read in
          * Element Web/Desktop.
          */
-        WebThreadsMarkAllReadButton,
+        WebThreadsMarkAllReadButton("WebThreadsMarkAllReadButton"),
 
         /**
          * User selected a thread in the Threads panel in Element Web/Desktop.
          */
-        WebThreadsPanelThreadItem,
+        WebThreadsPanelThreadItem("WebThreadsPanelThreadItem"),
 
         /**
          * User clicked the theme toggle button in the user menu of Element
          * Web/Desktop.
          */
-        WebUserMenuThemeToggleButton,
+        WebUserMenuThemeToggleButton("WebUserMenuThemeToggleButton"),
 
         /**
          * User clicked on the send DM CTA in the header of the new user
          * onboarding page in Element Web/Desktop.
          */
-        WebUserOnboardingHeaderSendDm,
+        WebUserOnboardingHeaderSendDm("WebUserOnboardingHeaderSendDm"),
 
         /**
          * User clicked on the action of the download apps task on the new user
          * onboarding page in Element Web/Desktop.
          */
-        WebUserOnboardingTaskDownloadApps,
+        WebUserOnboardingTaskDownloadApps("WebUserOnboardingTaskDownloadApps"),
 
         /**
          * User clicked on the action of the enable notifications task on the
          * new user onboarding page in Element Web/Desktop.
          */
-        WebUserOnboardingTaskEnableNotifications,
+        WebUserOnboardingTaskEnableNotifications("WebUserOnboardingTaskEnableNotifications"),
 
         /**
          * User clicked on the action of the find people task on the new user
          * onboarding page in Element Web/Desktop.
          */
-        WebUserOnboardingTaskSendDm,
+        WebUserOnboardingTaskSendDm("WebUserOnboardingTaskSendDm"),
 
         /**
          * User clicked on the action of the your profile task on the new user
          * onboarding page in Element Web/Desktop.
          */
-        WebUserOnboardingTaskSetupProfile,
+        WebUserOnboardingTaskSetupProfile("WebUserOnboardingTaskSetupProfile"),
     }
 
-    enum class InteractionType {
-        Keyboard,
-        Pointer,
-        Touch,
+    enum class InteractionType(val rawValue: String) {
+        Keyboard("Keyboard"),
+        Pointer("Pointer"),
+        Touch("Touch"),
     }
 
     override fun getName() = "Interaction"
@@ -519,8 +519,8 @@ data class Interaction(
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             index?.let { put("index", it) }
-            interactionType?.let { put("interactionType", it.name) }
-            put("name", name.name)
+            interactionType?.let { put("interactionType", it.rawValue) }
+            put("name", name.rawValue)
         }.takeIf { it.isNotEmpty() }
     }
 }

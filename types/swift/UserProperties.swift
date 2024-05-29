@@ -47,40 +47,40 @@ extension AnalyticsEvent {
 
         public enum FtueUseCaseSelection: String {
             /// The third option, Communities.
-            case CommunityMessaging
+            case CommunityMessaging = "CommunityMessaging"
             /// The first option, Friends and family.
-            case PersonalMessaging
+            case PersonalMessaging = "PersonalMessaging"
             /// The footer option to skip the question.
-            case Skip
+            case Skip = "Skip"
             /// The second option, Teams.
-            case WorkMessaging
+            case WorkMessaging = "WorkMessaging"
         }
 
         public enum AllChatsActiveFilter: String {
             /// Filters are activated and All is selected.
-            case All
+            case All = "All"
             /// Filters are activated and Favourites is selected.
-            case Favourites
+            case Favourites = "Favourites"
             /// Filters are activated and People is selected.
-            case People
+            case People = "People"
             /// Filters are activated and Unreads is selected.
-            case Unreads
+            case Unreads = "Unreads"
         }
 
         public enum VerificationState: String {
             /// The device is unverified.
-            case NotVerified
+            case NotVerified = "NotVerified"
             /// The device is considered to be verified, it has been signed by its user identity.
-            case Verified
+            case Verified = "Verified"
         }
 
         public enum RecoveryState: String {
             /// No default secret storage key exists or it is disabled explicitly using the account data event.
-            case Disabled
+            case Disabled = "Disabled"
             /// Secret storage is set up and we have all the secrets locally.
-            case Enabled
+            case Enabled = "Enabled"
             /// Secret storage is set up but we're missing some secrets.
-            case Incomplete
+            case Incomplete = "Incomplete"
         }
 
         public var properties: [String: Any?] {

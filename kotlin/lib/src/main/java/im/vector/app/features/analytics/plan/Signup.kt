@@ -32,53 +32,53 @@ data class Signup(
         val authenticationType: AuthenticationType,
 ) : VectorAnalyticsEvent {
 
-    enum class AuthenticationType {
+    enum class AuthenticationType(val rawValue: String) {
         /**
          * Social login using Apple.
          */
-        Apple,
+        Apple("Apple"),
 
         /**
          * Social login using Facebook.
          */
-        Facebook,
+        Facebook("Facebook"),
 
         /**
          * Social login using GitHub.
          */
-        GitHub,
+        GitHub("GitHub"),
 
         /**
          * Social login using GitLab.
          */
-        GitLab,
+        GitLab("GitLab"),
 
         /**
          * Social login using Google.
          */
-        Google,
+        Google("Google"),
 
         /**
          * Registration using some other mechanism such as fallback.
          */
-        Other,
+        Other("Other"),
 
         /**
          * Registration with a username and password.
          */
-        Password,
+        Password("Password"),
 
         /**
          * Registration using another SSO provider.
          */
-        SSO,
+        SSO("SSO"),
     }
 
     override fun getName() = "Signup"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("authenticationType", authenticationType.name)
+            put("authenticationType", authenticationType.rawValue)
         }.takeIf { it.isNotEmpty() }
     }
 }

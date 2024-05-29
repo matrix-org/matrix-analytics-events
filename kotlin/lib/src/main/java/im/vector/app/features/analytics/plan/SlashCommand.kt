@@ -31,16 +31,16 @@ data class SlashCommand(
         val command: Command,
 ) : VectorAnalyticsEvent {
 
-    enum class Command {
-        Invite,
-        Part,
+    enum class Command(val rawValue: String) {
+        Invite("Invite"),
+        Part("Part"),
     }
 
     override fun getName() = "SlashCommand"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("command", command.name)
+            put("command", command.rawValue)
         }.takeIf { it.isNotEmpty() }
     }
 }

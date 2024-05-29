@@ -52,92 +52,92 @@ data class UserProperties(
         val verificationState: VerificationState? = null,
 ) {
 
-    enum class FtueUseCaseSelection {
+    enum class FtueUseCaseSelection(val rawValue: String) {
         /**
          * The third option, Communities.
          */
-        CommunityMessaging,
+        CommunityMessaging("CommunityMessaging"),
 
         /**
          * The first option, Friends and family.
          */
-        PersonalMessaging,
+        PersonalMessaging("PersonalMessaging"),
 
         /**
          * The footer option to skip the question.
          */
-        Skip,
+        Skip("Skip"),
 
         /**
          * The second option, Teams.
          */
-        WorkMessaging,
+        WorkMessaging("WorkMessaging"),
     }
 
-    enum class AllChatsActiveFilter {
+    enum class AllChatsActiveFilter(val rawValue: String) {
 
         /**
          * Filters are activated and All is selected.
          */
-        All,
+        All("All"),
 
         /**
          * Filters are activated and Favourites is selected.
          */
-        Favourites,
+        Favourites("Favourites"),
 
         /**
          * Filters are activated and People is selected.
          */
-        People,
+        People("People"),
 
         /**
          * Filters are activated and Unreads is selected.
          */
-        Unreads,
+        Unreads("Unreads"),
     }
 
-    enum class VerificationState {
+    enum class VerificationState(val rawValue: String) {
 
         /**
          * The device is unverified.
          */
-        NotVerified,
+        NotVerified("NotVerified"),
 
         /**
          * The device is considered to be verified, it has been signed by its
          * user identity.
          */
-        Verified,
+        Verified("Verified"),
     }
 
-    enum class RecoveryState {
+    enum class RecoveryState(val rawValue: String) {
 
         /**
          * No default secret storage key exists or it is disabled explicitly
          * using the account data event.
          */
-        Disabled,
+        Disabled("Disabled"),
 
         /**
          * Secret storage is set up and we have all the secrets locally.
          */
-        Enabled,
+        Enabled("Enabled"),
 
         /**
          * Secret storage is set up but we're missing some secrets.
          */
-        Incomplete,
+        Incomplete("Incomplete"),
     }
 
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            allChatsActiveFilter?.let { put("allChatsActiveFilter", it.name) }
-            ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.name) }
+            allChatsActiveFilter?.let { put("allChatsActiveFilter", it.rawValue) }
+            ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.rawValue) }
             numFavouriteRooms?.let { put("numFavouriteRooms", it) }
             numSpaces?.let { put("numSpaces", it) }
-            recoveryState?.let { put("recoveryState", it.name) }
-            verificationState?.let { put("verificationState", it.name) }
+            recoveryState?.let { put("recoveryState", it.rawValue) }
+            verificationState?.let { put("verificationState", it.rawValue) }
         }.takeIf { it.isNotEmpty() }
     }
 }

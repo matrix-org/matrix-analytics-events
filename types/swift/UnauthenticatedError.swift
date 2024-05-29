@@ -41,9 +41,9 @@ extension AnalyticsEvent {
         }
 
         public enum ErrorCode: String {
-            case M_FORBIDDEN
-            case M_UNKNOWN
-            case M_UNKNOWN_TOKEN
+            case M_FORBIDDEN = "M_FORBIDDEN"
+            case M_UNKNOWN = "M_UNKNOWN"
+            case M_UNKNOWN_TOKEN = "M_UNKNOWN_TOKEN"
         }
 
         public var properties: [String: Any] {

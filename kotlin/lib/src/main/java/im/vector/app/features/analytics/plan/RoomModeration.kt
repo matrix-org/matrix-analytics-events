@@ -36,102 +36,102 @@ data class RoomModeration(
         val role: Role? = null,
 ) : VectorAnalyticsEvent {
 
-    enum class Action {
+    enum class Action(val rawValue: String) {
         /**
          * Banned a room member.
          */
-        BanMember,
+        BanMember("BanMember"),
 
         /**
          * Changed a room member's power level.
          */
-        ChangeMemberRole,
+        ChangeMemberRole("ChangeMemberRole"),
 
         /**
          * Changed the power level required to ban room members.
          */
-        ChangePermissionsBanMembers,
+        ChangePermissionsBanMembers("ChangePermissionsBanMembers"),
 
         /**
          * Changed the power level required to invite users to the room.
          */
-        ChangePermissionsInviteUsers,
+        ChangePermissionsInviteUsers("ChangePermissionsInviteUsers"),
 
         /**
          * Changed the power level required to kick room members.
          */
-        ChangePermissionsKickMembers,
+        ChangePermissionsKickMembers("ChangePermissionsKickMembers"),
 
         /**
          * Changed the power level required to redact messages in the room.
          */
-        ChangePermissionsRedactMessages,
+        ChangePermissionsRedactMessages("ChangePermissionsRedactMessages"),
 
         /**
          * Changed the power level required to set the room's avatar.
          */
-        ChangePermissionsRoomAvatar,
+        ChangePermissionsRoomAvatar("ChangePermissionsRoomAvatar"),
 
         /**
          * Changed the power level required to set the room's name.
          */
-        ChangePermissionsRoomName,
+        ChangePermissionsRoomName("ChangePermissionsRoomName"),
 
         /**
          * Changed the power level required to set the room's topic.
          */
-        ChangePermissionsRoomTopic,
+        ChangePermissionsRoomTopic("ChangePermissionsRoomTopic"),
 
         /**
          * Changed the power level required to send messages in the room.
          */
-        ChangePermissionsSendMessages,
+        ChangePermissionsSendMessages("ChangePermissionsSendMessages"),
 
         /**
          * Kicked a room member.
          */
-        KickMember,
+        KickMember("KickMember"),
 
         /**
          * Reset all of the room permissions back to their default values.
          */
-        ResetPermissions,
+        ResetPermissions("ResetPermissions"),
 
         /**
          * Unbanned a room member.
          */
-        UnbanMember,
+        UnbanMember("UnbanMember"),
     }
 
-    enum class Role {
+    enum class Role(val rawValue: String) {
 
         /**
          * A power level of 100.
          */
-        Administrator,
+        Administrator("Administrator"),
 
         /**
          * A power level of 50.
          */
-        Moderator,
+        Moderator("Moderator"),
 
         /**
          * Any other power level.
          */
-        Other,
+        Other("Other"),
 
         /**
          * A power level of 0.
          */
-        User,
+        User("User"),
     }
 
     override fun getName() = "RoomModeration"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("action", action.name)
-            role?.let { put("role", it.name) }
+            put("action", action.rawValue)
+            role?.let { put("role", it.rawValue) }
         }.takeIf { it.isNotEmpty() }
     }
 }

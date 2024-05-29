@@ -39,23 +39,23 @@ data class PollCreation(
         val numberOfAnswers: Int,
 ) : VectorAnalyticsEvent {
 
-    enum class Action {
+    enum class Action(val rawValue: String) {
         /**
          * Newly created poll.
          */
-        Create,
+        Create("Create"),
 
         /**
          * Edit of an existing poll.
          */
-        Edit,
+        Edit("Edit"),
     }
 
     override fun getName() = "PollCreation"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("action", action.name)
+            put("action", action.rawValue)
             put("isUndisclosed", isUndisclosed)
             put("numberOfAnswers", numberOfAnswers)
         }.takeIf { it.isNotEmpty() }

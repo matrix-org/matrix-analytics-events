@@ -47,265 +47,265 @@ data class ViewRoom(
         val viaKeyboard: Boolean? = null,
 ) : VectorAnalyticsEvent {
 
-    enum class Trigger {
+    enum class Trigger(val rawValue: String) {
         /**
          * Room accessed due to being just created.
          */
-        Created,
+        Created("Created"),
 
         /**
          * Room switched due to user interacting with a message search result.
          */
-        MessageSearch,
+        MessageSearch("MessageSearch"),
 
         /**
          * Room switched due to user selecting a user to go to a DM with.
          */
-        MessageUser,
+        MessageUser("MessageUser"),
 
         /**
          * Room accessed via space explore.
          */
-        MobileExploreRooms,
+        MobileExploreRooms("MobileExploreRooms"),
 
         /**
          * Room switched due to user interacting with a file search result.
          */
-        MobileFileSearch,
+        MobileFileSearch("MobileFileSearch"),
 
         /**
          * Room accessed via interacting with the incall screen.
          */
-        MobileInCall,
+        MobileInCall("MobileInCall"),
 
         /**
          * Room accessed during external sharing.
          */
-        MobileLinkShare,
+        MobileLinkShare("MobileLinkShare"),
 
         /**
          * Room accessed via link.
          */
-        MobilePermalink,
+        MobilePermalink("MobilePermalink"),
 
         /**
          * Room accessed via interacting with direct chat item in the room
          * contact detail screen.
          */
-        MobileRoomMemberDetail,
+        MobileRoomMemberDetail("MobileRoomMemberDetail"),
 
         /**
          * Room accessed via preview.
          */
-        MobileRoomPreview,
+        MobileRoomPreview("MobileRoomPreview"),
 
         /**
          * Room switched due to user interacting with a room search result.
          */
-        MobileRoomSearch,
+        MobileRoomSearch("MobileRoomSearch"),
 
         /**
          * Room accessed via interacting with direct chat item in the search
          * contact detail screen.
          */
-        MobileSearchContactDetail,
+        MobileSearchContactDetail("MobileSearchContactDetail"),
 
         /**
          * Room accessed via space bottom sheet list.
          */
-        MobileSpaceBottomSheet,
+        MobileSpaceBottomSheet("MobileSpaceBottomSheet"),
 
         /**
          * Room accessed via interacting with direct chat item in the space
          * contact detail screen.
          */
-        MobileSpaceMemberDetail,
+        MobileSpaceMemberDetail("MobileSpaceMemberDetail"),
 
         /**
          * Room accessed via space members list.
          */
-        MobileSpaceMembers,
+        MobileSpaceMembers("MobileSpaceMembers"),
 
         /**
          * Space accessed via interacting with the space menu.
          */
-        MobileSpaceMenu,
+        MobileSpaceMenu("MobileSpaceMenu"),
 
         /**
          * Space accessed via interacting with a space settings menu item.
          */
-        MobileSpaceSettings,
+        MobileSpaceSettings("MobileSpaceSettings"),
 
         /**
          * Room accessed via a push/desktop notification.
          */
-        Notification,
+        Notification("Notification"),
 
         /**
          * Room accessed via the predecessor link at the top of the upgraded
          * room.
          */
-        Predecessor,
+        Predecessor("Predecessor"),
 
         /**
          * Room accessed via the public rooms directory.
          */
-        RoomDirectory,
+        RoomDirectory("RoomDirectory"),
 
         /**
          * Room accessed via the room list.
          */
-        RoomList,
+        RoomList("RoomList"),
 
         /**
          * Room accessed via a shortcut.
          */
-        Shortcut,
+        Shortcut("Shortcut"),
 
         /**
          * Room accessed via a slash command in Element Web/Desktop like /goto.
          */
-        SlashCommand,
+        SlashCommand("SlashCommand"),
 
         /**
          * Room accessed via the space hierarchy view.
          */
-        SpaceHierarchy,
+        SpaceHierarchy("SpaceHierarchy"),
 
         /**
          * Room accessed via a timeline pill or link in another room.
          */
-        Timeline,
+        Timeline("Timeline"),
 
         /**
          * Room accessed via a tombstone at the bottom of a predecessor room.
          */
-        Tombstone,
+        Tombstone("Tombstone"),
 
         /**
          * Room switched due to user interacting with incoming verification
          * request.
          */
-        VerificationRequest,
+        VerificationRequest("VerificationRequest"),
 
         /**
          * Room switched due to accepting a call in a different room in Element
          * Web/Desktop.
          */
-        WebAcceptCall,
+        WebAcceptCall("WebAcceptCall"),
 
         /**
          * Room switched due to making a call via the dial pad in Element
          * Web/Desktop.
          */
-        WebDialPad,
+        WebDialPad("WebDialPad"),
 
         /**
          * Room accessed via interacting with the floating call or Jitsi PIP in
          * Element Web/Desktop.
          */
-        WebFloatingCallWindow,
+        WebFloatingCallWindow("WebFloatingCallWindow"),
 
         /**
          * Room accessed via the shortcut in Element Web/Desktop's forward
          * modal.
          */
-        WebForwardShortcut,
+        WebForwardShortcut("WebForwardShortcut"),
 
         /**
          * Room accessed via the Element Web/Desktop horizontal breadcrumbs at
          * the top of the room list.
          */
-        WebHorizontalBreadcrumbs,
+        WebHorizontalBreadcrumbs("WebHorizontalBreadcrumbs"),
 
         /**
          * Room accessed via an Element Web/Desktop keyboard shortcut like go to
          * next room with unread messages.
          */
-        WebKeyboardShortcut,
+        WebKeyboardShortcut("WebKeyboardShortcut"),
 
         /**
          * Room accessed via Element Web/Desktop's notification panel.
          */
-        WebNotificationPanel,
+        WebNotificationPanel("WebNotificationPanel"),
 
         /**
          * Room accessed via the predecessor link in Settings > Advanced in
          * Element Web/Desktop.
          */
-        WebPredecessorSettings,
+        WebPredecessorSettings("WebPredecessorSettings"),
 
         /**
          * Room accessed via clicking on a notifications badge on a room list
          * sublist in Element Web/Desktop.
          */
-        WebRoomListNotificationBadge,
+        WebRoomListNotificationBadge("WebRoomListNotificationBadge"),
 
         /**
          * Room switched due to the user changing space in Element Web/Desktop.
          */
-        WebSpaceContextSwitch,
+        WebSpaceContextSwitch("WebSpaceContextSwitch"),
 
         /**
          * Room accessed via clicking on the notifications badge on the
          * currently selected space in Element Web/Desktop.
          */
-        WebSpacePanelNotificationBadge,
+        WebSpacePanelNotificationBadge("WebSpacePanelNotificationBadge"),
 
         /**
          * Room accessed via interacting with the Threads Activity Centre in
          * Element Web/Desktop.
          */
-        WebThreadsActivityCentre,
+        WebThreadsActivityCentre("WebThreadsActivityCentre"),
 
         /**
          * Room accessed via Element Web/Desktop's Unified Search modal.
          */
-        WebUnifiedSearch,
+        WebUnifiedSearch("WebUnifiedSearch"),
 
         /**
          * Room accessed via the Element Web/Desktop vertical breadcrumb hover
          * menu.
          */
-        WebVerticalBreadcrumbs,
+        WebVerticalBreadcrumbs("WebVerticalBreadcrumbs"),
 
         /**
          * Room switched due to widget interaction.
          */
-        Widget,
+        Widget("Widget"),
     }
 
-    enum class ActiveSpace {
+    enum class ActiveSpace(val rawValue: String) {
 
         /**
          * Active space is Home.
          */
-        Home,
+        Home("Home"),
 
         /**
          * Active space is a meta space.
          */
-        Meta,
+        Meta("Meta"),
 
         /**
          * Active space is a private space.
          */
-        Private,
+        Private("Private"),
 
         /**
          * Active space is a public space.
          */
-        Public,
+        Public("Public"),
     }
 
     override fun getName() = "ViewRoom"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            activeSpace?.let { put("activeSpace", it.name) }
+            activeSpace?.let { put("activeSpace", it.rawValue) }
             isDM?.let { put("isDM", it) }
             isSpace?.let { put("isSpace", it) }
-            trigger?.let { put("trigger", it.name) }
+            trigger?.let { put("trigger", it.rawValue) }
             viaKeyboard?.let { put("viaKeyboard", it) }
         }.takeIf { it.isNotEmpty() }
     }

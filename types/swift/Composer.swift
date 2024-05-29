@@ -45,15 +45,15 @@ extension AnalyticsEvent {
 
         public enum MessageType: String {
             /// A pin drop location message.
-            case LocationPin
+            case LocationPin = "LocationPin"
             /// A user current location message.
-            case LocationUser
+            case LocationUser = "LocationUser"
             /// A poll message.
-            case Poll
+            case Poll = "Poll"
             /// A text message.
-            case Text
+            case Text = "Text"
             /// A voice message.
-            case VoiceMessage
+            case VoiceMessage = "VoiceMessage"
         }
 
         public var properties: [String: Any] {

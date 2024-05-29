@@ -36,42 +36,42 @@ extension AnalyticsEvent {
 
         public enum Action: String {
             /// Banned a room member.
-            case BanMember
+            case BanMember = "BanMember"
             /// Changed a room member's power level.
-            case ChangeMemberRole
+            case ChangeMemberRole = "ChangeMemberRole"
             /// Changed the power level required to ban room members.
-            case ChangePermissionsBanMembers
+            case ChangePermissionsBanMembers = "ChangePermissionsBanMembers"
             /// Changed the power level required to invite users to the room.
-            case ChangePermissionsInviteUsers
+            case ChangePermissionsInviteUsers = "ChangePermissionsInviteUsers"
             /// Changed the power level required to kick room members.
-            case ChangePermissionsKickMembers
+            case ChangePermissionsKickMembers = "ChangePermissionsKickMembers"
             /// Changed the power level required to redact messages in the room.
-            case ChangePermissionsRedactMessages
+            case ChangePermissionsRedactMessages = "ChangePermissionsRedactMessages"
             /// Changed the power level required to set the room's avatar.
-            case ChangePermissionsRoomAvatar
+            case ChangePermissionsRoomAvatar = "ChangePermissionsRoomAvatar"
             /// Changed the power level required to set the room's name.
-            case ChangePermissionsRoomName
+            case ChangePermissionsRoomName = "ChangePermissionsRoomName"
             /// Changed the power level required to set the room's topic.
-            case ChangePermissionsRoomTopic
+            case ChangePermissionsRoomTopic = "ChangePermissionsRoomTopic"
             /// Changed the power level required to send messages in the room.
-            case ChangePermissionsSendMessages
+            case ChangePermissionsSendMessages = "ChangePermissionsSendMessages"
             /// Kicked a room member.
-            case KickMember
+            case KickMember = "KickMember"
             /// Reset all of the room permissions back to their default values.
-            case ResetPermissions
+            case ResetPermissions = "ResetPermissions"
             /// Unbanned a room member.
-            case UnbanMember
+            case UnbanMember = "UnbanMember"
         }
 
         public enum Role: String {
             /// A power level of 100.
-            case Administrator
+            case Administrator = "Administrator"
             /// A power level of 50.
-            case Moderator
+            case Moderator = "Moderator"
             /// Any other power level.
-            case Other
+            case Other = "Other"
             /// A power level of 0.
-            case User
+            case User = "User"
         }
 
         public var properties: [String: Any] {
