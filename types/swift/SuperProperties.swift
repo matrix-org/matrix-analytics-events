@@ -23,20 +23,17 @@ import Foundation
 extension AnalyticsEvent {
     public struct SuperProperties {
 
-        /// Used by web to identify the platform (Web Platform/Electron Platform).
-        public let appPlatform: String?
+        /// Used as a discriminant to breakdown usage per client.
+        public let appPlatform: AppPlatform?
         /// Which crypto backend is the client currently using.
         public let cryptoSDK: CryptoSDK?
         /// Version of the crypto backend.
         public let cryptoSDKVersion: String?
-        /// Used as a discriminant to breakdown usage per client.
-        public let platformCodeName: PlatformCodeName?
 
-        public init(appPlatform: String?, cryptoSDK: CryptoSDK?, cryptoSDKVersion: String?, platformCodeName: PlatformCodeName?) {
+        public init(appPlatform: AppPlatform?, cryptoSDK: CryptoSDK?, cryptoSDKVersion: String?) {
             self.appPlatform = appPlatform
             self.cryptoSDK = cryptoSDK
             self.cryptoSDKVersion = cryptoSDKVersion
-            self.platformCodeName = platformCodeName
         }
 
         public enum CryptoSDK: String {
@@ -46,29 +43,28 @@ extension AnalyticsEvent {
             case Rust = "Rust"
         }
 
-        public enum PlatformCodeName: String {
-            /// Element Desktop platform code.
-            case Desktop = "Desktop"
-            /// Element Android platform code.
+        public enum AppPlatform: String {
+            /// Element Android platform.
             case EA = "EA"
-            /// Element iOS platform code.
+            /// Element iOS platform.
             case EI = "EI"
-            /// Element-X Android platform code.
+            /// Element-X Android platform.
             case EXA = "EXA"
-            /// Element-X iOS platform code.
+            /// Element-X iOS platform.
             case EXI = "EXI"
-            /// Other Platform code.
+            /// Element Desktop platform.
+            case ElectronPlatform = "Electron Platform"
+            /// Other Platform.
             case Other = "Other"
-            /// Element Web platform code.
-            case Web = "Web"
+            /// Element Web platform.
+            case WebPlatform = "Web Platform"
         }
 
         public var properties: [String: Any?] {
             return [
-                "appPlatform": appPlatform,
+                "appPlatform": appPlatform?.rawValue,
                 "cryptoSDK": cryptoSDK?.rawValue,
-                "cryptoSDKVersion": cryptoSDKVersion,
-                "platformCodeName": platformCodeName?.rawValue
+                "cryptoSDKVersion": cryptoSDKVersion
             ]
         }
     }

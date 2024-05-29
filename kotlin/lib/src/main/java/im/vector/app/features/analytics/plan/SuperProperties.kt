@@ -26,10 +26,9 @@ package im.vector.app.features.analytics.plan
  */
 data class SuperProperties(
         /**
-         * Used by web to identify the platform (Web Platform/Electron
-         * Platform).
+         * Used as a discriminant to breakdown usage per client.
          */
-        val appPlatform: String? = null,
+        val appPlatform: AppPlatform? = null,
         /**
          * Which crypto backend is the client currently using.
          */
@@ -38,10 +37,6 @@ data class SuperProperties(
          * Version of the crypto backend.
          */
         val cryptoSDKVersion: String? = null,
-        /**
-         * Used as a discriminant to breakdown usage per client.
-         */
-        val platformCodeName: PlatformCodeName? = null,
 ) {
 
     enum class CryptoSDK(val rawValue: String) {
@@ -56,50 +51,49 @@ data class SuperProperties(
         Rust("Rust"),
     }
 
-    enum class PlatformCodeName(val rawValue: String) {
+    enum class AppPlatform(val rawValue: String) {
 
         /**
-         * Element Desktop platform code.
-         */
-        Desktop("Desktop"),
-
-        /**
-         * Element Android platform code.
+         * Element Android platform.
          */
         EA("EA"),
 
         /**
-         * Element iOS platform code.
+         * Element iOS platform.
          */
         EI("EI"),
 
         /**
-         * Element-X Android platform code.
+         * Element-X Android platform.
          */
         EXA("EXA"),
 
         /**
-         * Element-X iOS platform code.
+         * Element-X iOS platform.
          */
         EXI("EXI"),
 
         /**
-         * Other Platform code.
+         * Element Desktop platform.
+         */
+        ElectronPlatform("Electron Platform"),
+
+        /**
+         * Other Platform.
          */
         Other("Other"),
 
         /**
-         * Element Web platform code.
+         * Element Web platform.
          */
-        Web("Web"),
+        WebPlatform("Web Platform"),
     }
 
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            appPlatform?.let { put("appPlatform", it) }
+            appPlatform?.let { put("appPlatform", it.rawValue) }
             cryptoSDK?.let { put("cryptoSDK", it.rawValue) }
             cryptoSDKVersion?.let { put("cryptoSDKVersion", it) }
-            platformCodeName?.let { put("platformCodeName", it.rawValue) }
         }.takeIf { it.isNotEmpty() }
     }
 }
