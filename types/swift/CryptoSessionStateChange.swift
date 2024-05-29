@@ -34,18 +34,18 @@ extension AnalyticsEvent {
 
         public enum VerificationState: String {
             /// The device is unverified.
-            case NotVerified
+            case NotVerified = "NotVerified"
             /// The device is considered to be verified, it has been signed by its user identity.
-            case Verified
+            case Verified = "Verified"
         }
 
         public enum RecoveryState: String {
             /// No default secret storage key exists or it is disabled explicitly using the account data event.
-            case Disabled
+            case Disabled = "Disabled"
             /// Secret storage is set up and we have all the secrets locally.
-            case Enabled
+            case Enabled = "Enabled"
             /// Secret storage is set up but we're missing some secrets.
-            case Incomplete
+            case Incomplete = "Incomplete"
         }
 
         public var properties: [String: Any] {

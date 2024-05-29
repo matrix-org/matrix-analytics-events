@@ -47,17 +47,17 @@ data class UnauthenticatedError(
         val softLogout: Boolean,
 ) : VectorAnalyticsEvent {
 
-    enum class ErrorCode {
-        M_FORBIDDEN,
-        M_UNKNOWN,
-        M_UNKNOWN_TOKEN,
+    enum class ErrorCode(val rawValue: String) {
+        M_FORBIDDEN("M_FORBIDDEN"),
+        M_UNKNOWN("M_UNKNOWN"),
+        M_UNKNOWN_TOKEN("M_UNKNOWN_TOKEN"),
     }
 
     override fun getName() = "UnauthenticatedError"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
-            put("errorCode", errorCode.name)
+            put("errorCode", errorCode.rawValue)
             put("errorReason", errorReason)
             put("refreshTokenAuth", refreshTokenAuth)
             put("softLogout", softLogout)

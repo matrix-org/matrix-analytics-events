@@ -34,125 +34,125 @@ extension AnalyticsEvent {
 
         public enum ScreenName: String {
             /// The screen that displays the user's breadcrumbs.
-            case Breadcrumbs
+            case Breadcrumbs = "Breadcrumbs"
             /// The screen shown to create a poll.
-            case CreatePollView
+            case CreatePollView = "CreatePollView"
             /// The screen shown to create a new (non-direct) room.
-            case CreateRoom
+            case CreateRoom = "CreateRoom"
             /// The screen shown to create a new space.
-            case CreateSpace
+            case CreateSpace = "CreateSpace"
             /// The confirmation screen shown before deactivating an account.
-            case DeactivateAccount
+            case DeactivateAccount = "DeactivateAccount"
             /// The tab on mobile that displays the dialpad.
-            case Dialpad
+            case Dialpad = "Dialpad"
             /// The screen shown to edit a poll.
-            case EditPollView
+            case EditPollView = "EditPollView"
             /// The Favourites tab on mobile that lists your favourite people/rooms.
-            case Favourites
+            case Favourites = "Favourites"
             /// The form for the forgot password use case.
-            case ForgotPassword
+            case ForgotPassword = "ForgotPassword"
             /// Legacy: The screen that shows information about a specific group.
-            case Group
+            case Group = "Group"
             /// The Home tab on iOS | possibly the same on Android?
-            case Home
+            case Home = "Home"
             /// The screen shown to share a link to download the app.
-            case InviteFriends
+            case InviteFriends = "InviteFriends"
             /// Room accessed via space bottom sheet list.
-            case Invites
+            case Invites = "Invites"
             /// The screen shown to share location.
-            case LocationSend
+            case LocationSend = "LocationSend"
             /// The screen shown to view a shared location.
-            case LocationView
+            case LocationView = "LocationView"
             /// The screen that displays the login flow (when the user already has an account).
-            case Login
+            case Login = "Login"
             /// Legacy: The screen that shows all groups/communities you have joined.
-            case MyGroups
+            case MyGroups = "MyGroups"
             /// The screen containing tests to help user to fix issues around notifications.
-            case NotificationTroubleshoot
+            case NotificationTroubleshoot = "NotificationTroubleshoot"
             /// The People tab on mobile that lists all the DM rooms you have joined.
-            case People
+            case People = "People"
             /// The screen that displays the registration flow (when the user wants to create an account).
-            case Register
+            case Register = "Register"
             /// The screen that displays the messages and events received in a room.
-            case Room
+            case Room = "Room"
             /// The room addresses screen shown from the Room Details screen.
-            case RoomAddresses
+            case RoomAddresses = "RoomAddresses"
             /// The screen shown when tapping the name of a room from the Room screen.
-            case RoomDetails
+            case RoomDetails = "RoomDetails"
             /// The screen that lists public rooms for you to discover.
-            case RoomDirectory
+            case RoomDirectory = "RoomDirectory"
             /// The screen that lists all the user's rooms and let them filter the rooms.
-            case RoomFilter
+            case RoomFilter = "RoomFilter"
             /// The screen that displays the list of members that are part of a room.
-            case RoomMembers
+            case RoomMembers = "RoomMembers"
             /// The notifications settings screen shown from the Room Details screen.
-            case RoomNotifications
+            case RoomNotifications = "RoomNotifications"
             /// The roles permissions screen shown from the Room Details screen.
-            case RoomPermissions
+            case RoomPermissions = "RoomPermissions"
             /// Screen that displays room preview if user hasn't joined yet.
-            case RoomPreview
+            case RoomPreview = "RoomPreview"
             /// The screen that allows you to search for messages/files in a specific room.
-            case RoomSearch
+            case RoomSearch = "RoomSearch"
             /// The settings screen shown from the Room Details screen.
-            case RoomSettings
+            case RoomSettings = "RoomSettings"
             /// The screen that allows you to see all of the files sent in a specific room.
-            case RoomUploads
+            case RoomUploads = "RoomUploads"
             /// The Rooms tab on mobile that lists all the (non-direct) rooms you've joined.
-            case Rooms
+            case Rooms = "Rooms"
             /// The Files tab shown in the global search screen on Mobile.
-            case SearchFiles
+            case SearchFiles = "SearchFiles"
             /// The Messages tab shown in the global search screen on Mobile.
-            case SearchMessages
+            case SearchMessages = "SearchMessages"
             /// The People tab shown in the global search screen on Mobile.
-            case SearchPeople
+            case SearchPeople = "SearchPeople"
             /// The Rooms tab shown in the global search screen on Mobile.
-            case SearchRooms
+            case SearchRooms = "SearchRooms"
             /// The global settings screen shown in the app.
-            case Settings
+            case Settings = "Settings"
             /// The advanced settings screen (developer mode, rageshake, push notification rules).
-            case SettingsAdvanced
+            case SettingsAdvanced = "SettingsAdvanced"
             /// The settings screen to change the default notification options.
-            case SettingsDefaultNotifications
+            case SettingsDefaultNotifications = "SettingsDefaultNotifications"
             /// The settings screen with general profile settings.
-            case SettingsGeneral
+            case SettingsGeneral = "SettingsGeneral"
             /// The Help and About screen.
-            case SettingsHelp
+            case SettingsHelp = "SettingsHelp"
             /// The settings screen with list of the ignored users.
-            case SettingsIgnoredUsers
+            case SettingsIgnoredUsers = "SettingsIgnoredUsers"
             /// The experimental features settings screen.
-            case SettingsLabs
+            case SettingsLabs = "SettingsLabs"
             /// The settings screen with legals information.
-            case SettingsLegals
+            case SettingsLegals = "SettingsLegals"
             /// The settings screen to manage notification mentions and keywords.
-            case SettingsMentionsAndKeywords
+            case SettingsMentionsAndKeywords = "SettingsMentionsAndKeywords"
             /// The notifications settings screen.
-            case SettingsNotifications
+            case SettingsNotifications = "SettingsNotifications"
             /// The preferences screen (theme, language, editor preferences, etc.
-            case SettingsPreferences
+            case SettingsPreferences = "SettingsPreferences"
             /// The global security settings screen.
-            case SettingsSecurity
+            case SettingsSecurity = "SettingsSecurity"
             /// The calls settings screen.
-            case SettingsVoiceVideo
+            case SettingsVoiceVideo = "SettingsVoiceVideo"
             /// The sidebar shown on mobile with spaces, settings etc.
-            case Sidebar
+            case Sidebar = "Sidebar"
             /// Room accessed via space bottom sheet list.
-            case SpaceBottomSheet
+            case SpaceBottomSheet = "SpaceBottomSheet"
             /// Screen that displays the list of rooms and spaces of a space.
-            case SpaceExploreRooms
+            case SpaceExploreRooms = "SpaceExploreRooms"
             /// Screen that displays the list of members of a space.
-            case SpaceMembers
+            case SpaceMembers = "SpaceMembers"
             /// The bottom sheet that list all space options.
-            case SpaceMenu
+            case SpaceMenu = "SpaceMenu"
             /// The screen shown to create a new direct room.
-            case StartChat
+            case StartChat = "StartChat"
             /// The screen shown to select which room directory you'd like to use.
-            case SwitchDirectory
+            case SwitchDirectory = "SwitchDirectory"
             /// Screen that displays list of threads for a room.
-            case ThreadList
+            case ThreadList = "ThreadList"
             /// A screen that shows information about a room member.
-            case User
+            case User = "User"
             /// The splash screen.
-            case Welcome
+            case Welcome = "Welcome"
         }
 
         public var properties: [String: Any] {

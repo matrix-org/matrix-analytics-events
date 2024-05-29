@@ -33,21 +33,21 @@ extension AnalyticsEvent {
 
         public enum AuthenticationType: String {
             /// Social login using Apple.
-            case Apple
+            case Apple = "Apple"
             /// Social login using Facebook.
-            case Facebook
+            case Facebook = "Facebook"
             /// Social login using GitHub.
-            case GitHub
+            case GitHub = "GitHub"
             /// Social login using GitLab.
-            case GitLab
+            case GitLab = "GitLab"
             /// Social login using Google.
-            case Google
+            case Google = "Google"
             /// Registration using some other mechanism such as fallback.
-            case Other
+            case Other = "Other"
             /// Registration with a username and password.
-            case Password
+            case Password = "Password"
             /// Registration using another SSO provider.
-            case SSO
+            case SSO = "SSO"
         }
 
         public var properties: [String: Any] {

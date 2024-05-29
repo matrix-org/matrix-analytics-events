@@ -70,104 +70,104 @@ data class Error(
         val wasVisibleToUser: Boolean? = null,
 ) : VectorAnalyticsEvent {
 
-    enum class Domain {
-        E2EE,
-        TO_DEVICE,
-        VOIP,
+    enum class Domain(val rawValue: String) {
+        E2EE("E2EE"),
+        TO_DEVICE("TO_DEVICE"),
+        VOIP("VOIP"),
     }
 
-    enum class Name {
+    enum class Name(val rawValue: String) {
 
         /**
          * E2EE domain error. Decryption failed for a message sent before you
          * were in the room (shared history visibility and support for sharing
          * past keys is not available/supported).
          */
-        ExpectedDueToMembership,
+        ExpectedDueToMembership("ExpectedDueToMembership"),
 
         /**
          * E2EE domain error. Decryption failed for a message sent before the
          * device logged in, and key backup is not enabled.
          */
-        HistoricalMessage,
+        HistoricalMessage("HistoricalMessage"),
 
         /**
          * E2EE domain error. The room key is known but is ratcheted (index >
          * 0).
          */
-        OlmIndexError,
+        OlmIndexError("OlmIndexError"),
 
         /**
          * E2EE domain error. Generic unknown inbound group session error.
          */
-        OlmKeysNotSentError,
+        OlmKeysNotSentError("OlmKeysNotSentError"),
 
         /**
          * E2EE domain error. Any other decryption error (missing field, format
          * errors...).
          */
-        OlmUnspecifiedError,
+        OlmUnspecifiedError("OlmUnspecifiedError"),
 
         /**
          * TO_DEVICE domain error. The to-device message failed to decrypt.
          */
-        ToDeviceFailedToDecrypt,
+        ToDeviceFailedToDecrypt("ToDeviceFailedToDecrypt"),
 
         /**
          * E2EE domain error. Decryption failed due to unknown error.
          */
-        UnknownError,
+        UnknownError("UnknownError"),
 
         /**
          * VOIP domain error. ICE negotiation failed.
          */
-        VoipIceFailed,
+        VoipIceFailed("VoipIceFailed"),
 
         /**
          * VOIP domain error. ICE negotiation timed out.
          */
-        VoipIceTimeout,
+        VoipIceTimeout("VoipIceTimeout"),
 
         /**
          * VOIP domain error. The call invite timed out.
          */
-        VoipInviteTimeout,
+        VoipInviteTimeout("VoipInviteTimeout"),
 
         /**
          * VOIP domain error. The user hung up the call.
          */
-        VoipUserHangup,
+        VoipUserHangup("VoipUserHangup"),
 
         /**
          * VOIP domain error. The user's media failed to start.
          */
-        VoipUserMediaFailed,
+        VoipUserMediaFailed("VoipUserMediaFailed"),
     }
 
-    enum class CryptoSDK {
+    enum class CryptoSDK(val rawValue: String) {
 
         /**
          * Legacy crypto backend specific to each platform.
          */
-        Legacy,
+        Legacy("Legacy"),
 
         /**
          * Cross-platform crypto backend written in Rust.
          */
-        Rust,
+        Rust("Rust"),
     }
 
-    enum class CryptoModule {
+    enum class CryptoModule(val rawValue: String) {
 
         /**
          * Native / legacy crypto module specific to each platform.
          */
-        Native,
+        Native("Native"),
 
         /**
          * Shared / cross-platform crypto module written in Rust.
          */
-        Rust,
+        Rust("Rust"),
     }
 
     override fun getName() = "Error"
@@ -175,13 +175,13 @@ data class Error(
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             context?.let { put("context", it) }
-            cryptoModule?.let { put("cryptoModule", it.name) }
-            cryptoSDK?.let { put("cryptoSDK", it.name) }
-            put("domain", domain.name)
+            cryptoModule?.let { put("cryptoModule", it.rawValue) }
+            cryptoSDK?.let { put("cryptoSDK", it.rawValue) }
+            put("domain", domain.rawValue)
             eventLocalAgeMillis?.let { put("eventLocalAgeMillis", it) }
             isFederated?.let { put("isFederated", it) }
             isMatrixDotOrg?.let { put("isMatrixDotOrg", it) }
-            put("name", name.name)
+            put("name", name.rawValue)
             timeToDecryptMillis?.let { put("timeToDecryptMillis", it) }
             userTrustsOwnIdentity?.let { put("userTrustsOwnIdentity", it) }
             wasVisibleToUser?.let { put("wasVisibleToUser", it) }

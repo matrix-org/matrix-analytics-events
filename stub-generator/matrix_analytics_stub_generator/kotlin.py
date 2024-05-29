@@ -1,3 +1,4 @@
+import re
 from .schema import Schema, is_mobile_screen_event, first_letter_up, first_letter_down, split_text
 
 def compute_kotlin(schema: Schema) -> str:
@@ -77,7 +78,7 @@ package im.vector.app.features.analytics.plan
     isFirstEnum = True
     for enum in schema.enums:
         result += "\n"
-        result += f"    enum class {enum.name} " + "{\n"
+        result += f"    enum class {enum.name}(val rawValue: String) " + "{\n"
         enum.values.sort()
         for value in enum.values:
             if value.description:
@@ -86,13 +87,14 @@ package im.vector.app.features.analytics.plan
                 result += f"        /**\n"
                 result += f"{split_text('         * ', value.description)}\n"
                 result += f"         */\n"
-            result += f"        {value.name},\n"
+            validIdentifier = re.sub('[^a-zA-Z0-9_]', '', value.name)
+            result += f"        {validIdentifier}(\"{value.name}\"),\n"
             isFirstEnum = False
         result += "    }\n"
-    
+
     if is_screen:
         result += "\n"
-        result += "    override fun getName() = screenName.name\n"
+        result += "    override fun getName() = screenName.rawValue\n"
     elif schema.event_name:
         result += "\n"
         result += f'    override fun getName() = "{schema.event_name}"\n'
@@ -114,12 +116,12 @@ package im.vector.app.features.analytics.plan
                 continue
             if member.required:
                 if member.enum:
-                    result += f'            put("{validName}", {member.name}.name)\n'
+                    result += f'            put("{validName}", {member.name}.rawValue)\n'
                 else:
                     result += f'            put("{validName}", {member.name})\n'
             else:
                 if member.enum:
-                    result += '            %s?.let { put("%s", it.name) }\n' % (
+                    result += '            %s?.let { put("%s", it.rawValue) }\n' % (
                         validName,
                         member.name,
                     )

@@ -44,56 +44,56 @@ data class PerformanceTimer(
         val timeMs: Int,
 ) : VectorAnalyticsEvent {
 
-    enum class Name {
+    enum class Name(val rawValue: String) {
         /**
          * The time spent parsing the response from an initial /sync request. In
          * this case, `itemCount` should contain the number of joined rooms.
          */
-        InitialSyncParsing,
+        InitialSyncParsing("InitialSyncParsing"),
 
         /**
          * The time spent waiting for a response to an initial /sync request. In
          * this case, `itemCount` should contain the number of joined rooms.
          */
-        InitialSyncRequest,
+        InitialSyncRequest("InitialSyncRequest"),
 
         /**
          * The time taken to display an event in the timeline that was opened
          * from a notification.
          */
-        NotificationsOpenEvent,
+        NotificationsOpenEvent("NotificationsOpenEvent"),
 
         /**
          * The duration of a regular /sync request when resuming the app. In
          * this case, `itemCount` should contain the number of joined rooms in
          * the response.
          */
-        StartupIncrementalSync,
+        StartupIncrementalSync("StartupIncrementalSync"),
 
         /**
          * The duration of an initial /sync request during startup (if the store
          * has been wiped). In this case, `itemCount` should contain the number
          * of joined rooms.
          */
-        StartupInitialSync,
+        StartupInitialSync("StartupInitialSync"),
 
         /**
          * How long the app launch screen is displayed for.
          */
-        StartupLaunchScreen,
+        StartupLaunchScreen("StartupLaunchScreen"),
 
         /**
          * The time to preload data in the MXStore on iOS. In this case,
          * `itemCount` should contain the number of rooms in the store.
          */
-        StartupStorePreload,
+        StartupStorePreload("StartupStorePreload"),
 
         /**
          * The time to load all data from the store (including
          * StartupStorePreload time). In this case, `itemCount` should contain
          * the number of rooms loaded into the session
          */
-        StartupStoreReady,
+        StartupStoreReady("StartupStoreReady"),
     }
 
     override fun getName() = "PerformanceTimer"
@@ -102,7 +102,7 @@ data class PerformanceTimer(
         return mutableMapOf<String, Any>().apply {
             context?.let { put("context", it) }
             itemCount?.let { put("itemCount", it) }
-            put("name", name.name)
+            put("name", name.rawValue)
             put("timeMs", timeMs)
         }.takeIf { it.isNotEmpty() }
     }

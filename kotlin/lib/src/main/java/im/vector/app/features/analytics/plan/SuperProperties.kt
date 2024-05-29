@@ -44,62 +44,62 @@ data class SuperProperties(
         val platformCodeName: PlatformCodeName? = null,
 ) {
 
-    enum class CryptoSDK {
+    enum class CryptoSDK(val rawValue: String) {
         /**
          * Legacy crypto backend specific to each platform.
          */
-        Legacy,
+        Legacy("Legacy"),
 
         /**
          * Cross-platform crypto backend written in Rust.
          */
-        Rust,
+        Rust("Rust"),
     }
 
-    enum class PlatformCodeName {
+    enum class PlatformCodeName(val rawValue: String) {
 
         /**
          * Element Desktop platform code.
          */
-        Desktop,
+        Desktop("Desktop"),
 
         /**
          * Element Android platform code.
          */
-        EA,
+        EA("EA"),
 
         /**
          * Element iOS platform code.
          */
-        EI,
+        EI("EI"),
 
         /**
          * Element-X Android platform code.
          */
-        EXA,
+        EXA("EXA"),
 
         /**
          * Element-X iOS platform code.
          */
-        EXI,
+        EXI("EXI"),
 
         /**
          * Other Platform code.
          */
-        Other,
+        Other("Other"),
 
         /**
          * Element Web platform code.
          */
-        Web,
+        Web("Web"),
     }
 
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             appPlatform?.let { put("appPlatform", it) }
-            cryptoSDK?.let { put("cryptoSDK", it.name) }
+            cryptoSDK?.let { put("cryptoSDK", it.rawValue) }
             cryptoSDKVersion?.let { put("cryptoSDKVersion", it) }
-            platformCodeName?.let { put("platformCodeName", it.name) }
+            platformCodeName?.let { put("platformCodeName", it.rawValue) }
         }.takeIf { it.isNotEmpty() }
     }
 }

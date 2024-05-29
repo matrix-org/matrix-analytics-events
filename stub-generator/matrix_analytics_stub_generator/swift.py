@@ -1,3 +1,4 @@
+import re
 from .schema import Schema, Member, is_mobile_screen_event
 
 
@@ -123,7 +124,8 @@ def compute_swift(schema: Schema) -> str:
         for value in enum.values:
             if value.description:
                 result += f"            /// {value.description}\n"
-            result += f"            case {value.name}\n"
+            validIdentifier = re.sub('[^a-zA-Z0-9_]', '', value.name)
+            result += f"            case {validIdentifier} = \"{value.name}\"\n"
         result += "        }\n"
 
     # Properties dictionary

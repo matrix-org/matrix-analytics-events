@@ -42,30 +42,30 @@ extension AnalyticsEvent {
 
         public enum Trigger: String {
             /// Room joined via an invite.
-            case Invite
+            case Invite = "Invite"
             /// Room joined via link.
-            case MobilePermalink
+            case MobilePermalink = "MobilePermalink"
             /// Room joined via a push/desktop notification.
-            case Notification
+            case Notification = "Notification"
             /// Room joined via the public rooms directory.
-            case RoomDirectory
+            case RoomDirectory = "RoomDirectory"
             /// Room joined via its preview.
-            case RoomPreview
+            case RoomPreview = "RoomPreview"
             /// Room joined via the /join slash command.
-            case SlashCommand
+            case SlashCommand = "SlashCommand"
             /// Room joined via the space hierarchy view.
-            case SpaceHierarchy
+            case SpaceHierarchy = "SpaceHierarchy"
             /// Room joined via a timeline pill or link in another room.
-            case Timeline
+            case Timeline = "Timeline"
         }
 
         public enum RoomSize: String {
-            case ElevenToOneHundred
-            case MoreThanAThousand
-            case One
-            case OneHundredAndOneToAThousand
-            case ThreeToTen
-            case Two
+            case ElevenToOneHundred = "ElevenToOneHundred"
+            case MoreThanAThousand = "MoreThanAThousand"
+            case One = "One"
+            case OneHundredAndOneToAThousand = "OneHundredAndOneToAThousand"
+            case ThreeToTen = "ThreeToTen"
+            case Two = "Two"
         }
 
         public var properties: [String: Any] {

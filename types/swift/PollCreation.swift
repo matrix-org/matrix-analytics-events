@@ -39,9 +39,9 @@ extension AnalyticsEvent {
 
         public enum Action: String {
             /// Newly created poll.
-            case Create
+            case Create = "Create"
             /// Edit of an existing poll.
-            case Edit
+            case Edit = "Edit"
         }
 
         public var properties: [String: Any] {

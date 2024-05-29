@@ -42,21 +42,21 @@ extension AnalyticsEvent {
 
         public enum Name: String {
             /// The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-            case InitialSyncParsing
+            case InitialSyncParsing = "InitialSyncParsing"
             /// The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-            case InitialSyncRequest
+            case InitialSyncRequest = "InitialSyncRequest"
             /// The time taken to display an event in the timeline that was opened from a notification.
-            case NotificationsOpenEvent
+            case NotificationsOpenEvent = "NotificationsOpenEvent"
             /// The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
-            case StartupIncrementalSync
+            case StartupIncrementalSync = "StartupIncrementalSync"
             /// The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
-            case StartupInitialSync
+            case StartupInitialSync = "StartupInitialSync"
             /// How long the app launch screen is displayed for.
-            case StartupLaunchScreen
+            case StartupLaunchScreen = "StartupLaunchScreen"
             /// The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
-            case StartupStorePreload
+            case StartupStorePreload = "StartupStorePreload"
             /// The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
-            case StartupStoreReady
+            case StartupStoreReady = "StartupStoreReady"
         }
 
         public var properties: [String: Any] {

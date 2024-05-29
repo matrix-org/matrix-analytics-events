@@ -49,31 +49,31 @@ data class Composer(
         val startsThread: Boolean? = null,
 ) : VectorAnalyticsEvent {
 
-    enum class MessageType {
+    enum class MessageType(val rawValue: String) {
         /**
          * A pin drop location message.
          */
-        LocationPin,
+        LocationPin("LocationPin"),
 
         /**
          * A user current location message.
          */
-        LocationUser,
+        LocationUser("LocationUser"),
 
         /**
          * A poll message.
          */
-        Poll,
+        Poll("Poll"),
 
         /**
          * A text message.
          */
-        Text,
+        Text("Text"),
 
         /**
          * A voice message.
          */
-        VoiceMessage,
+        VoiceMessage("VoiceMessage"),
     }
 
     override fun getName() = "Composer"
@@ -83,7 +83,7 @@ data class Composer(
             put("inThread", inThread)
             put("isEditing", isEditing)
             put("isReply", isReply)
-            put("messageType", messageType.name)
+            put("messageType", messageType.rawValue)
             startsThread?.let { put("startsThread", it) }
         }.takeIf { it.isNotEmpty() }
     }
