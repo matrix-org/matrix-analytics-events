@@ -56,6 +56,10 @@ extension AnalyticsEvent {
             case MobileAllChatsRecentsEnabled = "MobileAllChatsRecentsEnabled"
             /// User tapped on Add to Home button on Room Details screen.
             case MobileRoomAddHome = "MobileRoomAddHome"
+            /// The user tapped the room's call button.
+            case MobileRoomCallButton = "MobileRoomCallButton"
+            /// The user enabled the formatting options on the message composer.
+            case MobileRoomComposerFormattingEnabled = "MobileRoomComposerFormattingEnabled"
             /// User switched the favourite toggle on Room Details screen.
             case MobileRoomFavouriteToggle = "MobileRoomFavouriteToggle"
             /// User tapped on Leave Room button on Room Details screen.

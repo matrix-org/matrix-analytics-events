@@ -77,6 +77,8 @@ extension AnalyticsEvent {
             case Room = "Room"
             /// The room addresses screen shown from the Room Details screen.
             case RoomAddresses = "RoomAddresses"
+            /// The user has started or joined a call in a room.
+            case RoomCall = "RoomCall"
             /// The screen shown when tapping the name of a room from the Room screen.
             case RoomDetails = "RoomDetails"
             /// The screen that lists public rooms for you to discover.

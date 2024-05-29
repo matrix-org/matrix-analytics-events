@@ -147,6 +147,11 @@ data class MobileScreen(
         RoomAddresses("RoomAddresses"),
 
         /**
+         * The user has started or joined a call in a room.
+         */
+        RoomCall("RoomCall"),
+
+        /**
          * The screen shown when tapping the name of a room from the Room
          * screen.
          */

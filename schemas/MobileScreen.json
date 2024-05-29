@@ -67,7 +67,8 @@
         {"const": "LocationSend", "description": "The screen shown to share location."},
         {"const": "LocationView", "description": "The screen shown to view a shared location."},
         {"const": "CreatePollView", "description": "The screen shown to create a poll."},
-        {"const": "EditPollView", "description": "The screen shown to edit a poll."}
+        {"const": "EditPollView", "description": "The screen shown to edit a poll."},
+        {"const": "RoomCall", "description": "The user has started or joined a call in a room."}
       ]
     },
     "durationMs": {
