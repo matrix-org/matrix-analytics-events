@@ -109,6 +109,11 @@ data class Error(
         OlmUnspecifiedError("OlmUnspecifiedError"),
 
         /**
+         * E2EE domain error. The sender withheld the keys for this message.
+         */
+        RoomKeysWithheld("RoomKeysWithheld"),
+
+        /**
          * TO_DEVICE domain error. The to-device message failed to decrypt.
          */
         ToDeviceFailedToDecrypt("ToDeviceFailedToDecrypt"),

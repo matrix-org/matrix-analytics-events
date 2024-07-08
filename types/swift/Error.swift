@@ -76,6 +76,8 @@ extension AnalyticsEvent {
             case OlmKeysNotSentError = "OlmKeysNotSentError"
             /// E2EE domain error. Any other decryption error (missing field, format errors...).
             case OlmUnspecifiedError = "OlmUnspecifiedError"
+            /// E2EE domain error. The sender withheld the keys for this message.
+            case RoomKeysWithheld = "RoomKeysWithheld"
             /// TO_DEVICE domain error. The to-device message failed to decrypt.
             case ToDeviceFailedToDecrypt = "ToDeviceFailedToDecrypt"
             /// E2EE domain error. Decryption failed due to unknown error.
