@@ -22,7 +22,7 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 // https://github.com/matrix-org/matrix-analytics-events/
 
 /**
- * Triggered when the user pin or unpin a message.
+ * Triggered when the users pin or unpins a message.
  */
 data class PinUnpinAction(
         /**

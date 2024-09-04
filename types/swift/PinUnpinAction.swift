@@ -19,7 +19,7 @@ import Foundation
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
-/// Triggered when the user pin or unpin a message.
+/// Triggered when the users pin or unpins a message.
 extension AnalyticsEvent {
     public struct PinUnpinAction: AnalyticsEventProtocol {
         public let eventName = "PinUnpinAction"

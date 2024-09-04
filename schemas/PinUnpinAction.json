@@ -1,6 +1,6 @@
 {
     "type": "object",
-    "description": "Triggered when the user pin or unpin a message.",
+    "description": "Triggered when the users pin or unpins a message.",
     "properties": {
       "eventName": {
         "enum": ["PinUnpinAction"]
