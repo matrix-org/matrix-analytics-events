@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "description": "Triggered when the users pin or unpins a message.",
+    "properties": {
+      "eventName": {
+        "enum": ["PinUnpinAction"]
+      },
+      "kind": {
+        "description": "Is pin or unpin.",
+        "type": "string",
+        "oneOf": [
+          {"const": "Pin", "description": "Pin a message."},
+          {"const": "Unpin", "description": "Unpin a message."}
+        ]
+      },
+      "from": {
+        "description": "From where the action is triggered.",
+        "type": "string",
+        "oneOf": [
+          {"const": "Timeline", "description": "Action triggered from the timeline."},
+          {"const": "MessagePinningList", "description": "Action triggered from the menu item in message pinning list."},
+          {"const": "UnpinAll", "description": "Action triggered from the Unpin all button in message pinning list."}
+        ]
+    }
+    },
+    "required": ["eventName", "kind", "from"],
+    "additionalProperties": false
+}
+  

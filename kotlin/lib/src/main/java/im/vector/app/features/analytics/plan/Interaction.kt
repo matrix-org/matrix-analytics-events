@@ -143,6 +143,42 @@ data class Interaction(
         MobileThreadListThreadItem("MobileThreadListThreadItem"),
 
         /**
+         * User clicked on the pinned message banner on Mobile and Element
+         * Web/Desktop.
+         */
+        PinnedMessageBannerClick("PinnedMessageBannerClick"),
+
+        /**
+         * User clicked on the Close list button in the pinned message banner on
+         * Mobile and Element Web/Desktop.
+         */
+        PinnedMessageBannerCloseListButton("PinnedMessageBannerCloseListButton"),
+
+        /**
+         * User clicked on the View all button in the pinned message banner on
+         * Mobile and Element Web/Desktop.
+         */
+        PinnedMessageBannerViewAllButton("PinnedMessageBannerViewAllButton"),
+
+        /**
+         * User clicked on the View in timeline button in the pinned message
+         * list on Mobile and Element Web/Desktop.
+         */
+        PinnedMessageListViewTimeline("PinnedMessageListViewTimeline"),
+
+        /**
+         * User clicked on the Pinned messages menu item from the Room Info on
+         * Mobile and Element Web/Desktop.
+         */
+        PinnedMessageRoomInfoButton("PinnedMessageRoomInfoButton"),
+
+        /**
+         * User clicked on the Pinned messages state event in the timeline on
+         * Mobile and Element Web/Desktop.
+         */
+        PinnedMessageStateEventClick("PinnedMessageStateEventClick"),
+
+        /**
          * User tapped the already selected space from the space list.
          */
         SpacePanelSelectedSpace("SpacePanelSelectedSpace"),
