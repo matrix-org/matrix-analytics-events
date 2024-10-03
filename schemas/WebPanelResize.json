@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "description": "Triggered when the user resizes the right panel.",
+  "description": "Triggered when the user resizes a layout panel.",
   "properties": {
     "eventName": {
       "enum": ["WebPanelResize"]
