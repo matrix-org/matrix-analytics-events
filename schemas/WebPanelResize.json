@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "description": "Triggered when the user resizes a layout panel.",
+  "properties": {
+    "eventName": {
+      "enum": ["WebPanelResize"]
+    },
+    "panel": {
+      "description": "The panel that was resized.",
+      "enum": ["right"]
+    },
+    "roomType": {
+      "description": "The type of room the user is viewing when resizing the panel.",
+      "enum": ["video_room", "maximised_widget", "user_profile", "space", "other_room"]
+    },
+    "size": {
+      "description": "The size to which the user has resized the panel in pixels.",
+      "type": "integer"
+    }
+  },
+  "required": ["eventName", "panel", "roomType", "size"],
+  "additionalProperties": false
+}
