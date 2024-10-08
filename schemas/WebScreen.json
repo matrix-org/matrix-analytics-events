@@ -42,6 +42,7 @@
         {"const": "UserSettingsSidebar", "description": "Screen showing User Settings Sidebar Tab."},
         {"const": "UserSettingsVoiceVideo", "description": "Screen showing User Settings Voice & Video Tab."},
         {"const": "UserSettingsSecurityPrivacy", "description": "Screen showing User Settings Security & Privacy Tab."},
+        {"const": "UserSettingsEncryption", "description": "Screen showing User Encryption Tab."},
         {"const": "UserSettingsLabs", "description": "Screen showing User Settings Labs Tab."},
         {"const": "UserSettingsIgnoredUsers", "description": "Screen showing User Settings Ignored Users Tab."},
         {"const": "UserSettingsHelpAbout", "description": "Screen showing User Settings Help & About Tab."},
