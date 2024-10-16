@@ -99,7 +99,9 @@
         {"const": "MobileAllChatsFilterPeople", "description": "User tapped the People filter in the All Chats filter tab."},
         {"const": "MobileSpaceCreationValidated", "description": "User validated the creation of a new space."},
         {"const": "MobileRoomListRoomContextMenuUnreadToggle", "description": "User adjusted their unread rooms using the context menu on a room in the room list."},
-        {"const": "MobileRoomListRoomContextMenuFavouriteToggle", "description": "User adjusted their favourite rooms using the context menu on a room in the room list."}
+        {"const": "MobileRoomListRoomContextMenuFavouriteToggle", "description": "User adjusted their favourite rooms using the context menu on a room in the room list."},
+        {"const": "MobileSettingsOptimizeMediaUploadsEnabled", "description": "User enabled the Optimised Media Uploads setting."},
+        {"const": "MobileSettingsOptimizeMediaUploadsDisabled", "description": "User disabled the Optimised Media Uploads setting."}
       ]
     },
     "index": {

@@ -72,6 +72,10 @@ extension AnalyticsEvent {
             case MobileRoomThreadListButton = "MobileRoomThreadListButton"
             /// User tapped on a thread summary item on Room screen.
             case MobileRoomThreadSummaryItem = "MobileRoomThreadSummaryItem"
+            /// User disabled the Optimised Media Uploads setting.
+            case MobileSettingsOptimizeMediaUploadsDisabled = "MobileSettingsOptimizeMediaUploadsDisabled"
+            /// User enabled the Optimised Media Uploads setting.
+            case MobileSettingsOptimizeMediaUploadsEnabled = "MobileSettingsOptimizeMediaUploadsEnabled"
             /// User validated the creation of a new space.
             case MobileSpaceCreationValidated = "MobileSpaceCreationValidated"
             /// User tapped on the filter button on ThreadList screen.

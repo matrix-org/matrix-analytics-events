@@ -128,6 +128,16 @@ data class Interaction(
         MobileRoomThreadSummaryItem("MobileRoomThreadSummaryItem"),
 
         /**
+         * User disabled the Optimised Media Uploads setting.
+         */
+        MobileSettingsOptimizeMediaUploadsDisabled("MobileSettingsOptimizeMediaUploadsDisabled"),
+
+        /**
+         * User enabled the Optimised Media Uploads setting.
+         */
+        MobileSettingsOptimizeMediaUploadsEnabled("MobileSettingsOptimizeMediaUploadsEnabled"),
+
+        /**
          * User validated the creation of a new space.
          */
         MobileSpaceCreationValidated("MobileSpaceCreationValidated"),
