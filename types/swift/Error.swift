@@ -68,6 +68,10 @@ extension AnalyticsEvent {
         public enum Name: String {
             /// E2EE domain error. Decryption failed for a message sent before you were in the room (shared history visibility and support for sharing past keys is not available/supported).
             case ExpectedDueToMembership = "ExpectedDueToMembership"
+            /// E2EE domain error. Decryption failed for a message because it was sent by an insecure device
+            case ExpectedSentByInsecureDevice = "ExpectedSentByInsecureDevice"
+            /// E2EE domain error. Decryption failed for a message because the sender's verified identity has changed.
+            case ExpectedVerificationViolation = "ExpectedVerificationViolation"
             /// E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled.
             case HistoricalMessage = "HistoricalMessage"
             /// E2EE domain error. The room key is known but is ratcheted (index > 0).
