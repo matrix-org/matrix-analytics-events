@@ -23,6 +23,8 @@
         {"const": "HistoricalMessage", "description": "E2EE domain error. Decryption failed for a message sent before the device logged in, and key backup is not enabled."},
         {"const": "ExpectedDueToMembership", "description": "E2EE domain error. Decryption failed for a message sent before you were in the room (shared history visibility and support for sharing past keys is not available/supported)."},
         {"const": "RoomKeysWithheldForUnverifiedDevice", "description": "E2EE domain error. The sender withheld the keys for this message, due to the recipient device being unverified."},
+        {"const": "UnsignedSenderDevice", "description": "E2EE domain error. Refused to decrypt because the sender device is not cross-signed."},
+        {"const": "SenderIdentityVerificationViolation", "description": "E2EE domain error. Refused to decrypt because the sender's identity is unverified, but was previously verified."},
         {"const": "VoipUserHangup", "description": "VOIP domain error. The user hung up the call."},
         {"const": "VoipIceFailed", "description": "VOIP domain error. ICE negotiation failed."},
         {"const": "VoipInviteTimeout", "description": "VOIP domain error. The call invite timed out."},

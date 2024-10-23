@@ -78,10 +78,14 @@ extension AnalyticsEvent {
             case OlmUnspecifiedError = "OlmUnspecifiedError"
             /// E2EE domain error. The sender withheld the keys for this message, due to the recipient device being unverified.
             case RoomKeysWithheldForUnverifiedDevice = "RoomKeysWithheldForUnverifiedDevice"
+            /// E2EE domain error. Refused to decrypt because the sender's identity is unverified, but was previously verified.
+            case SenderIdentityVerificationViolation = "SenderIdentityVerificationViolation"
             /// TO_DEVICE domain error. The to-device message failed to decrypt.
             case ToDeviceFailedToDecrypt = "ToDeviceFailedToDecrypt"
             /// E2EE domain error. Decryption failed due to unknown error.
             case UnknownError = "UnknownError"
+            /// E2EE domain error. Refused to decrypt because the sender device is not cross-signed.
+            case UnsignedSenderDevice = "UnsignedSenderDevice"
             /// VOIP domain error. ICE negotiation failed.
             case VoipIceFailed = "VoipIceFailed"
             /// VOIP domain error. ICE negotiation timed out.

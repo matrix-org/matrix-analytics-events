@@ -115,6 +115,12 @@ data class Error(
         RoomKeysWithheldForUnverifiedDevice("RoomKeysWithheldForUnverifiedDevice"),
 
         /**
+         * E2EE domain error. Refused to decrypt because the sender's identity
+         * is unverified, but was previously verified.
+         */
+        SenderIdentityVerificationViolation("SenderIdentityVerificationViolation"),
+
+        /**
          * TO_DEVICE domain error. The to-device message failed to decrypt.
          */
         ToDeviceFailedToDecrypt("ToDeviceFailedToDecrypt"),
@@ -123,6 +129,12 @@ data class Error(
          * E2EE domain error. Decryption failed due to unknown error.
          */
         UnknownError("UnknownError"),
+
+        /**
+         * E2EE domain error. Refused to decrypt because the sender device is
+         * not cross-signed.
+         */
+        UnsignedSenderDevice("UnsignedSenderDevice"),
 
         /**
          * VOIP domain error. ICE negotiation failed.
