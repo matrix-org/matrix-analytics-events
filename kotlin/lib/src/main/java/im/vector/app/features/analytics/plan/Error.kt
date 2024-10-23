@@ -86,6 +86,18 @@ data class Error(
         ExpectedDueToMembership("ExpectedDueToMembership"),
 
         /**
+         * E2EE domain error. Decryption failed for a message because it was
+         * sent by an insecure device
+         */
+        ExpectedSentByInsecureDevice("ExpectedSentByInsecureDevice"),
+
+        /**
+         * E2EE domain error. Decryption failed for a message because the
+         * sender's verified identity has changed.
+         */
+        ExpectedVerificationViolation("ExpectedVerificationViolation"),
+
+        /**
          * E2EE domain error. Decryption failed for a message sent before the
          * device logged in, and key backup is not enabled.
          */
