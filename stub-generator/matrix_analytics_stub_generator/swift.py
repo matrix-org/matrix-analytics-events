@@ -122,6 +122,8 @@ def compute_swift(schema: Schema) -> str:
         result += f"        public enum {enum.name}: String {{\n"
         enum.values.sort()
         for value in enum.values:
+            if value.name.startswith("Web"):
+                continue
             if value.description:
                 result += f"            /// {value.description}\n"
             validIdentifier = re.sub('[^a-zA-Z0-9_]', '', value.name)
