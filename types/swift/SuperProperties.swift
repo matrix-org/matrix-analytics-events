@@ -56,8 +56,6 @@ extension AnalyticsEvent {
             case ElectronPlatform = "Electron Platform"
             /// Other Platform.
             case Other = "Other"
-            /// Element Web platform.
-            case WebPlatform = "Web Platform"
         }
 
         public var properties: [String: Any?] {

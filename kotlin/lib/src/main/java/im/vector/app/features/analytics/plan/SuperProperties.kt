@@ -82,11 +82,6 @@ data class SuperProperties(
          * Other Platform.
          */
         Other("Other"),
-
-        /**
-         * Element Web platform.
-         */
-        WebPlatform("Web Platform"),
     }
 
     fun getProperties(): Map<String, Any>? {
