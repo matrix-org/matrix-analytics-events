@@ -69,6 +69,9 @@
         {"const": "WebUserOnboardingTaskEnableNotifications", "description": "User clicked on the action of the enable notifications task on the new user onboarding page in Element Web/Desktop." },
         {"const": "WebRoomListUserOnboardingButton", "description": "User clicked on the button to return to the user onboarding list in the room list in Element Web/Desktop." },
         {"const": "WebRoomListUserOnboardingIgnoreButton", "description": "User clicked on the button to close the user onboarding button in the room list in Element Web/Desktop." },
+        {"const": "WebVoipOptionLegacy", "description": "The user chose the legacy call option."},
+        {"const": "WebVoipOptionJitsi", "description": "The user chose the Jitsi call option."},
+        {"const": "WebVoipOptionElementCall", "description": "The user chose the Element Call option."},
 
         {"const": "PinnedMessageBannerClick", "description": "User clicked on the pinned message banner on Mobile and Element Web/Desktop." },
         {"const": "PinnedMessageBannerViewAllButton", "description": "User clicked on the View all button in the pinned message banner on Mobile and Element Web/Desktop." },

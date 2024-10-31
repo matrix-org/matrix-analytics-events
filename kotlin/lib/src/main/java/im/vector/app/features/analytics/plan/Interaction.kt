@@ -562,6 +562,21 @@ data class Interaction(
          * onboarding page in Element Web/Desktop.
          */
         WebUserOnboardingTaskSetupProfile("WebUserOnboardingTaskSetupProfile"),
+
+        /**
+         * The user chose the Element Call option.
+         */
+        WebVoipOptionElementCall("WebVoipOptionElementCall"),
+
+        /**
+         * The user chose the Jitsi call option.
+         */
+        WebVoipOptionJitsi("WebVoipOptionJitsi"),
+
+        /**
+         * The user chose the legacy call option.
+         */
+        WebVoipOptionLegacy("WebVoipOptionLegacy"),
     }
 
     enum class InteractionType(val rawValue: String) {
