@@ -220,6 +220,12 @@ extension AnalyticsEvent {
             case WebUserOnboardingTaskSendDm = "WebUserOnboardingTaskSendDm"
             /// User clicked on the action of the your profile task on the new user onboarding page in Element Web/Desktop.
             case WebUserOnboardingTaskSetupProfile = "WebUserOnboardingTaskSetupProfile"
+            /// The user chose the Element Call option.
+            case WebVoipOptionElementCall = "WebVoipOptionElementCall"
+            /// The user chose the Jitsi call option.
+            case WebVoipOptionJitsi = "WebVoipOptionJitsi"
+            /// The user chose the legacy call option.
+            case WebVoipOptionLegacy = "WebVoipOptionLegacy"
         }
 
         public enum InteractionType: String {
