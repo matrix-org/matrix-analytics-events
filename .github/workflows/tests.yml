@@ -30,6 +30,8 @@ jobs:
       - name: 📕 Validate
         run: yarn build
 
+      - run: git diff --exit-code
+
       - name: 📕 Validate TS
         run: yarn build:ts
 
