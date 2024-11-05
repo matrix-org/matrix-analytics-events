@@ -98,34 +98,6 @@ extension AnalyticsEvent {
             case Tombstone = "Tombstone"
             /// Room switched due to user interacting with incoming verification request.
             case VerificationRequest = "VerificationRequest"
-            /// Room switched due to accepting a call in a different room in Element Web/Desktop.
-            case WebAcceptCall = "WebAcceptCall"
-            /// Room switched due to making a call via the dial pad in Element Web/Desktop.
-            case WebDialPad = "WebDialPad"
-            /// Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop.
-            case WebFloatingCallWindow = "WebFloatingCallWindow"
-            /// Room accessed via the shortcut in Element Web/Desktop's forward modal.
-            case WebForwardShortcut = "WebForwardShortcut"
-            /// Room accessed via the Element Web/Desktop horizontal breadcrumbs at the top of the room list.
-            case WebHorizontalBreadcrumbs = "WebHorizontalBreadcrumbs"
-            /// Room accessed via an Element Web/Desktop keyboard shortcut like go to next room with unread messages.
-            case WebKeyboardShortcut = "WebKeyboardShortcut"
-            /// Room accessed via Element Web/Desktop's notification panel.
-            case WebNotificationPanel = "WebNotificationPanel"
-            /// Room accessed via the predecessor link in Settings > Advanced in Element Web/Desktop.
-            case WebPredecessorSettings = "WebPredecessorSettings"
-            /// Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop.
-            case WebRoomListNotificationBadge = "WebRoomListNotificationBadge"
-            /// Room switched due to the user changing space in Element Web/Desktop.
-            case WebSpaceContextSwitch = "WebSpaceContextSwitch"
-            /// Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop.
-            case WebSpacePanelNotificationBadge = "WebSpacePanelNotificationBadge"
-            /// Room accessed via interacting with the Threads Activity Centre in Element Web/Desktop.
-            case WebThreadsActivityCentre = "WebThreadsActivityCentre"
-            /// Room accessed via Element Web/Desktop's Unified Search modal.
-            case WebUnifiedSearch = "WebUnifiedSearch"
-            /// Room accessed via the Element Web/Desktop vertical breadcrumb hover menu.
-            case WebVerticalBreadcrumbs = "WebVerticalBreadcrumbs"
             /// Room switched due to widget interaction.
             case Widget = "Widget"
         }

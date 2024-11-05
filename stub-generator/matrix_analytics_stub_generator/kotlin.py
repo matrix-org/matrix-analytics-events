@@ -81,6 +81,8 @@ package im.vector.app.features.analytics.plan
         result += f"    enum class {enum.name}(val rawValue: String) " + "{\n"
         enum.values.sort()
         for value in enum.values:
+            if value.name.startswith("Web"):
+                continue
             if value.description:
                 if not isFirstEnum:
                     result += "\n"
