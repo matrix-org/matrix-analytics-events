@@ -80,6 +80,16 @@
         {"const": "PinnedMessageRoomInfoButton", "description": "User clicked on the Pinned messages menu item from the Room Info on Mobile and Element Web/Desktop." },
         {"const": "PinnedMessageStateEventClick", "description": "User clicked on the Pinned messages state event in the timeline on Mobile and Element Web/Desktop." },
 
+        {"const": "RoomListFilterUnreads", "description": "User clicked on the button to filter unread messages in the room list." },
+        {"const": "RoomListFilterPeople", "description": "User clicked on the button to filter people in the room list." },
+        {"const": "RoomListFilterRooms", "description": "User clicked on the button to filter rooms in the room list." },
+        {"const": "RoomListFilterMentions", "description": "User clicked on the button to filter mentions in the room list." },
+        {"const": "RoomListFilterInvites", "description": "User clicked on the button to filter invites in the room list." },
+        {"const": "RoomListFilterFavourites", "description": "User clicked on the button to filter favourites in the room list." },
+        {"const": "RoomListFilterLowPriority", "description": "User clicked on the button to filter low priority messages in the room list." },
+        {"const": "RoomListFilterExpand", "description": "User clicked on the button to expand the room list filters." },
+        {"const": "RoomListFilterCollapse", "description": "User clicked on the button to collapse the room list filters." },
+
         {"const": "SpacePanelSelectedSpace", "description": "User tapped the already selected space from the space list."},
         {"const": "SpacePanelSwitchSpace", "description": "User tapped an unselected space from the space list -> space switching should occur."},
         {"const": "SpacePanelSwitchSubSpace", "description": "User tapped an unselected sub space from the space list -> space switching should occur."},
