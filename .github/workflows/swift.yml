@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-15
 
     concurrency:
       # When running on main, use the sha to allow all runs of this workflow to run concurrently.
@@ -21,7 +21,7 @@ jobs:
     - name: Install Swift
       uses: swift-actions/setup-swift@v2
       with:
-        swift-version: "5.7.3"
+        swift-version: "5.7"
 
     - name: Build for Swift
       run: swift build
