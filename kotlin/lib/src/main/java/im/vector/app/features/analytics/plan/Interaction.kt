@@ -189,6 +189,53 @@ data class Interaction(
         PinnedMessageStateEventClick("PinnedMessageStateEventClick"),
 
         /**
+         * User clicked on the button to collapse the room list filters.
+         */
+        RoomListFilterCollapse("RoomListFilterCollapse"),
+
+        /**
+         * User clicked on the button to expand the room list filters.
+         */
+        RoomListFilterExpand("RoomListFilterExpand"),
+
+        /**
+         * User clicked on the button to filter favourites in the room list.
+         */
+        RoomListFilterFavourites("RoomListFilterFavourites"),
+
+        /**
+         * User clicked on the button to filter invites in the room list.
+         */
+        RoomListFilterInvites("RoomListFilterInvites"),
+
+        /**
+         * User clicked on the button to filter low priority messages in the
+         * room list.
+         */
+        RoomListFilterLowPriority("RoomListFilterLowPriority"),
+
+        /**
+         * User clicked on the button to filter mentions in the room list.
+         */
+        RoomListFilterMentions("RoomListFilterMentions"),
+
+        /**
+         * User clicked on the button to filter people in the room list.
+         */
+        RoomListFilterPeople("RoomListFilterPeople"),
+
+        /**
+         * User clicked on the button to filter rooms in the room list.
+         */
+        RoomListFilterRooms("RoomListFilterRooms"),
+
+        /**
+         * User clicked on the button to filter unread messages in the room
+         * list.
+         */
+        RoomListFilterUnreads("RoomListFilterUnreads"),
+
+        /**
          * User tapped the already selected space from the space list.
          */
         SpacePanelSelectedSpace("SpacePanelSelectedSpace"),

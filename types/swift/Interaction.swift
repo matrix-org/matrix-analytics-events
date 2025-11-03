@@ -94,6 +94,24 @@ extension AnalyticsEvent {
             case PinnedMessageRoomInfoButton = "PinnedMessageRoomInfoButton"
             /// User clicked on the Pinned messages state event in the timeline on Mobile and Element Web/Desktop.
             case PinnedMessageStateEventClick = "PinnedMessageStateEventClick"
+            /// User clicked on the button to collapse the room list filters.
+            case RoomListFilterCollapse = "RoomListFilterCollapse"
+            /// User clicked on the button to expand the room list filters.
+            case RoomListFilterExpand = "RoomListFilterExpand"
+            /// User clicked on the button to filter favourites in the room list.
+            case RoomListFilterFavourites = "RoomListFilterFavourites"
+            /// User clicked on the button to filter invites in the room list.
+            case RoomListFilterInvites = "RoomListFilterInvites"
+            /// User clicked on the button to filter low priority messages in the room list.
+            case RoomListFilterLowPriority = "RoomListFilterLowPriority"
+            /// User clicked on the button to filter mentions in the room list.
+            case RoomListFilterMentions = "RoomListFilterMentions"
+            /// User clicked on the button to filter people in the room list.
+            case RoomListFilterPeople = "RoomListFilterPeople"
+            /// User clicked on the button to filter rooms in the room list.
+            case RoomListFilterRooms = "RoomListFilterRooms"
+            /// User clicked on the button to filter unread messages in the room list.
+            case RoomListFilterUnreads = "RoomListFilterUnreads"
             /// User tapped the already selected space from the space list.
             case SpacePanelSelectedSpace = "SpacePanelSelectedSpace"
             /// User tapped an unselected space from the space list -> space switching should occur.
