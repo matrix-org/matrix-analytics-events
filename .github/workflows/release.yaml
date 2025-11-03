@@ -16,6 +16,9 @@ jobs:
   release:
     name: "Release & Publish"
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - name: 🧮 Checkout code
         uses: actions/checkout@v3
@@ -26,6 +29,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: 'yarn'
+          registry-url: "https://registry.npmjs.org"
+
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
 
       - name: 🗜️ Set up python environment
         uses: actions/setup-python@v3
@@ -48,10 +56,9 @@ jobs:
 
       - name: 🚀 Publish to npm
         id: npm-publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          access: public
+        run: |
+          npm publish --access public --provenance
+          echo "version=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
 
       - name: 🧬 Create release
         uses: actions/create-release@v1
