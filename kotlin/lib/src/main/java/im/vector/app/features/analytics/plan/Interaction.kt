@@ -204,6 +204,28 @@ data class Interaction(
          * switching should occur.
          */
         SpacePanelSwitchSubSpace("SpacePanelSwitchSubSpace"),
+
+        /**
+         * User chose to set up new key backups after being prompted.
+         */
+        ToastSetUpRecoveryClick("ToastSetUpRecoveryClick"),
+
+        /**
+         * User declied to set up new key backups after being prompted.
+         */
+        ToastSetUpRecoveryDismiss("ToastSetUpRecoveryDismiss"),
+
+        /**
+         * User chose to connect with an existing key backup after being
+         * prompted.
+         */
+        ToastTurnOnKeyStorageClick("ToastTurnOnKeyStorageClick"),
+
+        /**
+         * User declined to connect with an existing key backup after being
+         * prompted.
+         */
+        ToastTurnOnKeyStorageDismiss("ToastTurnOnKeyStorageDismiss"),
     }
 
     enum class InteractionType(val rawValue: String) {
