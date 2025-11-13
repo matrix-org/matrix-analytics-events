@@ -9,7 +9,7 @@
     "quicktype": "^15.0.260"
   },
   "repository": {
-    "url": "github:matrix-org/matrix-analytics-events"
+    "url": "git+https://github.com/matrix-org/matrix-analytics-events.git"
   },
   "files": [
     "types/typescript",
