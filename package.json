@@ -8,7 +8,9 @@
     "json-schema-to-typescript": "^10.1.5",
     "quicktype": "^15.0.260"
   },
-  "url": "https://github.com/matrix-org/matrix-analytics-events",
+  "repository": {
+    "url": "github:matrix-org/matrix-analytics-events"
+  },
   "files": [
     "types/typescript",
     "LICENSE",
