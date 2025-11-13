@@ -100,6 +100,14 @@ extension AnalyticsEvent {
             case SpacePanelSwitchSpace = "SpacePanelSwitchSpace"
             /// User tapped an unselected sub space from the space list -> space switching should occur.
             case SpacePanelSwitchSubSpace = "SpacePanelSwitchSubSpace"
+            /// User chose to set up new key backups after being prompted.
+            case ToastSetUpRecoveryClick = "ToastSetUpRecoveryClick"
+            /// User declied to set up new key backups after being prompted.
+            case ToastSetUpRecoveryDismiss = "ToastSetUpRecoveryDismiss"
+            /// User chose to connect with an existing key backup after being prompted.
+            case ToastTurnOnKeyStorageClick = "ToastTurnOnKeyStorageClick"
+            /// User declined to connect with an existing key backup after being prompted.
+            case ToastTurnOnKeyStorageDismiss = "ToastTurnOnKeyStorageDismiss"
         }
 
         public enum InteractionType: String {
