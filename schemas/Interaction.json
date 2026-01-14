@@ -72,6 +72,7 @@
         {"const": "WebVoipOptionLegacy", "description": "The user chose the legacy call option."},
         {"const": "WebVoipOptionJitsi", "description": "The user chose the Jitsi call option."},
         {"const": "WebVoipOptionElementCall", "description": "The user chose the Element Call option."},
+        {"const": "WebRoomListMessagePreviewToggle", "description": "User clicked on the message preview toggle in the room list header in Element Web/Desktop."},
 
         {"const": "PinnedMessageBannerClick", "description": "User clicked on the pinned message banner on Mobile and Element Web/Desktop." },
         {"const": "PinnedMessageBannerViewAllButton", "description": "User clicked on the View all button in the pinned message banner on Mobile and Element Web/Desktop." },
