@@ -1,0 +1,21 @@
+{
+"type": "object",
+"description": "Triggered when user changes room list sorting algorithm.",
+"properties" : {
+   "eventName": {
+      "enum": ["RoomListSortingAlgorithmChanged"]
+    },
+   "oldAlgorithm": {
+    "type": "string",
+    "description": "The old sorting algorithm.",
+    "enum": ["Unread", "Activity", "Alphabetic"]
+   },
+  "newAlgorithm": {
+    "type": "string",
+    "description": "The new sorting algorithm.",
+    "enum": ["Unread", "Activity", "Alphabetic"]
+   }
+},
+  "required": ["eventName", "oldAlgorithm", "newAlgorithm"],
+   "additionalProperties": false
+}
