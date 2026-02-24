@@ -1,83 +1,126 @@
 {
-    "type": "object",
-    "description": "The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.",
-    "properties": {
-      "ftueUseCaseSelection": {
-        "description": "The selected messaging use case during the onboarding flow.",
-        "type": "string",
-        "oneOf": [
-          {"const": "PersonalMessaging", "description": "The first option, Friends and family."},
-          {"const": "WorkMessaging", "description": "The second option, Teams."},
-          {"const": "CommunityMessaging", "description": "The third option, Communities."},
-          {"const": "Skip", "description": "The footer option to skip the question."}
-        ]
-      },
-      "numSpaces": {
-        "description": "Number of spaces (and sub-spaces) the user is joined to.",
-        "type": "integer"
-      },
-      "numFavouriteRooms": {
-        "description": "Number of joined rooms the user has favourited.",
-        "type": "integer"
-      },
-      "WebMetaSpaceHomeEnabled": {
-        "description": "Whether the user has the home space enabled.",
-        "type": "boolean"
-      },
-      "WebMetaSpaceHomeAllRooms": {
-        "description": "Whether the user has the home space set to all rooms.",
-        "type": "boolean"
-      },
-      "WebMetaSpacePeopleEnabled": {
-        "description": "Whether the user has the people space enabled.",
-        "type": "boolean"
-      },
-      "WebMetaSpaceFavouritesEnabled": {
-        "description": "Whether the user has the favourites space enabled.",
-        "type": "boolean"
-      },
-      "WebMetaSpaceOrphansEnabled": {
-        "description": "Whether the user has the other rooms space enabled.",
-        "type": "boolean"
-      },
-      "allChatsActiveFilter": {
-        "description": "The active filter in the All Chats screen.",
-        "type": "string",
-        "oneOf": [
-          {"const": "All", "description": "Filters are activated and All is selected."},
-          {"const": "Unreads", "description": "Filters are activated and Unreads is selected."},
-          {"const": "Favourites", "description": "Filters are activated and Favourites is selected."},
-          {"const": "People", "description": "Filters are activated and People is selected."}
-        ]
-      },
-      "WebLayout": {
-        "description": "Which layout the user is using in Element Web/Desktop. This is known to clobber between devices.",
-        "type": "string",
-        "oneOf": [
-          {"const": "IRC", "description": "IRC layout."},
-          {"const": "Bubble", "description": "Bubble layout."},
-          {"const": "Group", "description": "Modern layout."},
-          {"const": "Compact", "description": "Modern layout with compact option enabled."}
-        ]
-      },
-      "verificationState": {
-        "description": "Describe the current session verification state, that is if the session is verified or not.",
-        "type": "string",
-        "oneOf": [
-          {"const": "Verified", "description": "The device is considered to be verified, it has been signed by its user identity."},
-          {"const": "NotVerified", "description": "The device is unverified."}
-        ]
-      },
-      "recoveryState": {
-        "description": "Describe the current session recovery state, that if 4S is setup, complete (all secrets cached) or not.",
-        "type": "string",
-        "oneOf": [
-          {"const": "Enabled", "description": "Secret storage is set up and we have all the secrets locally."},
-          {"const": "Disabled", "description": "No default secret storage key exists or it is disabled explicitly using the account data event."},
-          {"const": "Incomplete", "description": "Secret storage is set up but we're missing some secrets."}
-        ]
-      }
+  "type": "object",
+  "description": "The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.",
+  "properties": {
+    "ftueUseCaseSelection": {
+      "description": "The selected messaging use case during the onboarding flow.",
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "PersonalMessaging",
+          "description": "The first option, Friends and family."
+        },
+        {
+          "const": "WorkMessaging",
+          "description": "The second option, Teams."
+        },
+        {
+          "const": "CommunityMessaging",
+          "description": "The third option, Communities."
+        },
+        {
+          "const": "Skip",
+          "description": "The footer option to skip the question."
+        }
+      ]
     },
-    "required": [],
-    "additionalProperties": false
-  }
+    "numSpaces": {
+      "description": "Number of spaces (and sub-spaces) the user is joined to.",
+      "type": "integer"
+    },
+    "numFavouriteRooms": {
+      "description": "Number of joined rooms the user has favourited.",
+      "type": "integer"
+    },
+    "WebMetaSpaceHomeEnabled": {
+      "description": "Whether the user has the home space enabled.",
+      "type": "boolean"
+    },
+    "WebMetaSpaceHomeAllRooms": {
+      "description": "Whether the user has the home space set to all rooms.",
+      "type": "boolean"
+    },
+    "WebMetaSpacePeopleEnabled": {
+      "description": "Whether the user has the people space enabled.",
+      "type": "boolean"
+    },
+    "WebMetaSpaceFavouritesEnabled": {
+      "description": "Whether the user has the favourites space enabled.",
+      "type": "boolean"
+    },
+    "WebMetaSpaceOrphansEnabled": {
+      "description": "Whether the user has the other rooms space enabled.",
+      "type": "boolean"
+    },
+    "URLPreviewsEnabled": {
+      "description": "Whether the user has enabled URL previews globally.",
+      "type": "boolean"
+    },
+    "allChatsActiveFilter": {
+      "description": "The active filter in the All Chats screen.",
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "All",
+          "description": "Filters are activated and All is selected."
+        },
+        {
+          "const": "Unreads",
+          "description": "Filters are activated and Unreads is selected."
+        },
+        {
+          "const": "Favourites",
+          "description": "Filters are activated and Favourites is selected."
+        },
+        {
+          "const": "People",
+          "description": "Filters are activated and People is selected."
+        }
+      ]
+    },
+    "WebLayout": {
+      "description": "Which layout the user is using in Element Web/Desktop. This is known to clobber between devices.",
+      "type": "string",
+      "oneOf": [
+        { "const": "IRC", "description": "IRC layout." },
+        { "const": "Bubble", "description": "Bubble layout." },
+        { "const": "Group", "description": "Modern layout." },
+        {
+          "const": "Compact",
+          "description": "Modern layout with compact option enabled."
+        }
+      ]
+    },
+    "verificationState": {
+      "description": "Describe the current session verification state, that is if the session is verified or not.",
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "Verified",
+          "description": "The device is considered to be verified, it has been signed by its user identity."
+        },
+        { "const": "NotVerified", "description": "The device is unverified." }
+      ]
+    },
+    "recoveryState": {
+      "description": "Describe the current session recovery state, that if 4S is setup, complete (all secrets cached) or not.",
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "Enabled",
+          "description": "Secret storage is set up and we have all the secrets locally."
+        },
+        {
+          "const": "Disabled",
+          "description": "No default secret storage key exists or it is disabled explicitly using the account data event."
+        },
+        {
+          "const": "Incomplete",
+          "description": "Secret storage is set up but we're missing some secrets."
+        }
+      ]
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

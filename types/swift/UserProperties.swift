@@ -23,6 +23,8 @@ import Foundation
 extension AnalyticsEvent {
     public struct UserProperties {
 
+        /// Whether the user has enabled URL previews globally.
+        public let URLPreviewsEnabled: Bool?
         /// The active filter in the All Chats screen.
         public let allChatsActiveFilter: AllChatsActiveFilter?
         /// The selected messaging use case during the onboarding flow.
@@ -36,7 +38,8 @@ extension AnalyticsEvent {
         /// Describe the current session verification state, that is if the session is verified or not.
         public let verificationState: VerificationState?
 
-        public init(allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?, recoveryState: RecoveryState?, verificationState: VerificationState?) {
+        public init(URLPreviewsEnabled: Bool?, allChatsActiveFilter: AllChatsActiveFilter?, ftueUseCaseSelection: FtueUseCaseSelection?, numFavouriteRooms: Int?, numSpaces: Int?, recoveryState: RecoveryState?, verificationState: VerificationState?) {
+            self.URLPreviewsEnabled = URLPreviewsEnabled
             self.allChatsActiveFilter = allChatsActiveFilter
             self.ftueUseCaseSelection = ftueUseCaseSelection
             self.numFavouriteRooms = numFavouriteRooms
@@ -85,6 +88,7 @@ extension AnalyticsEvent {
 
         public var properties: [String: Any?] {
             return [
+                "URLPreviewsEnabled": URLPreviewsEnabled,
                 "allChatsActiveFilter": allChatsActiveFilter?.rawValue,
                 "ftueUseCaseSelection": ftueUseCaseSelection?.rawValue,
                 "numFavouriteRooms": numFavouriteRooms,

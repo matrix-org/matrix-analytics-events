@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "description": "Triggered when the user chooses to hide or show a URL preview.",
+  "properties": {
+    "visible": {
+      "description": "Has the user made the previews visible or hidden.",
+      "type": "boolean"
+    },
+    "previewKind": {
+      "description": "The kind of preview being rendered.",
+      "enum": ["LegacyCard"],
+      "type": "string"
+    },
+    "previewCount": {
+      "description": "How many URLs are being previewed.",
+      "type": "integer"
+    },
+    "hasThumbnail": {
+      "description": "Do the preview(s) contain at least one thumbnail.",
+      "type": "boolean"
+    }
+  },
+  "required": ["visible", "previewKind", "previewCount", "hasThumbnail"],
+  "additionalProperties": false
+}

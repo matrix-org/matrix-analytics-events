@@ -25,6 +25,10 @@ package im.vector.app.features.analytics.plan
  */
 data class UserProperties(
         /**
+         * Whether the user has enabled URL previews globally.
+         */
+        val uRLPreviewsEnabled: Boolean? = null,
+        /**
          * The active filter in the All Chats screen.
          */
         val allChatsActiveFilter: AllChatsActiveFilter? = null,
@@ -132,6 +136,7 @@ data class UserProperties(
 
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
+            uRLPreviewsEnabled?.let { put("URLPreviewsEnabled", it) }
             allChatsActiveFilter?.let { put("allChatsActiveFilter", it.rawValue) }
             ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.rawValue) }
             numFavouriteRooms?.let { put("numFavouriteRooms", it) }
