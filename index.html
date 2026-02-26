@@ -1202,6 +1202,16 @@
                 <tbody>
                     
                         <tr>
+                            <td>URLPreviewsEnabled</td>                        
+                            <td>Whether the user has enabled URL previews globally.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
                             <td>WebLayout</td>                        
                             <td>Which layout the user is using in Element Web/Desktop. This is known to clobber between devices.</td>
                             <td>
@@ -1572,6 +1582,71 @@
                                             </li>
                                         
                                     </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>UrlPreviewVisibilityChanged</h2>
+            <p>Triggered when the user chooses to hide or show a URL preview.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>hasThumbnail</td>                        
+                            <td>Do the preview(s) contain at least one thumbnail.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>previewCount</td>                        
+                            <td>How many URLs are being previewed.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>previewKind</td>                        
+                            <td>The kind of preview being rendered.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    LegacyCard    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>visible</td>                        
+                            <td>Has the user made the previews visible or hidden.</td>
+                            <td>
+                                                                
+                                    boolean
                                                             
                             </td>                            
                         </tr>
@@ -2800,6 +2875,71 @@
                             <td>
                                                                 
                                     integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>UrlPreviewRendered</h2>
+            <p>Triggered when the URL preview shows for a user. Should only be sent per event.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>encryptedRoom</td>                        
+                            <td>Is the URL being previewed in an encrypted room.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>hasThumbnail</td>                        
+                            <td>Do the preview(s) contain at least one thumbnail.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>previewCount</td>                        
+                            <td>How many URLs are being previewed.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>previewKind</td>                        
+                            <td>The kind of preview being rendered.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    LegacyCard    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
