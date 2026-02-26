@@ -80,7 +80,7 @@
       "URLPreviewsEnabled": {
         "description": "Whether the user has enabled URL previews globally.",
         "type": "boolean"
-      },
+      }
     },
     "required": [],
     "additionalProperties": false
