@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "description": "Triggered when the URL preview shows for a user. Should only be sent per event.",
+  "properties": {
+    "previewKind": {
+      "description": "The kind of preview being rendered.",
+      "enum": ["LegacyCard"],
+      "type": "string"
+    },
+    "encryptedRoom": {
+      "description": "Is the URL being previewed in an encrypted room.",
+      "type": "boolean"
+    },
+    "previewCount": {
+      "description": "How many URLs are being previewed.",
+      "type": "integer"
+    },
+    "hasThumbnail": {
+      "description": "Do the preview(s) contain at least one thumbnail.",
+      "type": "boolean"
+    }
+  },
+  "required": ["previewKind", "encryptedRoom", "previewCount", "hasThumbnail"],
+  "additionalProperties": false
+}
