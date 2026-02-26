@@ -16,6 +16,8 @@
 
 package im.vector.app.features.analytics.plan
 
+import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
+
 // GENERATED FILE, DO NOT EDIT. FOR MORE INFORMATION VISIT
 // https://github.com/matrix-org/matrix-analytics-events/
 
@@ -40,13 +42,15 @@ data class UrlPreviewRendered(
          * The kind of preview being rendered.
          */
         val previewKind: PreviewKind,
-) {
+) : VectorAnalyticsEvent {
 
     enum class PreviewKind(val rawValue: String) {
         LegacyCard("LegacyCard"),
     }
 
-    fun getProperties(): Map<String, Any>? {
+    override fun getName() = "UrlPreviewRendered"
+
+    override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             put("encryptedRoom", encryptedRoom)
             put("hasThumbnail", hasThumbnail)

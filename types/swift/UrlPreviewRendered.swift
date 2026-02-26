@@ -21,7 +21,8 @@ import Foundation
 
 /// Triggered when the URL preview shows for a user. Should only be sent per event.
 extension AnalyticsEvent {
-    public struct UrlPreviewRendered {
+    public struct UrlPreviewRendered: AnalyticsEventProtocol {
+        public let eventName = "UrlPreviewRendered"
 
         /// Is the URL being previewed in an encrypted room.
         public let encryptedRoom: Bool
@@ -43,7 +44,7 @@ extension AnalyticsEvent {
             case LegacyCard = "LegacyCard"
         }
 
-        public var properties: [String: Any?] {
+        public var properties: [String: Any] {
             return [
                 "encryptedRoom": encryptedRoom,
                 "hasThumbnail": hasThumbnail,
