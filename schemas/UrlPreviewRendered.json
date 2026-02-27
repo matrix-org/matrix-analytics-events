@@ -2,6 +2,9 @@
   "type": "object",
   "description": "Triggered when the URL preview shows for a user. Should only be sent per event.",
   "properties": {
+    "eventName": {
+      "enum": ["UrlPreviewRendered"]
+    },
     "previewKind": {
       "description": "The kind of preview being rendered.",
       "enum": ["LegacyCard"],

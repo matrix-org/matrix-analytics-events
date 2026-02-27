@@ -21,7 +21,8 @@ import Foundation
 
 /// Triggered when the user chooses to hide or show a URL preview.
 extension AnalyticsEvent {
-    public struct UrlPreviewVisibilityChanged {
+    public struct UrlPreviewVisibilityChanged: AnalyticsEventProtocol {
+        public let eventName = "UrlPreviewVisibilityChanged"
 
         /// Do the preview(s) contain at least one thumbnail.
         public let hasThumbnail: Bool
@@ -43,7 +44,7 @@ extension AnalyticsEvent {
             case LegacyCard = "LegacyCard"
         }
 
-        public var properties: [String: Any?] {
+        public var properties: [String: Any] {
             return [
                 "hasThumbnail": hasThumbnail,
                 "previewCount": previewCount,

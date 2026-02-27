@@ -2,6 +2,9 @@
   "type": "object",
   "description": "Triggered when the user chooses to hide or show a URL preview.",
   "properties": {
+    "eventName": {
+      "enum": ["UrlPreviewVisibilityChanged"]
+    },
     "visible": {
       "description": "Has the user made the previews visible or hidden.",
       "type": "boolean"
