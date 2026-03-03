@@ -23,6 +23,12 @@
       "type": "boolean"
     }
   },
-  "required": ["visible", "previewKind", "previewCount", "hasThumbnail"],
+  "required": [
+    "eventName",
+    "visible",
+    "previewKind",
+    "previewCount",
+    "hasThumbnail"
+  ],
   "additionalProperties": false
 }

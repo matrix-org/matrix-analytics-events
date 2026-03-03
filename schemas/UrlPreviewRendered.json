@@ -23,6 +23,12 @@
       "type": "boolean"
     }
   },
-  "required": ["previewKind", "encryptedRoom", "previewCount", "hasThumbnail"],
+  "required": [
+    "eventName",
+    "previewKind",
+    "encryptedRoom",
+    "previewCount",
+    "hasThumbnail"
+  ],
   "additionalProperties": false
 }
