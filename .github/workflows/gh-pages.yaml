@@ -2,28 +2,34 @@ name: Update Github Pages
 on:
   push:
     branches: [ main ]
+
+permissions: {}
+
 concurrency: gh-pages
+
 jobs:
   pages:
     name: "Build & Deploy Github Pages"
     runs-on: ubuntu-latest
     steps:
       - name: 🧮 Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: 🔧 Set up node environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version-file: .node-version
           cache: 'yarn'
 
       - name: 🗜️ Set up python environment
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: '3.10'
 
       - name: 🔨 Install Poetry
-        uses: snok/install-poetry@v1
+        uses: snok/install-poetry@76e04a911780d5b312d89783f7b1cd627778900a # v1.4.1
 
       - name: 🛠️ Setup
         run: "./scripts/setup.sh"
@@ -32,7 +38,7 @@ jobs:
         run: yarn build:html
 
       - name: 🚀 Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
         with:
           branch: gh-pages
           folder: types/html

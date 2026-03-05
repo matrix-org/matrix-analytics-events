@@ -21,12 +21,13 @@ jobs:
       id-token: write
     steps:
       - name: 🧮 Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           token: ${{ secrets.ELEMENT_BOT_TOKEN }}
+          persist-credentials: false
 
       - name: 🔧 Set up node environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           cache: 'yarn'
           # This prevents the "Update npm" step from failing.
@@ -38,23 +39,25 @@ jobs:
         run: npm install -g npm@latest
 
       - name: 🗜️ Set up python environment
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: '3.10'
 
       - name: 🔨 Install Poetry
-        uses: snok/install-poetry@v1
+        uses: snok/install-poetry@76e04a911780d5b312d89783f7b1cd627778900a # v1.4.1
 
       - name: 🛠️ Setup
         run: "./scripts/setup.sh"
 
       - name: 👊 Bump version
         run: |
-          yarn version --no-git-tag-version --${{ github.event.inputs.version-bump }}
+          yarn version --no-git-tag-version --${GITHUB_EVENT_INPUTS_VERSION_BUMP}
           git config --global user.name 'ElementRobot'
           git config --global user.email 'releases@riot.im'
-          git commit -am "${{ github.event.inputs.version-bump }} version bump"
+          git commit -am "${GITHUB_EVENT_INPUTS_VERSION_BUMP} version bump"
           git push
+        env:
+          GITHUB_EVENT_INPUTS_VERSION_BUMP: ${{ github.event.inputs.version-bump }}
 
       - name: 🚀 Publish to npm
         id: npm-publish
@@ -63,7 +66,8 @@ jobs:
           echo "version=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
 
       - name: 🧬 Create release
-        uses: actions/create-release@v1
+        # TODO: This action has been archived, find a new one.
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
