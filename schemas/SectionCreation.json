@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "description": "Triggered when the users create a section.",
+  "properties": {
+    "eventName": {
+      "enum": ["SectionCreation"]
+    },
+    "from": {
+      "description": "From where the action is triggered.",
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "RoomListItemOverflowMenu",
+          "description": "Action triggered from the room list item overflow menu."
+        },
+        {
+          "const": "RoomListHeader",
+          "description": "Action triggered from the room list header."
+        }
+      ]
+    }
+  },
+  "required": ["eventName", "from"],
+  "additionalProperties": false
+}
