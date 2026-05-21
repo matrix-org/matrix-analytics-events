@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "description": "Triggered when the users collapse or expand a section.",
+  "properties": {
+    "eventName": {
+      "enum": ["ExpandCollapseSection"]
+    },
+    "kind": {
+      "description": "Is expand or collapse.",
+      "type": "string",
+      "oneOf": [
+        { "const": "Expand", "description": "Expand a section." },
+        { "const": "Collapse", "description": "Collapse a section." }
+      ]
+    },
+    "from": {
+      "description": "From where the action is triggered.",
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "SectionHeader",
+          "description": "Action triggered from a section header."
+        },
+        {
+          "const": "RoomListHeader",
+          "description": "Action triggered from the room list header."
+        }
+      ]
+    }
+  },
+  "required": ["eventName", "kind", "from"],
+  "additionalProperties": false
+}
