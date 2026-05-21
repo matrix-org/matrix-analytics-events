@@ -55,7 +55,7 @@ def compute_swift(schema: Schema) -> str:
     is_screen = is_mobile_screen_event(schema.klass)
 
     result = """//
-// Copyright 2021 New Vector Ltd
+// Copyright 2026 Element Creations Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.

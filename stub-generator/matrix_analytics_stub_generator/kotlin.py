@@ -6,7 +6,7 @@ def compute_kotlin(schema: Schema) -> str:
     is_screen = is_mobile_screen_event(schema.klass)
 
     result = """/*
- * Copyright (c) 2021 New Vector Ltd
+ * Copyright (c) 2026 Element Creations Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
