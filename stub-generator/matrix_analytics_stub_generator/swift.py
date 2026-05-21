@@ -1,5 +1,6 @@
 import re
 from .schema import Schema, Member, is_mobile_screen_event
+import datetime
 
 
 def swift_member_definition(member: Member) -> str:
@@ -54,8 +55,8 @@ def compute_swift(schema: Schema) -> str:
     """Compute the output for Swift."""
     is_screen = is_mobile_screen_event(schema.klass)
 
-    result = """//
-// Copyright 2021 New Vector Ltd
+    result = f"""//
+// Copyright {datetime.date.today().year} Element Creations Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
