@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 New Vector Ltd
+ * Copyright (c) 2026 Element Creations Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -251,6 +251,28 @@ data class Interaction(
          * switching should occur.
          */
         SpacePanelSwitchSubSpace("SpacePanelSwitchSubSpace"),
+
+        /**
+         * User chose to set up new key backups after being prompted.
+         */
+        ToastSetUpRecoveryClick("ToastSetUpRecoveryClick"),
+
+        /**
+         * User declied to set up new key backups after being prompted.
+         */
+        ToastSetUpRecoveryDismiss("ToastSetUpRecoveryDismiss"),
+
+        /**
+         * User chose to connect with an existing key backup after being
+         * prompted.
+         */
+        ToastTurnOnKeyStorageClick("ToastTurnOnKeyStorageClick"),
+
+        /**
+         * User declined to connect with an existing key backup after being
+         * prompted.
+         */
+        ToastTurnOnKeyStorageDismiss("ToastTurnOnKeyStorageDismiss"),
     }
 
     enum class InteractionType(val rawValue: String) {

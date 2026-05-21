@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 New Vector Ltd
+ * Copyright (c) 2026 Element Creations Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@ package im.vector.app.features.analytics.plan
  * definition. These properties must all be device independent.
  */
 data class UserProperties(
+        /**
+         * Whether the user has enabled URL previews globally.
+         */
+        val uRLPreviewsEnabled: Boolean? = null,
         /**
          * The active filter in the All Chats screen.
          */
@@ -132,6 +136,7 @@ data class UserProperties(
 
     fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
+            uRLPreviewsEnabled?.let { put("URLPreviewsEnabled", it) }
             allChatsActiveFilter?.let { put("allChatsActiveFilter", it.rawValue) }
             ftueUseCaseSelection?.let { put("ftueUseCaseSelection", it.rawValue) }
             numFavouriteRooms?.let { put("numFavouriteRooms", it) }
