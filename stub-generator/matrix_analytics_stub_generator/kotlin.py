@@ -1,12 +1,13 @@
 import re
 from .schema import Schema, is_mobile_screen_event, first_letter_up, first_letter_down, split_text
+import datetime
 
 def compute_kotlin(schema: Schema) -> str:
     """Compute the output for Kotlin."""
     is_screen = is_mobile_screen_event(schema.klass)
 
-    result = """/*
- * Copyright (c) 2026 Element Creations Ltd.
+    result = f"""/*
+ * Copyright (c) {datetime.date.today().year} Element Creations Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
