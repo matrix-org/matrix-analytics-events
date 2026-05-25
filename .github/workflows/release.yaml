@@ -83,5 +83,5 @@ jobs:
               body: `${version} Release`,
               draft: false,
               prerelease: false,
-              make_latest: true,
+              make_latest: "true",
             });
