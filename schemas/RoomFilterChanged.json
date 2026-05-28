@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "description": "Triggered when the user changes the room list filters.",
+  "properties": {
+    "eventName": {
+      "enum": ["RoomFilterChanged"]
+    },
+    "changedFilter": {
+      "description": "The filter that was toggled by the user.",
+      "type": "string",
+      "oneOf": [
+        {"const": "Unreads", "description": "Filter for unread messages."},
+        {"const": "People", "description": "Filter for people/DMs."},
+        {"const": "Rooms", "description": "Filter for rooms."},
+        {"const": "Mentions", "description": "Filter for mentions."},
+        {"const": "Invites", "description": "Filter for invites."},
+        {"const": "Favourites", "description": "Filter for favourites."},
+        {"const": "LowPriority", "description": "Filter for low priority messages."}
+      ]
+    },
+    "isEnabled": {
+      "description": "Whether the filter was enabled (true) or disabled (false).",
+      "type": "boolean"
+    },
+    "activeFilters": {
+      "description": "The set of filters that are now active after this change. This helps track which filter combinations users prefer.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["eventName", "changedFilter", "isEnabled", "activeFilters"],
+  "additionalProperties": false
+}

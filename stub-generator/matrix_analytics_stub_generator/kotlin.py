@@ -67,6 +67,8 @@ package im.vector.app.features.analytics.plan
             result += f"val {validName}: Int"
         elif member.type == "boolean":
             result += f"val {validName}: Boolean"
+        elif member.type == "array":
+            result += f"val {validName}: List<String>"
         else:
             raise Exception(f"Not handled yet: {member.type}")
         result += f"{defaultValue},\n"

@@ -19,6 +19,8 @@ def swift_member_definition(member: Member) -> str:
         definition = f"{member.name}: Int"
     elif member.type == "boolean":
         definition = f"{member.name}: Bool"
+    elif member.type == "array":
+        definition = f"{member.name}: [String]"
     else:
         raise Exception(f"Not handled yet: {member.type}")
     definition += f"{optionalSuffix}"
