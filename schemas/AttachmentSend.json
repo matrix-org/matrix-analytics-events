@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "description": "Triggered when the user sends an attachment.",
+  "properties": {
+    "eventName": {
+      "enum": ["AttachmentSend"]
+    },
+    "isReply": {
+      "description": "Whether the user's composer interaction was a reply to a previously sent event.",
+      "type": "boolean"
+    },
+    "inThread": {
+      "description": "Whether the user was using the composer inside of a thread.",
+      "type": "boolean"
+    },
+    "kind": {
+      "description": "The kind of attachment dialog opened. May refer to a module uploader kind.",
+      "type": "string"
+    },
+    "count": {
+      "description": "The number of attachments sent.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "type": {
+      "description": "The types of attachment sent. If multiple are being sent, use the most common type.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "eventName",
+    "isEditing",
+    "isReply",
+    "inThread",
+    "kind",
+    "count"
+  ],
+  "additionalProperties": false
+}

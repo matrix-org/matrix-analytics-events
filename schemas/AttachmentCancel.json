@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "description": "Triggered when the user cancels sending an attachment.",
+  "properties": {
+    "eventName": {
+      "enum": ["AttachmentCancel"]
+    },
+    "isReply": {
+      "description": "Whether the user's composer interaction was a reply to a previously sent event.",
+      "type": "boolean"
+    },
+    "inThread": {
+      "description": "Whether the user was using the composer inside of a thread.",
+      "type": "boolean"
+    },
+    "kind": {
+      "description": "The kind of attachment dialog opened. May refer to a module uploader kind.",
+      "type": "string"
+    },
+    "stage": {
+      "description": "Where did the user perform the cancellation.",
+      "type": "string",
+      "enum": ["Picker", "Confirmation"]
+    }
+  },
+  "required": [
+    "eventName",
+    "isEditing",
+    "isReply",
+    "inThread",
+    "kind",
+    "count",
+    "stage"
+  ],
+  "additionalProperties": false
+}
