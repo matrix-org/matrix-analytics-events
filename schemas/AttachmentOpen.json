@@ -6,11 +6,11 @@
       "enum": ["AttachmentOpen"]
     },
     "isReply": {
-      "description": "Whether the user's composer interaction was a reply to a previously sent event.",
+      "description": "Whether the user's attachment is going to be a reply to a previously sent event.",
       "type": "boolean"
     },
     "inThread": {
-      "description": "Whether the user was using the composer inside of a thread.",
+      "description": "Whether the user's attachment is going to be included in a thread.",
       "type": "boolean"
     },
     "kind": {

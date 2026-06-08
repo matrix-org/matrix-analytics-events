@@ -1,5 +1,5 @@
 //
-// Copyright 2021 New Vector Ltd
+// Copyright 2026 Element Creations Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ extension AnalyticsEvent {
     public struct AttachmentOpen: AnalyticsEventProtocol {
         public let eventName = "AttachmentOpen"
 
-        /// Whether the user was using the composer inside of a thread.
+        /// Whether the user's attachment is going to be included in a thread.
         public let inThread: Bool
-        /// Whether the user's composer interaction was a reply to a previously sent event.
+        /// Whether the user's attachment is going to be a reply to a previously sent event.
         public let isReply: Bool
         /// The kind of attachment dialog opened. May refer to a module uploader kind.
         public let kind: String

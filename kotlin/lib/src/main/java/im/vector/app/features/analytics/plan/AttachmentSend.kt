@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 New Vector Ltd
+ * Copyright (c) 2026 Element Creations Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,11 +30,11 @@ data class AttachmentSend(
          */
         val count: Int,
         /**
-         * Whether the user was using the composer inside of a thread.
+         * Whether the user's attachment is going to be included in a thread.
          */
         val inThread: Boolean,
         /**
-         * Whether the user's composer interaction was a reply to a previously
+         * Whether the user's attachment is going to be a reply to a previously
          * sent event.
          */
         val isReply: Boolean,
