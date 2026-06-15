@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "description": "Triggered when the user opens the attachment dialog.",
+  "properties": {
+    "eventName": {
+      "enum": ["AttachmentOpen"]
+    },
+    "isReply": {
+      "description": "Whether the user's attachment is going to be a reply to a previously sent event.",
+      "type": "boolean"
+    },
+    "inThread": {
+      "description": "Whether the user's attachment is going to be included in a thread.",
+      "type": "boolean"
+    },
+    "kind": {
+      "description": "The kind of attachment dialog opened. May refer to a module uploader kind.",
+      "type": "string"
+    }
+  },
+  "required": ["eventName", "isEditing", "isReply", "inThread", "kind"],
+  "additionalProperties": false
+}
