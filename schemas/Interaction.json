@@ -74,6 +74,9 @@
         {"const": "WebVoipOptionElementCall", "description": "The user chose the Element Call option."},
         {"const": "WebRoomListMessagePreviewToggle", "description": "User clicked on the message preview toggle in the room list header in Element Web/Desktop."},
         {"const": "WebDeleteSection", "description": "User clicked on delete section button in Element Web/Desktop."},
+        {"const": "WebRoomListSectionToggle", "description": "User toggled the room list section in Element Web/Desktop."},
+        {"const": "WebRoomListPeopleSectionToggle", "description": "User toggled the room list people section in Element Web/Desktop."},
+        {"const": "WebSettingsActivityIsUnreadToggle", "description": "User toggled the activity is unread settings in Element Web/Desktop."},
 
         {"const": "PinnedMessageBannerClick", "description": "User clicked on the pinned message banner on Mobile and Element Web/Desktop." },
         {"const": "PinnedMessageBannerViewAllButton", "description": "User clicked on the View all button in the pinned message banner on Mobile and Element Web/Desktop." },
