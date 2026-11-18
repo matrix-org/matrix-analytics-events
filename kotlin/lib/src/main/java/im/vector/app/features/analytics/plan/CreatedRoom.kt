@@ -29,13 +29,23 @@ data class CreatedRoom(
          * Whether the room is a DM.
          */
         val isDM: Boolean,
+        val joinRule: JoinRule,
 ) : VectorAnalyticsEvent {
+
+    enum class JoinRule(val rawValue: String) {
+        Invite("Invite"),
+        Knock("Knock"),
+        KnockRestricted("KnockRestricted"),
+        Public("Public"),
+        Restricted("Restricted"),
+    }
 
     override fun getName() = "CreatedRoom"
 
     override fun getProperties(): Map<String, Any>? {
         return mutableMapOf<String, Any>().apply {
             put("isDM", isDM)
+            put("joinRule", joinRule.rawValue)
         }.takeIf { it.isNotEmpty() }
     }
 }
