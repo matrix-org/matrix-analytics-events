@@ -33,8 +33,8 @@
     <h1>Analytics events for Element clients</h1>    
     
         <section class="event">            
-            <h2>AttachmentOpen</h2>
-            <p>Triggered when the user opens the attachment dialog.</p>
+            <h2>RoomListSortingAlgorithmChanged</h2>
+            <p>Triggered when user changes room list sorting algorithm.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -46,31 +46,61 @@
                 <tbody>
                     
                         <tr>
-                            <td>inThread</td>                        
-                            <td>Whether the user&#39;s attachment is going to be included in a thread.</td>
+                            <td>newAlgorithm</td>                        
+                            <td>The new sorting algorithm.</td>
                             <td>
-                                                                
-                                    boolean
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Unread    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Activity    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Alphabetic    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
                     
                         <tr>
-                            <td>isReply</td>                        
-                            <td>Whether the user&#39;s attachment is going to be a reply to a previously sent event.</td>
+                            <td>oldAlgorithm</td>                        
+                            <td>The old sorting algorithm.</td>
                             <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>kind</td>                        
-                            <td>The kind of attachment dialog opened. May refer to a module uploader kind.</td>
-                            <td>
-                                                                
-                                    string
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Unread    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Activity    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Alphabetic    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
@@ -80,8 +110,8 @@
         </section>
     
         <section class="event">            
-            <h2>CreatedRoom</h2>
-            <p>Triggered when the user creates a room.</p>
+            <h2>PinUnpinAction</h2>
+            <p>Triggered when the users pin or unpins a message.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -93,53 +123,82 @@
                 <tbody>
                     
                         <tr>
-                            <td>isDM</td>                        
-                            <td>Whether the room is a DM.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>joinRule</td>                        
-                            <td></td>
+                            <td>from</td>                        
+                            <td>From where the action is triggered.</td>
                             <td>
                                 
                                     <ul>
                                         
                                             <li>
                                                 
-                                                    Public    
+                                                    <b>Timeline:</b> Action triggered from the timeline.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    Invite    
+                                                    <b>MessagePinningList:</b> Action triggered from the menu item in message pinning list.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    Restricted    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Knock    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    KnockRestricted    
+                                                    <b>UnpinAll:</b> Action triggered from the Unpin all button in message pinning list.
                                                     
                                             </li>
                                         
                                     </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>kind</td>                        
+                            <td>Is pin or unpin.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Pin:</b> Pin a message.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Unpin:</b> Unpin a message.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>PollEnd</h2>
+            <p>Triggered when a poll has been ended.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>doNotUse</td>                        
+                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.</td>
+                            <td>
+                                                                
+                                    boolean
                                                             
                             </td>                            
                         </tr>
@@ -214,8 +273,8 @@
         </section>
     
         <section class="event">            
-            <h2>PermissionChanged</h2>
-            <p>Triggered when the user changes a permission status.</p>
+            <h2>AttachmentSend</h2>
+            <p>Triggered when the user sends an attachment.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -227,49 +286,14 @@
                 <tbody>
                     
                         <tr>
-                            <td>granted</td>                        
-                            <td>Whether the permission has been granted by the user.</td>
+                            <td>count</td>                        
+                            <td>The number of attachments sent.</td>
                             <td>
                                                                 
-                                    boolean
+                                    integer
                                                             
                             </td>                            
                         </tr>
-                    
-                        <tr>
-                            <td>permission</td>                        
-                            <td>The name of the permission.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Notification:</b> Permissions related to sending notifications have changed.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>AttachmentCancel</h2>
-            <p>Triggered when the user cancels sending an attachment.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
                     
                         <tr>
                             <td>inThread</td>                        
@@ -302,25 +326,11 @@
                         </tr>
                     
                         <tr>
-                            <td>stage</td>                        
-                            <td>Where did the user perform the cancellation.</td>
+                            <td>type</td>                        
+                            <td>The types of attachment sent. If multiple are being sent, use the most common type.</td>
                             <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    Picker    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Confirmation    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
+                                                                
+                                    string
                                                             
                             </td>                            
                         </tr>
@@ -330,8 +340,8 @@
         </section>
     
         <section class="event">            
-            <h2>WebSearch</h2>
-            <p>Triggered when the user searches rooms.</p>
+            <h2>RoomModeration</h2>
+            <p>Triggered when a moderation action is performed within a room.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -343,31 +353,127 @@
                 <tbody>
                     
                         <tr>
-                            <td>numResults</td>                        
-                            <td>How many results the user got to their query.</td>
+                            <td>action</td>                        
+                            <td>The action that was performed.</td>
                             <td>
-                                                                
-                                    integer
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangeMemberRole:</b> Changed a room member&#39;s power level.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>KickMember:</b> Kicked a room member.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>BanMember:</b> Banned a room member.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>UnbanMember:</b> Unbanned a room member.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsRoomName:</b> Changed the power level required to set the room&#39;s name.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsRoomAvatar:</b> Changed the power level required to set the room&#39;s avatar.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsRoomTopic:</b> Changed the power level required to set the room&#39;s topic.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsSendMessages:</b> Changed the power level required to send messages in the room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsRedactMessages:</b> Changed the power level required to redact messages in the room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsInviteUsers:</b> Changed the power level required to invite users to the room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsKickMembers:</b> Changed the power level required to kick room members.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ChangePermissionsBanMembers:</b> Changed the power level required to ban room members.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>ResetPermissions:</b> Reset all of the room permissions back to their default values.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
                     
                         <tr>
-                            <td>queryLength</td>                        
-                            <td>The length of the user&#39;s query.</td>
+                            <td>role</td>                        
+                            <td>When the action sets a particular power level, this is the suggested role for that the power level.</td>
                             <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>viaSpotlight</td>                        
-                            <td>Whether the user is using the new search experience beta.</td>
-                            <td>
-                                                                
-                                    boolean
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Administrator:</b> A power level of 100.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Moderator:</b> A power level of 50.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>User:</b> A power level of 0.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Other:</b> Any other power level.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
@@ -438,6 +544,47 @@
         </section>
     
         <section class="event">            
+            <h2>SlashCommand</h2>
+            <p>Triggered when the user runs a slash command in their composer.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>command</td>                        
+                            <td>The name of this command.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Part    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Invite    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>SectionCreation</h2>
             <p>Triggered when the users create a section.</p>
             <table class="event-table">
@@ -479,8 +626,8 @@
         </section>
     
         <section class="event">            
-            <h2>WebPanelResize</h2>
-            <p>Triggered when the user resizes a layout panel.</p>
+            <h2>ExpandCollapseSection</h2>
+            <p>Triggered when the users collapse or expand a section.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -492,15 +639,21 @@
                 <tbody>
                     
                         <tr>
-                            <td>panel</td>                        
-                            <td>The panel that was resized.</td>
+                            <td>from</td>                        
+                            <td>From where the action is triggered.</td>
                             <td>
                                 
                                     <ul>
                                         
                                             <li>
                                                 
-                                                    right    
+                                                    <b>SectionHeader:</b> Action triggered from a section header.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomListHeader:</b> Action triggered from the room list header.
                                                     
                                             </li>
                                         
@@ -510,53 +663,25 @@
                         </tr>
                     
                         <tr>
-                            <td>roomType</td>                        
-                            <td>The type of room the user is viewing when resizing the panel.</td>
+                            <td>kind</td>                        
+                            <td>Is expand or collapse.</td>
                             <td>
                                 
                                     <ul>
                                         
                                             <li>
                                                 
-                                                    video_room    
+                                                    <b>Expand:</b> Expand a section.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    maximised_widget    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    user_profile    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    space    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    other_room    
+                                                    <b>Collapse:</b> Collapse a section.
                                                     
                                             </li>
                                         
                                     </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>size</td>                        
-                            <td>The size to which the user has resized the panel in pixels.</td>
-                            <td>
-                                                                
-                                    integer
                                                             
                             </td>                            
                         </tr>
@@ -911,6 +1036,140 @@
         </section>
     
         <section class="event">            
+            <h2>UnauthenticatedError</h2>
+            <p>Triggered when the user becomes unauthenticated without actually clicking sign out(E.g. Due to expiry of an access token without a way to refresh).</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>errorCode</td>                        
+                            <td>The error code as defined in matrix spec. The source of this error is from the homeserver.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    M_UNKNOWN    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    M_FORBIDDEN    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    M_UNKNOWN_TOKEN    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>errorReason</td>                        
+                            <td>The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>refreshTokenAuth</td>                        
+                            <td>Whether the auth mechanism is refresh-token-based.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>softLogout</td>                        
+                            <td>Whether a soft logout or hard logout was triggered.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallEnded</h2>
+            <p>Triggered when a call has ended.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>durationMs</td>                        
+                            <td>The duration of the call in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
             <h2>Error</h2>
             <p>Triggered when an error occurred.</p>
             <table class="event-table">
@@ -1178,8 +1437,8 @@
         </section>
     
         <section class="event">            
-            <h2>NotificationTroubleshoot</h2>
-            <p>Triggered when the user runs the troubleshoot notification test suite.</p>
+            <h2>PermissionChanged</h2>
+            <p>Triggered when the user changes a permission status.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -1191,11 +1450,29 @@
                 <tbody>
                     
                         <tr>
-                            <td>hasError</td>                        
-                            <td>Whether one or more tests are in error.</td>
+                            <td>granted</td>                        
+                            <td>Whether the permission has been granted by the user.</td>
                             <td>
                                                                 
                                     boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>permission</td>                        
+                            <td>The name of the permission.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Notification:</b> Permissions related to sending notifications have changed.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
@@ -1205,8 +1482,8 @@
         </section>
     
         <section class="event">            
-            <h2>AttachmentSend</h2>
-            <p>Triggered when the user sends an attachment.</p>
+            <h2>AttachmentCancel</h2>
+            <p>Triggered when the user cancels sending an attachment.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -1216,16 +1493,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
-                        <tr>
-                            <td>count</td>                        
-                            <td>The number of attachments sent.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
                     
                         <tr>
                             <td>inThread</td>                        
@@ -1258,11 +1525,25 @@
                         </tr>
                     
                         <tr>
-                            <td>type</td>                        
-                            <td>The types of attachment sent. If multiple are being sent, use the most common type.</td>
+                            <td>stage</td>                        
+                            <td>Where did the user perform the cancellation.</td>
                             <td>
-                                                                
-                                    string
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Picker    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Confirmation    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
                                                             
                             </td>                            
                         </tr>
@@ -1272,8 +1553,8 @@
         </section>
     
         <section class="event">            
-            <h2>RoomListSortingAlgorithmChanged</h2>
-            <p>Triggered when user changes room list sorting algorithm.</p>
+            <h2>WebSearch</h2>
+            <p>Triggered when the user searches rooms.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -1285,27 +1566,125 @@
                 <tbody>
                     
                         <tr>
-                            <td>newAlgorithm</td>                        
-                            <td>The new sorting algorithm.</td>
+                            <td>numResults</td>                        
+                            <td>How many results the user got to their query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>queryLength</td>                        
+                            <td>The length of the user&#39;s query.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>viaSpotlight</td>                        
+                            <td>Whether the user is using the new search experience beta.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>PollVote</h2>
+            <p>Triggered when a poll vote has been cast.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>doNotUse</td>                        
+                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>SuperProperties</h2>
+            <p>Super Properties are properties associated with events that are sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>appPlatform</td>                        
+                            <td>Used as a discriminant to breakdown usage per client.</td>
                             <td>
                                 
                                     <ul>
                                         
                                             <li>
                                                 
-                                                    Unread    
+                                                    <b>Web Platform:</b> Element Web platform.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    Activity    
+                                                    <b>Electron Platform:</b> Element Desktop platform.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    Alphabetic    
+                                                    <b>EI:</b> Element iOS platform.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>EXI:</b> Element-X iOS platform.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>EA:</b> Element Android platform.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>EXA:</b> Element-X Android platform.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Other:</b> Other Platform.
                                                     
                                             </li>
                                         
@@ -1315,31 +1694,35 @@
                         </tr>
                     
                         <tr>
-                            <td>oldAlgorithm</td>                        
-                            <td>The old sorting algorithm.</td>
+                            <td>cryptoSDK</td>                        
+                            <td>Which crypto backend is the client currently using.</td>
                             <td>
                                 
                                     <ul>
                                         
                                             <li>
                                                 
-                                                    Unread    
+                                                    <b>Legacy:</b> Legacy crypto backend specific to each platform.
                                                     
                                             </li>
                                         
                                             <li>
                                                 
-                                                    Activity    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Alphabetic    
+                                                    <b>Rust:</b> Cross-platform crypto backend written in Rust.
                                                     
                                             </li>
                                         
                                     </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>cryptoSDKVersion</td>                        
+                            <td>Version of the crypto backend.</td>
+                            <td>
+                                                                
+                                    string
                                                             
                             </td>                            
                         </tr>
@@ -1417,6 +1800,400 @@
                                             </li>
                                         
                                     </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>ViewRoom</h2>
+            <p>Triggered when the user changes rooms.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>activeSpace</td>                        
+                            <td>active space when user navigated to the room.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Home:</b> Active space is Home.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Private:</b> Active space is a private space.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Public:</b> Active space is a public space.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Meta:</b> Active space is a meta space.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isSpace</td>                        
+                            <td>Whether the room is a Space.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>trigger</td>                        
+                            <td>The reason for the room change if known.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Created:</b> Room accessed due to being just created.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomList:</b> Room accessed via the room list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDirectory:</b> Room accessed via the public rooms directory.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceHierarchy:</b> Room accessed via the space hierarchy view.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Timeline:</b> Room accessed via a timeline pill or link in another room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Notification:</b> Room accessed via a push/desktop notification.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Tombstone:</b> Room accessed via a tombstone at the bottom of a predecessor room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Predecessor:</b> Room accessed via the predecessor link at the top of the upgraded room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Widget:</b> Room switched due to widget interaction.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MessageSearch:</b> Room switched due to user interacting with a message search result.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MessageUser:</b> Room switched due to user selecting a user to go to a DM with.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>VerificationRequest:</b> Room switched due to user interacting with incoming verification request.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SlashCommand:</b> Room accessed via a slash command in Element Web/Desktop like /goto.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Shortcut:</b> Room accessed via a shortcut.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebNotificationPanel:</b> Room accessed via Element Web/Desktop&#39;s notification panel.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebKeyboardShortcut:</b> Room accessed via an Element Web/Desktop keyboard shortcut like go to next room with unread messages.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebHorizontalBreadcrumbs:</b> Room accessed via the Element Web/Desktop horizontal breadcrumbs at the top of the room list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebVerticalBreadcrumbs:</b> Room accessed via the Element Web/Desktop vertical breadcrumb hover menu.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebAcceptCall:</b> Room switched due to accepting a call in a different room in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebDialPad:</b> Room switched due to making a call via the dial pad in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebForwardShortcut:</b> Room accessed via the shortcut in Element Web/Desktop&#39;s forward modal.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebUnifiedSearch:</b> Room accessed via Element Web/Desktop&#39;s Unified Search modal.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebPredecessorSettings:</b> Room accessed via the predecessor link in Settings &gt; Advanced in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpaceContextSwitch:</b> Room switched due to the user changing space in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebRoomListNotificationBadge:</b> Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebSpacePanelNotificationBadge:</b> Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebFloatingCallWindow:</b> Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>WebThreadsActivityCentre:</b> Room accessed via interacting with the Threads Activity Centre in Element Web/Desktop.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileFileSearch:</b> Room switched due to user interacting with a file search result.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRoomSearch:</b> Room switched due to user interacting with a room search result.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSearchContactDetail:</b> Room accessed via interacting with direct chat item in the search contact detail screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRoomMemberDetail:</b> Room accessed via interacting with direct chat item in the room contact detail screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSpaceMemberDetail:</b> Room accessed via interacting with direct chat item in the space contact detail screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileInCall:</b> Room accessed via interacting with the incall screen.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSpaceMenu:</b> Space accessed via interacting with the space menu.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSpaceSettings:</b> Space accessed via interacting with a space settings menu item.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileRoomPreview:</b> Room accessed via preview.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobilePermalink:</b> Room accessed via link.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileLinkShare:</b> Room accessed during external sharing.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileExploreRooms:</b> Room accessed via space explore.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSpaceMembers:</b> Room accessed via space members list.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobileSpaceBottomSheet:</b> Room accessed via space bottom sheet list.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>viaKeyboard</td>                        
+                            <td>Whether the interaction was performed via the keyboard input.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>AttachmentOpen</h2>
+            <p>Triggered when the user opens the attachment dialog.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>inThread</td>                        
+                            <td>Whether the user&#39;s attachment is going to be included in a thread.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isReply</td>                        
+                            <td>Whether the user&#39;s attachment is going to be a reply to a previously sent event.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>kind</td>                        
+                            <td>The kind of attachment dialog opened. May refer to a module uploader kind.</td>
+                            <td>
+                                                                
+                                    string
                                                             
                             </td>                            
                         </tr>
@@ -1831,288 +2608,6 @@
         </section>
     
         <section class="event">            
-            <h2>ExpandCollapseSection</h2>
-            <p>Triggered when the users collapse or expand a section.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>from</td>                        
-                            <td>From where the action is triggered.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>SectionHeader:</b> Action triggered from a section header.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomListHeader:</b> Action triggered from the room list header.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>kind</td>                        
-                            <td>Is expand or collapse.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Expand:</b> Expand a section.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Collapse:</b> Collapse a section.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CallError</h2>
-            <p>Triggered when an error occurred in a call.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>PollVote</h2>
-            <p>Triggered when a poll vote has been cast.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>doNotUse</td>                        
-                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>RoomModeration</h2>
-            <p>Triggered when a moderation action is performed within a room.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>action</td>                        
-                            <td>The action that was performed.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangeMemberRole:</b> Changed a room member&#39;s power level.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>KickMember:</b> Kicked a room member.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>BanMember:</b> Banned a room member.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>UnbanMember:</b> Unbanned a room member.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsRoomName:</b> Changed the power level required to set the room&#39;s name.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsRoomAvatar:</b> Changed the power level required to set the room&#39;s avatar.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsRoomTopic:</b> Changed the power level required to set the room&#39;s topic.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsSendMessages:</b> Changed the power level required to send messages in the room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsRedactMessages:</b> Changed the power level required to redact messages in the room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsInviteUsers:</b> Changed the power level required to invite users to the room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsKickMembers:</b> Changed the power level required to kick room members.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ChangePermissionsBanMembers:</b> Changed the power level required to ban room members.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>ResetPermissions:</b> Reset all of the room permissions back to their default values.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>role</td>                        
-                            <td>When the action sets a particular power level, this is the suggested role for that the power level.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Administrator:</b> A power level of 100.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Moderator:</b> A power level of 50.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>User:</b> A power level of 0.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Other:</b> Any other power level.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
             <h2>UserProperties</h2>
             <p>The user properties to apply when identifying. This is not an event definition. These properties must all be device independent.</p>
             <table class="event-table">
@@ -2372,8 +2867,8 @@
         </section>
     
         <section class="event">            
-            <h2>PollEnd</h2>
-            <p>Triggered when a poll has been ended.</p>
+            <h2>RoomFilterChanged</h2>
+            <p>Triggered when the user changes the room list filters.</p>
             <table class="event-table">
                 <thead>
                     <tr>
@@ -2385,116 +2880,75 @@
                 <tbody>
                     
                         <tr>
-                            <td>doNotUse</td>                        
-                            <td>Do not use this. Remove this property when the kotlin type generator can properly generate types without properties other than the event name.</td>
+                            <td>activeFilters</td>                        
+                            <td>The set of filters that are now active after this change. This helps track which filter combinations users prefer.</td>
+                            <td>
+                                                                
+                                    array
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>changedFilter</td>                        
+                            <td>The filter that was toggled by the user.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Unreads:</b> Filter for unread messages.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>People:</b> Filter for people/DMs.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Rooms:</b> Filter for rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Mentions:</b> Filter for mentions.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Invites:</b> Filter for invites.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Favourites:</b> Filter for favourites.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>LowPriority:</b> Filter for low priority messages.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isEnabled</td>                        
+                            <td>Whether the filter was enabled (true) or disabled (false).</td>
                             <td>
                                                                 
                                     boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>SuperProperties</h2>
-            <p>Super Properties are properties associated with events that are sent with every capture call, be it a $pageview, an autocaptured button click, or anything else.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>appPlatform</td>                        
-                            <td>Used as a discriminant to breakdown usage per client.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Web Platform:</b> Element Web platform.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Electron Platform:</b> Element Desktop platform.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>EI:</b> Element iOS platform.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>EXI:</b> Element-X iOS platform.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>EA:</b> Element Android platform.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>EXA:</b> Element-X Android platform.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Other:</b> Other Platform.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>cryptoSDK</td>                        
-                            <td>Which crypto backend is the client currently using.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Legacy:</b> Legacy crypto backend specific to each platform.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Rust:</b> Cross-platform crypto backend written in Rust.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>cryptoSDKVersion</td>                        
-                            <td>Version of the crypto backend.</td>
-                            <td>
-                                                                
-                                    string
                                                             
                             </td>                            
                         </tr>
@@ -2591,6 +3045,671 @@
                         <tr>
                             <td>startsThread</td>                        
                             <td>Whether this message begins a new thread or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>PerformanceTimer</h2>
+            <p>Triggered after timing an operation in the app.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>context</td>                        
+                            <td>Client defined, can be used for debugging.</td>
+                            <td>
+                                                                
+                                    string
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>itemCount</td>                        
+                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>name</td>                        
+                            <td>The timer that is being reported.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>timeMs</td>                        
+                            <td>The time reported by the timer in milliseconds.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>JoinedRoom</h2>
+            <p>Triggered when the user joins a room.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>isSpace</td>                        
+                            <td>Whether the room is a Space.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>roomSize</td>                        
+                            <td>The size of the room.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    One    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Two    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    ThreeToTen    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    ElevenToOneHundred    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    OneHundredAndOneToAThousand    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    MoreThanAThousand    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>trigger</td>                        
+                            <td>The trigger for a room being joined if known.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Invite:</b> Room joined via an invite.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomPreview:</b> Room joined via its preview.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SlashCommand:</b> Room joined via the /join slash command.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>RoomDirectory:</b> Room joined via the public rooms directory.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>SpaceHierarchy:</b> Room joined via the space hierarchy view.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Timeline:</b> Room joined via a timeline pill or link in another room.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Notification:</b> Room joined via a push/desktop notification.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>MobilePermalink:</b> Room joined via link.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CreatedRoom</h2>
+            <p>Triggered when the user creates a room.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isDM</td>                        
+                            <td>Whether the room is a DM.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>joinRule</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    Public    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Invite    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Restricted    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    Knock    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    KnockRestricted    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>NotificationTroubleshoot</h2>
+            <p>Triggered when the user runs the troubleshoot notification test suite.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>hasError</td>                        
+                            <td>Whether one or more tests are in error.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CryptoSessionState</h2>
+            <p>Describe the current session crypto state, that is if the session is verified or not, if recovery is correctly setup.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>recoveryState</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Enabled:</b> Secret storage is set up and we have all the secrets locally.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Disabled:</b> No default secret storage key exists or it is disabled explicitly using the account data event.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>Incomplete:</b> Secret storage is set up but we&#39;re missing some secrets.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>verificationState</td>                        
+                            <td></td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    <b>Verified:</b> The device is considered to be verified, it has been signed by its user identity.
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    <b>NotVerified:</b> The device is unverified.
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallStarted</h2>
+            <p>Triggered when a call is started.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>WebPanelResize</h2>
+            <p>Triggered when the user resizes a layout panel.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>panel</td>                        
+                            <td>The panel that was resized.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    right    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>roomType</td>                        
+                            <td>The type of room the user is viewing when resizing the panel.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    video_room    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    maximised_widget    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    user_profile    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    space    
+                                                    
+                                            </li>
+                                        
+                                            <li>
+                                                
+                                                    other_room    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>size</td>                        
+                            <td>The size to which the user has resized the panel in pixels.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>CallError</h2>
+            <p>Triggered when an error occurred in a call.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>isVideo</td>                        
+                            <td>Whether its a video call or not.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>numParticipants</td>                        
+                            <td>Number of participants in the call.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>placed</td>                        
+                            <td>Whether this user placed it.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    
+        <section class="event">            
+            <h2>UrlPreviewVisibilityChanged</h2>
+            <p>Triggered when the user chooses to hide or show a URL preview.</p>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <td class="property">Property</td>
+                        <td class="description">Description</td>
+                        <td class="type">Type</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>hasThumbnail</td>                        
+                            <td>Do the preview(s) contain at least one thumbnail.</td>
+                            <td>
+                                                                
+                                    boolean
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>previewCount</td>                        
+                            <td>How many URLs are being previewed.</td>
+                            <td>
+                                                                
+                                    integer
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>previewKind</td>                        
+                            <td>The kind of preview being rendered.</td>
+                            <td>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                
+                                                    LegacyCard    
+                                                    
+                                            </li>
+                                        
+                                    </ul>                                    
+                                                            
+                            </td>                            
+                        </tr>
+                    
+                        <tr>
+                            <td>visible</td>                        
+                            <td>Has the user made the previews visible or hidden.</td>
                             <td>
                                                                 
                                     boolean
@@ -3281,1125 +4400,6 @@
                                             </li>
                                         
                                     </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>SlashCommand</h2>
-            <p>Triggered when the user runs a slash command in their composer.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>command</td>                        
-                            <td>The name of this command.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    Part    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Invite    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>JoinedRoom</h2>
-            <p>Triggered when the user joins a room.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isDM</td>                        
-                            <td>Whether the room is a DM.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isSpace</td>                        
-                            <td>Whether the room is a Space.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>roomSize</td>                        
-                            <td>The size of the room.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    One    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    Two    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    ThreeToTen    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    ElevenToOneHundred    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    OneHundredAndOneToAThousand    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    MoreThanAThousand    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>trigger</td>                        
-                            <td>The trigger for a room being joined if known.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Invite:</b> Room joined via an invite.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomPreview:</b> Room joined via its preview.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SlashCommand:</b> Room joined via the /join slash command.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomDirectory:</b> Room joined via the public rooms directory.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpaceHierarchy:</b> Room joined via the space hierarchy view.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Timeline:</b> Room joined via a timeline pill or link in another room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Notification:</b> Room joined via a push/desktop notification.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobilePermalink:</b> Room joined via link.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CallEnded</h2>
-            <p>Triggered when a call has ended.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>durationMs</td>                        
-                            <td>The duration of the call in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CallStarted</h2>
-            <p>Triggered when a call is started.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>isVideo</td>                        
-                            <td>Whether its a video call or not.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>numParticipants</td>                        
-                            <td>Number of participants in the call.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>placed</td>                        
-                            <td>Whether this user placed it.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>CryptoSessionState</h2>
-            <p>Describe the current session crypto state, that is if the session is verified or not, if recovery is correctly setup.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>recoveryState</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Enabled:</b> Secret storage is set up and we have all the secrets locally.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Disabled:</b> No default secret storage key exists or it is disabled explicitly using the account data event.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Incomplete:</b> Secret storage is set up but we&#39;re missing some secrets.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>verificationState</td>                        
-                            <td></td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Verified:</b> The device is considered to be verified, it has been signed by its user identity.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>NotVerified:</b> The device is unverified.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>PinUnpinAction</h2>
-            <p>Triggered when the users pin or unpins a message.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>from</td>                        
-                            <td>From where the action is triggered.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Timeline:</b> Action triggered from the timeline.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MessagePinningList:</b> Action triggered from the menu item in message pinning list.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>UnpinAll:</b> Action triggered from the Unpin all button in message pinning list.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>kind</td>                        
-                            <td>Is pin or unpin.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Pin:</b> Pin a message.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Unpin:</b> Unpin a message.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>UrlPreviewVisibilityChanged</h2>
-            <p>Triggered when the user chooses to hide or show a URL preview.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>hasThumbnail</td>                        
-                            <td>Do the preview(s) contain at least one thumbnail.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>previewCount</td>                        
-                            <td>How many URLs are being previewed.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>previewKind</td>                        
-                            <td>The kind of preview being rendered.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    LegacyCard    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>visible</td>                        
-                            <td>Has the user made the previews visible or hidden.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>UnauthenticatedError</h2>
-            <p>Triggered when the user becomes unauthenticated without actually clicking sign out(E.g. Due to expiry of an access token without a way to refresh).</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>errorCode</td>                        
-                            <td>The error code as defined in matrix spec. The source of this error is from the homeserver.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    M_UNKNOWN    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    M_FORBIDDEN    
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    M_UNKNOWN_TOKEN    
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>errorReason</td>                        
-                            <td>The reason for the error. The source of this error is from the homeserver, the reason can vary and is subject to change so there is no enum of possible values.</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>refreshTokenAuth</td>                        
-                            <td>Whether the auth mechanism is refresh-token-based.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>softLogout</td>                        
-                            <td>Whether a soft logout or hard logout was triggered.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>PerformanceTimer</h2>
-            <p>Triggered after timing an operation in the app.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>context</td>                        
-                            <td>Client defined, can be used for debugging.</td>
-                            <td>
-                                                                
-                                    string
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>itemCount</td>                        
-                            <td>Client defined, an optional value to indicate how many items were handled during the operation.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>name</td>                        
-                            <td>The timer that is being reported.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupInitialSync:</b> The duration of an initial /sync request during startup (if the store has been wiped). In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupIncrementalSync:</b> The duration of a regular /sync request when resuming the app. In this case, `itemCount` should contain the number of joined rooms in the response.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupStorePreload:</b> The time to preload data in the MXStore on iOS. In this case, `itemCount` should contain the number of rooms in the store.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupStoreReady:</b> The time to load all data from the store (including StartupStorePreload time). In this case, `itemCount` should contain the number of rooms loaded into the session
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>StartupLaunchScreen:</b> How long the app launch screen is displayed for.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncRequest:</b> The time spent waiting for a response to an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>InitialSyncParsing:</b> The time spent parsing the response from an initial /sync request. In this case, `itemCount` should contain the number of joined rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>NotificationsOpenEvent:</b> The time taken to display an event in the timeline that was opened from a notification.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>timeMs</td>                        
-                            <td>The time reported by the timer in milliseconds.</td>
-                            <td>
-                                                                
-                                    integer
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>RoomFilterChanged</h2>
-            <p>Triggered when the user changes the room list filters.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>activeFilters</td>                        
-                            <td>The set of filters that are now active after this change. This helps track which filter combinations users prefer.</td>
-                            <td>
-                                                                
-                                    array
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>changedFilter</td>                        
-                            <td>The filter that was toggled by the user.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Unreads:</b> Filter for unread messages.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>People:</b> Filter for people/DMs.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Rooms:</b> Filter for rooms.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Mentions:</b> Filter for mentions.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Invites:</b> Filter for invites.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Favourites:</b> Filter for favourites.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>LowPriority:</b> Filter for low priority messages.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isEnabled</td>                        
-                            <td>Whether the filter was enabled (true) or disabled (false).</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    
-        <section class="event">            
-            <h2>ViewRoom</h2>
-            <p>Triggered when the user changes rooms.</p>
-            <table class="event-table">
-                <thead>
-                    <tr>
-                        <td class="property">Property</td>
-                        <td class="description">Description</td>
-                        <td class="type">Type</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>activeSpace</td>                        
-                            <td>active space when user navigated to the room.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Home:</b> Active space is Home.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Private:</b> Active space is a private space.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Public:</b> Active space is a public space.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Meta:</b> Active space is a meta space.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isDM</td>                        
-                            <td>Whether the room is a DM.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>isSpace</td>                        
-                            <td>Whether the room is a Space.</td>
-                            <td>
-                                                                
-                                    boolean
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>trigger</td>                        
-                            <td>The reason for the room change if known.</td>
-                            <td>
-                                
-                                    <ul>
-                                        
-                                            <li>
-                                                
-                                                    <b>Created:</b> Room accessed due to being just created.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomList:</b> Room accessed via the room list.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>RoomDirectory:</b> Room accessed via the public rooms directory.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SpaceHierarchy:</b> Room accessed via the space hierarchy view.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Timeline:</b> Room accessed via a timeline pill or link in another room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Notification:</b> Room accessed via a push/desktop notification.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Tombstone:</b> Room accessed via a tombstone at the bottom of a predecessor room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Predecessor:</b> Room accessed via the predecessor link at the top of the upgraded room.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Widget:</b> Room switched due to widget interaction.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MessageSearch:</b> Room switched due to user interacting with a message search result.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MessageUser:</b> Room switched due to user selecting a user to go to a DM with.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>VerificationRequest:</b> Room switched due to user interacting with incoming verification request.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>SlashCommand:</b> Room accessed via a slash command in Element Web/Desktop like /goto.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>Shortcut:</b> Room accessed via a shortcut.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebNotificationPanel:</b> Room accessed via Element Web/Desktop&#39;s notification panel.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebKeyboardShortcut:</b> Room accessed via an Element Web/Desktop keyboard shortcut like go to next room with unread messages.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebHorizontalBreadcrumbs:</b> Room accessed via the Element Web/Desktop horizontal breadcrumbs at the top of the room list.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebVerticalBreadcrumbs:</b> Room accessed via the Element Web/Desktop vertical breadcrumb hover menu.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebAcceptCall:</b> Room switched due to accepting a call in a different room in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebDialPad:</b> Room switched due to making a call via the dial pad in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebForwardShortcut:</b> Room accessed via the shortcut in Element Web/Desktop&#39;s forward modal.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebUnifiedSearch:</b> Room accessed via Element Web/Desktop&#39;s Unified Search modal.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebPredecessorSettings:</b> Room accessed via the predecessor link in Settings &gt; Advanced in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSpaceContextSwitch:</b> Room switched due to the user changing space in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebRoomListNotificationBadge:</b> Room accessed via clicking on a notifications badge on a room list sublist in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebSpacePanelNotificationBadge:</b> Room accessed via clicking on the notifications badge on the currently selected space in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebFloatingCallWindow:</b> Room accessed via interacting with the floating call or Jitsi PIP in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>WebThreadsActivityCentre:</b> Room accessed via interacting with the Threads Activity Centre in Element Web/Desktop.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileFileSearch:</b> Room switched due to user interacting with a file search result.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRoomSearch:</b> Room switched due to user interacting with a room search result.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSearchContactDetail:</b> Room accessed via interacting with direct chat item in the search contact detail screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRoomMemberDetail:</b> Room accessed via interacting with direct chat item in the room contact detail screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSpaceMemberDetail:</b> Room accessed via interacting with direct chat item in the space contact detail screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileInCall:</b> Room accessed via interacting with the incall screen.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSpaceMenu:</b> Space accessed via interacting with the space menu.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSpaceSettings:</b> Space accessed via interacting with a space settings menu item.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileRoomPreview:</b> Room accessed via preview.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobilePermalink:</b> Room accessed via link.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileLinkShare:</b> Room accessed during external sharing.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileExploreRooms:</b> Room accessed via space explore.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSpaceMembers:</b> Room accessed via space members list.
-                                                    
-                                            </li>
-                                        
-                                            <li>
-                                                
-                                                    <b>MobileSpaceBottomSheet:</b> Room accessed via space bottom sheet list.
-                                                    
-                                            </li>
-                                        
-                                    </ul>                                    
-                                                            
-                            </td>                            
-                        </tr>
-                    
-                        <tr>
-                            <td>viaKeyboard</td>                        
-                            <td>Whether the interaction was performed via the keyboard input.</td>
-                            <td>
-                                                                
-                                    boolean
                                                             
                             </td>                            
                         </tr>
