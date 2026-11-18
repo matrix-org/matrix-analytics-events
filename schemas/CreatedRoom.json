@@ -8,8 +8,18 @@
     "isDM": {
       "description": "Whether the room is a DM.",
       "type": "boolean"
+    },
+    "joinRule": {
+      "type": "string",
+      "enum": [
+        "Public",
+        "Invite",
+        "Restricted",
+        "Knock",
+        "KnockRestricted"
+      ]
     }
   },
-  "required": ["isDM", "eventName"],
+  "required": ["isDM", "eventName", "joinRule"],
   "additionalProperties": false
 }

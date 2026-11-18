@@ -26,14 +26,25 @@ extension AnalyticsEvent {
 
         /// Whether the room is a DM.
         public let isDM: Bool
+        public let joinRule: JoinRule
 
-        public init(isDM: Bool) {
+        public init(isDM: Bool, joinRule: JoinRule) {
             self.isDM = isDM
+            self.joinRule = joinRule
+        }
+
+        public enum JoinRule: String {
+            case Invite = "Invite"
+            case Knock = "Knock"
+            case KnockRestricted = "KnockRestricted"
+            case Public = "Public"
+            case Restricted = "Restricted"
         }
 
         public var properties: [String: Any] {
             return [
-                "isDM": isDM
+                "isDM": isDM,
+                "joinRule": joinRule.rawValue
             ]
         }
     }
